@@ -54,26 +54,54 @@ def extract_ttl_content(text):
 @click.argument('output', nargs=1)
 def convert_text_to_kg(filenames, output):
 
+    chunk_size = 100
+    chunks = []
     print(f'Reading the file...')
     if not filenames and not sys.stdin.isatty():
         lines = sys.stdin
     else:
         lines = read_file(filenames)
 
+    curr_chunk_size = 0
+    curr_chunk = ""
+    for line in lines.splitlines():
+        print(f"next line is {line}")
+        if curr_chunk_size > chunk_size:
+            chunks.append(curr_chunk)
+            curr_chunk = ""
+            curr_chunk_size = 0
+        curr_chunk += line
+        curr_chunk += "\n"
+        curr_chunk_size += len(line)
+    chunks.append(curr_chunk)
+
     args = {
         'temperature': 0.35,
         'max_new_tokens': 2048,
-        'protocols_dir': '/content/drive/MyDrive/Thesis/week0/protocols/MI/protocol',
-        'output_dir': '/content/drive/MyDrive/Thesis/week1/results/gpt-4-turbo/MI'
+        # 'protocols_dir': '/content/drive/MyDrive/Thesis/week0/protocols/MI/protocol',
+        # 'output_dir': '/content/drive/MyDrive/Thesis/week1/results/gpt-4-turbo/MI'
     }
 
 
     print(f'Prompting the LLM...')
-    model_ontology_output = get_ontology_1(get_system_prompt(), lines, args['temperature'])
-    ttl_output = extract_ttl_content(model_ontology_output)
+    g = Graph()
+    for chunk in chunks:
+        model_ontology_output = get_ontology_1(get_system_prompt(), lines, args['temperature'])
+        ttl_output = extract_ttl_content(model_ontology_output)
+        print(f'TTL OUTPUT IS {ttl_output}')
+        # merging
+        try:
+            g1 = Graph()
+            g1.parse(data = ttl_output, format = 'ttl')
+            g += g1
+        except BadSyntax:
+            print(f"Error in Turtle syntax: {filename}")
+
+
     print(f'Writing the file...')
-    with open(output, 'w', encoding='utf8') as out_file:
-        out_file.write(ttl_output)
+    # with open(output, 'w', encoding='utf8') as out_file:
+    #     out_file.write(ttl_output)
+    g.serialize(destination=output, format='turtle')
     print(f'Written {output}')
 
 
