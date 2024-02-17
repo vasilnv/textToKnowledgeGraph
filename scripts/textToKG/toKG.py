@@ -1,9 +1,9 @@
 import click
 from openai import OpenAI
-from rdflib import Graph, Namespace, Literal, URIRef
-import os
+from rdflib import Graph
 import re
-import os
+from rdflib.plugins.parsers.notation3 import BadSyntax
+import sys
 
 def read_file(filenames):
     if filenames and filenames[0] == '-':
@@ -26,7 +26,7 @@ Not allowed relations: schema:indication, schema:indicates, schema:indications, 
 Use the prefix ex: with IRI <http://example.com/> for any created entities or properties."""
 
 def get_ontology_1(system_prompt, protocol, temp):
-    client = OpenAI(api_key="<YOUR-API-KEY>")
+    client = OpenAI(api_key="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")
     chat_completion = client.chat.completions.create(
       messages=[
           {
@@ -38,16 +38,11 @@ def get_ontology_1(system_prompt, protocol, temp):
               "content": protocol,
           }
       ],
-      model="gpt-4-turbo-preview",
+      model="gpt-3.5-turbo-0125",
       temperature=temp
 
     )
     return chat_completion.choices[0].message.content
-
-def extract_ttl_content(text):
-    ttl_pattern = r'```ttl\n([\s\S]*?)\n```'
-    matches = re.search(ttl_pattern, text)
-    return matches.group(1) if matches else None
 
 @click.command()
 @click.argument('filenames', nargs=-1)
@@ -65,7 +60,6 @@ def convert_text_to_kg(filenames, output):
     curr_chunk_size = 0
     curr_chunk = ""
     for line in lines.splitlines():
-        print(f"next line is {line}")
         if curr_chunk_size > chunk_size:
             chunks.append(curr_chunk)
             curr_chunk = ""
@@ -76,26 +70,24 @@ def convert_text_to_kg(filenames, output):
     chunks.append(curr_chunk)
 
     args = {
-        'temperature': 0.35,
-        'max_new_tokens': 2048,
-        # 'protocols_dir': '/content/drive/MyDrive/Thesis/week0/protocols/MI/protocol',
-        # 'output_dir': '/content/drive/MyDrive/Thesis/week1/results/gpt-4-turbo/MI'
+        'temperature': 0.3,
+        'max_new_tokens': 2048
     }
 
 
     print(f'Prompting the LLM...')
     g = Graph()
-    for chunk in chunks:
-        model_ontology_output = get_ontology_1(get_system_prompt(), lines, args['temperature'])
+    for (chunk_id, chunk) in enumerate(chunks):
+        model_ontology_output = get_ontology_1(get_system_prompt(), chunk, args['temperature'])
         ttl_output = extract_ttl_content(model_ontology_output)
         print(f'TTL OUTPUT IS {ttl_output}')
         # merging
         try:
             g1 = Graph()
-            g1.parse(data = ttl_output, format = 'ttl')
+            g1.parse(data=ttl_output, format='ttl')
             g += g1
         except BadSyntax:
-            print(f"Error in Turtle syntax: {filename}")
+            print(f"Error in Turtle syntax: {chunk_id}")
 
 
     print(f'Writing the file...')
@@ -103,7 +95,6 @@ def convert_text_to_kg(filenames, output):
     #     out_file.write(ttl_output)
     g.serialize(destination=output, format='turtle')
     print(f'Written {output}')
-
 
 if __name__ == "__main__":
     convert_text_to_kg()

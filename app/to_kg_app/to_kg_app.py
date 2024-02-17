@@ -2,14 +2,14 @@ import streamlit as st
 from openai import OpenAI
 import re
 from rdflib import Graph
-from rdflib.extras.external_graph_libs import rdflib_to_networkx_multidigraph
 from rdflib.plugins.parsers.notation3 import BadSyntax
-from pyvis.network import Network
-import streamlit.components.v1 as components
+from streamlit_agraph import agraph, Node, Edge, Config
 
 st.title('Convert Text to Knowledge Graph')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+modelGpt = "gpt-3.5-turbo-0125"
+
 
 def extract_ttl_content_gpt_3(text):
     ttl_pattern = r'```turtle\n([\s\S]*?)\n```'
@@ -24,24 +24,48 @@ Not allowed relations: schema:indication, schema:indicates, schema:indications, 
 Use the prefix ex: with IRI <http://example.com/> for any created entities or properties."""
 
 
-def get_ontology_1(system_prompt, protocol, temp):
+def get_missed_statements_prompt():
+    return f"""Now you have the opportunity to go through each sentence in the medical text again and update the statements from the ontology. Make sure the ontology explicitly states every statement from the text. Add any missed statements. Use only information from the medical text. Output the full result ontology"""
+
+
+def get_single_entities_prompt():
+    return f"""Now go through the result ontology and make sure each created entity defines a single object. Check if there are Literals and string objects that can be represented with a single entity. Update the statements in the ontology where possible. Use prefix ex: with IRI <http://example.com/> for any created entities. Do not lose any knowledge in the new ontology. """
+
+
+def format_single_part_conversation(role, message):
+    return {
+        'role': role,
+        'content': message
+    }
+
+
+def format_initial_messages(system_prompt, protocol):
+    return [
+        {
+            "role": "system",
+            "content": system_prompt
+        },
+        {
+            "role": "user",
+            "content": protocol
+        }
+    ]
+
+
+def get_ontology(client1, temp, prompt_messages):
     client = OpenAI(api_key=openai_api_key)
     chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "system",
-                "content": system_prompt,
-            },
-            {
-                "role": "user",
-                "content": protocol,
-            }
-        ],
+        messages=prompt_messages,
         model="gpt-3.5-turbo-0125",
-        temperature=temp
+        temperature=temp,
+        max_tokens=4096,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
 
     )
     return chat_completion.choices[0].message.content
+
 
 def convert_text_to_kg(text):
     chunk_size = 2000
@@ -66,17 +90,21 @@ def convert_text_to_kg(text):
     }
 
     print('Prompting the LLM...')
+    client = OpenAI(api_key=openai_api_key)
     g = Graph()
     ttl_output_whole = ""
     for chunk in chunks:
-        print(f'chunk is {chunk}')
-        model_ontology_output = get_ontology_1(get_system_prompt(), chunk, args['temperature'])
-        print(f"OUTPUT FROM LLM: {model_ontology_output}")
-        ttl_output = extract_ttl_content_gpt_3(model_ontology_output)
-        print(f"EXTRACTED: {ttl_output}")
+        messages = format_initial_messages(get_system_prompt(), chunk)
+        model_ontology_output = get_ontology(client, args['temperature'],
+                                             messages)
+        messages.append(format_single_part_conversation('assistant', model_ontology_output))
+        messages.append(format_single_part_conversation('user', get_missed_statements_prompt()))
+        final_ontology = get_ontology(client, args['temperature'], messages)
+        ttl_output = extract_ttl_content_gpt_3(final_ontology)
+
         if len(ttl_output) != 0:
             ttl_output_whole += ttl_output
-        # # merging
+        # merging
             try:
                 g1 = Graph()
                 g1.parse(data=ttl_output, format='ttl')
@@ -85,30 +113,47 @@ def convert_text_to_kg(text):
                 print(f"Error in Turtle syntax")
 
     print(f'Writing the result {ttl_output_whole}')
-    # st.code(ttl_output_whole)
-    could_download = len(ttl_output_whole) == 0
+    generate_visual_graph(g)
 
-    # st.download_button(label="Download file", data=ttl_output_whole, disabled=could_download)
-
-    G = rdflib_to_networkx_multidigraph(g)
-    nt = Network('500px', '500px')
-    nt.from_nx(G)
-
-    try:
-        path = '/tmp'
-        nt.show_buttons()
-        nt.save_graph(f'{path}/pyvis_graph.html')
-        HtmlFile = open(f'{path}/pyvis_graph.html', 'r', encoding='utf-8')
-    # Save and read graph as HTML file (locally)
-    except:
-        path = '/html_files'
-        nt.show_buttons()
-        nt.save_graph(f'{path}/pyvis_graph.html')
-        HtmlFile = open(f'{path}/pyvis_graph.html', 'r', encoding='utf-8')
-
-    # Load HTML file in HTML component for display on Streamlit page
-    components.html(HtmlFile.read(), height=435)
     return ttl_output_whole
+
+
+def generate_visual_graph(g):
+    nodes = []
+    for (s, p, o) in g:
+        nodes.append(s)
+        nodes.append(o)
+        # VG.add_edge(s, p, o)
+    node_data = list(set(nodes))
+    node_label_to_id = {}
+    graph_nodes = []
+    graph_edges = []
+    for i in range(0, len(node_data)):
+        shortened_iri = node_data[i].replace("https://schema.org/", "schema:")
+        shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
+        graph_nodes.append(Node(id=i, size=10, label=shortened_iri, title=shortened_iri))
+        node_label_to_id[node_data[i]] = i
+        print(f'Adding node {node_data[i]}')
+    for (s, p, o) in g:
+        print(f'Predicate in iteration is {p}')
+        shortened_iri = p.replace("https://schema.org/", "schema:")
+        shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
+        shortened_iri = shortened_iri.replace("http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "a")
+
+        graph_edges.append(Edge(source=node_label_to_id[s], label=shortened_iri, target=node_label_to_id[o]))
+    config = Config(width=600,
+                    height=750,
+                    directed=True,
+                    physics=True,
+                    hierarchical=False,
+                    highlightColor="#F7A7A6",
+                    edgeMinimization=False
+                    # **kwargs
+                    )
+    agraph(nodes=graph_nodes,
+           edges=graph_edges,
+           config=config)
+
 
 def generate_response(input_text):
     # llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
@@ -116,9 +161,15 @@ def generate_response(input_text):
     st.code(ttl_file)
     return ttl_file
 
+
+def clear_text():
+    st.session_state["text"] = ""
+
+
 with st.form('text_form'):
-    text = st.text_area('Enter text:')
+    text = st.text_area('Enter text:', key="text")
     submitted = st.form_submit_button('Submit')
+    clear_btn = st.form_submit_button('Clear', on_click=clear_text)
     if not openai_api_key.startswith('sk-'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')
     if submitted and openai_api_key.startswith('sk-'):
@@ -126,5 +177,5 @@ with st.form('text_form'):
         if 'submitted' in st.session_state:
             data_to_download = generate_response(text)
 
-if submitted:
+if 'submitted' in st.session_state and data_to_download is not None:
     st.download_button(label='Download', data=data_to_download, file_name='kg.ttl')
