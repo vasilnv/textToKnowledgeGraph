@@ -166,9 +166,7 @@ def generate_visual_graph(g):
         shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
         graph_nodes.append(Node(id=i, size=10, label=shortened_iri, title=shortened_iri))
         node_label_to_id[node_data[i]] = i
-        print(f'Adding node {node_data[i]}')
     for (s, p, o) in g:
-        print(f'Predicate in iteration is {p}')
         shortened_iri = p.replace("https://schema.org/", "schema:")
         shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
         shortened_iri = shortened_iri.replace("http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "a")
