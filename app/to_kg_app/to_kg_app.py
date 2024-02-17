@@ -4,6 +4,8 @@ import re
 from rdflib import Graph
 from rdflib.plugins.parsers.notation3 import BadSyntax
 from streamlit_agraph import agraph, Node, Edge, Config
+import os
+import csv
 
 st.title('Convert Text to Knowledge Graph')
 
@@ -67,6 +69,30 @@ def get_ontology(client1, temp, prompt_messages):
     return chat_completion.choices[0].message.content
 
 
+def load_valid_properties():
+    current_file_path = os.path.dirname(os.path.abspath(__file__))
+    valid_props_file = os.path.join(current_file_path, 'validProperties.csv')
+
+    with open(valid_props_file, 'r') as f:
+        reader = csv.reader(f)
+        valid_props = {rows[0]: rows[1] for rows in reader}
+
+    return valid_props
+
+
+def post_process_ttl_file(g, valid_props):
+    for s, p, o in g:
+        predicate_suffix = p.split("#")[-1]
+        if predicate_suffix in valid_props:
+            g.remove((s, p, o))
+            new_predicate = f"{p.split('#')[0]}#{valid_props[predicate_suffix]}"
+            g.add((s, new_predicate, o))
+    result_ontology = g.serialize(format="turtle")
+    print(f"result ontology: {result_ontology}")
+    print(f"serialized result ontology: {g.serialize(format='ttl')}")
+    return result_ontology
+
+
 def convert_text_to_kg(text):
     chunk_size = 2000
     chunks = []
@@ -97,11 +123,15 @@ def convert_text_to_kg(text):
         messages = format_initial_messages(get_system_prompt(), chunk)
         model_ontology_output = get_ontology(client, args['temperature'],
                                              messages)
+        print("Finished first step of the pipeline")
         messages.append(format_single_part_conversation('assistant', model_ontology_output))
         messages.append(format_single_part_conversation('user', get_missed_statements_prompt()))
         final_ontology = get_ontology(client, args['temperature'], messages)
+        print("Finished second step of the pipeline")
+        print("Extracting file in turtle format...")
         ttl_output = extract_ttl_content_gpt_3(final_ontology)
 
+        print("Merging chunks...")
         if len(ttl_output) != 0:
             ttl_output_whole += ttl_output
         # merging
@@ -112,7 +142,10 @@ def convert_text_to_kg(text):
             except BadSyntax:
                 print(f"Error in Turtle syntax")
 
-    print(f'Writing the result {ttl_output_whole}')
+    valid_properties = load_valid_properties()
+    print("Post-processing the result ontology...")
+    ttl_output_whole = post_process_ttl_file(g, valid_properties)
+    print(f'Visualizing the result')
     generate_visual_graph(g)
 
     return ttl_output_whole
