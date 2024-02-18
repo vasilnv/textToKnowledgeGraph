@@ -12,6 +12,7 @@ st.title('Convert Text to Knowledge Graph')
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 modelGpt = "gpt-3.5-turbo-0125"
 
+log_message = st.empty()
 
 def extract_ttl_content_gpt_3(text):
     ttl_pattern = r'```turtle\n([\s\S]*?)\n```'
@@ -116,6 +117,7 @@ def convert_text_to_kg(text):
     }
 
     print('Prompting the LLM...')
+    log_message.info("Prompting the LLM...")
     client = OpenAI(api_key=openai_api_key)
     g = Graph()
     ttl_output_whole = ""
@@ -124,14 +126,18 @@ def convert_text_to_kg(text):
         model_ontology_output = get_ontology(client, args['temperature'],
                                              messages)
         print("Finished first step of the pipeline")
+        log_message.info("Finished first step of the pipeline")
         messages.append(format_single_part_conversation('assistant', model_ontology_output))
         messages.append(format_single_part_conversation('user', get_missed_statements_prompt()))
         final_ontology = get_ontology(client, args['temperature'], messages)
         print("Finished second step of the pipeline")
+        log_message.info("Finished second step of the pipeline")
         print("Extracting file in turtle format...")
+        log_message.info("Extracting file in turtle format...")
         ttl_output = extract_ttl_content_gpt_3(final_ontology)
 
         print("Merging chunks...")
+        log_message.info("Merging chunks...")
         if len(ttl_output) != 0:
             ttl_output_whole += ttl_output
         # merging
@@ -140,13 +146,17 @@ def convert_text_to_kg(text):
                 g1.parse(data=ttl_output, format='ttl')
                 g += g1
             except BadSyntax:
+                st.error('An error occurred during the parsing of the generated file', icon="🚨")
                 print(f"Error in Turtle syntax")
+                log_message.empty()
 
     valid_properties = load_valid_properties()
     print("Post-processing the result ontology...")
+    log_message.info("Post-processing the result ontology...")
     ttl_output_whole = post_process_ttl_file(g, valid_properties)
     print(f'Visualizing the result')
     generate_visual_graph(g)
+    log_message.empty()
 
     return ttl_output_whole
 
@@ -207,6 +217,8 @@ with st.form('text_form'):
         st.session_state.submitted = True
         if 'submitted' in st.session_state:
             data_to_download = generate_response(text)
+
+my_message = st.empty()
 
 if 'submitted' in st.session_state and data_to_download is not None:
     st.download_button(label='Download', data=data_to_download, file_name='kg.ttl')
