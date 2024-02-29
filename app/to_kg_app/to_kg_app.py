@@ -10,29 +10,52 @@ import csv
 st.title('Convert Text to Knowledge Graph')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
-modelGpt = "gpt-3.5-turbo-0125"
+modelGpt = "gpt-4-turbo-preview"
 
 log_message = st.empty()
 
 def extract_ttl_content_gpt_3(text):
-    ttl_pattern = r'```turtle\n([\s\S]*?)\n```'
+    ttl_pattern = r'```ttl\n([\s\S]*?)\n```'
     matches = re.search(ttl_pattern, text)
-    return matches.group(1) if matches else None
+    return matches.group(1) if matches else text
 
 
 def get_system_prompt():
-    return f"""Use the context of medicine. Translate the following user text to an RDF graph using the SCHEMA.ORG ontology formatted as TTL. Use only valid entities (such as schema:MedicalCondition, schema:MedicalSignOrSymptom, schema:MedicalTest, schema:Drug) and properties (such as schema:possibleTreatment, schema:causeOf, schema:signOrSymptom, schema:usedToDiagnose, schema:drug, schema:possibleComplication, schema:guideline) listed on SCHEMA.ORG.
-Not allowed relations: schema:indication, schema:indicates, schema:indications, schema:indicate, schema:partOf , schema:prevalence, schema:cause , schema:outcome, schema:subProcedure, schema:isA, schema:complication.
-
-Use the prefix ex: with IRI <http://example.com/> for any created entities or properties."""
+    return f"""Use the context of medicine. Translate the following user text to an RDF graph using the HL7 FHIR standard formatted as TTL. Use appropriate and valid classes and properties listed on HL7 FHIR to represent entities and their attributes."""
 
 
-def get_missed_statements_prompt():
-    return f"""Now you have the opportunity to go through each sentence in the medical text again and update the statements from the ontology. Make sure the ontology explicitly states every statement from the text. Add any missed statements. Use only information from the medical text. Output the full result ontology"""
+def get_missed_statements_prompt(protocol, kg_candidate):
+    return f"""Given the initial knowledge graph in Turtle (TTL) format, created from a medical text using HL7 FHIR standard and the prefix ex: with IRI <http://example.com/> for any created entities or properties, perform a detailed revision of the graph. Evaluate the graph based on the following criteria:
 
 
-def get_single_entities_prompt():
-    return f"""Now go through the result ontology and make sure each created entity defines a single object. Check if there are Literals and string objects that can be represented with a single entity. Update the statements in the ontology where possible. Use prefix ex: with IRI <http://example.com/> for any created entities. Do not lose any knowledge in the new ontology. """
+Completeness: Assess whether the knowledge graph includes all relevant information provided in the text. Identify any missing entities, attributes, or relationships that are mentioned in the text but not represented in the graph.
+
+
+Specificity: Examine the use of HL7 FHIR vocabulary in the graph. Determine if the classes and properties used accurately and specifically represent the information from the text. Highlight any instances where more specific HL7 FHIR terms could better represent the details provided.
+
+
+Fidelity to Text: Evaluate the knowledge graph's adherence to the text. Identify any assumptions, extrapolations, or additions not directly supported by the text. Ensure that every element of the knowledge graph can be traced back to explicit information provided in the text.
+
+
+Text: {protocol}
+initial knowledge graph in Turtle (TTL) format: {kg_candidate}
+
+
+Objective:
+
+
+Generate precise comments on each of the above components, highlighting areas for improvement. Your feedback should include:
+
+
+Specific entities, attributes, or relationships that are missing (for Completeness).
+Suggestions for more accurate or specific HL7 FHIR classes and properties (for Specificity).
+Points of deviation from the text, including any assumptions or unwarranted additions (for Fidelity to Text).
+This detailed evaluation and feedback will inform the creation of a revised knowledge graph that aims to fully capture the text's information with high fidelity, leveraging the appropriate and specific HL7 FHIR vocabulary.
+"""
+
+
+def get_final_ontology_prompt():
+    return f"""Based on the identified gaps and inaccuracies, generate a revised knowledge graph in TTL format using HL7 FHIR standard, ensuring it more accurately reflects the text's content."""
 
 
 def format_single_part_conversation(role, message):
@@ -59,7 +82,7 @@ def get_ontology(client1, temp, prompt_messages):
     client = OpenAI(api_key=openai_api_key)
     chat_completion = client.chat.completions.create(
         messages=prompt_messages,
-        model="gpt-3.5-turbo-0125",
+        model="gpt-4-turbo-preview",
         temperature=temp,
         max_tokens=4096,
         top_p=1,
@@ -128,14 +151,18 @@ def convert_text_to_kg(text):
         print("Finished first step of the pipeline")
         log_message.info("Finished first step of the pipeline")
         messages.append(format_single_part_conversation('assistant', model_ontology_output))
-        messages.append(format_single_part_conversation('user', get_missed_statements_prompt()))
-        final_ontology = get_ontology(client, args['temperature'], messages)
+        messages.append(format_single_part_conversation('user', get_missed_statements_prompt(chunk, model_ontology_output)))
+        revised_comments = get_ontology(client, args['temperature'], messages)
         print("Finished second step of the pipeline")
         log_message.info("Finished second step of the pipeline")
+        messages.append(format_single_part_conversation('assistant', revised_comments))
+        messages.append(format_single_part_conversation('user', get_final_ontology_prompt()))
+        final_ontology = get_ontology(client, args['temperature'], messages)
         print("Extracting file in turtle format...")
         log_message.info("Extracting file in turtle format...")
+        print(f"Final ontology is {final_ontology}")
         ttl_output = extract_ttl_content_gpt_3(final_ontology)
-
+        ttl_output = extract_ttl_content_gpt_3(model_ontology_output)
         print("Merging chunks...")
         log_message.info("Merging chunks...")
         if len(ttl_output) != 0:
@@ -172,18 +199,18 @@ def generate_visual_graph(g):
     graph_nodes = []
     graph_edges = []
     for i in range(0, len(node_data)):
-        shortened_iri = node_data[i].replace("https://schema.org/", "schema:")
-        shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
+        shortened_iri = node_data[i].replace("http://hl7.org/fhir/", "fhir:")
+        shortened_iri = shortened_iri.replace("http://example.com/", "ex:")
         graph_nodes.append(Node(id=i, size=10, label=shortened_iri, title=shortened_iri))
         node_label_to_id[node_data[i]] = i
     for (s, p, o) in g:
-        shortened_iri = p.replace("https://schema.org/", "schema:")
-        shortened_iri = shortened_iri.replace("https://my.example.com/", "ex:")
+        shortened_iri = p.replace("http://hl7.org/fhir/", "fhir:")
+        shortened_iri = shortened_iri.replace("http://example.com/", "ex:")
         shortened_iri = shortened_iri.replace("http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "a")
 
         graph_edges.append(Edge(source=node_label_to_id[s], label=shortened_iri, target=node_label_to_id[o]))
-    config = Config(width=600,
-                    height=750,
+    config = Config(width=800,
+                    height=1000,
                     directed=True,
                     physics=True,
                     hierarchical=False,
