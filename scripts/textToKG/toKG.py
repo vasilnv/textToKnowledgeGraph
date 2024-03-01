@@ -26,7 +26,7 @@ Not allowed relations: schema:indication, schema:indicates, schema:indications, 
 Use the prefix ex: with IRI <http://example.com/> for any created entities or properties."""
 
 def get_ontology_1(system_prompt, protocol, temp):
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="<YOUR-API-KEY>")
     chat_completion = client.chat.completions.create(
       messages=[
           {
