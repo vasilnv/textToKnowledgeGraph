@@ -78,7 +78,7 @@ def format_initial_messages(system_prompt, protocol):
     ]
 
 
-def get_ontology(client1, temp, prompt_messages):
+def get_ontology(temp, prompt_messages):
     client = OpenAI(api_key=openai_api_key)
     chat_completion = client.chat.completions.create(
         messages=prompt_messages,
@@ -146,13 +146,13 @@ def convert_text_to_kg(text):
     ttl_output_whole = ""
     for chunk in chunks:
         messages = format_initial_messages(get_system_prompt(), chunk)
-        model_ontology_output = get_ontology(client, args['temperature'],
+        model_ontology_output = get_ontology(args['temperature'],
                                              messages)
         print("Finished first step of the pipeline")
         log_message.info("Finished first step of the pipeline")
         messages.append(format_single_part_conversation('assistant', model_ontology_output))
         messages.append(format_single_part_conversation('user', get_missed_statements_prompt(chunk, model_ontology_output)))
-        revised_comments = get_ontology(client, args['temperature'], messages)
+        revised_comments = get_ontology(args['temperature'], messages)
         print("Finished second step of the pipeline")
         log_message.info("Finished second step of the pipeline")
         messages.append(format_single_part_conversation('assistant', revised_comments))
