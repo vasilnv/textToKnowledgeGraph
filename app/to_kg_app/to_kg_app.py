@@ -14,7 +14,8 @@ modelGpt = "gpt-4-turbo-preview"
 
 log_message = st.empty()
 
-def extract_ttl_content_gpt_3(text):
+
+def extract_ttl_content_gpt(text):
     ttl_pattern = r'```ttl\n([\s\S]*?)\n```'
     matches = re.search(ttl_pattern, text)
     return matches.group(1) if matches else text
@@ -112,8 +113,8 @@ def post_process_ttl_file(g, valid_props):
             new_predicate = f"{p.split('#')[0]}#{valid_props[predicate_suffix]}"
             g.add((s, new_predicate, o))
     result_ontology = g.serialize(format="turtle")
-    print(f"result ontology: {result_ontology}")
-    print(f"serialized result ontology: {g.serialize(format='ttl')}")
+    # print(f"result ontology: {result_ontology}")
+    # print(f"serialized result ontology: {g.serialize(format='ttl')}")
     return result_ontology
 
 
@@ -157,12 +158,11 @@ def convert_text_to_kg(text):
         log_message.info("Finished second step of the pipeline")
         messages.append(format_single_part_conversation('assistant', revised_comments))
         messages.append(format_single_part_conversation('user', get_final_ontology_prompt()))
-        final_ontology = get_ontology(client, args['temperature'], messages)
+        final_ontology = get_ontology(args['temperature'], messages)
         print("Extracting file in turtle format...")
         log_message.info("Extracting file in turtle format...")
         print(f"Final ontology is {final_ontology}")
-        ttl_output = extract_ttl_content_gpt_3(final_ontology)
-        ttl_output = extract_ttl_content_gpt_3(model_ontology_output)
+        ttl_output = extract_ttl_content_gpt(final_ontology)
         print("Merging chunks...")
         log_message.info("Merging chunks...")
         if len(ttl_output) != 0:
@@ -177,10 +177,10 @@ def convert_text_to_kg(text):
                 print(f"Error in Turtle syntax")
                 log_message.empty()
 
-    valid_properties = load_valid_properties()
-    print("Post-processing the result ontology...")
-    log_message.info("Post-processing the result ontology...")
-    ttl_output_whole = post_process_ttl_file(g, valid_properties)
+    # valid_properties = load_valid_properties()
+    # print("Post-processing the result ontology...")
+    # log_message.info("Post-processing the result ontology...")
+    # ttl_output_whole = post_process_ttl_file(g, valid_properties)
     print(f'Visualizing the result')
     generate_visual_graph(g)
     log_message.empty()
