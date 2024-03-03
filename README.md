@@ -16,7 +16,7 @@ python3 -m venv venv
 source venv/bin/activate
 `
 
-2. Navigate to the app script:
+2. Navigate to the app directory:
 `
 cd app/to_kg_app
 `
@@ -68,7 +68,7 @@ pip3 install -r requirements.txt
 
 3. Run the script by providing your Open AI API key as the first parameter
 `
-python ./textToKG/toKG.py <YOUR_API_KEY> <input_dir.txt> <output_dir.ttl>
+python ./textToKG/toKG.py <input_file.txt> <output_file.ttl> <YOUR_API_KEY> 
 `
 
 
