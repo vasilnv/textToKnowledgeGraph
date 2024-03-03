@@ -93,4 +93,5 @@ The deduplication step requires user interaction. It is based on python's dedupe
 
 ## License 
 CC BY-SA 4.0
+
 CC-BY-SA cite as:  Vasil Vasilev, Georgi Grazhdanski, Sylvia Vassileva, Ivan Koychev and Svetla Boytcheva. (2024) Large language models enhanced automatic knowledge graphs generation in medical domain. It was submitted to ESWC 2024
