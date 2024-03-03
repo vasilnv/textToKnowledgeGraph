@@ -68,7 +68,7 @@ pip3 install -r requirements.txt
 
 3. Run the script by providing your Open AI API key as the first parameter
 `
-python ./textToKG/toKG.py <input_file.txt> <output_file.ttl> <YOUR_API_KEY> 
+python ./textToKG/toKG.py <input_dir.txt> <output_dir.ttl>  <YOUR_API_KEY>
 `
 
 
@@ -92,6 +92,15 @@ The deduplication step requires user interaction. It is based on python's dedupe
 
 
 ## License 
-CC BY-SA 4.0
+Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
 CC-BY-SA cite as:  Vasil Vasilev, Georgi Grazhdanski, Sylvia Vassileva, Ivan Koychev and Svetla Boytcheva. (2024) Large language models enhanced automatic knowledge graphs generation in medical domain. It was submitted to ESWC 2024
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
