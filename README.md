@@ -68,7 +68,7 @@ pip3 install -r requirements.txt
 
 3. Run the script by providing your Open AI API key as the first parameter
 `
-python ./textToKG/toKG.py <input_dir.txt> <output_dir.ttl>  <YOUR_API_KEY>
+python ./toKG.py <input_dir.txt> <output_dir.ttl>  <YOUR_API_KEY>
 `
 
 
