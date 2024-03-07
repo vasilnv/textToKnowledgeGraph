@@ -4,32 +4,25 @@
 Steps to run the application:
 
 1. Activate a virtual environment
-`
+```ssh
 sudo apt install python3.8-venv
-`
-
-`
 python3 -m venv venv
-`
-
-`
 source venv/bin/activate
-`
-
+```
 2. Navigate to the app directory:
-`
+```ssh
 cd app/to_kg_app
-`
+```
 
 3. Install requirements 
-`
+```ssh
 pip3 install -r requirements.txt
-`
+```
 
 4. Start the application
-`
+```ssh
 streamlit run to_kg_app.py
-`
+```
 
 In order to generate a knowledge graph from text you need to have an OpenAI API key. 
 
@@ -37,56 +30,50 @@ In order to generate a knowledge graph from text you need to have an OpenAI API 
 Steps to start the script:
 
 1. Activate a virtual environment
-`
+```ssh
 sudo apt install python3.8-venv
-`
-
-`
 python3 -m venv venv
-`
-
-`
 source venv/bin/activate
-`
+```
 
 2. Navigate to the scripts directory:
-`
+```ssh
 cd scripts
-`
+```
 
 ### Generate a KG from an input text 
 
 1. Navigate to the textToKG directory
-`
+```ssh
 cd textToKG/
-`
+```
 
 2. Install requirements 
-`
+```ssh
 pip3 install -r requirements.txt
-`
+```
 
 3. Run the script by providing your Open AI API key as the first parameter
-`
+```ssh
 python ./toKG.py <input_dir.txt> <output_dir.ttl>  <YOUR_API_KEY>
-`
+```
 
 
 ### Run a deduplication of your KG 
 1. Navigate to the deduplication directory
-`
+```ssh
 cd deduplication/
-`
+```
 
 2. Install requirements 
-`
+```ssh
 pip3 install -r requirements.txt
-`
+```
 
 3. Run the deduplication script.  
-`
+```ssh
 python ./deduplication.py <input_file.ttl> <output_file.ttl>
-`
+```
 
 The deduplication step requires user interaction. It is based on python's dedupe library (https://docs.dedupe.io/en/latest/). After running the script you will receive multiple questions about deduplicated statements in your knowledge graph. 
 
