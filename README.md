@@ -11,7 +11,7 @@ source venv/bin/activate
 ```
 2. Navigate to the app directory:
 ```ssh
-cd app/to_kg_app
+cd app/
 ```
 
 3. Install requirements 
