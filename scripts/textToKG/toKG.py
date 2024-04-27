@@ -2,10 +2,10 @@ import click
 from openai import OpenAI
 from rdflib import Graph
 import re
-from rdflib.plugins.parsers.notation3 import BadSyntax
 import sys
 import os
 import csv
+
 
 def read_file(filenames):
     if filenames and filenames[0] == '-':
