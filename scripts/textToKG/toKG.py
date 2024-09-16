@@ -2,8 +2,9 @@ import click
 from openai import OpenAI
 from rdflib import Graph
 import re
-from rdflib.plugins.parsers.notation3 import BadSyntax
 import sys
+import os
+import csv
 
 
 def read_file(filenames):
@@ -121,9 +122,10 @@ def post_process_ttl_file(g, valid_props):
 @click.argument('filenames', nargs=-1)
 @click.argument('output', nargs=1)
 @click.argument('api_key', nargs=1)
-def convert_text_to_kg(filenames, output, api_key):
+@click.argument('retry', nargs=1)
+def convert_text_to_kg(filenames, output, api_key, retry):
 
-    chunk_size = 2000
+    chunk_size = 1500
     chunks = []
     print(f'Reading the file...')
     if not filenames and not sys.stdin.isatty():
@@ -154,34 +156,45 @@ def convert_text_to_kg(filenames, output, api_key):
     g = Graph()
     ttl_output_whole = ""
     for chunk in chunks:
-        messages = format_initial_messages(get_system_prompt(), chunk)
-        model_ontology_output = get_ontology(args['temperature'],
-                                             messages, api_key)
-        print("Finished first step of the pipeline")
-        messages.append(format_single_part_conversation('assistant', model_ontology_output))
-        messages.append(format_single_part_conversation('user',
-                                                        get_missed_statements_prompt(chunk, model_ontology_output)))
-        revised_comments = get_ontology(args['temperature'], messages, api_key)
-        print("Finished second step of the pipeline")
-        messages.append(format_single_part_conversation('assistant', revised_comments))
-        messages.append(format_single_part_conversation('user', get_final_ontology_prompt()))
-        final_ontology = get_ontology(args['temperature'], messages, api_key)
-        print("Extracting file in turtle format...")
-        ttl_output = extract_ttl_content_gpt(final_ontology)
-        print("Merging chunks...")
-        if len(ttl_output) != 0:
-            ttl_output_whole += ttl_output
-        # merging
-            try:
-                g1 = Graph()
-                g1.parse(data=ttl_output, format='ttl')
-                g += g1
-            except BadSyntax:
-                print(f"Error in Turtle syntax")
+        g1 = Graph()
+        ttl_output = infer_ontology(api_key, args, chunk)
+        while True:
+            if len(ttl_output) != 0:
+                # merging
+                try:
+                    g1.parse(data=ttl_output, format='ttl')
+                    ttl_output_whole += ttl_output
+                    g += g1
+                    break
+                except Exception as e:
+                    print(f"Error paring in TTL: ", e)
+                    if bool(retry):
+                        ttl_output = infer_ontology(api_key, args, chunk)
+                    else:
+                        break
 
     print(f'Writing the file...')
     g.serialize(destination=output, format='turtle')
     print(f'Written {output}')
+
+
+def infer_ontology(api_key, args, chunk):
+    messages = format_initial_messages(get_system_prompt(), chunk)
+    model_ontology_output = get_ontology(args['temperature'],
+                                         messages, api_key)
+    print("Finished first step of the pipeline")
+    messages.append(format_single_part_conversation('assistant', model_ontology_output))
+    messages.append(format_single_part_conversation('user',
+                                                    get_missed_statements_prompt(chunk, model_ontology_output)))
+    revised_comments = get_ontology(args['temperature'], messages, api_key)
+    print("Finished second step of the pipeline")
+    messages.append(format_single_part_conversation('assistant', revised_comments))
+    messages.append(format_single_part_conversation('user', get_final_ontology_prompt()))
+    final_ontology = get_ontology(args['temperature'], messages, api_key)
+    print("Extracting file in turtle format...")
+    ttl_output = extract_ttl_content_gpt(final_ontology)
+    print("Merging chunks...")
+    return ttl_output
 
 
 if __name__ == "__main__":
