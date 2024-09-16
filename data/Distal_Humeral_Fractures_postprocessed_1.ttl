@@ -1,0 +1,1325 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:Abaloparatide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "80 mcg/40mcl" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "3.12 mg/1.56mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "80 mcg" ] .
+
+ns2:Acetylsalicylic_acid a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "650 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ],
+        [ a ns1:Dosage ;
+            ns2:form "Paste" ;
+            ns2:route "Dental" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cream; kit; liquid; tablet" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/3251" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/5001" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "320 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Irrigation; Ophthalmic; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release; tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "600 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "300 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "150 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/325mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated pellets" ;
+            ns2:strength "160 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "10000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Inhalant; kit; liquid; spray; tablet" ;
+            ns2:route "Ophthalmic; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet; tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/811" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Spray" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg/0.1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Irrigation; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Inhalant; kit; liquid; ointment; spray; swab; tablet" ;
+            ns2:route "Ophthalmic; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ;
+            ns2:strength "600 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Ophthalmic; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous; Parenteral" ;
+            ns2:strength "1 g/5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; tablet; tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / pck" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "450 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, gelatin coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Buccal" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Inhalant; kit; liquid; ointment; spray; tablet" ;
+            ns2:route "Ophthalmic; Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; liquid; ointment; swab; tablet" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "324 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ;
+            ns2:strength "650 mg/1sachet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; tablet, delayed release; tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 1/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous; Parenteral" ;
+            ns2:strength "500 mg/2.5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cream; kit; liquid; ointment; swab; tablet" ;
+            ns2:route "Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.400 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "1.3 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "162.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "600 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Aerosol, metered; injection; kit; solution; tablet; tablet, chewable" ;
+            ns2:route "Intramuscular; Intravenous; Oral; Respiratory (inhalation); Subcutaneous; Sublingual" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cream; kit; liquid; ointment; swab; tablet" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; liquid; ointment; swab; tablet" ;
+            ns2:route "Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, multilayer" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gum, chewing" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg / gum" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "324 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, soluble" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/325mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Strip" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cream; kit; liquid; ointment; spray; tablet" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "60 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, effervescent" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/81mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cream; inhalant; kit; swab; tablet" ;
+            ns2:route "Oral; Respiratory (inhalation); Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "975 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Lozenge" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Pill" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "160 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "1 G" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; liquid; ointment; spray; tablet" ;
+            ns2:route "Ophthalmic; Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg / ect" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.5 G" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "650 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "1300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "162 mg/1621" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "650 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Aerosol, metered; injection; kit; tablet; tablet, chewable" ;
+            ns2:route "Intramuscular; Intravenous; Oral; Respiratory (inhalation); Subcutaneous; Sublingual" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "0.6 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "600 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release; tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "324 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ;
+            ns2:strength "162 mg/1sachet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/811" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "162 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "350 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "975 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/81mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / sachet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "300.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "324 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 ng/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "162 mg/1sachet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "25.000 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "162 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, effervescent" ;
+            ns2:route "Oral" ;
+            ns2:strength "9.88 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "81 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "325 g/1" ] .
+
+ns2:Casting a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "118643004" ;
+                    ns1:display "Casting" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:reasonReference ns2:AngulatedDistalHumeralFracture,
+        ns2:PosteriorlyDisplacedFracture .
+
+ns2:ClosedReduction a ns1:Procedure ;
+    ns1:name "Closed reduction" ;
+    ns1:reasonReference ns2:AngulatedDistalHumeralFracture,
+        ns2:PosteriorlyDisplacedFracture .
+
+ns2:Denosumab a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "60.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "120 mg / 1.7 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "60 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "60 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "120 mg/1.7mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "120 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "12000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "60 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "60 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "60 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "120.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "120 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "120 mg/1.7ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "120 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "60 mg/1ml" ] .
+
+ns2:DiagnosisOfDistalHumeralFractures a ns1:Condition ;
+    ns1:diagnosisMethod ns2:AnteroposteriorXRay,
+        ns2:LateralXRay ;
+    ns1:signOrSymptom ns2:AbnormalAnteriorHumeralLine,
+        ns2:AbnormalRadiocapitellarLine,
+        ns2:AnteriorFatPad,
+        ns2:PosteriorFatPad ;
+    ns1:value "Diagnosis of Distal Humeral Fractures" .
+
+ns2:Dibotermin_alfa a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:strength "1.5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Implant" ;
+            ns2:route "Intracavitary" ;
+            ns2:strength "1.5 mg/ml" ] .
+
+ns2:Ecchymoses a ns1:Sign ;
+    ns1:Sign.location "Anterior Medial Forearm" ;
+    ns1:Sign.suggests ns2:BrachialArteryInjury ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "77643000" ;
+                    ns1:display "Ecchymoses" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:ElbowPain a ns1:Symptom ;
+    ns1:Symptom.associatedWith ns2:DistalHumeralFracture ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "74323005" ;
+                    ns1:display "Elbow Pain" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:ElbowSwelling a ns1:Symptom ;
+    ns1:Symptom.associatedWith ns2:DistalHumeralFracture ;
+    ns1:Symptom.value "Elbow Swelling" .
+
+ns2:Human_calcitonin a ns1:MedicationRequest .
+
+ns2:Injury a ns1:Observation ;
+    ns1:bodySite ns2:MedianNerve,
+        ns2:RadialArtery ;
+    ns1:focus ns2:DistalHumeralFracture ;
+    ns1:name "Injury" .
+
+ns2:Ketobemidone a ns1:MedicationRequest .
+
+ns2:Lasofoxifene a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 μg" ] .
+
+ns2:LimitedRangeOfMotion a ns1:Symptom ;
+    ns1:Symptom.associatedWith ns2:DistalHumeralFracture ;
+    ns1:Symptom.name "Limited Range of Motion" .
+
+ns2:MedianNerveInjury a ns1:Condition ;
+    ns1:name "Median Nerve Injury" ;
+    ns1:relatedTo ns2:Reduction .
+
+ns2:NeurovascularExamination a ns1:Procedure ;
+    ns1:focus "brachial artery injury",
+        "distal pulses",
+        "median nerve",
+        "radial nerve",
+        "ulnar nerve" ;
+    ns1:name "neurovascular examination" ;
+    ns1:reasonCode "suspected fracture" .
+
+ns2:NeurovascularObservation a ns1:Procedure ;
+    ns1:name "Neurovascular observation" ;
+    ns1:reasonReference ns2:DistalHumeralFracture .
+
+ns2:ORIF a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "133863002" ;
+                    ns1:display "Open reduction with internal fixation" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:reasonReference ns2:DisplacedFracture .
+
+ns2:OrthopedicConsultation a ns1:Procedure ;
+    ns1:reasonReference ns2:DistalHumeralFracture ;
+    ns1:value "Early orthopedic consultation" .
+
+ns2:RadialArteryInjury a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "34173009" ;
+                    ns1:display "Radial Artery Injury" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Reduction .
+
+ns2:Romosozumab a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "105 mg / 1.17 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "90 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "105 mg/1.17mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "105 MG/1.17ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "105 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "105.000 mg" ] .
+
+ns2:Splinting a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "79321009" ;
+                    ns1:display "Splinting" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:reasonReference ns2:ClinicallySuspectedFracture,
+        ns2:NondisplacedFracture,
+        ns2:OccultFracture .
+
+ns2:Strontium_ranelate a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "2 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 gr" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 gr" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "2000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.00 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ] .
+
+ns2:Teriparatide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "20 Mikrogramm/80Mikroliter" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 μg/80μl" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "20 µg/80µl" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 mcg/80ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "750 mcg/3ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "20 mcg/80mcL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "750 ug/3mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "20 MCG/80MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 mcg/80mcL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "750 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 mcg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 mcg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Patch" ;
+            ns2:route "Transdermal" ;
+            ns2:strength "40 MICROGRAMMI/ORA" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:strength "1 g/1g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 ?g/80?l" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 g/80l" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "250 mcg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "20 mcg/80mcL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "0.25 mg" ] .
+
+ns2:Treatment a ns1:Procedure ;
+    ns1:performer ns2:OrthopedicSurgeon ;
+    ns1:reasonReference ns2:DistalHumeralFracture ;
+    ns1:value "Treatment" .
+
+ns2:XRay a ns1:DiagnosticReport ;
+    ns1:name "X-ray" ;
+    ns1:result ns2:AnteriorFatPad,
+        ns2:AnteriorHumeralLine,
+        ns2:PosteriorFatPad,
+        ns2:RadiocapitellarLine .
+
+ns2:XRayReview a ns1:Procedure ;
+    ns1:description "x-ray review" ;
+    ns1:evidence "abnormalities in the anterior humeral or radiocapitellar line",
+        "posterior fat pad" ;
+    ns1:reasonCode "compatible findings with distal humeral fracture in children" .
+
+ns2:AbnormalAnteriorHumeralLine a ns1:Observation ;
+    ns1:name "Abnormal Anterior Humeral Line" .
+
+ns2:AbnormalFinding a ns1:ObservationInterpretation ;
+    ns1:name "Abnormal" .
+
+ns2:AbnormalRadiocapitellarLine a ns1:Observation ;
+    ns1:name "Abnormal Radiocapitellar Line" .
+
+ns2:AgeGroup a ns1:CodeableConcept ;
+    ns1:text "children" .
+
+ns2:AnteriorHumeralLine a ns1:Observation ;
+    ns1:interpretation "if transects none or only the anterior part of the capitellum, indicates posteriorly displaced distal humeral fracture",
+        "normally transects the middle of the capitellum" ;
+    ns1:method "line drawn along the anterior border of the humerus on a true lateral x-ray" ;
+    ns1:name "Anterior humeral line" .
+
+ns2:AnteroposteriorXRay a ns1:DiagnosticReport ;
+    ns1:name "Anteroposterior X-ray" .
+
+ns2:BrachialArteryInjury a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "10129005" ;
+                    ns1:display "Brachial Artery Injury" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:evidence "ecchymoses or enlarging swelling on the anterior medial forearm" .
+
+ns2:Children a ns1:Group ;
+    ns1:actual true ;
+    ns1:characteristic ns2:AgeGroup ;
+    ns1:type "person" .
+
+ns2:ClinicallySuspectedFracture a ns1:Condition ;
+    ns1:name "Clinically Suspected Fracture" .
+
+ns2:DisplacedFinding a ns1:ObservationInterpretation ;
+    ns1:name "Displaced" .
+
+ns2:DisplacedFracture a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "123735002" ;
+                    ns1:display "Displaced Fracture" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Hemarthrosis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "81808003" ;
+                    ns1:display "Hemarthrosis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:complicationOf ns2:DistalHumeralFracture ;
+    ns1:definition "Fractures are usually intra-articular, causing hemarthrosis." .
+
+ns2:LargeAnteriorFatPad a ns1:Observation ;
+    ns1:interpretation ns2:SailSign ;
+    ns1:name "Large Anterior Fat Pad" .
+
+ns2:LateralXRay a ns1:DiagnosticReport ;
+    ns1:name "Lateral X-ray" .
+
+ns2:MedianNerve a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "38464002" ;
+                    ns1:display "Median Nerve" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:NondisplacedFracture a ns1:Condition ;
+    ns1:name "Nondisplaced Fracture" .
+
+ns2:OccultFracture a ns1:Condition ;
+    ns1:clinicalStatus "likely" ;
+    ns1:evidence "radiocapitellar line does not bisect the capitellum" ;
+    ns1:relatedFinding ns2:LargeAnteriorFatPad,
+        ns2:PosteriorFatPad ;
+    ns1:value "Occult Fracture" ;
+    ns1:verificationStatus "suspected" .
+
+ns2:RadialArtery a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "45631007" ;
+                    ns1:display "Radial Artery" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:RadiocapitellarLine a ns1:Observation ;
+    ns1:interpretation "if does not bisect, indicates occult fracture",
+        "normally bisects the capitellum" ;
+    ns1:method "line drawn through the midshaft of the radius on a true lateral x-ray of the elbow" ;
+    ns1:name "Radiocapitellar line",
+        "radiocapitellar line" .
+
+ns2:AnteriorFatPad a ns1:Observation ;
+    ns1:interpretation ns2:DisplacedFinding,
+        ns2:SailSign ;
+    ns1:name "Anterior Fat Pad",
+        "Anterior fat pad" ;
+    ns1:relatedFinding ns2:JointEffusion .
+
+ns2:JointEffusion a ns1:Condition ;
+    ns1:name "Joint Effusion" .
+
+ns2:NeurovascularInjury a ns1:Condition ;
+    ns1:canLeadTo ns2:CompartmentSyndrome ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "428609006" ;
+                    ns1:display "Neurovascular Injury" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:complicationOf ns2:DistalHumeralFracture ;
+    ns1:definition "The brachial artery or median or radial nerve may be damaged, particularly when the fracture is posteriorly displaced or angulated." .
+
+ns2:OrthopedicSurgeon a ns1:Practitioner ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "22731001" ;
+                    ns1:display "Orthopedic Surgeon" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Reduction a ns1:Procedure ;
+    ns1:name "Reduction" ;
+    ns1:performer ns2:OrthopedicSurgeon ;
+    ns1:reasonReference ns2:AngulatedDistalHumeralFracture,
+        ns2:PosteriorlyDisplacedFracture .
+
+ns2:SailSign a ns1:ObservationInterpretation ;
+    ns1:name "Sail Sign" .
+
+ns2:VolkmannIschemicContracture a ns1:Condition ;
+    ns1:complicationOf ns2:CompartmentSyndrome ;
+    ns1:definition "A flexion contracture at the wrist resulting in a clawlike hand deformity." ;
+    ns1:name "Volkmann ischemic contracture" .
+
+ns2:AngulatedDistalHumeralFracture a ns1:Condition ;
+    ns1:name "Angulated Distal Humeral Fracture" .
+
+ns2:CompartmentSyndrome a ns1:Condition ;
+    ns1:canLeadTo ns2:VolkmannIschemicContracture ;
+    ns1:complicationOf ns2:NeurovascularInjury ;
+    ns1:definition "Neurovascular injury sometimes leads to compartment syndrome of the forearm, which can cause Volkmann ischemic contracture." ;
+    ns1:name "Compartment syndrome" .
+
+ns2:PosteriorFatPad a ns1:Observation ;
+    ns1:interpretation ns2:AbnormalFinding,
+        "evidence of occult fracture" ;
+    ns1:relatedFinding ns2:JointEffusion ;
+    ns1:value "Posterior Fat Pad" .
+
+ns2:PosteriorlyDisplacedFracture a ns1:Condition ;
+    ns1:description "Posteriorly Displaced Fracture" .
+
+ns2:DistalHumeralFracture a ns1:Condition ;
+    ns1:Condition.name "Distal Humeral Fracture" ;
+    ns1:ageGroup "Children aged 3 to 11 years" ;
+    ns1:clinicalStatus "active",
+        "posteriorly displaced" ;
+    ns1:commonComplications ns2:CompartmentSyndrome,
+        ns2:Hemarthrosis,
+        ns2:NeurovascularInjury,
+        ns2:VolkmannIschemicContracture ;
+    ns1:definition "Distal humeral fractures usually result from a fall on an outstretched arm or direct force; they may be associated with neurovascular injury." ;
+    ns1:evidence "abnormalities in the anterior humeral or radiocapitellar line",
+        "posterior fat pad" ;
+    ns1:mechanismOfInjury "Fall on an outstretched arm with the elbow extended or direct force" ;
+    ns1:subject ns2:Children ;
+    ns1:verificationStatus "confirmed" .
+

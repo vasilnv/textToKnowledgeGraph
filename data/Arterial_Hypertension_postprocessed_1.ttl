@@ -1,0 +1,2011 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:ASCVD a ns1:Condition ;
+    ns1:Condition.description "Atherosclerotic cardiovascular disease (ASCVD)" ;
+    ns1:Condition.riskFactor ns2:Diabetes,
+        ns2:KidneyDisease .
+
+ns2:AbnormalSodiumTransport a ns1:Condition ;
+    ns1:name "Abnormal sodium transport" ;
+    ns1:relatedTo ns2:BloodPressure,
+        ns2:CellWall,
+        ns2:Hypertension,
+        ns2:IntracellularCalcium,
+        ns2:IntracellularSodium,
+        ns2:Norepinephrine,
+        ns2:NormotensiveChildren,
+        ns2:ParentWithHypertension,
+        ns2:SodiumPotassiumPump,
+        ns2:SodiumTransport,
+        ns2:SympatheticNeurons,
+        ns2:SympatheticStimulation .
+
+ns2:AcutePorphyria a ns1:Condition ;
+    ns1:Condition.value "symptoms suggesting" .
+
+ns2:Adherence a ns1:Observation,
+        ns1:Procedure ;
+    ns1:name "adherence" ;
+    ns1:status "assessed" .
+
+ns2:Aldosterone a ns1:Substance ;
+    ns1:description "Aldosterone causes sodium and water retention, elevating BP, and enhances potassium excretion." .
+
+ns2:AlternativeMedication a ns1:Medication ;
+    ns1:name "aldosterone antagonist" ;
+    ns1:status "used if third medication contraindicated" .
+
+ns2:Ambrisentan a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.5 mg" ].
+
+ns2:AnginaPectoris a ns1:Condition ;
+    ns1:name "Angina pectoris" ;
+    ns1:preferredMedication ns2:CalciumChannelBlocker .
+
+ns2:Angiotensin a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "9974009" ;
+                    ns1:display "Angiotensin" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:AngiotensinConvertingEnzyme a ns1:Substance ;
+    ns1:description "Angiotensin-converting enzyme (ACE), mainly in the lungs but also in the kidneys and brain, cleaves angiotensin I to angiotensin II." .
+
+ns2:AngiotensinI a ns1:Substance ;
+    ns1:description "Angiotensin I is an inactive product cleaved by angiotensin-converting enzyme (ACE) to angiotensin II." .
+
+ns2:AngiotensinII a ns1:Substance ;
+    ns1:description "Angiotensin II is a potent vasoconstrictor that also stimulates autonomic centers in the brain to increase sympathetic discharge and stimulates release of aldosterone and vasopressin." .
+
+ns2:AngiotensinIII a ns1:Substance ;
+    ns1:description "Angiotensin III stimulates aldosterone release as actively as angiotensin II but has much less pressor activity." .
+
+ns2:Angiotensinogen a ns1:Substance ;
+    ns1:description "Angiotensinogen is converted to angiotensin I by renin." .
+
+ns2:AntihypertensivesForPatientsWithComorbidities a ns1:DocumentReference ;
+    ns1:name "Antihypertensives for Patients With Comorbidities" .
+
+ns2:AorticCoarctation a ns1:Condition ;
+    ns1:Condition.evidence ns2:DelayedFemoralPulses,
+        ns2:DiminishedFemoralPulses ;
+    ns1:Condition.subject ns2:PatientsUnder30 .
+
+ns2:AorticRegurgitation a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "60234000" ;
+                    ns1:display "Aortic Regurgitation" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance ;
+    ns1:name "I35.1" .
+
+ns2:ArteriolarSclerosis a ns1:Condition ;
+    ns1:display "Arteriolar Sclerosis" ;
+    ns1:hasComponent ns2:DiastolicBloodPressure,
+        ns2:RenalBloodFlow .
+
+ns2:ArteriovenousFistula a ns1:Condition ;
+    ns1:display "Arteriovenous Fistula" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance .
+
+ns2:BilateralNephrectomy a ns1:Procedure ;
+    ns1:display "Bilateral nephrectomy" .
+
+ns2:BloodPressureControlHispanicAdults a ns1:Observation ;
+    ns1:subject ns2:HispanicAdults ;
+    ns1:value "23%" .
+
+ns2:BloodPressureControlNonHispanicAsianAdults a ns1:Observation ;
+    ns1:subject ns2:NonHispanicAsianAdults ;
+    ns1:value "24%" .
+
+ns2:BloodPressureControlNonHispanicBlackAdults a ns1:Observation ;
+    ns1:subject ns2:NonHispanicBlackAdults ;
+    ns1:value "20%" .
+
+ns2:BloodPressureControlNonHispanicWhiteAdults a ns1:Observation ;
+    ns1:subject ns2:NonHispanicWhiteAdults ;
+    ns1:value "31%" .
+
+ns2:BloodPressureResponse a ns1:Observation ;
+    ns1:Observation.description "Blood pressure response" ;
+    ns1:Observation.related "Racial groups" .
+
+ns2:Bosentan a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "62.50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "129.08 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "64.54 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "32 mg/1" ] .
+
+ns2:Bradykinin a ns1:Substance ;
+    ns1:name "Bradykinin" .
+
+ns2:CNSDisorders a ns1:Condition ;
+    ns1:Condition.value "symptoms suggesting" .
+
+ns2:CardiovascularMorbidity a ns1:Condition ;
+    ns1:display "Cardiovascular Morbidity" .
+
+ns2:CardiovascularMortality a ns1:Condition ;
+    ns1:display "Cardiovascular Mortality" .
+
+ns2:ChronicRenalParenchymalDisease a ns1:Condition ;
+    ns1:description "Hypertension due to chronic renal parenchymal disease (renoprival hypertension) results from the combination of a renin-dependent mechanism and a volume-dependent mechanism." .
+
+ns2:Chymase a ns1:Substance ;
+    ns1:description "Chymase enzymes also convert angiotensin I to angiotensin II." .
+
+ns2:CirculatingAngiotensin a ns1:Observation ;
+    ns1:description "Circulating angiotensin has a negative feedback effect on renin secretion." .
+
+ns2:CirculatingPlasmaCatecholamineLevels a ns1:Observation ;
+    ns1:Observation.context "during rest" ;
+    ns1:Observation.description "Circulating plasma catecholamine levels" ;
+    ns1:Observation.status "higher than normal" ;
+    ns1:Observation.subject ns2:PatientsWithHypertension .
+
+ns2:CombinationDose a ns1:Medication ;
+    ns1:name "combination and dose" ;
+    ns1:status "determined" .
+
+ns2:CombinationTherapy a ns1:TherapeuticProcedure ;
+    ns1:description "Combination therapy with 2 antihypertensive agents" ;
+    ns1:option ns2:ACEInhibitor,
+        ns2:ARB,
+        ns2:CalciumChannelBlocker,
+        ns2:Diuretic .
+
+ns2:ContraindicatedMedication a ns1:Medication ;
+    ns1:status "not tolerated or contraindicated" ;
+    ns1:value "third medication" .
+
+ns2:CystatinC a ns1:Observation ;
+    ns1:Observation.name "elevated" .
+
+ns2:DiabetesWithProteinuria a ns1:Condition ;
+    ns1:name "Diabetes with proteinuria" ;
+    ns1:preferredMedication ns2:ACEInhibitor,
+        ns2:ARB .
+
+ns2:DiagnosisOfHypertension a ns1:Condition ;
+    ns1:method ns2:Sphygmomanometry ;
+    ns1:name "Diagnosis Of Hypertension" ;
+    ns1:related ns2:History,
+        ns2:OtherTests,
+        ns2:PhysicalExamination .
+
+ns2:Dyslipidemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "370992007" ;
+                    ns1:display "Dyslipidemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Eclampsia a ns1:Condition ;
+    ns1:display "Eclampsia" .
+
+ns2:Education a ns1:Procedure ;
+    ns1:method "empathy and support" ;
+    ns1:status "essential for success" .
+
+ns2:EndothelialDysfunction a ns1:Condition ;
+    ns1:affects ns2:BloodPressure .
+
+ns2:Endothelin a ns1:Substance ;
+    ns1:NAME "Endothelin" .
+
+ns2:FourthMedication a ns1:Medication ;
+    ns1:status "commonly needed for resistant hypertension" .
+
+ns2:GoalBP a ns1:Observation ;
+    ns1:period "1 month" ;
+    ns1:status "not achieved" .
+
+ns2:GoalBloodPressure a ns1:Observation ;
+    ns1:NAME "Goal blood pressure" ;
+    ns1:appliesTo ns2:MostPatients,
+        ns2:PatientsWithDiabetes,
+        ns2:PatientsWithKidneyDisorder ;
+    ns1:value "BP < 130/80 mm Hg" .
+
+ns2:Grade1Retinopathy a ns1:Condition ;
+    ns1:description "Grade 1: Constriction of arterioles only." ;
+    ns1:hasSymptom ns2:Symptom_ConstrictionOfArterioles .
+
+ns2:Grade2Retinopathy a ns1:Condition ;
+    ns1:description "Grade 2: Constriction and sclerosis of arterioles." ;
+    ns1:hasSymptom ns2:Symptom_ConstrictionOfArterioles,
+        ns2:Symptom_SclerosisOfArterioles .
+
+ns2:Grade3Retinopathy a ns1:Condition ;
+    ns1:description "Grade 3: Hemorrhages and exudates in addition to vascular changes." ;
+    ns1:hasSymptom ns2:Symptom_Exudates,
+        ns2:Symptom_Hemorrhages .
+
+ns2:Grade4Retinopathy a ns1:Condition ;
+    ns1:description "Grade 4: Papilledema." ;
+    ns1:hasSymptom ns2:Symptom_Papilledema .
+
+ns2:HighRestingPulseRate a ns1:Observation ;
+    ns1:Observation.display "High resting pulse rate" ;
+    ns1:Observation.predictor ns2:Hypertension ;
+    ns1:Observation.result ns2:IncreasedSympatheticNervousActivity .
+
+ns2:HomeBPMeasurement a ns1:Procedure ;
+    ns1:condition ns2:CloselyMonitored,
+        ns2:RegularlyCalibratedSphygmomanometer,
+        ns2:TrainedToMeasureBP ;
+    ns1:name "Home BP measurement" ;
+    ns1:performedBy ns2:FamilyMembers,
+        ns2:Patients .
+
+ns2:HypertensionAwareness a ns1:Observation ;
+    ns1:subject ns2:UnitedStatesAdults ;
+    ns1:value "Many are not aware" .
+
+ns2:HypertensionInPregnancy a ns1:Condition ;
+    ns1:bodySite [ ns1:coding [ ns1:code "75367002" ;
+                    ns1:display "Blood pressure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:clinicalStatus [ ns1:coding [ ns1:code "active" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/condition-clinical" ] ] ;
+    ns1:display "Hypertension in Pregnancy" ;
+    ns1:related [ ns1:target [ ns1:reference "ex:Preeclampsia" ] ],
+        [ ns1:target [ ns1:reference "ex:Eclampsia" ] ] ;
+    ns1:stage [ ns1:summary [ ns1:coding [ ns1:code "stage-1" ;
+                            ns1:display "Stage 1 Hypertension" ;
+                            ns1:system "http://hl7.org/fhir/ValueSet/condition-stage" ] ] ] ;
+    ns1:verificationStatus [ ns1:coding [ ns1:code "confirmed" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/condition-ver-status" ] ] .
+
+ns2:HypertensionSpecialist a ns1:Practitioner ;
+    ns1:status "consulted for difficult to control BP" ;
+    ns1:value "hypertension specialist" .
+
+ns2:HypertensionTreatment a ns1:Procedure ;
+    ns1:outcome "50% receive treatment" ;
+    ns1:reasonReference ns2:Hypertension ;
+    ns1:subject ns2:UnitedStatesAdults .
+
+ns2:HypertensionTreatmentDuringPregnancy a ns1:Procedure ;
+    ns1:outcome ns2:CarefulMedicationSelection ;
+    ns1:value "Treatment of hypertension during pregnancy" .
+
+ns2:HypertensionTreatmentRecommendation a ns1:Procedure ;
+    ns1:outcome "80% recommended treatment with medication and lifestyle modification" ;
+    ns1:reasonReference ns2:Hypertension ;
+    ns1:subject ns2:UnitedStatesAdults .
+
+ns2:HypertensiveEmergency a ns1:Condition ;
+    ns1:description "When severe hypertension causes severe cardiovascular, neurologic, renal, and retinal symptoms, it is referred to as a hypertensive emergency." ;
+    ns1:requires ns2:ImmediateBloodPressureReduction .
+
+ns2:HypertensiveHeartDisease a ns1:Condition ;
+    ns1:description "A 4th heart sound is one of the earliest signs of hypertensive heart disease." ;
+    ns1:hasSymptom ns2:Symptom_4thHeartSound .
+
+ns2:HypertensiveRetinopathy a ns1:Condition ;
+    ns1:description "Retinal changes may include arteriolar narrowing, hemorrhages, exudates, and, in patients with encephalopathy, papilledema." ;
+    ns1:hasSymptom ns2:Symptom_ArteriolarNarrowing,
+        ns2:Symptom_Exudates,
+        ns2:Symptom_Hemorrhages,
+        ns2:Symptom_Papilledema .
+
+ns2:Hypokalemia a ns1:Condition ;
+    ns1:Condition.description "unrelated to diuretic use" ;
+    ns1:Condition.evidence ns2:HighSaltIntake,
+        ns2:PrimaryAldosteronism .
+
+ns2:Iloprost a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "0.013 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Nasal" ;
+            ns2:strength "0.010 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "20 cg" ] .
+
+ns2:IndividualizedApproach a ns1:Procedure ;
+    ns1:Procedure.value "Individualized approach" .
+
+ns2:InitialChoiceOfAntihypertensiveMedicationClass a ns1:DocumentReference ;
+    ns1:description "Initial Choice of Antihypertensive Medication Class" .
+
+ns2:InitialMedication a ns1:Medication ;
+    ns1:dosage "increased" ;
+    ns1:value "initial medication" .
+
+ns2:InitialSystolicBP a ns1:Observation ;
+    ns1:display "systolic BP" ;
+    ns1:status "initiated with 2 medications" ;
+    ns1:value "> 160 mm Hg" .
+
+ns2:IsolatedSystolicHypertension a ns1:Condition ;
+    ns1:display "Isolated Systolic Hypertension" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance .
+
+ns2:LabileElevatedBP a ns1:Condition ;
+    ns1:Condition.evidence ns2:ExcessivePerspiration,
+        ns2:Headache,
+        ns2:Pallor,
+        ns2:Palpitations,
+        ns2:Tachycardia,
+        ns2:Tremor ;
+    ns1:Condition.name "significantly elevated BP and symptoms" ;
+    ns1:Condition.screening ns2:HyperthyroidismScreening,
+        ns2:PheochromocytomaScreening .
+
+ns2:LifestyleModifications a ns1:Observation ;
+    ns1:name "Lifestyle modifications" ;
+    ns1:recommendation ns2:ElevatedBP,
+        ns2:HypertensionStage .
+
+ns2:LoweringBP a ns1:Procedure ;
+    ns1:name "Lowering BP" ;
+    ns1:outcome ns2:IncreasedRiskOfAdverseMedicationEffects,
+        ns2:ReducedRiskOfVascularComplications ;
+    ns1:target ns2:BPBelow13080mmHg .
+
+ns2:LoweringBPTo120 a ns1:Procedure ;
+    ns1:name "Lowering BP to 120 mm Hg systolic" ;
+    ns1:outcome ns2:HigherRiskOfDizziness,
+        ns2:HigherRiskOfLightHeadedness,
+        ns2:PossibleWorseningOfKidneyFunction .
+
+ns2:Macitentan a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ] .
+
+ns2:MaculaDensaReceptor a ns1:Observation ;
+    ns1:description "A macula densa receptor detects changes in the delivery rate or concentration of sodium chloride in the distal tubule." .
+
+ns2:Management a ns1:Procedure ;
+    ns1:Procedure.name "Management of High Blood Pressure" ;
+    ns1:Procedure.related "Adherence",
+        "Medication",
+        "Reassessment",
+        "Therapeutic selection" .
+
+ns2:Medication a ns1:Medication ;
+    ns1:Medication.name "Angiotensin II receptor blocker (ARB)",
+        "Angiotensin-converting enzyme (ACE) inhibitor",
+        "Dihydropyridine calcium channel blocker",
+        "Thiazide diuretic",
+        "chlorthalidone",
+        "indapamide" .
+
+ns2:MedicationForHypertension a ns1:MedicationRequest ;
+    ns1:reasonReference ns2:Hypertension .
+
+ns2:Myxedema a ns1:Condition ;
+    ns1:Condition.value "symptoms suggesting" .
+
+ns2:NitricOxide a ns1:Substance ;
+    ns1:name "Nitric oxide" .
+
+ns2:Nonadherence a ns1:Observation ;
+    ns1:reason "lifelong treatment required" ;
+    ns1:status "interferes with BP control" ;
+    ns1:value "nonadherence" .
+
+ns2:NonpharmacologicInterventions a ns1:Procedure ;
+    ns1:name "Nonpharmacological Interventions" ;
+    ns1:recommendation ns2:AdequateSleepDuration,
+        ns2:EnhancedDietaryPotassium,
+        ns2:HealthyDiet,
+        ns2:IncreasedPhysicalActivity,
+        ns2:ModerationInAlcoholIntake,
+        ns2:ReducedDietarySodium,
+        ns2:SmokingCessation,
+        ns2:WeightLoss .
+
+ns2:OlderPatients a ns1:Patient ;
+    ns1:age "older" ;
+    ns1:condition "frail" ;
+    ns1:observation ns2:DiastolicBP60To65mmHg ;
+    ns1:outcome ns2:NoIncreaseInCardiovascularEvents .
+
+ns2:Patient a ns1:Patient ;
+    ns1:Patient.condition ns2:Diabetes,
+        ns2:Hypertension,
+        ns2:KidneyDisease ;
+    ns1:Patient.race "African ancestry" .
+
+ns2:PatientsWithDiabetesBP120 a ns1:Patient ;
+    ns1:condition "diabetes" ;
+    ns1:observation ns2:BPBelow120mmHgSystolic,
+        ns2:DiastolicBPApproaching60mmHg ;
+    ns1:outcome ns2:IncreasedRiskOfAdverseEvents .
+
+ns2:Penbutolol a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:strength "40 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ] .
+
+ns2:Preeclampsia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "398254007" ;
+                    ns1:display "Preeclampsia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Preeclampsia" .
+
+ns2:RaceBasedApproach a ns1:Procedure ;
+    ns1:Procedure.name "Race-based approach" .
+
+ns2:RacialGroups a ns1:Group ;
+    ns1:Group.name "Racial groups" .
+
+ns2:Reassessment a ns1:Procedure ;
+    ns1:Procedure.name "Reassessment" .
+
+ns2:ReductionInNitricOxide a ns1:Observation ;
+    ns1:causes ns2:SaltSensitiveHypertension ;
+    ns1:dueTo ns2:StiffArteries ;
+    ns1:name "Reduction in nitric oxide" .
+
+ns2:RenalVascularReceptor a ns1:Observation ;
+    ns1:description "A renal vascular receptor responds to changes in tension in the afferent arteriolar wall." .
+
+ns2:Renin a ns1:Substance ;
+    ns1:description "Renin, an enzyme formed in the juxtaglomerular apparatus, catalyzes conversion of angiotensinogen to angiotensin I." .
+
+ns2:ReninAngiotensinAldosteroneSystem a ns1:Observation ;
+    ns1:description "The renin-angiotensin-aldosterone system helps regulate blood volume and therefore blood pressure." ;
+    ns1:name "Renin-angiotensin-aldosterone system" .
+
+ns2:ReninDependentMechanism a ns1:Observation ;
+    ns1:description "Increased renin activity is not evident in peripheral blood in most cases of chronic renal parenchymal disease." .
+
+ns2:ReninSecretion a ns1:Observation ;
+    ns1:description "Renin secretion is controlled by at least 4 mechanisms." .
+
+ns2:RenovascularHypertension a ns1:Condition ;
+    ns1:Condition.evidence ns2:UnilateralRenalArteryBruit ;
+    ns1:Condition.subject ns2:ThinPatients ;
+    ns1:description "Angiotensin is generally acknowledged to be responsible for renovascular hypertension, at least in the early phase." .
+
+ns2:Riociguat a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.5 mg" ] .
+
+ns2:SaltSensitivity a ns1:Condition ;
+    ns1:name "Salt sensitivity" .
+
+ns2:SecondMedication a ns1:Medication ;
+    ns1:name "second medication" ;
+    ns1:recommendation "recommended for initial treatment" ;
+    ns1:status "added" .
+
+ns2:Selexipag a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1.6 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "800 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1200 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.8 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.200 mg" ] .
+
+ns2:SerumCreatinine a ns1:Observation ;
+    ns1:Observation.name "elevated" .
+
+ns2:SevereAorticStenosis a ns1:Condition ;
+    ns1:avoids ns2:ACEInhibitor ;
+    ns1:name "Severe aortic stenosis" .
+
+ns2:SevereHypertension a ns1:Condition ;
+    ns1:description "Severe hypertension (typically defined as systolic blood pressure ≥ 180 mm Hg and/or diastolic blood pressure ≥ 120 mm Hg) can be asymptomatic (hypertensive urgency)." ;
+    ns1:hasSymptom ns2:Symptom_HeartFailure,
+        ns2:Symptom_HypertensiveEncephalopathy,
+        ns2:Symptom_RenalFailure,
+        ns2:Symptom_RetinalChanges,
+        ns2:Symptom_SymptomaticCoronaryAtherosclerosis .
+
+ns2:Sildenafil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Film, soluble" ;
+            ns2:route "Oral" ;
+            ns2:strength "70241 Mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg" ] .
+
+ns2:SinglePillCombination a ns1:Medication ;
+    ns1:name "Single pill combination" ;
+    ns1:preferredFor ns2:PatientAdherence .
+
+ns2:SympatheticNervousSystem a ns1:BodyStructure,
+        ns1:Observation ;
+    ns1:BodyStructure.display "Sympathetic nervous system" ;
+    ns1:description "Sympathetic nervous system stimulates renin secretion mediated by beta-receptors (via the renal nerve)." .
+
+ns2:SystemicRheumaticDiseases a ns1:Condition ;
+    ns1:Condition.name "symptoms suggesting" .
+
+ns2:SystolicBloodPressure a ns1:Observation ;
+    ns1:value "≥ 130 mm Hg" .
+
+ns2:Tadalafil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ] .
+
+ns2:TherapeuticSelection a ns1:Procedure ;
+    ns1:Procedure.name "Therapeutic selection" ;
+    ns1:Procedure.related "Individualized approach",
+        "Race-based approach" .
+
+ns2:Therapy a ns1:Procedure ;
+    ns1:name "therapy" ;
+    ns1:status "titrated frequently" .
+
+ns2:ThirdMedication a ns1:Medication ;
+    ns1:name "third medication" ;
+    ns1:status "added if target BP not achieved with 2 medications" .
+
+ns2:Thyrotoxicosis a ns1:Condition ;
+    ns1:display "Thyrotoxicosis" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance .
+
+ns2:Treprostinil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "1 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous; Subcutaneous" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous; Subcutaneous" ;
+            ns2:strength "8 mg/20mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous; Subcutaneous" ;
+            ns2:strength "10 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "5 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.125 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "50 mg/20ml" ] .
+
+ns2:UncomplicatedHypertension a ns1:Condition ;
+    ns1:name "Uncomplicated hypertension" ;
+    ns1:recommendation ns2:ActivityRestriction .
+
+ns2:UncontrolledBP a ns1:Observation ;
+    ns1:subject ns2:UnitedStatesAdults ;
+    ns1:value "60% have BP ≥ 140/90 mm Hg" .
+
+ns2:Vasoconstrictors a ns1:Substance ;
+    ns1:name "Vasoconstrictors" ;
+    ns1:producedBy ns2:EndothelialCells .
+
+ns2:VasodilatorDeficiency a ns1:Condition ;
+    ns1:causes ns2:Hypertension ;
+    ns1:name "Vasodilator deficiency" .
+
+ns2:Vasopressin a ns1:Substance ;
+    ns1:description "Vasopressin causes sodium and water retention, elevating BP." .
+
+ns2:VolumeDependentMechanism a ns1:Observation ;
+    ns1:description "Hypertension is typically moderate and sensitive to sodium and water balance in chronic renal parenchymal disease." .
+
+ns2:2017ACC_AHA_Guidelines a ns1:Guideline ;
+    ns1:guidelineName "2017 American College of Cardiology/American Heart Association guidelines" ;
+    ns1:hasConclusion ns2:InsufficientEvidenceForUseInManagingResistantHypertension .
+
+ns2:AbdomenPalpation a ns1:Observation ;
+    ns1:Observation.component ns2:AbdominalMasses,
+        ns2:KidneyEnlargement .
+
+ns2:AbdominalAorticAneurysm a ns1:Condition ;
+    ns1:display "Abdominal aortic aneurysm" ;
+    ns1:relatedTo ns2:Hypertension .
+
+ns2:Acromegaly a ns1:Condition ;
+    ns1:Condition.value "symptoms suggesting" .
+
+ns2:ActivityRestriction a ns1:Procedure ;
+    ns1:name "Activity restriction" ;
+    ns1:recommendation ns2:BloodPressureControl .
+
+ns2:AdequateSleep a ns1:Procedure ;
+    ns1:description "Ensuring more than 6 hours of sleep per night to manage hypertension." ;
+    ns1:name "Adequate sleep duration" .
+
+ns2:AdequateSleepDuration a ns1:Procedure ;
+    ns1:name "Adequate sleep duration" ;
+    ns1:recommendation ns2:OptimizedSleepQuality,
+        ns2:ShortSleepDuration .
+
+ns2:Albuminuria a ns1:Observation ;
+    ns1:Observation.name "proteinuria" .
+
+ns2:AlcoholIntakeMen a ns1:Quantity ;
+    ns1:unit "drinks/day" ;
+    ns1:value "2 drinks daily" .
+
+ns2:AlcoholIntakeWomen a ns1:Quantity ;
+    ns1:unit "drinks/day" ;
+    ns1:value "1 drink daily" .
+
+ns2:AngiotensinIIReceptorBlockers a ns1:Medication ;
+    ns1:definition "A type of medication used to treat hypertension." ;
+    ns1:name "Angiotensin II Receptor Blockers" .
+
+ns2:Arteriolosclerosis a ns1:Condition ;
+    ns1:display "Arteriolosclerosis" ;
+    ns1:relatedTo ns2:Hyalinization,
+        ns2:Hyperplasia,
+        ns2:MedialHypertrophy .
+
+ns2:Atherogenesis a ns1:Condition ;
+    ns1:display "Atherosclerosis" .
+
+ns2:Auscultation a ns1:Observation ;
+    ns1:Observation.component ns2:BruitsInAbdomen,
+        ns2:BruitsInNeck .
+
+ns2:AutomatedReader a ns1:Device ;
+    ns1:description "Automated readers are often inaccurate" .
+
+ns2:AvoidHarmToFetus a ns1:Observation ;
+    ns1:name "Avoid harm to fetus" .
+
+ns2:BPBelow120mmHgSystolic a ns1:Observation ;
+    ns1:value "BP < 120 mm Hg systolic" .
+
+ns2:BPBelow13080mmHg a ns1:Observation ;
+    ns1:value "BP < 130/80 mm Hg" .
+
+ns2:BPControl a ns1:Observation ;
+    ns1:name "BP control",
+        "Blood Pressure Control" ;
+    ns1:note "For everyone up to age 80 years, including those with a kidney disorder or diabetes" ;
+    ns1:status "requires several evaluations and changes in pharmacotherapy" ;
+    ns1:value "< 130/80 mm Hg" .
+
+ns2:BPMeasurementInBothArms a ns1:Procedure ;
+    ns1:description "Measure BP in both arms at the first visit; subsequent measurements should use the arm that gave the higher reading" .
+
+ns2:BPMeasurementInForearm a ns1:Procedure ;
+    ns1:description "Measure BP in a forearm (radial artery)" .
+
+ns2:BPMeasurementInThigh a ns1:Procedure ;
+    ns1:description "Measure BP in a thigh with a much larger cuff to rule out coarctation of the aorta" .
+
+ns2:Battery a ns1:DeviceComponent ;
+    ns1:hasFunction ns2:PowerStimulator ;
+    ns1:partOf ns2:BaroreflexActivationTherapy .
+
+ns2:BloodPressureMeasurement a ns1:Observation ;
+    ns1:bodySite ns2:Forearm,
+        ns2:Thigh,
+        ns2:UpperArm ;
+    ns1:device ns2:AutomatedReader,
+        ns2:MechanicalDevice ;
+    ns1:method ns2:MeasurementMethod ;
+    ns1:name "Blood pressure measurement",
+        "blood pressure measurement" ;
+    ns1:related ns2:CoarctationOfTheAorta,
+        ns2:Hypertension,
+        ns2:MaskedHypertension,
+        ns2:Obesity,
+        ns2:WhiteCoatHypertension .
+
+ns2:BloodTests a ns1:Procedure ;
+    ns1:name "Blood Tests" ;
+    ns1:status "completed" .
+
+ns2:Blood_Pressure a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "blood pressure" ;
+    ns1:ObservationComponent.value "higher" .
+
+ns2:Brain a ns1:BodyStructure ;
+    ns1:name "Brain" .
+
+ns2:BroadNotchedPWave a ns1:Observation ;
+    ns1:Observation.comment "nonspecific, may be one of the earliest signs of hypertensive heart disease" ;
+    ns1:Observation.name "atrial hypertrophy" .
+
+ns2:CT a ns1:Procedure ;
+    ns1:Procedure.reasonCode ns2:CoarctationOfTheAorta .
+
+ns2:Calcium a ns1:Observation ;
+    ns1:name "calcium" .
+
+ns2:CardiacExamination a ns1:Observation .
+
+ns2:CardiovascularRiskFactorIdentificationTest a ns1:Procedure ;
+    ns1:definition "Tests done to identify other cardiovascular risk factors." ;
+    ns1:name "Cardiovascular Risk Factor Identification Test" .
+
+ns2:CardiovascularRiskFactors a ns1:Condition ;
+    ns1:name "cardiovascular risk factors" .
+
+ns2:CardiovascularSystem a ns1:BodyStructure ;
+    ns1:name "Cardiovascular System" .
+
+ns2:Cardiovascular_Events a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "cardiovascular events" ;
+    ns1:ObservationComponent.relatedTo ns2:Diastolic_BP,
+        ns2:Systolic_BP ;
+    ns1:ObservationComponent.value "fatal and nonfatal" .
+
+ns2:CarefulMedicationSelection a ns1:Procedure ;
+    ns1:name "Careful medication selection" ;
+    ns1:outcome ns2:AvoidHarmToFetus .
+
+ns2:CarotidBaroreceptorStimulator a ns1:DeviceComponent ;
+    ns1:hasFunction ns2:StimulateCarotidBaroreceptor ;
+    ns1:partOf ns2:BaroreflexActivationTherapy .
+
+ns2:CauseDeterminationTest a ns1:Procedure ;
+    ns1:definition "Tests done to determine the cause of hypertension." ;
+    ns1:name "Cause Determination Test" .
+
+ns2:CerebralBloodFlow a ns1:Observation ;
+    ns1:display "Cerebral Blood Flow" ;
+    ns1:name "CeBF" .
+
+ns2:ChronicGlomerulonephritis a ns1:Condition .
+
+ns2:ClinicallySignificant a ns1:ObservationStatus .
+
+ns2:CloselyMonitored a ns1:Condition ;
+    ns1:name "Closely monitored" .
+
+ns2:CompleteMetabolicPanel a ns1:Observation ;
+    ns1:name "complete metabolic panel" .
+
+ns2:CongenitalAdrenalHyperplasia a ns1:Condition .
+
+ns2:CoronaryArteryDisease a ns1:Condition ;
+    ns1:display "Coronary artery disease" .
+
+ns2:CoronaryBloodFlow a ns1:Observation ;
+    ns1:display "Coronary Blood Flow" ;
+    ns1:name "CBF" .
+
+ns2:Coronary_Artery_Disease a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "coronary artery disease" ;
+    ns1:ObservationComponent.value "most common cause of death" .
+
+ns2:Creatinine a ns1:Observation ;
+    ns1:name "creatinine" .
+
+ns2:CushingSyndrome a ns1:Condition ;
+    ns1:Condition.name "symptoms suggesting" .
+
+ns2:Death a ns1:Condition ;
+    ns1:display "Death" .
+
+ns2:DiastolicBP60To65mmHg a ns1:Observation ;
+    ns1:value "Diastolic BP 60 to 65 mm Hg" .
+
+ns2:DiastolicBPApproaching60mmHg a ns1:Observation ;
+    ns1:value "Diastolic BP approaching 60 mm Hg" .
+
+ns2:DiastolicDysfunction a ns1:Condition ;
+    ns1:display "Diastolic dysfunction" ;
+    ns1:relatedTo ns2:DilatedCardiomyopathy,
+        ns2:HeartFailure .
+
+ns2:Diastolic_BP a ns1:ObservationComponent ;
+    ns1:ObservationComponent.display "diastolic BP" ;
+    ns1:ObservationComponent.value "predicts worse" .
+
+ns2:Diet a ns1:Procedure ;
+    ns1:description "Dietary changes including increased fruits and vegetables, decreased salt, and limited alcohol to manage hypertension." ;
+    ns1:name "Diet" .
+
+ns2:Diuretic a ns1:Medication ;
+    ns1:name "Diuretic" .
+
+ns2:Diuretics a ns1:Medication ;
+    ns1:definition "A type of medication used to treat hypertension." ;
+    ns1:name "Diuretics" .
+
+ns2:Echocardiography a ns1:Procedure ;
+    ns1:Procedure.reasonCode ns2:CoarctationOfTheAorta,
+        ns2:LeftVentricularHypertrophy .
+
+ns2:ElevatedBP a ns1:Condition ;
+    ns1:name "Elevated BP" .
+
+ns2:ElevatedBloodPressure a ns1:Observation ;
+    ns1:name "Elevated blood pressure" ;
+    ns1:relatedTo ns2:MosaicTheory .
+
+ns2:ElevatedQRSVoltage a ns1:Observation ;
+    ns1:Observation.comment "may occur later and indicates left ventricular hypertrophy (LVH)" ;
+    ns1:Observation.description "with or without evidence of ischemia" .
+
+ns2:EnhancedDietaryPotassium a ns1:Procedure ;
+    ns1:contraindication ns2:ChronicKidneyDisease,
+        ns2:MedicationsReducingPotassiumExcretion ;
+    ns1:name "Enhanced dietary potassium intake" .
+
+ns2:EnvironmentalFactors a ns1:Observation ;
+    ns1:definition "Eg, dietary sodium, stress" ;
+    ns1:name "Environmental factors" ;
+    ns1:relatedTo ns2:GeneticSusceptibility .
+
+ns2:ExcessiveAlcoholIntake a ns1:Condition .
+
+ns2:ExcessivePerspiration a ns1:Symptom .
+
+ns2:Exercise a ns1:Procedure ;
+    ns1:description "Physical activity to help manage hypertension." ;
+    ns1:name "Exercise" .
+
+ns2:FamilyMembers a ns1:RelatedPerson .
+
+ns2:FastingPlasmaGlucose a ns1:Observation ;
+    ns1:name "fasting plasma glucose" .
+
+ns2:FiltrationFraction a ns1:Observation ;
+    ns1:display "Filtration Fraction" ;
+    ns1:name "FF" .
+
+ns2:Fruits a ns1:Substance ;
+    ns1:name "Fruits" .
+
+ns2:FunduscopicExamination a ns1:Observation ;
+    ns1:Observation.component ns2:Retinopathy .
+
+ns2:GeneticSusceptibility a ns1:Observation ;
+    ns1:definition "Affects only people who are genetically susceptible at younger ages." ;
+    ns1:name "Genetic susceptibility" .
+
+ns2:GlomerularFiltrationRate a ns1:Observation ;
+    ns1:display "Glomerular Filtration Rate" ;
+    ns1:name "GFR" .
+
+ns2:Headache a ns1:Symptom .
+
+ns2:HealthyDiet a ns1:Procedure ;
+    ns1:name "Healthy diet" ;
+    ns1:recommendation ns2:Fruits,
+        ns2:LowFatDairy,
+        ns2:ReducedSaturatedFat,
+        ns2:ReducedTotalFat,
+        ns2:Vegetables,
+        ns2:WholeGrains .
+
+ns2:HeightMeasurement a ns1:Observation ;
+    ns1:Observation.component ns2:Height .
+
+ns2:Hemorrhagic_Stroke a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "hemorrhagic stroke" .
+
+ns2:Heredity a ns1:Observation ;
+    ns1:definition "A predisposing factor, but the exact mechanism is unclear." ;
+    ns1:name "Heredity" .
+
+ns2:HighSaltIntake a ns1:Observation .
+
+ns2:HighSodiumIntake a ns1:Observation ;
+    ns1:definition "More likely to precipitate hypertension in patients > 65 years." ;
+    ns1:name "High sodium intake" .
+
+ns2:HigherRiskOfDizziness a ns1:Observation ;
+    ns1:name "Higher risk of dizziness" .
+
+ns2:HigherRiskOfLightHeadedness a ns1:Observation ;
+    ns1:name "Higher risk of light-headedness" .
+
+ns2:HispanicAdults a ns1:Group ;
+    ns1:condition ns2:Hypertension ;
+    ns1:memberCount "39%" .
+
+ns2:History a ns1:Observation,
+        ns1:Procedure ;
+    ns1:Observation.component [ ns1:ObservationComponent.name "Duration of hypertension" ;
+            ns1:ObservationComponent.value "previously recorded BP levels" ],
+        [ ns1:ObservationComponent.name "History or symptoms of coronary artery disease" ;
+            ns1:ObservationComponent.value "heart failure, obstructive sleep apnea" ],
+        [ ns1:ObservationComponent.name "Symptoms of or personal or family history of other relevant coexisting disorders" ;
+            ns1:ObservationComponent.value "stroke, renal dysfunction, peripheral arterial disease, dyslipidemia, diabetes, gout" ],
+        [ ns1:ObservationComponent.name "Use of medications that predispose to hypertension" ;
+            ns1:ObservationComponent.value "NSAIDs, estrogen-containing oral contraceptives" ],
+        [ ns1:ObservationComponent.name "Sleep duration" ],
+        [ ns1:ObservationComponent.name "Social history" ;
+            ns1:ObservationComponent.value "exercise levels, use of tobacco, alcohol, stimulants (including medications and illicit drugs)" ],
+        [ ns1:ObservationComponent.name "Dietary history" ;
+            ns1:ObservationComponent.value "intake of salt, stimulants (eg, tea, coffee, caffeine-containing sodas, energy drinks)" ] ;
+    ns1:Observation.name "History" ;
+    ns1:helps-determine ns2:TargetOrganDamage ;
+    ns1:helps-identify ns2:Etiology .
+
+ns2:Hyalinization a ns1:Condition ;
+    ns1:display "Hyalinization" .
+
+ns2:Hyperplasia a ns1:Condition ;
+    ns1:display "Hyperplasia" .
+
+ns2:HypertensionStage a ns1:Condition ;
+    ns1:name "Hypertension Stage" .
+
+ns2:Hypertension_Control a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "hypertension control" ;
+    ns1:ObservationComponent.value "prevents complications, prolongs life" .
+
+ns2:Hyperthyroidism a ns1:Condition ;
+    ns1:Condition.name "symptoms suggesting" .
+
+ns2:HyperthyroidismScreening a ns1:Procedure ;
+    ns1:Procedure.name "measuring thyroid-stimulating hormone (TSH)" .
+
+ns2:Hypothyroidism a ns1:Condition .
+
+ns2:ImmediateBloodPressureReduction a ns1:Procedure ;
+    ns1:method ns2:ParenteralAntihypertensives ;
+    ns1:name "Immediate blood pressure reduction" .
+
+ns2:IncreasedBloodPressure a ns1:Observation ;
+    ns1:Observation.name "Increased blood pressure" ;
+    ns1:Observation.subject ns2:PatientsWhoAreNormotensive,
+        ns2:PatientsWithElevatedBP,
+        ns2:PatientsWithHypertension .
+
+ns2:IncreasedPhysicalActivity a ns1:Procedure ;
+    ns1:name "Increased physical activity" ;
+    ns1:recommendation ns2:StructuredExerciseProgram .
+
+ns2:IncreasedRiskOfAdverseEvents a ns1:Observation ;
+    ns1:name "Increased risk of adverse events" .
+
+ns2:IncreasedRiskOfAdverseMedicationEffects a ns1:Observation ;
+    ns1:name "Increased risk of adverse medication effects" .
+
+ns2:IncreasedSympatheticNervousActivity a ns1:Observation ;
+    ns1:Observation.name "Increased sympathetic nervous activity" .
+
+ns2:InsufficientEvidenceForUseInManagingResistantHypertension a ns1:ObservationStatus .
+
+ns2:IntracellularSodium a ns1:Substance ;
+    ns1:name "Intracellular sodium" ;
+    ns1:relatedTo ns2:IntracellularCalcium,
+        ns2:SympatheticStimulation .
+
+ns2:IonPumpsMalfunction a ns1:Observation ;
+    ns1:definition "May lead to chronically increased vascular tone." ;
+    ns1:name "Malfunction of ion pumps on sarcolemmal membranes of smooth muscle cells" .
+
+ns2:Ischemic_Stroke a ns1:ObservationComponent ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "422504002" ;
+                    ns1:display "Ischemic Stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Kidneys a ns1:BodyStructure ;
+    ns1:name "Kidneys" ;
+    ns1:produces ns2:Vasodilators .
+
+ns2:LipidPanel a ns1:Observation ;
+    ns1:name "lipid panel" .
+
+ns2:LongStandingHypertensionSymptom a ns1:Symptom ;
+    ns1:definition "Symptoms that develop when hypertension is long-standing." ;
+    ns1:name "Long-standing Hypertension Symptom" .
+
+ns2:LongTermEfficacy a ns1:ObservationStatus .
+
+ns2:LowFatDairy a ns1:Substance ;
+    ns1:name "Low-fat dairy products" .
+
+ns2:LupusNephritis a ns1:Condition .
+
+ns2:MRI a ns1:Procedure ;
+    ns1:Procedure.reasonCode ns2:CoarctationOfTheAorta .
+
+ns2:MaskedHypertension a ns1:Condition ;
+    ns1:description "BP measured at home is higher than values obtained in the clinician's office" .
+
+ns2:MeasurementMethod a ns1:Procedure ;
+    ns1:description "Average of 2 or 3 measurements taken at different times with the patient seated in a chair for > 5 minutes, feet on floor, back supported, limb supported at heart level, no clothing covering the area of cuff placement, no exercise, caffeine, or smoking for at least 30 minutes" ;
+    ns1:related ns2:BPMeasurementInBothArms,
+        ns2:BPMeasurementInForearm,
+        ns2:BPMeasurementInThigh .
+
+ns2:MechanicalDevice a ns1:Device ;
+    ns1:description "Mechanical devices should be calibrated periodically" .
+
+ns2:MedialHypertrophy a ns1:Condition ;
+    ns1:display "Medial hypertrophy" .
+
+ns2:Medications a ns1:Procedure ;
+    ns1:definition "Treatment involving medications for hypertension." ;
+    ns1:description "Medications prescribed based on blood pressure and presence of cardiovascular disease or risk factors to manage hypertension." ;
+    ns1:includes ns2:ACEInhibitors,
+        ns2:AngiotensinIIReceptorBlockers,
+        ns2:CalciumChannelBlockers,
+        ns2:Diuretics ;
+    ns1:name "Medications" .
+
+ns2:MedicationsReducingPotassiumExcretion a ns1:Medication ;
+    ns1:name "Medications that reduce potassium excretion" .
+
+ns2:MineralocorticoidExcessSyndromes a ns1:Condition .
+
+ns2:MinimumSodiumReduction a ns1:Quantity ;
+    ns1:unit "mg/day" ;
+    ns1:value "1000 mg/day" .
+
+ns2:ModerationInAlcoholIntake a ns1:Procedure ;
+    ns1:name "Moderation in alcohol intake" ;
+    ns1:recommendation ns2:AlcoholIntakeMen,
+        ns2:AlcoholIntakeWomen .
+
+ns2:MosaicTheory a ns1:Observation ;
+    ns1:definition "Multiple factors are probably involved in sustaining elevated blood pressure." ;
+    ns1:name "Mosaic theory" .
+
+ns2:MostPatients a ns1:Patient ;
+    ns1:age "up to 80 years" .
+
+ns2:MuscleBloodFlow a ns1:Observation ;
+    ns1:display "Muscle Blood Flow" ;
+    ns1:name "MBF" .
+
+ns2:MyocardialInfarction a ns1:Condition ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "57054005" ;
+                    ns1:display "Acute Myocardial Infarction" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Myocardial infarction" ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:NeurologicExamination a ns1:Observation .
+
+ns2:NoIncreaseInCardiovascularEvents a ns1:Observation ;
+    ns1:name "No increase in cardiovascular events" .
+
+ns2:NoMajorSafetyIssues a ns1:ObservationStatus .
+
+ns2:NonHispanicAsianAdults a ns1:Group ;
+    ns1:condition ns2:Hypertension ;
+    ns1:memberCount "45%" .
+
+ns2:NonHispanicBlackAdults a ns1:Group ;
+    ns1:condition ns2:Hypertension ;
+    ns1:memberCount "58%" .
+
+ns2:NonHispanicWhiteAdults a ns1:Group ;
+    ns1:condition ns2:Hypertension ;
+    ns1:memberCount "49%" .
+
+ns2:NormotensiveChildren a ns1:Group ;
+    ns1:name "Normotensive children" ;
+    ns1:relatedTo ns2:ParentWithHypertension .
+
+ns2:NotRecommendedByGuidelines a ns1:ObservationStatus ;
+    ns1:basedOn ns2:2017ACC_AHA_Guidelines .
+
+ns2:ObstructiveSleepApnea a ns1:Condition .
+
+ns2:ObstructiveUropathy a ns1:Condition .
+
+ns2:OptimalSodiumIntake a ns1:Quantity ;
+    ns1:unit "mg/day" ;
+    ns1:value "1500 mg/day" .
+
+ns2:OptimizedSleepQuality a ns1:Procedure ;
+    ns1:name "Optimized sleep quality and duration" ;
+    ns1:recommendation ns2:BloodPressureControl,
+        ns2:ChronicKidneyDisease .
+
+ns2:OrganDamageAssessmentTest a ns1:Procedure ;
+    ns1:definition "Tests done to assess organ damage due to hypertension." ;
+    ns1:name "Organ Damage Assessment Test" .
+
+ns2:OtherTests a ns1:Procedure ;
+    ns1:helps-determine ns2:TargetOrganDamage ;
+    ns1:helps-identify ns2:Etiology .
+
+ns2:Overweight a ns1:Condition ;
+    ns1:name "Overweight" .
+
+ns2:Pallor a ns1:Symptom .
+
+ns2:Palpitations a ns1:Symptom .
+
+ns2:ParenteralAntihypertensives a ns1:Medication ;
+    ns1:name "Parenteral antihypertensives" .
+
+ns2:PatientAdherence a ns1:Observation ;
+    ns1:name "Patient adherence" .
+
+ns2:Patients a ns1:Patient .
+
+ns2:PatientsUnder30 a ns1:Patient .
+
+ns2:PatientsWhoAreNormotensive a ns1:Group ;
+    ns1:Group.name "Patients who are normotensive" .
+
+ns2:PatientsWithDiabetes a ns1:Patient ;
+    ns1:condition "diabetes" .
+
+ns2:PatientsWithElevatedBP a ns1:Group ;
+    ns1:Group.name "Patients with elevated BP" .
+
+ns2:PatientsWithKidneyDisorder a ns1:Patient ;
+    ns1:condition "kidney disorder" .
+
+ns2:PercutaneousCatheterBasedRadiofrequencyAblation a ns1:Device ;
+    ns1:deviceName "Percutaneous catheter-based radiofrequency ablation" ;
+    ns1:hasOutcome ns2:ReductionInSystolicBloodPressure ;
+    ns1:hasStatus ns2:Experimental ;
+    ns1:hasUncertainty ns2:ReductionInMajorCardiovascularEvents ;
+    ns1:usedFor ns2:ResistantHypertension ;
+    ns1:usedIn ns2:Australia,
+        ns2:Europe ;
+    ns1:usedInCentersWith ns2:ExtensiveExperience .
+
+ns2:PeripheralArterialPulseEvaluation a ns1:Observation ;
+    ns1:Observation.component ns2:DelayedFemoralPulses,
+        ns2:DiminishedFemoralPulses .
+
+ns2:PersistentReductionOfOfficeBP a ns1:Observation ;
+    ns1:hasSignificance ns2:LongTermEfficacy .
+
+ns2:PheochromocytomaScreening a ns1:Procedure ;
+    ns1:Procedure.name "measuring plasma free metanephrines" .
+
+ns2:PhysicalExamination a ns1:Observation,
+        ns1:Procedure ;
+    ns1:Observation.name ns2:AbdomenPalpation,
+        ns2:Auscultation,
+        ns2:CardiacExamination,
+        ns2:FunduscopicExamination,
+        ns2:HeightMeasurement,
+        ns2:NeurologicExamination,
+        ns2:PeripheralArterialPulseEvaluation,
+        ns2:RespiratoryExamination,
+        ns2:WaistCircumferenceMeasurement,
+        ns2:WeightMeasurement ;
+    ns1:helps-determine ns2:TargetOrganDamage ;
+    ns1:helps-identify ns2:Etiology .
+
+ns2:PlasmaFreeMetanephrines a ns1:Observation ;
+    ns1:name "plasma free metanephrines" ;
+    ns1:relatedTo ns2:Pheochromocytoma .
+
+ns2:PolycysticRenalDisease a ns1:Condition .
+
+ns2:PossibleWorseningOfKidneyFunction a ns1:Observation ;
+    ns1:name "Possible worsening of kidney function" .
+
+ns2:Potassium a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "88480006" ;
+                    ns1:display "Potassium" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PrimaryHyperparathyroidism a ns1:Condition .
+
+ns2:Prognosis_Hypertension a ns1:Observation ;
+    ns1:Observation.component ns2:Blood_Pressure,
+        ns2:Cardiovascular_Events,
+        ns2:Coronary_Artery_Disease,
+        ns2:Hypertension_Control,
+        ns2:Retinal_Changes,
+        ns2:Stroke,
+        ns2:Survival,
+        ns2:Target_Organ_Involvement .
+
+ns2:Pyelonephritis a ns1:Condition .
+
+ns2:ReducedDietarySodium a ns1:Procedure ;
+    ns1:name "Reduced dietary sodium" ;
+    ns1:recommendation ns2:MinimumSodiumReduction,
+        ns2:OptimalSodiumIntake .
+
+ns2:ReducedRiskOfVascularComplications a ns1:Observation ;
+    ns1:name "Reduced risk of vascular complications" .
+
+ns2:ReducedSaturatedFat a ns1:Substance ;
+    ns1:name "Reduced saturated fat" .
+
+ns2:ReducedTotalFat a ns1:Substance ;
+    ns1:name "Reduced total fat" .
+
+ns2:ReductionInMajorCardiovascularEvents a ns1:Observation ;
+    ns1:hasUncertainty ns2:Uncertain .
+
+ns2:ReductionInSystolicBloodPressure a ns1:Observation ;
+    ns1:hasSignificance ns2:ClinicallySignificant,
+        ns2:StatisticallySignificant .
+
+ns2:RegularlyCalibratedSphygmomanometer a ns1:Device ;
+    ns1:name "Regularly calibrated sphygmomanometer" .
+
+ns2:RenalArteryStenosis a ns1:Condition ;
+    ns1:definition "A cause of secondary hypertension." ;
+    ns1:name "Renal Artery Stenosis" .
+
+ns2:RenalFailure a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "42399005" ;
+                    ns1:display "Renal Failure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Renal failure" .
+
+ns2:ReninAngiotensinSystem a ns1:Observation ;
+    ns1:name "Activity of the renin-angiotensin system" .
+
+ns2:RenovascularDisease a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "123799005" ;
+                    ns1:display "Renovascular Disease" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Renovascular Disease" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance .
+
+ns2:RespiratoryExamination a ns1:Observation .
+
+ns2:Retinal_Changes a ns1:ObservationComponent ;
+    ns1:ObservationComponent.display "retinal changes" ;
+    ns1:ObservationComponent.value "severe" .
+
+ns2:SaltSensitiveHypertension a ns1:Condition ;
+    ns1:definedBy [ a ns1:Observation ;
+            ns1:name "Inordinate increase of > 10 to 20 mm Hg systolic BP after a large sodium load" ] ;
+    ns1:name "Salt-sensitive hypertension" .
+
+ns2:SevereHypertensionSymptom a ns1:Symptom ;
+    ns1:definition "Symptoms that develop when hypertension is severe." ;
+    ns1:name "Severe Hypertension Symptom" .
+
+ns2:ShortSleepDuration a ns1:Condition ;
+    ns1:association ns2:Hypertension ;
+    ns1:definition "Typically defined as < 5 or 6 hours per night in adults" ;
+    ns1:name "Short sleep duration" .
+
+ns2:SleepStudy a ns1:Procedure ;
+    ns1:Procedure.reasonCode ns2:SleepApnea ;
+    ns1:name "sleep study" .
+
+ns2:SodiumTransport a ns1:Process ;
+    ns1:name "Sodium transport" ;
+    ns1:relatedTo ns2:CellWall,
+        ns2:SodiumPotassiumPump .
+
+ns2:SpotUrineAlbuminCreatinineRatio a ns1:Procedure ;
+    ns1:name "Spot Urine Albumin:Creatinine Ratio" ;
+    ns1:status "completed" .
+
+ns2:StatisticallySignificant a ns1:ObservationStatus .
+
+ns2:StiffArteries a ns1:Condition ;
+    ns1:name "Stiff arteries" .
+
+ns2:StructuredExerciseProgram a ns1:Procedure ;
+    ns1:name "Structured exercise program" .
+
+ns2:Survival a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "1-year survival" ;
+    ns1:ObservationComponent.value "< 10% with grade 3 retinopathy, < 5% with grade 4 retinopathy" .
+
+ns2:Symptom_4thHeartSound a ns1:Symptom ;
+    ns1:description "4th heart sound" .
+
+ns2:Symptom_ArteriolarNarrowing a ns1:Symptom ;
+    ns1:description "Arteriolar narrowing" .
+
+ns2:Symptom_Dizziness a ns1:Symptom ;
+    ns1:description "Dizziness" .
+
+ns2:Symptom_Epistaxis a ns1:Symptom ;
+    ns1:description "Epistaxis" .
+
+ns2:Symptom_FacialFlushing a ns1:Symptom ;
+    ns1:description "Facial flushing" .
+
+ns2:Symptom_Fatigue a ns1:Symptom ;
+    ns1:description "Fatigue" .
+
+ns2:Symptom_Headache a ns1:Symptom ;
+    ns1:description "Headache" .
+
+ns2:Symptom_HeartFailure a ns1:Symptom ;
+    ns1:description "Heart failure" .
+
+ns2:Symptom_HypertensiveEncephalopathy a ns1:Symptom ;
+    ns1:description "Hypertensive encephalopathy" .
+
+ns2:Symptom_Nervousness a ns1:Symptom ;
+    ns1:description "Nervousness" .
+
+ns2:Symptom_RenalFailure a ns1:Symptom ;
+    ns1:description "Renal failure" .
+
+ns2:Symptom_RetinalChanges a ns1:Symptom ;
+    ns1:description "Retinal changes" .
+
+ns2:Symptom_SclerosisOfArterioles a ns1:Symptom ;
+    ns1:description "Sclerosis of arterioles" .
+
+ns2:Symptom_SymptomaticCoronaryAtherosclerosis a ns1:Symptom ;
+    ns1:description "Symptomatic coronary atherosclerosis" .
+
+ns2:Systolic_BP a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "systolic BP" ;
+    ns1:ObservationComponent.value "predicts better" .
+
+ns2:Tachycardia a ns1:Symptom .
+
+ns2:Target_Organ_Involvement a ns1:ObservationComponent ;
+    ns1:ObservationComponent.name "target-organ involvement" ;
+    ns1:ObservationComponent.value "evidence" .
+
+ns2:ThiazideDiuretics a ns1:Medication ;
+    ns1:name "Thiazide Diuretics" .
+
+ns2:ThinPatients a ns1:Patient .
+
+ns2:ThoracicAorticDissection a ns1:Condition ;
+    ns1:display "Thoracic aortic dissection" ;
+    ns1:relatedTo ns2:Hypertension .
+
+ns2:ThyroidStimulatingHormoneLevels a ns1:Observation ;
+    ns1:name "thyroid-stimulating hormone levels" .
+
+ns2:TrainedToMeasureBP a ns1:Condition ;
+    ns1:name "Trained to measure BP" .
+
+ns2:Tremor a ns1:Symptom .
+
+ns2:Uncertain a ns1:ObservationStatus .
+
+ns2:UnilateralRenalArteryBruit a ns1:Observation .
+
+ns2:UrinalysisDetection a ns1:Observation ;
+    ns1:Observation.name ns2:Albuminuria,
+        ns2:Casts,
+        ns2:Microhematuria .
+
+ns2:UrinaryAlbuminCreatinineRatio a ns1:Observation ;
+    ns1:name "urinary albumin:creatinine ratio" ;
+    ns1:relatedTo ns2:RenalUltrasonography .
+
+ns2:UseOfCocaine a ns1:Condition .
+
+ns2:UseOfCorticosteroids a ns1:Condition .
+
+ns2:UseOfLicorice a ns1:Condition .
+
+ns2:UseOfNSAIDs a ns1:Condition .
+
+ns2:UseOfOralContraceptives a ns1:Condition .
+
+ns2:UseOfSympathomimetics a ns1:Condition .
+
+ns2:VascularTone a ns1:Observation ;
+    ns1:display "Vascular tone" ;
+    ns1:relatedTo ns2:IonPumpsMalfunction .
+
+ns2:Vasodilators a ns1:Substance ;
+    ns1:display "Vasodilators" ;
+    ns1:producedBy ns2:EndothelialCells .
+
+ns2:Vegetables a ns1:Substance ;
+    ns1:display "Vegetables" .
+
+ns2:WaistCircumferenceMeasurement a ns1:Observation ;
+    ns1:Observation.component ns2:WaistCircumference .
+
+ns2:WeightMeasurement a ns1:Observation ;
+    ns1:Observation.component ns2:Weight .
+
+ns2:WhiteCoatHypertension a ns1:Condition ;
+    ns1:description "BP is elevated when measured in the physician’s office but normal when measured at home or by ambulatory BP monitoring" .
+
+ns2:WholeGrains a ns1:Substance ;
+    ns1:name "Whole grains" .
+
+ns2:ACEInhibitors a ns1:Medication ;
+    ns1:definition "A type of medication used to treat hypertension." ;
+    ns1:name "ACE Inhibitors",
+        "Angiotensin-Converting Enzyme Inhibitors" .
+
+ns2:BloodPressureControl a ns1:Observation,
+        ns1:Procedure ;
+    ns1:subject ns2:UnitedStatesAdults ;
+    ns1:value "26% have BP at goal" .
+
+ns2:CalciumChannelBlocker a ns1:Medication ;
+    ns1:name "Calcium channel blocker" .
+
+ns2:CalciumChannelBlockers a ns1:Medication ;
+    ns1:definition "A type of medication used to treat hypertension." ;
+    ns1:name "Calcium Channel Blockers",
+        "Dihydropyridine Calcium Channel Blockers" .
+
+ns2:CellWall a ns1:BodyStructure ;
+    ns1:name "Cell wall" .
+
+ns2:ControlBloodPressure a ns1:Procedure ;
+    ns1:description "Managing blood pressure to limit adverse consequences." ;
+    ns1:name "Control of blood pressure" .
+
+ns2:Diabetes a ns1:Condition ;
+    ns1:Condition.name "Diabetes" ;
+    ns1:associatedWith ns2:Hypertension ;
+    ns1:name "Diabetes" .
+
+ns2:DiastolicBloodPressure a ns1:Observation ;
+    ns1:display "Diastolic Blood Pressure" ;
+    ns1:name "271650006",
+        "DBP" ;
+    ns1:value "≥ 80 mm Hg" .
+
+ns2:DilatedCardiomyopathy a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "399020009" ;
+                    ns1:display "Dilated Cardiomyopathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Dilated cardiomyopathy" ;
+    ns1:relatedTo ns2:HeartFailure .
+
+ns2:ECG a ns1:Procedure ;
+    ns1:Procedure.result ns2:BroadNotchedPWave,
+        ns2:ElevatedQRSVoltage,
+        ns2:LeftVentricularHypertrophy ;
+    ns1:name "ECG" ;
+    ns1:status "completed" .
+
+ns2:EndothelialCells a ns1:BodyStructure ;
+    ns1:name "Endothelial cells" .
+
+ns2:IntracellularCalcium a ns1:Substance ;
+    ns1:name "Intracellular calcium" ;
+    ns1:relatedTo ns2:SympatheticStimulation .
+
+ns2:KidneyDisease a ns1:Condition ;
+    ns1:Condition.name "Kidney disease" .
+
+ns2:LeftVentricularHypertrophy a ns1:Condition ;
+    ns1:Condition.diagnosis ns2:Echocardiography ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "164873001" ;
+                    ns1:display "LVH" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:LifestyleChanges a ns1:Procedure ;
+    ns1:definition "Treatment involving lifestyle changes for hypertension." ;
+    ns1:note "Especially a low-sodium and higher potassium diet" ;
+    ns1:value "Lifestyle Changes" .
+
+ns2:Norepinephrine a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "45555007" ;
+                    ns1:display "Norepinephrine" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:BloodPressure .
+
+ns2:ParentWithHypertension a ns1:Group ;
+    ns1:value "Parent with hypertension" .
+
+ns2:PatientsWithHypertension a ns1:Group ;
+    ns1:Group.value "Patients with hypertension" .
+
+ns2:Pheochromocytoma a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302835009" ;
+                    ns1:display "Pheochromocytoma" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Pheochromocytoma" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:PlasmaVolume,
+        ns2:TotalPeripheralResistance .
+
+ns2:PrimaryHypertension a ns1:Condition ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "59621000" ;
+                    ns1:display "Primary Hypertension" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Hemodynamics and physiologic components (eg, plasma volume, activity of the renin-angiotensin system) vary, indicating that primary hypertension is unlikely to have a single cause.",
+        "Hypertension with no known cause (primary; formerly, essential, hypertension).",
+        "Hypertension with no specific cause—85% of cases." ;
+    ns1:description "A type of hypertension with no cure.",
+        "The role of the renin-angiotensin-aldosterone system in primary hypertension is not established." ;
+    ns1:display "Primary Hypertension" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:TotalPeripheralResistance ;
+    ns1:hasTreatment ns2:ControlBloodPressure ;
+    ns1:note "Most hypertension is primary" ;
+    ns1:partOf ns2:Hypertension ;
+    ns1:relatedTo ns2:ElevatedBloodPressure,
+        ns2:EnvironmentalFactors,
+        ns2:Heredity,
+        ns2:HighSodiumIntake,
+        ns2:PlasmaVolume,
+        ns2:ReninAngiotensinSystem,
+        ns2:VascularTone ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:RenalBloodFlow a ns1:Observation ;
+    ns1:display "Renal Blood Flow" ;
+    ns1:name "RBF" .
+
+ns2:RenalParenchymalDisease a ns1:Condition ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "767094002" ;
+                    ns1:display "Renal Parenchymal Disease" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Renal Parenchymal Disease" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:PlasmaVolume,
+        ns2:TotalPeripheralResistance ;
+    ns1:includes ns2:ChronicGlomerulonephritis,
+        ns2:LupusNephritis,
+        ns2:ObstructiveUropathy,
+        ns2:PolycysticRenalDisease,
+        ns2:Pyelonephritis ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:RenalUltrasonography a ns1:Procedure ;
+    ns1:Procedure.reasonCode ns2:UrinalysisDetection ;
+    ns1:name "renal ultrasonography" .
+
+ns2:ResistantHypertension a ns1:Condition ;
+    ns1:bodySite [ ns1:coding [ ns1:code "75367002" ;
+                    ns1:display "Blood pressure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:clinicalStatus [ ns1:coding [ ns1:code "active" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/condition-clinical" ] ] ;
+    ns1:display "Resistant Hypertension" ;
+    ns1:hasTreatment ns2:BaroreflexActivationTherapy,
+        ns2:PercutaneousCatheterBasedRadiofrequencyAblation ;
+    ns1:related [ ns1:target [ ns1:reference "ex:CardiovascularMorbidity" ] ],
+        [ ns1:target [ ns1:reference "ex:CardiovascularMortality" ] ] ;
+    ns1:stage [ ns1:summary [ ns1:coding [ ns1:display "Stage 2 Hypertension" ;
+                            ns1:system "http://hl7.org/fhir/ValueSet/condition-stage" ;
+                            ns1:value "stage-2" ] ] ] ;
+    ns1:status "BP remains above goal despite 3 medications" ;
+    ns1:verificationStatus [ ns1:coding [ ns1:system "http://hl7.org/fhir/ValueSet/condition-ver-status" ;
+                    ns1:value "confirmed" ] ] .
+
+ns2:SecondaryHypertension a ns1:Condition ;
+    ns1:causedBy ns2:Acromegaly,
+        ns2:CoarctationOfTheAorta,
+        ns2:CongenitalAdrenalHyperplasia,
+        ns2:CushingSyndrome,
+        ns2:ExcessiveAlcoholIntake,
+        ns2:Hyperthyroidism,
+        ns2:Hypothyroidism,
+        ns2:MineralocorticoidExcessSyndromes,
+        ns2:Obesity,
+        ns2:ObstructiveSleepApnea,
+        ns2:Pheochromocytoma,
+        ns2:PrimaryAldosteronism,
+        ns2:PrimaryHyperparathyroidism,
+        ns2:RenalParenchymalDisease,
+        ns2:RenovascularDisease,
+        ns2:UseOfCocaine,
+        ns2:UseOfCorticosteroids,
+        ns2:UseOfLicorice,
+        ns2:UseOfNSAIDs,
+        ns2:UseOfOralContraceptives,
+        ns2:UseOfSympathomimetics ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "31992008" ;
+                    ns1:display "Secondary Hypertension" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Hypertension with an identified cause." ;
+    ns1:description "A type of hypertension that can be corrected in some cases." ;
+    ns1:hasCause ns2:ChronicKidneyDisease,
+        ns2:Obesity,
+        ns2:PrimaryAldosteronism,
+        ns2:RenalArteryStenosis,
+        ns2:SleepApnea ;
+    ns1:hasTreatment ns2:ControlBloodPressure ;
+    ns1:note "5 to 15% is secondary to another disorder" ;
+    ns1:partOf ns2:Hypertension ;
+    ns1:relatedTo ns2:PrimaryAldosteronism,
+        ns2:RenalParenchymalDisease ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:SleepApnea a ns1:Condition ;
+    ns1:Condition.name "history suggests" ;
+    ns1:definition "A cause of secondary hypertension." ;
+    ns1:name "Sleep Apnea" .
+
+ns2:SmokingCessation a ns1:Procedure ;
+    ns1:description "Stopping smoking to help manage hypertension." ;
+    ns1:name "Smoking cessation" .
+
+ns2:SodiumPotassiumPump a ns1:Device ;
+    ns1:name "Sodium-potassium pump (Na+, K+-ATPase)" ;
+    ns1:relatedTo ns2:Norepinephrine,
+        ns2:SympatheticNeurons .
+
+ns2:Sphygmomanometry a ns1:Procedure ;
+    ns1:definition "Diagnosis method for hypertension." ;
+    ns1:name "Sphygmomanometry" ;
+    ns1:used-to-diagnose ns2:Hypertension .
+
+ns2:Stroke a ns1:Condition,
+        ns1:ObservationComponent ;
+    ns1:ObservationComponent.relatedTo ns2:Hemorrhagic_Stroke,
+        ns2:Ischemic_Stroke ;
+    ns1:ObservationComponent.value "common consequence of inadequately treated hypertension",
+        "stroke" ;
+    ns1:clinicalStatus "active" ;
+    ns1:display "Stroke" ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:SympatheticNeurons a ns1:BodyStructure ;
+    ns1:name "Sympathetic neurons" .
+
+ns2:Symptom_ConstrictionOfArterioles a ns1:Symptom ;
+    ns1:description "Constriction of arterioles" .
+
+ns2:Symptom_Exudates a ns1:Symptom ;
+    ns1:description "Exudates" .
+
+ns2:Symptom_Hemorrhages a ns1:Symptom ;
+    ns1:description "Hemorrhages" .
+
+ns2:Symptom_Papilledema a ns1:Symptom ;
+    ns1:description "Papilledema" .
+
+ns2:Urinalysis a ns1:Observation,
+        ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "27171005" ;
+                    ns1:display "Urinalysis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:status "completed" .
+
+ns2:WeightLoss a ns1:Procedure ;
+    ns1:description "A method to treat hypertension by reducing body weight." ;
+    ns1:name "Weight loss" ;
+    ns1:recommendation ns2:Obesity,
+        ns2:Overweight .
+
+ns2:ACEInhibitor a ns1:Medication ;
+    ns1:name "ACE inhibitor" .
+
+ns2:ARB a ns1:Medication ;
+    ns1:name "ARB",
+        "Angiotensin II Receptor Blockers" ;
+    ns1:status "not used together with ACE inhibitor" .
+
+ns2:BaroreflexActivationTherapy a ns1:Device ;
+    ns1:deviceName "Baroreflex activation therapy" ;
+    ns1:hasComponent ns2:Battery,
+        ns2:CarotidBaroreceptorStimulator ;
+    ns1:hasOutcome ns2:PersistentReductionOfOfficeBP ;
+    ns1:hasSafetyStatus ns2:NoMajorSafetyIssues ;
+    ns1:hasStatus ns2:NotRecommendedByGuidelines ;
+    ns1:usedFor ns2:ResistantHypertension .
+
+ns2:BloodPressure a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "75367002" ;
+                    ns1:display "Blood Pressure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:component [ ns1:value "systolic" ;
+            ns1:valueQuantity [ ns1:value "mmHg" ] ],
+        [ ns1:value "diastolic" ;
+            ns1:valueQuantity [ ns1:value "mmHg" ] ] ;
+    ns1:display "Blood Pressure" ;
+    ns1:interpretation [ ns1:coding [ ns1:code "N" ;
+                    ns1:display "Normal" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/observation-interpretation" ] ] .
+
+ns2:Etiology a ns1:Observation .
+
+ns2:HeartFailure a ns1:Condition ;
+    ns1:code "84114007" ;
+    ns1:display "Heart failure" .
+
+ns2:SympatheticStimulation a ns1:Procedure,
+        ns1:Process ;
+    ns1:Procedure.result ns2:IncreasedBloodPressure ;
+    ns1:name "Sympathetic stimulation" .
+
+ns2:ChronicKidneyDisease a ns1:Condition ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "709044004" ;
+                    ns1:display "Chronic Kidney Disease" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A cause of secondary hypertension." ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:Obesity a ns1:Condition ;
+    ns1:definition "A cause of secondary hypertension." ;
+    ns1:description "Patients with obesity usually require large cuffs" ;
+    ns1:name "Obesity" .
+
+ns2:PrimaryAldosteronism a ns1:Condition ;
+    ns1:Condition.name "measuring plasma aldosterone levels and plasma renin activity" ;
+    ns1:Condition.prevalence "10 to 20% of patients with resistant hypertension" ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "190507007" ;
+                    ns1:display "Primary Aldosteronism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A common cause of secondary hypertension." ;
+    ns1:display "Primary Aldosteronism" ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:PlasmaVolume,
+        ns2:TotalPeripheralResistance ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:TargetOrganDamage a ns1:Condition,
+        ns1:Observation ;
+    ns1:name "target-organ damage" .
+
+ns2:CoarctationOfTheAorta a ns1:Condition ;
+    ns1:Condition.confirmation ns2:CT,
+        ns2:MRI ;
+    ns1:Condition.value "suspected" ;
+    ns1:description "BP is significantly lower in the legs, particularly in patients with diminished or delayed femoral pulses" .
+
+ns2:PlasmaVolume a ns1:Observation ;
+    ns1:display "Plasma Volume" ;
+    ns1:value "PV",
+        "Plasma volume" .
+
+ns2:UnitedStatesAdults a ns1:Group ;
+    ns1:condition ns2:Hypertension ;
+    ns1:memberCount "50%" .
+
+ns2:CardiacOutput a ns1:Observation ;
+    ns1:display "Cardiac Output" ;
+    ns1:value "CO" .
+
+ns2:TotalPeripheralResistance a ns1:Observation ;
+    ns1:display "Total Peripheral Resistance" ;
+    ns1:value "TPR" .
+
+ns2:Hypertension a ns1:Condition ;
+    ns1:Condition.prognosis ns2:Prognosis_Hypertension ;
+    ns1:Condition.related "Atherosclerotic cardiovascular disease (ASCVD)",
+        "Diabetes",
+        "Kidney disease" ;
+    ns1:bodySite [ ns1:coding [ ns1:code "75367002" ;
+                    ns1:display "Blood pressure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:clinicalStatus [ ns1:coding [ ns1:code "active" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/condition-clinical" ] ],
+        "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "38341003" ;
+                    ns1:display "Hypertension" ;
+                    ns1:system "http://snomed.info/sct" ] ],
+        "38341003",
+        "Hypertension",
+        "I10",
+        "hypertension" ;
+    ns1:definition "A condition characterized by high blood pressure.",
+        "A condition defined as a systolic blood pressure (BP) ≥ 130 mm Hg or a diastolic blood pressure ≥ 80 mm Hg or taking medication for hypertension.",
+        "Sustained elevation of resting systolic blood pressure (≥ 130 mm Hg), diastolic blood pressure (≥ 80 mm Hg), or both." ;
+    ns1:description "A condition characterized by high blood pressure.",
+        "BP in the stage 1 hypertensive range or is markedly labile",
+        "Hypertension is usually asymptomatic until complications develop in target organs." ;
+    ns1:diagnosis ns2:BloodPressureMeasurement ;
+    ns1:display "Hypertension" ;
+    ns1:hasCause ns2:PrimaryHypertension,
+        ns2:SecondaryHypertension ;
+    ns1:hasComponent ns2:CardiacOutput,
+        ns2:CerebralBloodFlow,
+        ns2:CoronaryBloodFlow,
+        ns2:DiastolicBloodPressure,
+        ns2:FiltrationFraction,
+        ns2:GlomerularFiltrationRate,
+        ns2:MuscleBloodFlow,
+        ns2:PlasmaVolume,
+        ns2:RenalBloodFlow,
+        ns2:TotalPeripheralResistance ;
+    ns1:hasDiagnosis ns2:Sphygmomanometry ;
+    ns1:hasSymptom ns2:LongStandingHypertensionSymptom,
+        ns2:SevereHypertensionSymptom,
+        ns2:Symptom_Dizziness,
+        ns2:Symptom_Epistaxis,
+        ns2:Symptom_FacialFlushing,
+        ns2:Symptom_Fatigue,
+        ns2:Symptom_Headache,
+        ns2:Symptom_Nervousness ;
+    ns1:hasTest ns2:Calcium,
+        ns2:CardiovascularRiskFactorIdentificationTest,
+        ns2:CauseDeterminationTest,
+        ns2:CompleteMetabolicPanel,
+        ns2:Creatinine,
+        ns2:ECG,
+        ns2:FastingPlasmaGlucose,
+        ns2:LipidPanel,
+        ns2:OrganDamageAssessmentTest,
+        ns2:PlasmaFreeMetanephrines,
+        ns2:Potassium,
+        ns2:RenalUltrasonography,
+        ns2:SleepStudy,
+        ns2:ThyroidStimulatingHormoneLevels,
+        ns2:Urinalysis,
+        ns2:UrinaryAlbuminCreatinineRatio ;
+    ns1:hasTreatment ns2:AdequateSleep,
+        ns2:Diet,
+        ns2:Exercise,
+        ns2:LifestyleChanges,
+        ns2:Medications,
+        ns2:SmokingCessation,
+        ns2:WeightLoss ;
+    ns1:note "Usually asymptomatic until complications develop in target organs" ;
+    ns1:relatedTo ns2:ACEInhibitors,
+        ns2:ARB,
+        ns2:AbdominalAorticAneurysm,
+        ns2:Arteriolosclerosis,
+        ns2:Atherogenesis,
+        ns2:BPControl,
+        ns2:BloodTests,
+        ns2:Brain,
+        ns2:CalciumChannelBlockers,
+        ns2:CardiovascularRiskFactors,
+        ns2:CardiovascularSystem,
+        ns2:ChronicKidneyDisease,
+        ns2:CoronaryArteryDisease,
+        ns2:Death,
+        ns2:DiastolicDysfunction,
+        ns2:DilatedCardiomyopathy,
+        ns2:ECG,
+        ns2:HeartFailure,
+        ns2:Kidneys,
+        ns2:LifestyleChanges,
+        ns2:MyocardialInfarction,
+        ns2:PrimaryHypertension,
+        ns2:RenalFailure,
+        ns2:SecondaryHypertension,
+        ns2:SpotUrineAlbuminCreatinineRatio,
+        ns2:Stroke,
+        ns2:TargetOrganDamage,
+        ns2:ThiazideDiuretics,
+        ns2:ThoracicAorticDissection,
+        ns2:Urinalysis ;
+    ns1:stage [ ns1:summary [ ns1:coding [ ns1:code "827069000" ;
+                            ns1:display "Stage 1 Hypertension" ;
+                            ns1:system "http://snomed.info/sct" ] ] ] ;
+    ns1:verificationStatus [ ns1:coding [ ns1:code "confirmed" ;
+                    ns1:system "http://hl7.org/fhir/ValueSet/condition-ver-status" ] ],
+        "confirmed" .
+

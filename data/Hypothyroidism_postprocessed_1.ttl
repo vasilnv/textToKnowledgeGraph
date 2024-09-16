@@ -1,0 +1,2045 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:Amenorrhea a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "14302001" ;
+                    ns1:display "Amenorrhea" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedCondition ns2:SecondaryHypothyroidism .
+
+ns2:Anemia a ns1:Condition ;
+    ns1:hasSymptom ns2:Hypochromic,
+        ns2:Macrocytic,
+        ns2:NormocyticNormochromic ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:AnnualMeasurement a ns1:Procedure ;
+    ns1:name "Annual measurement" ;
+    ns1:target [ ns1:observation ns2:FreeT4,
+                ns2:SerumTSH ] .
+
+ns2:DesiccatedAnimalThyroidPreparations a ns1:Medication ;
+    ns1:affects ns2:SerumTSHLevels .
+
+ns2:DrugAdministration a ns1:Procedure ;
+    ns1:method "given cautiously" ;
+    ns1:name "Drug administration" ;
+    ns1:reason "drugs are metabolized more slowly than in healthy people" .
+
+ns2:EuthyroidSickSyndrome a ns1:Condition ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:FluidReplacement a ns1:Procedure ;
+    ns1:name "Fluid replacement" ;
+    ns1:reason "hypothyroid patients do not excrete water appropriately" .
+
+ns2:FreeThyroxine a ns1:Observation ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism ;
+    ns1:value "T4" .
+
+ns2:HeartDisease a ns1:Condition ;
+    ns1:relatedTo ns2:Therapy .
+
+ns2:Hypoxemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "389087006" ;
+                    ns1:display "Hypoxemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:monitor "PaO2" ;
+    ns1:treatment ns2:MechanicalVentilatoryAssistance .
+
+ns2:Liotrix a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mcg" ] .
+
+ns2:MyxedemaComa a ns1:Condition ;
+    ns1:Condition.characteristic ns2:Areflexia,
+        ns2:CarbonDioxideRetention,
+        ns2:Coma,
+        ns2:ExtremeHypothermia,
+        ns2:RespiratoryDepression,
+        ns2:Seizures ;
+    ns1:Condition.description "A life-threatening complication of hypothyroidism, usually occurring in patients with a long history of hypothyroidism." ;
+    ns1:Condition.diagnosisMethod ns2:ClinicalJudgment,
+        ns2:History,
+        ns2:PhysicalExamination ;
+    ns1:Condition.precipitatingFactor ns2:DrugsSuppressingCNS,
+        ns2:ExposureToCold,
+        ns2:Illness,
+        ns2:Infection,
+        ns2:Trauma ;
+    ns1:Condition.prognosis "Death is likely without rapid treatment" ;
+    ns1:Condition.treatment "Rapid treatment" ;
+    ns1:clinicalStatus "life-threatening complication" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "21263006" ;
+                    ns1:display "Myxedema coma" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedCondition ns2:RapidDiagnosisAndTreatment ;
+    ns1:treatment ns2:Corticosteroids,
+        ns2:Oral_T4,
+        ns2:SupportiveCare,
+        ns2:T4_IV .
+
+ns2:NRP409 a ns1:MedicationRequest .
+
+ns2:OralT4 a ns1:Medication ;
+    ns1:dosage [ ns1:description "Lowest dose that restores serum TSH levels to midnormal range" ] ;
+    ns1:value "Oral T4 (levothyroxine)" .
+
+ns2:PrecipitatingFactor a ns1:Condition ;
+    ns1:treatment "rapidly and appropriately treated" ;
+    ns1:value "Precipitating factor" .
+
+ns2:SerumCholesterol a ns1:Observation ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:SerumThyroxineBindingGlobulinDeficiency a ns1:Condition ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:SubclinicalThyroidDysfunction a ns1:Condition ;
+    ns1:definition "Relatively common; occurs in about 15% of older women and 10% of older men, particularly in those with underlying Hashimoto thyroiditis." ;
+    ns1:value "Subclinical thyroid dysfunction" .
+
+ns2:SyntheticT4Preparations a ns1:Medication ;
+    ns1:affects ns2:SerumT3Levels .
+
+ns2:T3T4Mixtures a ns1:Medication ;
+    ns1:affects ns2:SerumT3Levels .
+
+ns2:T3_IV a ns1:Procedure ;
+    ns1:initialDose "25 to 50 mcg IV" ;
+    ns1:maintenanceDose "10 to 20 mcg twice a day" ;
+    ns1:value "T3 given IV" .
+
+ns2:TertiaryHypothyroidism a ns1:Condition ;
+    ns1:causedBy ns2:TRH ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "37429009" ;
+                    ns1:display "Tertiary Hypothyroidism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Deficient TSH secretion due to deficient TRH secretion is termed tertiary hypothyroidism." .
+
+ns2:Thyroglobulin a ns1:MedicationRequest .
+
+ns2:ThyroidStimulatingHormone a ns1:Observation ;
+    ns1:name "TSH" ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:Triiodothyronine a ns1:Observation ;
+    ns1:name "T3" ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:TriiodothyronineLevel a ns1:Observation ;
+    ns1:name "Triiodothyronine (T3) level" ;
+    ns1:value "Normal early in some disorders" .
+
+ns2:AbdominalEffusion a ns1:Symptom .
+
+ns2:AdministrationOfThyroxine a ns1:TherapeuticProcedure ;
+    ns1:name "Administration of thyroxine" .
+
+ns2:AdrenalCrisis a ns1:Condition ;
+    ns1:name "adrenal crisis" .
+
+ns2:AdrenalInsufficiency a ns1:Condition ;
+    ns1:name "Adrenal Insufficiency" .
+
+ns2:AlteredThyroidHormoneSynthesis a ns1:Observation ;
+    ns1:name "Altered thyroid hormone synthesis" .
+
+ns2:Amiodarone a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372821002" ;
+                    ns1:display "Amiodarone" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:AnyAge a ns1:AgeRange ;
+    ns1:value "Any age" .
+
+ns2:Areflexia a ns1:Symptom ;
+    ns1:Symptom.description "Areflexia" .
+
+ns2:Atherosclerosis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "38716007" ;
+                    ns1:display "Atherosclerosis" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:AtrophicBreasts a ns1:Observation ;
+    ns1:value "Atrophic Breasts" .
+
+ns2:CancerOfLarynx a ns1:Condition ;
+    ns1:relatedTo ns2:RadiationTherapy ;
+    ns1:value "Cancer of the larynx" .
+
+ns2:CarbonDioxideRetention a ns1:Symptom ;
+    ns1:Symptom.description "Carbon dioxide retention" .
+
+ns2:CardiacRisks a ns1:Observation .
+
+ns2:CardiovascularManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:EnlargedHeart,
+        ns2:PericardialEffusion,
+        ns2:SlowHeartRate .
+
+ns2:Carotenemia a ns1:Symptom ;
+    ns1:Symptom.cause ns2:DepositionOfCarotene ;
+    ns1:Symptom.location ns2:Palms,
+        ns2:Soles .
+
+ns2:CarpalTunnelSyndrome a ns1:Condition ;
+    ns1:Condition.cause ns2:DepositionOfProteinaceousGroundSubstance .
+
+ns2:CheckpointInhibitors a ns1:Substance ;
+    ns1:name "Checkpoint inhibitors" ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:ClinicalJudgment a ns1:DiagnosticMethod ;
+    ns1:DiagnosticMethod.description "Clinical judgment" .
+
+ns2:CoarseHair a ns1:Symptom .
+
+ns2:Coma a ns1:Symptom ;
+    ns1:Symptom.description "Coma with extreme hypothermia (temperature 24° to 32.2° C)" .
+
+ns2:Constipation a ns1:Symptom .
+
+ns2:Corticosteroids a ns1:Procedure ;
+    ns1:name "Corticosteroids" ;
+    ns1:reason "possibility of central hypothyroidism cannot be initially ruled out" .
+
+ns2:DecreasedAdrenergicDrive a ns1:Cause .
+
+ns2:DecreasedAdrenergicStimulation a ns1:Cause .
+
+ns2:DecreasedSecretionOfT4AndT3 a ns1:Observation ;
+    ns1:resultIn ns2:IncreasedTSH,
+        ns2:LowT4AndT3 ;
+    ns1:value "Decreased secretion of T4 and T3" .
+
+ns2:DecreasedThyroidHormone a ns1:Cause .
+
+ns2:DecreasedThyroidHormonogenesis a ns1:Observation ;
+    ns1:resultIn ns2:IncreasedTSH,
+        ns2:IodineTrapping,
+        ns2:ThyroidEnlargement ;
+    ns1:value "Decreased thyroid hormonogenesis" .
+
+ns2:Dementia a ns1:Symptom .
+
+ns2:DepositionOfCarotene a ns1:Cause .
+
+ns2:DermatologicManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:Carotenemia,
+        ns2:CoarseHair,
+        ns2:DryHair,
+        ns2:FacialPuffiness,
+        ns2:Macroglossia,
+        ns2:Myxedema,
+        ns2:ScalySkin,
+        ns2:SparseHair,
+        ns2:ThickSkin .
+
+ns2:DesiccatedAnimalThyroidExtract a ns1:Medication ;
+    ns1:value "Desiccated Animal Thyroid Extract" .
+
+ns2:Dilation a ns1:Cause .
+
+ns2:DiseaseInHypothalamusOrPituitary a ns1:Condition ;
+    ns1:value "Disease in the hypothalamus or pituitary" .
+
+ns2:DiseaseInThyroid a ns1:Condition ;
+    ns1:value "Disease in the thyroid" .
+
+ns2:DroopyEyelids a ns1:Symptom ;
+    ns1:Symptom.cause ns2:DecreasedAdrenergicDrive .
+
+ns2:Drugs a ns1:Medication ;
+    ns1:affects ns2:MetabolicClearance,
+        ns2:T4Absorption .
+
+ns2:DrugsSuppressingCNS a ns1:PrecipitatingFactor ;
+    ns1:PrecipitatingFactor.description "Drugs that suppress the central nervous system" .
+
+ns2:DullFacialExpression a ns1:Symptom .
+
+ns2:ElevatedTSH a ns1:Observation ;
+    ns1:value "Elevated TSH" .
+
+ns2:EndemicGoiter a ns1:Condition ;
+    ns1:value "Endemic goiter" .
+
+ns2:EnlargedHeart a ns1:Symptom ;
+    ns1:Symptom.cause ns2:Dilation,
+        ns2:PericardialEffusion .
+
+ns2:ExposureToCold a ns1:PrecipitatingFactor ;
+    ns1:PrecipitatingFactor.description "Exposure to cold" .
+
+ns2:ExtremeHypothermia a ns1:Symptom ;
+    ns1:Symptom.description "Extreme hypothermia (temperature 24° to 32.2° C)" .
+
+ns2:FacialPuffiness a ns1:Symptom .
+
+ns2:Feet a ns1:BodySite .
+
+ns2:FetalDevelopment a ns1:Condition ;
+    ns1:value "Fetal development" .
+
+ns2:Forgetfulness a ns1:Symptom .
+
+ns2:FreeT4 a ns1:Observation ;
+    ns1:value "Free T4" .
+
+ns2:FreeT4Level a ns1:Observation ;
+    ns1:value "Free thyroxine (T4) level",
+        "Low" .
+
+ns2:GastrointestinalManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:Constipation .
+
+ns2:GrowthHormoneDeficiency a ns1:Condition ;
+    ns1:value "Growth Hormone Deficiency" .
+
+ns2:GynecologicManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:Menorrhagia,
+        ns2:SecondaryAmenorrhea .
+
+ns2:Hands a ns1:BodySite .
+
+ns2:HashimotoThyroiditis a ns1:Condition ;
+    ns1:name "Hashimoto thyroiditis" ;
+    ns1:resultIn ns2:FirmGoiter,
+        ns2:ShrunkenFibroticThyroid .
+
+ns2:HighSerumCholesterol a ns1:Observation ;
+    ns1:name "High Serum Cholesterol" .
+
+ns2:HighTSHLevels a ns1:Observation ;
+    ns1:name "High TSH levels" .
+
+ns2:History a ns1:DiagnosticMethod ;
+    ns1:DiagnosticMethod.description "History" .
+
+ns2:HoarseSlowSpeech a ns1:Sign ;
+    ns1:name "Hoarse slow speech" .
+
+ns2:HoarseVoice a ns1:Symptom .
+
+ns2:HodgkinLymphoma a ns1:Condition ;
+    ns1:name "Hodgkin lymphoma" ;
+    ns1:relatedTo ns2:RadiationTherapy .
+
+ns2:Hypercholesterolemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "13644009" ;
+                    ns1:display "Hypercholesterolemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Hypochromic a ns1:Observation ;
+    ns1:name "Hypochromic" .
+
+ns2:Hypoglycemia a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302866003" ;
+                    ns1:display "Hypoglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedCondition ns2:AdrenalInsufficiency,
+        ns2:GrowthHormoneDeficiency .
+
+ns2:HypothalamicDisease a ns1:Condition ;
+    ns1:name "Hypothalamic disease" .
+
+ns2:HypothalamicPituitaryAxis a ns1:BodyStructure ;
+    ns1:name "Hypothalamic-Pituitary Axis" .
+
+ns2:Hypothalamus a ns1:BodyStructure ;
+    ns1:definition "The hypothalamus produces insufficient thyrotropin-releasing hormone (TRH)." ;
+    ns1:name "Hypothalamus" ;
+    ns1:produces ns2:TRH .
+
+ns2:Hypothermia a ns1:Symptom .
+
+ns2:Illness a ns1:PrecipitatingFactor ;
+    ns1:PrecipitatingFactor.description "Illness" .
+
+ns2:Infection a ns1:PrecipitatingFactor ;
+    ns1:PrecipitatingFactor.description "Infection" .
+
+ns2:InfiltrationWithMucopolysaccharides a ns1:Cause .
+
+ns2:InheritedEnzymaticDefects a ns1:Condition ;
+    ns1:name "Inherited enzymatic defects" ;
+    ns1:resultIn ns2:AlteredThyroidHormoneSynthesis,
+        ns2:GoitrousHypothyroidism .
+
+ns2:IntellectualDisability a ns1:Condition ;
+    ns1:name "Intellectual disability" .
+
+ns2:InterferonAlfa a ns1:Substance ;
+    ns1:name "Interferon-alfa" ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:IodineContainingDrugs a ns1:Substance ;
+    ns1:name "Iodine-containing drugs" ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:IodineDeficiency a ns1:Condition ;
+    ns1:causedBy ns2:DecreasedThyroidHormonogenesis ;
+    ns1:name "Iodine deficiency" ;
+    ns1:resultIn ns2:CongenitalHypothyroidism,
+        ns2:EndemicGoiter,
+        ns2:GoitrousHypothyroidism .
+
+ns2:IodineTrapping a ns1:Observation ;
+    ns1:name "Iodine trapping" .
+
+ns2:Levothyroxine a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:administrationCondition ns2:CortisolSecretion,
+        ns2:CortisolTherapy ;
+    ns1:affects ns2:FreeT4Level ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "710809001" ;
+                    ns1:display "Levothyroxine" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:contraindication ns2:AdrenalCrisis ;
+    ns1:dosage [ ns1:dosageInstruction "100 mcg or 1.7 mcg/kg orally once a day for young or middle-aged patients",
+                "75 to 150 mcg orally once a day",
+                "adjusted until TSH levels are in midnormal range" ] ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "37.5 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5000000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.088 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "500 mcg / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.050 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15000000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "13 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".075 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.05 mg" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "7500000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "75 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mcg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution / drops" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "62.5 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "13 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20000000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "13 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "13700000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "175 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "137 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 mcg / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "160 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "112 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".1 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "200 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.300 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "200 mcg / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "100 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".025 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.025 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, sugar coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.1 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 Mikrogramm/5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".1 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "13 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.088 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "88 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "13 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".112 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "40 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.2 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "62.5 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "11200000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "17500000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.025 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.175 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "150 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".05 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.050 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.112 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.1 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.137 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".137 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "62 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "100 mcg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 µg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 Mikrogramm/5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".125 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "20 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "25 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.175 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.200 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "37.5 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.2 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.112 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "137 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "500 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.0500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.075 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".05 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "112 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 cg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "150.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "13 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.3 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mcg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 MIKROGRAMM" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "8800000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "175 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "50 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 MCG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mcg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Emulsion" ;
+            ns2:route "Cutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "44 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".3 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.125 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".088 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "125 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "44 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.150 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "112 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.125 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "137 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 MICROGRAMMI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "63 UG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 Mikrogramm/5ml" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "88 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "88 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 Mikrogramm" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 ug/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "40 mcg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.1 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.075 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".150 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "175 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.05 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mcg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength ".2 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "200 ug/1" ],
+        [ ns1:timing "Annual measurement of serum TSH and free T4 to assess progress of the condition if untreated or to adjust the levothyroxine dosage." ] ;
+    ns1:indication [ ns1:condition ns2:Atherosclerosis,
+                ns2:Depression,
+                ns2:Fatigue,
+                ns2:FetalDevelopment,
+                ns2:Hypercholesterolemia,
+                ns2:OvertHypothyroidism,
+                ns2:Pregnancy,
+                ns2:SubclinicalHypothyroidism ] .
+
+ns2:LevothyroxineTherapy a ns1:Medication ;
+    ns1:description "In older patients, levothyroxine therapy is begun with low doses, usually 25 mcg once a day. Maintenance doses may also need to be lower in older patients." ;
+    ns1:dosage "25 mcg once a day" ;
+    ns1:dosageAdjustment "Maintenance doses may also need to be lower in older patients." .
+
+ns2:Liothyronine a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:affects ns2:SerumT3Levels ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "61275002" ;
+                    ns1:display "Liothyronine" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MCG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 MCG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution / drops" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 MCG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 ug/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 MCG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 MCG/ML" ] .
+
+ns2:Lithium a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "85899009" ;
+                    ns1:display "Lithium" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:LittleOrNoFunction a ns1:Observation ;
+    ns1:name "Little or no function" .
+
+ns2:LowBloodPressure a ns1:Observation ;
+    ns1:value "Low Blood Pressure" .
+
+ns2:LowDose a ns1:MedicationAdministration ;
+    ns1:affects ns2:SerumTSHLevels .
+
+ns2:LowSerumCholesterol a ns1:Observation ;
+    ns1:value "Low Serum Cholesterol" .
+
+ns2:LowT4AndT3 a ns1:Observation ;
+    ns1:value "Low T4 and T3" .
+
+ns2:LowTSH a ns1:Observation ;
+    ns1:value "Low TSH" .
+
+ns2:LowTSHLevels a ns1:Observation ;
+    ns1:value "Low TSH levels" .
+
+ns2:Macrocytic a ns1:Observation ;
+    ns1:value "Macrocytic" .
+
+ns2:Macroglossia a ns1:Symptom ;
+    ns1:Symptom.cause ns2:DepositionOfProteinaceousGroundSubstance .
+
+ns2:MaintenanceDose a ns1:MedicationAdministration ;
+    ns1:relatedTo ns2:Drugs,
+        ns2:PregnantWomen .
+
+ns2:MeasuringTSHLevels a ns1:Observation ;
+    ns1:description "Measuring TSH levels" ;
+    ns1:relatedTo ns2:Screening .
+
+ns2:MechanicalVentilatoryAssistance a ns1:Procedure ;
+    ns1:description "Mechanical ventilatory assistance" ;
+    ns1:reason "ventilation is compromised" .
+
+ns2:Menorrhagia a ns1:Observation,
+        ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "386692008" ;
+                    ns1:display "Menorrhagia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedCondition ns2:Hypothyroidism .
+
+ns2:MentalFogginess a ns1:Symptom .
+
+ns2:MetabolicClearance a ns1:Observation .
+
+ns2:MetabolicManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:ColdIntolerance,
+        ns2:Hypothermia,
+        ns2:ModestWeightGain .
+
+ns2:MinimalMacroglossia a ns1:Observation ;
+    ns1:name "Minimal Macroglossia" .
+
+ns2:ModestWeightGain a ns1:Symptom ;
+    ns1:Symptom.cause ns2:DecreasedMetabolism,
+        ns2:FluidRetention .
+
+ns2:Myxedema a ns1:Symptom .
+
+ns2:MyxedemaMadness a ns1:Condition .
+
+ns2:Neonates a ns1:Group ;
+    ns1:name "Neonates" .
+
+ns2:NeurologicManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:Forgetfulness,
+        ns2:Paresthesias,
+        ns2:SlowingOfReflexes .
+
+ns2:NoSerousPericardialEffusions a ns1:Observation ;
+    ns1:name "No Serous Pericardial Effusions" .
+
+ns2:NormalT3 a ns1:Observation ;
+    ns1:name "Normal T3" .
+
+ns2:NormocyticNormochromic a ns1:Observation ;
+    ns1:value "Normocytic-Normochromic" .
+
+ns2:OcularManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:DroopyEyelids,
+        ns2:PeriorbitalSwelling .
+
+ns2:OlderAdultsWithRiskFactors a ns1:Group ;
+    ns1:value "Older adults with risk factors" .
+
+ns2:Oral_T4 a ns1:Procedure ;
+    ns1:description "Conversion to oral T4 when patient is stable" .
+
+ns2:OtherManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:AbdominalEffusion,
+        ns2:HoarseVoice,
+        ns2:PleuralEffusion,
+        ns2:SlowSpeech .
+
+ns2:OvertHypothyroidism a ns1:Condition ;
+    ns1:definition "Low serum levels of free T4 within the next 10 years in patients with serum TSH > 10 mU/L." ;
+    ns1:name "Overt hypothyroidism" .
+
+ns2:Palms a ns1:BodySite .
+
+ns2:Paresthesias a ns1:Symptom ;
+    ns1:Symptom.cause ns2:CarpalTunnelSyndrome ;
+    ns1:Symptom.location ns2:Feet,
+        ns2:Hands .
+
+ns2:PeriorbitalRegion a ns1:BodySite .
+
+ns2:PeriorbitalSwelling a ns1:Symptom ;
+    ns1:Symptom.cause ns2:InfiltrationWithMucopolysaccharides .
+
+ns2:PersonalityChanges a ns1:Symptom .
+
+ns2:PhysicalExamination a ns1:DiagnosticMethod ;
+    ns1:DiagnosticMethod.description "Physical examination" .
+
+ns2:Pituitary a ns1:BodyStructure ;
+    ns1:definition "The pituitary produces insufficient TSH." ;
+    ns1:produces ns2:TSH ;
+    ns1:value "Pituitary" .
+
+ns2:PituitaryDisease a ns1:Condition ;
+    ns1:name "Pituitary disease" .
+
+ns2:PleuralEffusion a ns1:Symptom ;
+    ns1:Symptom.development ns2:SlowDevelopment ;
+    ns1:Symptom.effect ns2:RareHemodynamicDistress,
+        ns2:RareRespiratoryDistress .
+
+ns2:PostTherapeuticHypothyroidism a ns1:Condition ;
+    ns1:causedBy ns2:RadioactiveIodineTherapy,
+        ns2:SurgeryForHyperthyroidismOrGoiter ;
+    ns1:name "Post-therapeutic hypothyroidism" .
+
+ns2:Pregnancy a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "77386006" ;
+                    ns1:display "Pregnancy" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PregnantWomen a ns1:Patient .
+
+ns2:PrimaryHypothyroidism a ns1:Condition,
+        ns1:Subtype ;
+    ns1:Condition.sign ns2:CardiovascularManifestations,
+        ns2:DermatologicManifestations,
+        ns2:GastrointestinalManifestations,
+        ns2:GynecologicManifestations,
+        ns2:MetabolicManifestations,
+        ns2:NeurologicManifestations,
+        ns2:OcularManifestations,
+        ns2:OtherManifestations,
+        ns2:PsychiatricManifestations ;
+    ns1:Condition.symptom ns2:ColdIntolerance,
+        ns2:FluidRetention,
+        ns2:MentalFogginess,
+        ns2:Puffiness,
+        ns2:Tiredness ;
+    ns1:associatedWith ns2:CongenitalHypothyroidism,
+        ns2:FirmGoiter,
+        ns2:HashimotoThyroiditis,
+        ns2:InheritedEnzymaticDefects,
+        ns2:IodineDeficiency,
+        ns2:PostTherapeuticHypothyroidism,
+        ns2:ShrunkenFibroticThyroid ;
+    ns1:bodySite ns2:Thyroid ;
+    ns1:causedBy ns2:DecreasedSecretionOfT4AndT3,
+        ns2:DiseaseInThyroid ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "57185003" ;
+                    ns1:display "Primary Hypothyroidism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Primary hypothyroidism is due to decreased secretion of T4 and T3 from the thyroid." ;
+    ns1:hasSymptom ns2:ElevatedTSH,
+        ns2:HighSerumCholesterol,
+        ns2:LowT4,
+        ns2:NormalT3 ;
+    ns1:relatedCondition ns2:HighTSHLevels ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism .
+
+ns2:PsychiatricManifestations a ns1:Manifestation ;
+    ns1:Manifestation.symptom ns2:Dementia,
+        ns2:Depression,
+        ns2:DullFacialExpression,
+        ns2:PersonalityChanges,
+        ns2:Psychosis .
+
+ns2:Psychosis a ns1:Symptom ;
+    ns1:Symptom.subtype ns2:MyxedemaMadness .
+
+ns2:Puffiness a ns1:Symptom ;
+    ns1:Symptom.location ns2:PeriorbitalRegion .
+
+ns2:RadioactiveIodineTherapy a ns1:Procedure ;
+    ns1:name "Radioactive iodine therapy" .
+
+ns2:RapidDiagnosisAndTreatment a ns1:Procedure ;
+    ns1:name "Rapid diagnosis and treatment" .
+
+ns2:RareRespiratoryDistress a ns1:Effect .
+
+ns2:RespiratoryDepression a ns1:Symptom ;
+    ns1:Symptom.description "Respiratory depression with carbon dioxide retention" .
+
+ns2:ScalySkin a ns1:Symptom .
+
+ns2:Screening a ns1:Procedure ;
+    ns1:description "Screening for hypothyroidism" ;
+    ns1:method ns2:MeasuringTSHLevels ;
+    ns1:reasonCode ns2:Hypothyroidism ;
+    ns1:targetPopulation ns2:Neonates,
+        ns2:OlderAdultsWithRiskFactors .
+
+ns2:SecondaryAmenorrhea a ns1:Symptom .
+
+ns2:Seizures a ns1:Symptom ;
+    ns1:Symptom.description "Seizures" .
+
+ns2:SerumTSH a ns1:DiagnosticReport,
+        ns1:Observation ;
+    ns1:interpretation "Best diagnostic test" ;
+    ns1:referenceRange [ ns1:high "10 mU/L" ;
+            ns1:low "4.5 mU/L" ] ;
+    ns1:value "Serum TSH" .
+
+ns2:SkinDepigmentation a ns1:Observation ;
+    ns1:name "Skin Depigmentation" .
+
+ns2:SlowHeartRate a ns1:Symptom ;
+    ns1:Symptom.cause ns2:DecreasedAdrenergicStimulation,
+        ns2:DecreasedThyroidHormone .
+
+ns2:SlowSpeech a ns1:Symptom .
+
+ns2:SlowingOfReflexes a ns1:Symptom ;
+    ns1:Symptom.phase ns2:RelaxationPhase .
+
+ns2:SmallHeart a ns1:Observation ;
+    ns1:name "Small Heart" .
+
+ns2:Soles a ns1:BodySite .
+
+ns2:SparseHair a ns1:Symptom .
+
+ns2:SubclinicalHypothyroidism a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "54823002" ;
+                    ns1:display "Subclinical Hypothyroidism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Elevated serum TSH in patients with absent or minimal symptoms of hypothyroidism and normal serum levels of free thyroxine (T4)." .
+
+ns2:SupportiveCare a ns1:Procedure ;
+    ns1:name "Supportive care as needed" .
+
+ns2:SurgeryForHyperthyroidismOrGoiter a ns1:Procedure ;
+    ns1:name "Surgery for hyperthyroidism or goiter" .
+
+ns2:T4Absorption a ns1:Observation .
+
+ns2:T4_IV a ns1:Procedure ;
+    ns1:initialDose "300 to 500 mcg IV" ;
+    ns1:maintenanceDose "75 to 100 mcg once a day" ;
+    ns1:name "T4 given IV" .
+
+ns2:TSH a ns1:Observation,
+        ns1:Substance ;
+    ns1:definition "Thyroid-stimulating hormone." ;
+    ns1:interpretation "midnormal range" ;
+    ns1:name "TSH" .
+
+ns2:Therapy a ns1:Procedure ;
+    ns1:hasPart ns2:LowDose,
+        ns2:MaintenanceDose .
+
+ns2:ThickSkin a ns1:Symptom .
+
+ns2:ThyroidEnlargement a ns1:Observation ;
+    ns1:name "Thyroid enlargement" .
+
+ns2:ThyroidFunctionEvaluation a ns1:Procedure ;
+    ns1:method "Measurement of serum TSH" ;
+    ns1:name "Thyroid function evaluation" ;
+    ns1:performedAt "6- to 12-month intervals" ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:ThyroidFunctionTests a ns1:DiagnosticProcedure ;
+    ns1:name "Thyroid function tests" .
+
+ns2:ThyroidHormoneCombination a ns1:Medication ;
+    ns1:name "Combination of T4 and T3" .
+
+ns2:Tiredness a ns1:Symptom .
+
+ns2:Trauma a ns1:PrecipitatingFactor ;
+    ns1:PrecipitatingFactor.description "Trauma" .
+
+ns2:TypicalFacialAppearance a ns1:Sign ;
+    ns1:name "Typical facial appearance" .
+
+ns2:TyrosineKinaseInhibitors a ns1:Substance ;
+    ns1:name "Tyrosine kinase inhibitors" ;
+    ns1:relatedTo ns2:Hypothyroidism .
+
+ns2:WeightGain a ns1:Symptom ;
+    ns1:value "Weight gain" .
+
+ns2:YoungerAdults a ns1:Group ;
+    ns1:description "Younger adults." .
+
+ns2:CongenitalHypothyroidism a ns1:Condition ;
+    ns1:name "Congenital hypothyroidism" ;
+    ns1:resultIn ns2:IntellectualDisability .
+
+ns2:CortisolSecretion a ns1:Observation ;
+    ns1:name "cortisol secretion" .
+
+ns2:CortisolTherapy a ns1:Procedure ;
+    ns1:name "cortisol therapy" .
+
+ns2:DepositionOfProteinaceousGroundSubstance a ns1:Cause .
+
+ns2:Depression a ns1:Symptom ;
+    ns1:name "Depression" .
+
+ns2:DryHair a ns1:Observation,
+        ns1:Symptom ;
+    ns1:name "Dry Hair" .
+
+ns2:DrySkin a ns1:Observation,
+        ns1:Sign ;
+    ns1:name "Dry Skin" .
+
+ns2:Fatigue a ns1:Symptom ;
+    ns1:name "Fatigue" .
+
+ns2:FirmGoiter a ns1:Condition ;
+    ns1:name "Firm goiter" .
+
+ns2:FluidRetention a ns1:Symptom .
+
+ns2:GoitrousHypothyroidism a ns1:Condition ;
+    ns1:name "Goitrous hypothyroidism" .
+
+ns2:IncreasedTSH a ns1:Observation ;
+    ns1:name "Increased TSH" .
+
+ns2:LowT4 a ns1:Observation ;
+    ns1:name "Low T4" .
+
+ns2:OlderAdults a ns1:AgeRange,
+        ns1:Group ;
+    ns1:description "Older adults, particularly those > 65 years old." ;
+    ns1:hasSymptom ns2:Symptoms ;
+    ns1:name "Older adults" .
+
+ns2:PericardialEffusion a ns1:Symptom ;
+    ns1:Symptom.development ns2:SlowDevelopment ;
+    ns1:Symptom.effect ns2:RareHemodynamicDistress .
+
+ns2:RareHemodynamicDistress a ns1:Effect .
+
+ns2:SerumTSHLevels a ns1:Observation ;
+    ns1:relatedTo ns2:SecondaryHypothyroidism .
+
+ns2:ShrunkenFibroticThyroid a ns1:Condition ;
+    ns1:name "Shrunken fibrotic thyroid" ;
+    ns1:resultIn ns2:LittleOrNoFunction .
+
+ns2:SlowDevelopment a ns1:Development .
+
+ns2:Symptoms a ns1:Observation ;
+    ns1:component [ ns1:value "Cognitive changes",
+                "Cold intolerance",
+                "Constipation",
+                "Dull facial expression",
+                "Personality changes",
+                "Puffy face" ] ;
+    ns1:description "Older patients have significantly fewer symptoms than do younger adults, and complaints are often subtle and vague. Many older patients with hypothyroidism present with nonspecific geriatric syndromes—confusion, anorexia, weight loss, falling, incontinence, and decreased mobility. Musculoskeletal symptoms (especially arthralgias) occur often, but arthritis is rare. Muscular aches and weakness, often mimicking polymyalgia rheumatica or polymyositis, and an elevated creatine kinase (CK) level may occur. In older patients, hypothyroidism may mimic dementia or parkinsonism." ;
+    ns1:value "Symptoms" .
+
+ns2:TRH a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "10534002" ;
+                    ns1:display "TRH" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Thyrotropin-releasing hormone." .
+
+ns2:ColdIntolerance a ns1:Symptom ;
+    ns1:name "Cold intolerance" .
+
+ns2:RadiationTherapy a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "1287742003" ;
+                    ns1:display "Radiation Therapy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:CancerOfLarynx,
+        ns2:HodgkinLymphoma,
+        ns2:Hypothyroidism .
+
+ns2:SerumT3Levels a ns1:Observation ;
+    ns1:affects ns2:CardiacRisks .
+
+ns2:SecondaryHypothyroidism a ns1:Condition,
+        ns1:Subtype ;
+    ns1:bodySite ns2:HypothalamicPituitaryAxis ;
+    ns1:causedBy ns2:DiseaseInHypothalamusOrPituitary,
+        ns2:Hypothalamus,
+        ns2:Pituitary ;
+    ns1:characteristic ns2:AtrophicBreasts,
+        ns2:DryHair,
+        ns2:DrySkin,
+        ns2:Hypoglycemia,
+        ns2:LowBloodPressure,
+        ns2:MinimalMacroglossia,
+        ns2:NoSerousPericardialEffusions,
+        ns2:SkinDepigmentation,
+        ns2:SmallHeart ;
+    ns1:clinicalStatus "active",
+        "uncommon" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "82598004" ;
+                    ns1:display "Secondary Hypothyroidism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Secondary hypothyroidism occurs when the hypothalamus produces insufficient thyrotropin-releasing hormone (TRH) or the pituitary produces insufficient TSH." ;
+    ns1:hasSymptom ns2:LowSerumCholesterol,
+        ns2:LowT4,
+        ns2:LowTSH ;
+    ns1:relatedCondition ns2:HypothalamicDisease,
+        ns2:LowTSHLevels,
+        ns2:PituitaryDisease ;
+    ns1:relatedTo ns2:DiagnosisOfHypothyroidism ;
+    ns1:requires ns2:CortisolSecretion,
+        ns2:CortisolTherapy .
+
+ns2:DiagnosisOfHypothyroidism a ns1:Condition ;
+    ns1:code "Diagnosis of Hypothyroidism" .
+
+ns2:Hypothyroidism a ns1:Condition ;
+    ns1:affects ns2:OlderAdults,
+        ns2:YoungerAdults ;
+    ns1:clinicalStatus "Active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "40930008" ;
+                    ns1:display "Hypothyroidism" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Thyroid hormone deficiency" ;
+    ns1:description "Hypothyroidism is particularly common among older adults. It occurs in close to 10% of women and 6% of men > 65. Although typically easy to diagnose in younger adults, hypothyroidism may be subtle and manifest atypically in older adults." ;
+    ns1:diagnosis ns2:ThyroidFunctionTests ;
+    ns1:hasSymptom ns2:Symptoms ;
+    ns1:management ns2:AdministrationOfThyroxine ;
+    ns1:manifestation "Subtle" ;
+    ns1:occurrence ns2:AnyAge,
+        ns2:OlderAdults ;
+    ns1:relatedCondition ns2:SecondaryHypothyroidism ;
+    ns1:relatedTo ns2:Amiodarone,
+        ns2:CheckpointInhibitors,
+        ns2:InterferonAlfa,
+        ns2:IodineContainingDrugs,
+        ns2:Lithium,
+        ns2:RadiationTherapy,
+        ns2:ThyroidFunctionEvaluation,
+        ns2:TyrosineKinaseInhibitors ;
+    ns1:severity "Significant morbidity" ;
+    ns1:sign ns2:DrySkin,
+        ns2:HoarseSlowSpeech,
+        ns2:TypicalFacialAppearance ;
+    ns1:subtype ns2:PrimaryHypothyroidism,
+        ns2:SecondaryHypothyroidism ;
+    ns1:symptom ns2:ColdIntolerance,
+        ns2:Fatigue,
+        ns2:WeightGain ;
+    ns1:treatedBy ns2:DesiccatedAnimalThyroidExtract,
+        ns2:Levothyroxine,
+        ns2:LevothyroxineTherapy,
+        ns2:Liothyronine,
+        ns2:ThyroidHormoneCombination .
+

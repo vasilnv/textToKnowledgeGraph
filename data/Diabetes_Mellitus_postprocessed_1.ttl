@@ -1,0 +1,4819 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:AB192 a ns1:MedicationRequest .
+
+ns2:ALT-2074 a ns1:MedicationRequest .
+
+ns2:AMG-131 a ns1:MedicationRequest .
+
+ns2:AMG-222 a ns1:MedicationRequest .
+
+ns2:APD668 a ns1:MedicationRequest .
+
+ns2:AT1391 a ns1:MedicationRequest .
+
+ns2:Abatacept a ns1:Medication ;
+    ns1:affects ns2:BetaCells ;
+    ns1:description "Abatacept (CTLA-4-Ig)" .
+
+ns2:Acarbose a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code "A10BF01",
+        "Acarbose" ;
+    ns1:display "Acarbose" ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.0000 mg" ] .
+
+ns2:Acetohexamide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / tab" ] .
+
+ns2:Acetylcarnitine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "500 mg/4ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "500 MG/4ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "308 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "500 mg" ] .
+
+ns2:AcuteIllness a ns1:Condition ;
+    ns1:description "Acute illness" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:AcuteWorseningOfDiabeticComplications a ns1:Condition ;
+    ns1:description "Acute worsening of diabetic complications" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:AdjustedGoals a ns1:Goal ;
+    ns1:condition [ ns1:code ns2:CommunicationImpairment,
+                ns2:FrailOlderPatients,
+                ns2:HypoglycemiaUnawareness,
+                ns2:ShortLifeExpectancy ] ;
+    ns1:target [ ns1:measure ns2:LessStrictGlycemicControl ] .
+
+ns2:Adolescents a ns1:Patient ;
+    ns1:condition ns2:Diabetes_in_adolescents ;
+    ns1:hasSymptom ns2:Diabetic_ketoacidosis,
+        ns2:Hyperglycemia,
+        ns2:Hypoglycemia ;
+    ns1:requires ns2:Emergency_department_visits,
+        ns2:Hospitalization ;
+    ns1:requiresTreatment ns2:Individual_or_family_therapy,
+        ns2:Intensive_medical_supervision,
+        ns2:Patient_education,
+        ns2:Psychopharmacology,
+        ns2:Psychosocial_interventions .
+
+ns2:Albiglutide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "30 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "50 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "30 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "50 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "50 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "30 mg / 0.5 mL" ] .
+
+ns2:Albuminuria a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "274769005" ;
+                    ns1:display "Albuminuria" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedCondition ns2:DiabetesMellitus .
+
+ns2:Alogliptin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "6.25 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "6.25 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "6.25 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "8.500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg" ] .
+
+ns2:AlphaCell a ns1:Cell ;
+    ns1:definition "Cells in the pancreas that produce glucagon and remain unharmed in autoimmune beta-cell destruction." ;
+    ns1:description "Alpha Cell" .
+
+ns2:Anorexia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "56882008" ;
+                    ns1:display "Anorexia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Antibiotics a ns1:Procedure ;
+    ns1:Procedure.description "Debridement and antibiotics frequently result in good healing and may prevent major surgery." ;
+    ns1:Procedure.name "Antibiotics" .
+
+ns2:AntihyperglycemicMedication a ns1:Medication ;
+    ns1:name "Antihyperglycemic medication" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:AntihypertensiveMedications a ns1:Medication ;
+    ns1:name "Antihypertensive Medications" ;
+    ns1:relatedTo ns2:Hypertension .
+
+ns2:AntithymocyteGlobulin a ns1:Medication ;
+    ns1:affects ns2:BetaCells ;
+    ns1:name "Antithymocyte globulin (ATG)" .
+
+ns2:ApplyFootPowder a ns1:Procedure ;
+    ns1:Procedure.description "Nonmedicated foot powders should be applied to moist feet." ;
+    ns1:Procedure.name "Apply foot powder" .
+
+ns2:ApplyLubricant a ns1:Procedure ;
+    ns1:Procedure.description "A lubricant (eg, lanolin) should be applied to dry, scaly skin." ;
+    ns1:Procedure.name "Apply lubricant" .
+
+ns2:Arimoclomol a ns1:MedicationRequest .
+
+ns2:Atorvastatin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.85 Mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.341 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "1 kg/1kg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "4000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.640 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/301" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "20 kg/20kg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.7 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "43.376 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "60 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.648 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.7 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "86.800 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "40.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:strength "40 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.825 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.649 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.69 Mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "43.38 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, chewable" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "8000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg/301" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.825 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "21.65 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Oral" ;
+            ns2:strength "3 g/100mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.36 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "40.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "4000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ] .
+
+ns2:AvoidBarefoot a ns1:Procedure ;
+    ns1:Procedure.description "Walking barefoot should be avoided." ;
+    ns1:Procedure.name "Avoid barefoot" .
+
+ns2:AvoidItems a ns1:Procedure ;
+    ns1:Procedure.description "Adhesive plasters and tape, harsh chemicals, corn cures, water bottles, and electric pads should not be used on skin." ;
+    ns1:Procedure.name "Avoid items" .
+
+ns2:AvoidWeightBearing a ns1:Procedure ;
+    ns1:Procedure.description "Patients with neuropathic foot ulcers should avoid weight bearing until ulcers heal." ;
+    ns1:Procedure.name "Avoid weight bearing" .
+
+ns2:Azathioprine a ns1:Medication ;
+    ns1:affects ns2:AutoimmuneResponse ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372574004" ;
+                    ns1:display "Azathioprine" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:BarrettConnorE a ns1:Practitioner ;
+    ns1:name "Barrett-Connor E" .
+
+ns2:BaselineECG a ns1:Procedure ;
+    ns1:name "Baseline ECG" ;
+    ns1:reasonCode "risk of heart disease" .
+
+ns2:Becaplermin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Topical" ;
+            ns2:strength "100 ug/1g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Topical" ;
+            ns2:strength "0.01 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Cutaneous" ;
+            ns2:strength "0.01 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Topical" ;
+            ns2:strength "100 mcg / g" ] .
+
+ns2:BeckRW a ns1:Practitioner ;
+    ns1:name "Beck RW" .
+
+ns2:BetaCell a ns1:Cell ;
+    ns1:definition "Cells in the pancreas that produce insulin and are targeted in autoimmune beta-cell destruction." ;
+    ns1:name "Beta Cell" .
+
+ns2:Bexagliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ] .
+
+ns2:Bezafibrate a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Pill" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "400.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg/1" ] .
+
+ns2:Bisegliptin a ns1:MedicationRequest .
+
+ns2:BloodPressureMeasurement a ns1:Procedure ;
+    ns1:description "Measurement of blood pressure" ;
+    ns1:performedPeriod "every examination" .
+
+ns2:BloodPressureTarget a ns1:Observation ;
+    ns1:description "Blood Pressure Target" ;
+    ns1:relatedTo ns2:BloodPressure ;
+    ns1:value "< 130/80 mm Hg" .
+
+ns2:BundyBN a ns1:Practitioner ;
+    ns1:name "Bundy BN" .
+
+ns2:CLX-0921 a ns1:MedicationRequest .
+
+ns2:CRx-401 a ns1:MedicationRequest .
+
+ns2:Canagliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "150.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "50.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "300 mg" ] .
+
+ns2:CardiovascularDiseaseTesting a ns1:Procedure ;
+    ns1:description "Testing for cardiovascular disease" ;
+    ns1:reasonCode "risk of heart disease" .
+
+ns2:CertifiedClinicalLaboratory a ns1:Organization ;
+    ns1:display "Certified Clinical Laboratory" ;
+    ns1:note "Tests must be done in a certified clinical laboratory with an assay that is certified and standardized to a reference assay" .
+
+ns2:ChangeSocks a ns1:Procedure ;
+    ns1:Procedure.description "Patients should change socks or stockings daily and not wear constricting clothing (eg, garters, socks, or stockings with tight elastic tops)." ;
+    ns1:Procedure.name "Change socks" .
+
+ns2:ChronicKidneyDiseaseStage4 a ns1:Condition ;
+    ns1:note "Correlation between HbA1C and glycemic levels is poor",
+        "HbA1C can be falsely decreased" .
+
+ns2:ChronicKidneyDiseaseStage5 a ns1:Condition ;
+    ns1:note "Correlation between HbA1C and glycemic levels is poor",
+        "HbA1C can be falsely decreased" .
+
+ns2:Cirrhosis a ns1:Condition ;
+    ns1:note "Correlation between HbA1C and glycemic levels is poor",
+        "HbA1C can be falsely decreased" .
+
+ns2:ContinuousSubcutaneousInfusion a ns1:Procedure ;
+    ns1:name "Continuous subcutaneous infusion" ;
+    ns1:partOf ns2:BasalBolusTherapy ;
+    ns1:usedIn ns2:RapidActingInsulin .
+
+ns2:Counseling a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "409063005" ;
+                    ns1:display "Counseling" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Diabetes outpatient self-management training services" ;
+    ns1:outcome "Addressing risk of developing diabetes and importance of lifestyle changes" ;
+    ns1:reasonReference ns2:ImpairedGlucoseRegulation .
+
+ns2:CutToenails a ns1:Procedure ;
+    ns1:Procedure.description "Toenails should be cut, preferably by a podiatrist, straight across and not too close to the skin." ;
+    ns1:Procedure.name "Cut toenails" .
+
+ns2:Cyclosporine a ns1:Medication ;
+    ns1:affects ns2:AutoimmuneResponse ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "387467008" ;
+                    ns1:display "Cyclosporine" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:DPP4Inhibitors a ns1:Medication ;
+    ns1:description "Dipeptidyl peptidase-4 inhibitors" ;
+    ns1:effect ns2:WeightNeutral ;
+    ns1:subClassOf ns2:AntihyperglycemicMedications .
+
+ns2:Dapagliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ] .
+
+ns2:Dasiglucagon a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "0.6 mg/0.6mL" ] .
+
+ns2:Debridement a ns1:Procedure ;
+    ns1:Procedure.description "Debridement and antibiotics frequently result in good healing and may prevent major surgery." ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "36777000" ;
+                    ns1:display "Debridement" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:DecreasedPulses a ns1:Observation ;
+    ns1:description "Decreased pulses" .
+
+ns2:DeficiencyAnemiaTreatment a ns1:Procedure ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:Desmopressin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous; Subcutaneous" ;
+            ns2:strength "40 ug/10mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous; Subcutaneous" ;
+            ns2:strength "15 µg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular; Intravenous; Subcutaneous" ;
+            ns2:strength "4 cg" ] .
+
+ns2:Detemir a ns1:Medication ;
+    ns1:Medication.subtype ns2:LongActingInsulin ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "414515005" ;
+                    ns1:display "Detemir" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:DiaPep_277 a ns1:MedicationRequest .
+
+ns2:DiabetesCare a ns1:Procedure ;
+    ns1:description "Careful adjustment for patient factors, including those related to age and lifestyle, comorbid conditions, and need for treatment of other acute or chronic conditions." .
+
+ns2:DiabetesMellitusControl a ns1:Observation ;
+    ns1:focus ns2:Fructosamine,
+        ns2:Glucose,
+        ns2:HbA1C ;
+    ns1:method ns2:MeasuringBloodLevels .
+
+ns2:DiabetesMonitoring a ns1:Observation ;
+    ns1:description "Monitoring for complications of diabetes" .
+
+ns2:DiabetesPharmacotherapy a ns1:Procedure ;
+    ns1:description "Diabetes pharmacotherapy" .
+
+ns2:DiabetesSymptoms a ns1:Observation ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:description "Diabetes symptoms" .
+
+ns2:DiabetesTreatment a ns1:Procedure ;
+    ns1:goal ns2:ControlHyperglycemia,
+        ns2:MinimizeHypoglycemicEpisodes,
+        ns2:PreventComplications,
+        ns2:RelieveSymptoms .
+
+ns2:Diagnosis a ns1:Procedure ;
+    ns1:basedOn ns2:Elevated2HourValueOnOralGlucoseToleranceTest,
+        ns2:ElevatedFastingPlasmaGlucoseLevel,
+        ns2:ElevatedHemoglobinA1C ;
+    ns1:description "Diagnosis" .
+
+ns2:DiagnosisOfDiabetesMellitus a ns1:Condition ;
+    ns1:code "Diabetes Mellitus" ;
+    ns1:method ns2:FastingPlasmaGlucose,
+        ns2:GlycosylatedHemoglobin,
+        ns2:OralGlucoseToleranceTesting .
+
+ns2:Diarrhea a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "62315008" ;
+                    ns1:display "Diarrhea" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:DietaryRestrictions a ns1:Condition ;
+    ns1:name "Dietary restrictions" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Donislecel a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravascular" ;
+            ns2:strength "5000 [arb'U]/400mL" ] .
+
+ns2:DualIncretinAgonist a ns1:Medication ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:name "Dual incretin agonist" ;
+    ns1:subClassOf ns2:AntihyperglycemicMedications .
+
+ns2:Dulaglutide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "3 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "1.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "4.5 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "1.5 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "0.75 mg/0.5mL" ].
+
+ns2:EarlyCombinationTherapy a ns1:Procedure ;
+    ns1:description "Early combination therapy" .
+
+ns2:Empagliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg" ] .
+
+ns2:Ertugliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ] .
+
+ns2:Euglycemia a ns1:Observation ;
+    ns1:Observation.relatedTo ns2:DextroseSolution ;
+    ns1:name "Euglycemia" ;
+    ns1:relatedTo ns2:SlidingScaleInsulin .
+
+ns2:Exenatide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for suspension, extended release; kit" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "2 mg / dose" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "250.000 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "10 MICROGRAMMI" ] .
+
+ns2:Finerenone a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ] .
+
+ns2:FingerstickGlucoseMonitoring a ns1:Device ;
+    ns1:Device.property [ ns1:Device.property.type "Measure" ;
+            ns1:Device.property.value "Capillary blood glucose" ],
+        [ ns1:Device.property.type "Require" ;
+            ns1:Device.property.value "Test strips" ],
+        [ ns1:Device.property.type "Require" ;
+            ns1:Device.property.value "Means for pricking the skin" ],
+        [ ns1:Device.property.type "Require" ;
+            ns1:Device.property.value "Obtaining a blood sample" ],
+        [ ns1:Device.property.type "Feature" ;
+            ns1:Device.property.value "Time to results" ],
+        [ ns1:Device.property.type "Feature" ;
+            ns1:Device.property.value "Size of display panel" ],
+        [ ns1:Device.property.type "Feature" ;
+            ns1:Device.property.value "Voice readout" ],
+        [ ns1:Device.property.type "Feature" ;
+            ns1:Device.property.value "Smartphone app connectivity" ] ;
+    ns1:Device.type "Fingerstick glucose monitors" .
+
+ns2:FolateDeficiencyAnemia a ns1:Condition ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:FootCare a ns1:Procedure ;
+    ns1:Procedure.description "Regular professional podiatric care, including trimming of toenails and calluses, is important for patients with sensory loss or circulatory impairment." ;
+    ns1:Procedure.name "Foot care" .
+
+ns2:FootExamination a ns1:Procedure ;
+    ns1:method "monofilament esthesiometer" ;
+    ns1:name "Foot examination" ;
+    ns1:performedPeriod "annually" ;
+    ns1:reasonCode "impaired sense of pressure, vibration, pain, or temperature" .
+
+ns2:ForlenzaGP a ns1:Practitioner ;
+    ns1:name "Forlenza GP" .
+
+ns2:Fosinopril a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 MG" ] .
+
+ns2:FowlerSE a ns1:Practitioner ;
+    ns1:name "Fowler SE" .
+
+ns2:FunduscopicExamination a ns1:Procedure ;
+    ns1:name "Funduscopic examination" ;
+    ns1:performedBy "ophthalmologist" ;
+    ns1:performedPeriod "annually for patients with retinopathy, every 2 years for those without retinopathy" ;
+    ns1:reasonCode "retinopathy" .
+
+ns2:FungalNailInfection a ns1:Condition ;
+    ns1:name "Fungal nail infection" .
+
+ns2:GIP a ns1:Medication ;
+    ns1:name "Glucose-dependent insulinotropic polypeptide" .
+
+ns2:Gangrene a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372070002" ;
+                    ns1:display "Gangrene" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:GastricAspirationTherapy a ns1:Device ;
+    ns1:name "Gastric aspiration therapy" ;
+    ns1:subClassOf ns2:MedicalDevices .
+
+ns2:GastricBypass a ns1:Procedure ;
+    ns1:name "Gastric bypass" ;
+    ns1:subClassOf ns2:SurgicalTreatment .
+
+ns2:Glargine a ns1:Medication ;
+    ns1:Medication.subtype ns2:LongActingInsulin ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "411529005" ;
+                    ns1:display "Glargine" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Glimepiride a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "4 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "8 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "3 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 Mg" ] .
+
+ns2:Gliquidone a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 MG" ] .
+
+ns2:GlucoseControl a ns1:Procedure ;
+    ns1:description "Glucose control" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:GlucoseMonitoring a ns1:Procedure ;
+    ns1:method [ ns1:name ns2:ContinuousGlucoseMonitoring,
+                ns2:HomeMonitoring ] .
+
+ns2:Glyburide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1.5 mg/1" ] .
+
+ns2:GwiltM a ns1:Practitioner ;
+    ns1:name "Gwilt M" .
+
+ns2:HE3286 a ns1:MedicationRequest .
+
+ns2:HairLoss a ns1:Observation ;
+    ns1:name "Hair loss" .
+
+ns2:HbA1CMonitoring a ns1:Procedure ;
+    ns1:frequency [ ns1:description "Every 3 months",
+                "Every 6 months for good control" ] ;
+    ns1:method ns2:VenousPlasma .
+
+ns2:HbCDisease a ns1:Condition ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:HbSDisease a ns1:Condition ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:HemoglobinA1C a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "408591000" ;
+                    ns1:display "HbA1C" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:goal "goal HbA1C is < 7% for most patients" ;
+    ns1:interpretation "assesses control between physician visits",
+        "reflects glucose control over the preceding 3 months" ;
+    ns1:note "Control suggested by HbA1C values sometimes differs from daily glucose readings",
+        "False elevations of HbA1C may occur with low red blood cell turnover, high-dose aspirin, and high blood alcohol concentrations",
+        "Falsely normal HbA1C values occur with increased red blood cell turnover, hemolytic anemias, hemoglobinopathies, or during treatment of deficiency anemias",
+        "HbA1C can be falsely decreased in patients with cirrhosis or chronic kidney disease stages 4 and 5",
+        "Home testing kits are available but used infrequently",
+        "In patients with cirrhosis or chronic kidney disease stages 4 and 5, correlation between HbA1C and glycemic levels is poor",
+        "Pregnancy also falsely decreases HbA1C values",
+        "goal should be individualized" ;
+    ns1:recommendation "should be assessed at least twice a year in patients with type 2 diabetes when plasma glucose appears stable",
+        "should be assessed more frequently when control is uncertain",
+        "should be assessed quarterly in patients with type 1 diabetes" .
+
+ns2:Hemoglobinopathy a ns1:Condition ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:HemolyticAnemia a ns1:Condition ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:Hepatitis_B_Vaccine_\(Recombinant\) a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, suspension" ;
+            ns2:route "Intramuscular; Subcutaneous" ;
+            ns2:strength "10 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "10 mcg/0.5ml" ] .
+
+ns2:HeroldKC a ns1:Practitioner ;
+    ns1:name "Herold KC" .
+
+ns2:HeroldM a ns1:Practitioner ;
+    ns1:name "Herold M" .
+
+ns2:HeroldZ a ns1:Practitioner ;
+    ns1:name "Herold Z" .
+
+ns2:HighBloodAlcoholConcentration a ns1:Condition ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:HighDoseAspirin a ns1:Substance ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:HildemannS a ns1:Practitioner ;
+    ns1:name "Hildemann S" .
+
+ns2:HospitalizedPatient a ns1:Patient ;
+    ns1:condition ns2:CriticalIllness,
+        ns2:Hyperglycemia,
+        ns2:RenalInsufficiency,
+        ns2:StressInducedHyperglycemia ;
+    ns1:medication ns2:BasalInsulin,
+        ns2:DipeptidylPeptidase4Inhibitors,
+        ns2:Glucocorticoids,
+        ns2:InsulinInfusion,
+        ns2:LongerActingInsulins,
+        ns2:Metformin,
+        ns2:Pressors,
+        ns2:ShortActingInsulin,
+        ns2:SlidingScaleInsulin,
+        ns2:Sulfonylureas,
+        ns2:TotalParenteralNutrition ;
+    ns1:outcome ns2:ImprovedSurvival,
+        ns2:IncreasedInfectionRate,
+        ns2:Mortality,
+        ns2:OrganFailure,
+        ns2:StrokeRecovery ;
+    ns1:procedure ns2:ComputerizedAlgorithm,
+        ns2:InsulinInfusionProtocol .
+
+ns2:HostalekU a ns1:Practitioner ;
+    ns1:name "Hostalek U" .
+
+ns2:HybridClosedLoopInsulinPumpTherapy a ns1:Device ;
+    ns1:description "Useful tool in individuals who fluctuate between hypoglycemia and hyperglycemia." .
+
+ns2:INCB13739 a ns1:MedicationRequest .
+
+ns2:ISIS_113715 a ns1:MedicationRequest .
+
+ns2:ImpairedFastingGlucose a ns1:Condition ;
+    ns1:display "Impaired Fasting Glucose" ;
+    ns1:name "R73.01" .
+
+ns2:ImplantedGastricBalloons a ns1:Device ;
+    ns1:description "Implanted gastric balloons" ;
+    ns1:subClassOf ns2:MedicalDevices .
+
+ns2:IncreasedFrequencyOfSelfTesting a ns1:Procedure ;
+    ns1:description "May reveal previously unrecognized patterns and provides the patient with helpful feedback." .
+
+ns2:IncreasedRedBloodCellTurnover a ns1:Condition ;
+    ns1:note "Falsely normal HbA1C values occur" .
+
+ns2:IndividualizedTargets a ns1:Procedure ;
+    ns1:name "Individualized Targets" ;
+    ns1:relatedTo ns2:BloodPressure .
+
+ns2:Infection a ns1:Condition ;
+    ns1:name "Infection" .
+
+ns2:InspectFeet a ns1:Procedure ;
+    ns1:Procedure.description "Patients should inspect their feet daily for cracks, fissures, calluses, corns, and ulcers." ;
+    ns1:Procedure.name "Inspect feet" .
+
+ns2:InsulinProduction a ns1:Procedure ;
+    ns1:display "Insulin production" ;
+    ns1:name "Z79.4" ;
+    ns1:reasonReference ns2:InsulinDeficiency ;
+    ns1:target ns2:BetaCells .
+
+ns2:InsulinRegimen a ns1:Procedure ;
+    ns1:Procedure.name "Insulin Regimen" ;
+    ns1:Procedure.relatedTo ns2:Surgery ;
+    ns1:name "Insulin regimen" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Insulin_aspart a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 unit / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "100 iu/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ] .
+
+ns2:Insulin_degludec a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 iu/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 IU" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "200 IU" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ] .
+
+ns2:Insulin_detemir a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 units/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "100 iu/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "14.2 mg/1mL" ] .
+
+ns2:Insulin_glargine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "3.640 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 IU/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "300 U/ML" ] .
+
+ns2:Insulin_glulisine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 unit / mL" ] .
+
+ns2:Insulin_human a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "1 unit / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, metered" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "4 1/1" ] .
+
+ns2:Insulin_lispro a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 iu/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, suspension" ;
+            ns2:route "Intramuscular; Parenteral; Subcutaneous" ;
+            ns2:strength "100 U/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "200 U" ] .
+
+ns2:Insulin_pork a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 unit / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Intramuscular; Subcutaneous" ;
+            ns2:strength "100 unit/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular; Intravenous; Subcutaneous" ;
+            ns2:strength "100 unit" ] .
+
+ns2:IntermediateActingInsulin a ns1:Medication ;
+    ns1:Medication.name "Intermediate-acting Insulin" ;
+    ns1:Medication.relatedTo ns2:Type1Diabetes .
+
+ns2:Inulin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Oral" ] .
+
+ns2:IronDeficiencyAnemia a ns1:Condition ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:Ischemia a ns1:Condition ;
+    ns1:name "Ischemia" .
+
+ns2:Ketoacidosis a ns1:Condition ;
+    ns1:name "Ketoacidosis" ;
+    ns1:symptom ns2:AbdominalPain,
+        ns2:ColdOrFluLikeSymptoms,
+        ns2:Fever,
+        ns2:Nausea,
+        ns2:UnusualSustainedHyperglycemia,
+        ns2:Vomiting .
+
+ns2:Ketones a ns1:Observation ;
+    ns1:Observation.name "Ketones" ;
+    ns1:Observation.relatedTo ns2:PlasmaGlucose .
+
+ns2:KidneyFunction a ns1:Observation ;
+    ns1:name "Kidney function" .
+
+ns2:KnowlerWC a ns1:Practitioner ;
+    ns1:name "Knowler WC" .
+
+ns2:LaboratoryTests a ns1:Procedure ;
+    ns1:description "Appropriate tests to rule out underlying disorders." .
+
+ns2:Linagliptin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.00 mg" ] .
+
+ns2:LindroosAK a ns1:Practitioner ;
+    ns1:name "Lindroos AK" .
+
+ns2:LipidProfileMeasurement a ns1:Procedure ;
+    ns1:name "Measurement of lipid profile" ;
+    ns1:performedPeriod "annually, more often when abnormalities are present" .
+
+ns2:Liraglutide a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "444828003" ;
+                    ns1:display "Liraglutide" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Liraglutide" ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "6 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "100 IU/ml" ] ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:subClassOf ns2:GLP1ReceptorAgonists .
+
+ns2:Lixisenatide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "20 mcg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "0.1 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit; solution" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "0.05 mg" ] .
+
+ns2:Lobeglitazone a ns1:MedicationRequest .
+
+ns2:LongSA a ns1:Practitioner ;
+    ns1:name "Long SA" .
+
+ns2:LowRedBloodCellTurnover a ns1:Condition ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:MB-07803 a ns1:MedicationRequest .
+
+ns2:MacrovascularComplications a ns1:Condition ;
+    ns1:description "Macrovascular complications" ;
+    ns1:includes ns2:Atherosclerosis,
+        ns2:CoronaryArteryDisease,
+        ns2:PeripheralArterialInsufficiency,
+        ns2:TransientIschemicAttackStroke .
+
+ns2:Magnesium_gluconate a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Oral" ;
+            ns2:strength "114 mg / 15 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "1000 mg/10ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Oral" ] .
+
+ns2:Managlinat_dialanetil a ns1:MedicationRequest .
+
+ns2:MartinS a ns1:Practitioner ;
+    ns1:name "Martin S" .
+
+ns2:McVeanJ a ns1:Practitioner ;
+    ns1:name "McVean J" .
+
+ns2:MeasurementOfKetones a ns1:Procedure ;
+    ns1:Procedure.name "Measurement of Ketones" ;
+    ns1:Procedure.relatedTo ns2:Type1Diabetes .
+
+ns2:MeasurementOfPlasmaGlucose a ns1:Procedure ;
+    ns1:Procedure.name "Measurement of Plasma Glucose" ;
+    ns1:Procedure.relatedTo ns2:Diabetes,
+        ns2:Surgery .
+
+ns2:MetabolicSurgery a ns1:Procedure ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:name "Metabolic surgery (bariatric surgery)" .
+
+ns2:Miglitol a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg/1" ] .
+
+ns2:MiscellaneousDiabetes a ns1:Condition ;
+    ns1:causedBy ns2:Endocrinopathies,
+        ns2:Medications,
+        ns2:MonogenicDiabetes,
+        ns2:PancreasConditions ;
+    ns1:definition "Miscellaneous types of diabetes mellitus account for a small proportion of cases." ;
+    ns1:name "Miscellaneous types of diabetes mellitus" .
+
+ns2:Mitiglinide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "10 mg" ] .
+
+ns2:Monitoring a ns1:Procedure ;
+    ns1:display "Monitoring",
+        "Monitoring for development of diabetes symptoms or elevated plasma glucose" ;
+    ns1:name "3024F" ;
+    ns1:note "HbA1C values may be falsely high or low and can vary with race/ethnicity" ;
+    ns1:reasonReference ns2:ImpairedGlucoseRegulation .
+
+ns2:MoreIntensiveRegimen a ns1:Procedure ;
+    ns1:description "Allows for frequent dose adjustments based on glucose testing." .
+
+ns2:NagyG a ns1:Practitioner ;
+    ns1:name "Nagy G" .
+
+ns2:NaltrexoneBupropion a ns1:Medication ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:name "Naltrexone/bupropion" .
+
+ns2:Nateglinide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "60 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "180 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "120 mg/1" ] .
+
+ns2:NerupJ a ns1:Practitioner ;
+    ns1:name "Nerup J" .
+
+ns2:NeuropathicFootUlcers a ns1:Condition ;
+    ns1:Condition.name "Neuropathic foot ulcers" .
+
+ns2:NewOnsetDiabetes a ns1:Condition ;
+    ns1:name "New-onset diabetes" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Olmesartan a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg/1" ] .
+
+ns2:Omega-3-carboxylic_acids a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, gelatin coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 g/1" ] .
+
+ns2:OralFeedings a ns1:Procedure ;
+    ns1:Procedure.description "Oral Feedings" ;
+    ns1:Procedure.relatedTo ns2:Surgery .
+
+ns2:OralHydrogel a ns1:Medication ;
+    ns1:composition "Cellulose and citric acid" ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:mechanism "Causes patients to feel full and eat less" ;
+    ns1:name "Oral hydrogel" .
+
+ns2:Orlistat a ns1:Medication ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "387007000" ;
+                    ns1:display "Orlistat" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Orlistat" ;
+    ns1:effect ns2:SerumLipidReduction,
+        ns2:WeightLoss ;
+    ns1:mechanism "Reduces dietary fat absorption" .
+
+ns2:OrthopedicDevices a ns1:Procedure ;
+    ns1:Procedure.description "A neuropathic joint can often be satisfactorily managed with orthopedic devices (eg, short leg braces, molded shoes, sponge-rubber arch supports, crutches, prostheses)." ;
+    ns1:Procedure.name "Orthopedic devices" .
+
+ns2:OrthoticProtection a ns1:Procedure ;
+    ns1:Procedure.description "If they cannot avoid weight bearing, they should wear appropriate orthotic protection." ;
+    ns1:Procedure.name "Orthotic protection" .
+
+ns2:Osteomyelitis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "60168000" ;
+                    ns1:display "Osteomyelitis" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Otelixizumab a ns1:MedicationRequest .
+
+ns2:PainSense a ns1:Observation ;
+    ns1:description "Pain sense" .
+
+ns2:PancreasTransplantation a ns1:Procedure ;
+    ns1:display "Pancreas transplantation" ;
+    ns1:name "0FT" ;
+    ns1:reasonReference ns2:Type1DiabetesMellitus .
+
+ns2:PancreaticIsletCellTransplantation a ns1:Procedure ;
+    ns1:display "Transplantation of pancreatic islet cells" ;
+    ns1:name "0FZ" ;
+    ns1:reasonReference ns2:Type1DiabetesMellitus .
+
+ns2:Pathogenesis a ns1:Condition ;
+    ns1:description "complex and incompletely understood" .
+
+ns2:PatientsWithAcuteMetabolicDecompensation a ns1:Group ;
+    ns1:hasCondition ns2:DiabeticKetoacidosis,
+        ns2:HyperosmolarHyperglycemicState ;
+    ns1:member ns2:AcuteMetabolicDecompensation .
+
+ns2:PatientsWithAtheroscleroticCardiovascularDisease a ns1:Group ;
+    ns1:hasCondition ns2:MyocardialInfarction,
+        ns2:Stroke ;
+    ns1:hasMedication ns2:GLP1ReceptorAgonists,
+        ns2:SGLT2Inhibitor ;
+    ns1:member ns2:AtheroscleroticCardiovascularDisease .
+
+ns2:PatientsWithChronicKidneyDisease a ns1:Group ;
+    ns1:hasMedication ns2:SGLT2Inhibitor ;
+    ns1:member ns2:ChronicKidneyDisease .
+
+ns2:PatientsWithHeartFailure a ns1:Group ;
+    ns1:hasMedication ns2:SGLT2Inhibitor ;
+    ns1:member ns2:HeartFailure .
+
+ns2:PatientsWithMetabolicAssociatedSteatohepatitis a ns1:Group ;
+    ns1:hasMedication ns2:GLP1ReceptorAgonists,
+        ns2:Pioglitazone ;
+    ns1:member ns2:MetabolicAssociatedSteatohepatitis .
+
+ns2:PatientsWithMetabolicAssociatedSteatoticLiverDisease a ns1:Group ;
+    ns1:hasMedication ns2:GLP1ReceptorAgonists,
+        ns2:Pioglitazone ;
+    ns1:member ns2:MetabolicAssociatedSteatoticLiverDisease .
+
+ns2:PatientsWithPregnancy a ns1:Group ;
+    ns1:hasMedication ns2:Insulin ;
+    ns1:member ns2:Pregnancy .
+
+ns2:PatientsWithSevereHyperglycemia a ns1:Group ;
+    ns1:hasMedication ns2:Insulin ;
+    ns1:member ns2:SevereHyperglycemia .
+
+ns2:PatientsWithType2Diabetes a ns1:Group ;
+    ns1:hasMedication ns2:GLP1ReceptorAgonists,
+        ns2:Insulin,
+        ns2:Metformin,
+        ns2:NonInsulinAntihyperglycemicMedication,
+        ns2:Pioglitazone,
+        ns2:SGLT2Inhibitor,
+        ns2:Tirzepatide ;
+    ns1:hasObservation ns2:AdverseEffects,
+        ns2:BloodGlucoseControl,
+        ns2:Catabolism,
+        ns2:Convenience,
+        ns2:Cost,
+        ns2:HbA1C,
+        ns2:PatientPreference,
+        ns2:PlasmaGlucose,
+        ns2:Polydipsia,
+        ns2:Polyuria,
+        ns2:WeightLoss ;
+    ns1:hasProcedure ns2:TrialDietExercise ;
+    ns1:member ns2:Type2Diabetes .
+
+ns2:PearlsAndPitfalls a ns1:DocumentReference ;
+    ns1:display "Pearls & Pitfalls" ;
+    ns1:note "Point-of-care fingerstick HbA1C tests are not accurate enough to be used for initial diagnosis of diabetes" .
+
+ns2:PeltonenM a ns1:Practitioner ;
+    ns1:name "Peltonen M" .
+
+ns2:Pharmacotherapy a ns1:Procedure ;
+    ns1:display "Other long term (current) drug therapy" ;
+    ns1:name "Z79.899" ;
+    ns1:outcome "Weight loss" ;
+    ns1:reasonReference ns2:Obesity .
+
+ns2:Phenformin a ns1:MedicationRequest .
+
+ns2:Phentermine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "37.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "8 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "30.00 mg" ] .
+
+ns2:PhentermineTopiramate a ns1:Medication ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:description "A08AA",
+        "Phentermine/topiramate" ;
+    ns1:display "Phentermine/topiramate" ;
+    ns1:effect ns2:AppetiteReduction,
+        ns2:WeightLoss ;
+    ns1:mechanism "Reduces appetite through multiple mechanisms in the brain" .
+
+ns2:PhysicalActivity a ns1:Procedure ;
+    ns1:display "Exercise counseling" ;
+    ns1:outcome "Reduce incidence of diabetes by > 50%" .
+
+ns2:PhysicalExamination a ns1:Procedure ;
+    ns1:description "Used to rule out underlying disorders." .
+
+ns2:Pitavastatin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "4.18 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "4 mg" ] .
+
+ns2:PlasmaGlucoseLevel a ns1:Observation ;
+    ns1:name "Plasma glucose level" ;
+    ns1:relatedTo ns2:SlidingScaleInsulin .
+
+ns2:PointOfCareFingerstickHbA1C a ns1:Observation ;
+    ns1:display "Point-of-care finger-stick HbA1C" ;
+    ns1:note "Point-of-care finger-stick HbA1C measurements should not be used for diagnostic purposes, although they can be used for monitoring diabetes control" .
+
+ns2:PoorlyControlledHyperglycemia a ns1:Condition ;
+    ns1:description "Poorly controlled hyperglycemia" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Pramlintide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "1000 ug/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "600 ug/1mL" ] .
+
+ns2:PressureSense a ns1:Observation ;
+    ns1:description "Pressure sense" .
+
+ns2:Prevention a ns1:Procedure ;
+    ns1:description "Prevention" ;
+    ns1:relatedTo ns2:Complications .
+
+ns2:PreventiveMedications a ns1:Procedure ;
+    ns1:description "Preventive medications" ;
+    ns1:includes ns2:ReninAngiotensinAldosteroneSystemBlockers,
+        ns2:Statins .
+
+ns2:Procedures a ns1:Procedure ;
+    ns1:name "Procedures" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:ProperShoes a ns1:Procedure ;
+    ns1:Procedure.bane "Proper shoes" ;
+    ns1:Procedure.description "Shoes should fit well, be wide-toed without open heels or toes, and be changed frequently." .
+
+ns2:Ragaglitazar a ns1:MedicationRequest .
+
+ns2:Ramipril a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule, gelatin coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.0 mg" ] .
+
+ns2:RandomPlasmaGlucose a ns1:Observation ;
+    ns1:display "Glucose [Mass/volume] in Blood" ;
+    ns1:interpretation "Random glucose value > 200 mg/dL (> 11.1 mmol/L) may be diagnostic" .
+
+ns2:RefractoryCases a ns1:Condition ;
+    ns1:Condition.name "Refractory cases" .
+
+ns2:Reglitazar a ns1:MedicationRequest .
+
+ns2:RegularInsulin a ns1:Medication ;
+    ns1:Medication.relatedTo ns2:Surgery ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "412222002" ;
+                    ns1:display "Regular Insulin" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Repaglinide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 mg/tablet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "4 mg" ] .
+
+ns2:ResearchPurposes a ns1:Procedure ;
+    ns1:method ns2:OralGlucoseToleranceTesting .
+
+ns2:RestrictedPhysicalActivity a ns1:Condition ;
+    ns1:description "Restricted physical activity" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Rosiglitazone a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "2 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "8 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "4 mg/1" ] .
+
+ns2:SGLT2Inhibitors a ns1:Medication ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:name "SGLT-2 inhibitors" ;
+    ns1:subClassOf ns2:AntihyperglycemicMedications .
+
+ns2:Saxagliptin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg/1" ] .
+
+ns2:SchernthanerG a ns1:Practitioner ;
+    ns1:name "Schernthaner G" .
+
+ns2:ScreeningForComplications a ns1:Procedure ;
+    ns1:description "Regular screening for complications" .
+
+ns2:ScreeningForDiabetesMellitus a ns1:Procedure ;
+    ns1:description "Screening for Diabetes Mellitus" ;
+    ns1:reasonCode ns2:IncreasedRiskOfDiabetes .
+
+ns2:ScreeningProcedure a ns1:Procedure ;
+    ns1:description "Screening for diabetes" ;
+    ns1:relatedArtifact ns2:FPGLevel,
+        ns2:HbA1C,
+        ns2:OGTT .
+
+ns2:SelfCareTechniques a ns1:Procedure ;
+    ns1:description "Includes insulin preparation and injection and glucose testing." .
+
+ns2:SelfMeasurementUrineKetones a ns1:Observation ;
+    ns1:comment "recommended for patients with type 1 diabetes if they experience symptoms, signs, or triggers of ketoacidosis" ;
+    ns1:description "Self-measurement of urine ketones" .
+
+ns2:Semaglutide a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "764283003" ;
+                    ns1:display "Semaglutide 2.4mg" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "2.4 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral; Subcutaneous" ;
+            ns2:strength "0.5 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "2.4 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "1.340 mg" ] ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:subClassOf ns2:GLP1ReceptorAgonists .
+
+ns2:SerumCreatinineMeasurement a ns1:Procedure ;
+    ns1:description "Measurement of serum creatinine" ;
+    ns1:performedPeriod "annually" ;
+    ns1:reasonCode "assess kidney function" .
+
+ns2:SimsEK a ns1:Practitioner ;
+    ns1:name "Sims EK" .
+
+ns2:Simvastatin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg/5mL" ] .
+
+ns2:Sitagliptin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "64.25 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "54.475 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/1" ] .
+
+ns2:SjostromL a ns1:Practitioner ;
+    ns1:name "Sjostrom L" .
+
+ns2:SkinCracking a ns1:Observation ;
+    ns1:description "Skin cracking" .
+
+ns2:SleeveGastrectomy a ns1:Procedure ;
+    ns1:name "Sleeve gastrectomy" ;
+    ns1:subClassOf ns2:SurgicalTreatment .
+
+ns2:SomogyiA a ns1:Practitioner ;
+    ns1:name "Somogyi A" .
+
+ns2:Sotagliflozin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg/1" ] .
+
+ns2:SpecialShoes a ns1:Procedure ;
+    ns1:Procedure.code "Special shoes" ;
+    ns1:Procedure.description "Special shoes should be prescribed to reduce trauma if the foot is deformed (eg, previous toe amputation, hammer toe, bunion)." .
+
+ns2:SpecialShoesAfterHealing a ns1:Procedure ;
+    ns1:Procedure.code "Special shoes after healing" ;
+    ns1:Procedure.description "After the ulcer has healed, appropriate inserts or special shoes should be prescribed." .
+
+ns2:Stage2Type1Diabetes a ns1:Condition ;
+    ns1:name "Stage 2 type 1 diabetes" .
+
+ns2:Stage3Type1Diabetes a ns1:Condition ;
+    ns1:name "Stage 3 type 1 diabetes" .
+
+ns2:StepwiseApproach a ns1:Procedure ;
+    ns1:name "Stepwise approach" .
+
+ns2:StierK a ns1:Practitioner ;
+    ns1:name "Stier K" .
+
+ns2:StrictControl a ns1:Procedure ;
+    ns1:name "Strict Control" ;
+    ns1:relatedTo ns2:Hypertension,
+        ns2:LipidLevels,
+        ns2:PlasmaGlucose .
+
+ns2:StricterGlycemicGoals a ns1:Goal ;
+    ns1:condition [ ns1:code ns2:LongLifeExpectancy,
+                ns2:NoCardiovascularDisease,
+                ns2:NoHypoglycemia,
+                ns2:ShortDurationDiabetes ] ;
+    ns1:target [ ns1:measure ns2:HbA1CStrict ] .
+
+ns2:SubcutaneousInsulin a ns1:Medication ;
+    ns1:Medication.code "Subcutaneous Insulin" ;
+    ns1:Medication.relatedTo ns2:Surgery,
+        ns2:Type1Diabetes .
+
+ns2:Succinobucol a ns1:MedicationRequest .
+
+ns2:SulfonylureasInducedHypoglycemia a ns1:Condition ;
+    ns1:name "Hypoglycemia induced by sulfonylureas" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:SurgicalRemoval a ns1:Procedure ;
+    ns1:Procedure.description "In refractory cases, especially if osteomyelitis is present, surgical removal of the metatarsal head (the source of pressure), amputation of the involved toe, or transmetatarsal amputation may be required." ;
+    ns1:Procedure.name "Surgical removal" .
+
+ns2:SymptomsOfDiabetes a ns1:Observation ;
+    ns1:display "Symptoms of Diabetes" ;
+    ns1:note "Testing twice may not be necessary in the presence of symptoms of diabetes" .
+
+ns2:SzekelyTE a ns1:Practitioner ;
+    ns1:name "Szekely TE" .
+
+ns2:TH0318 a ns1:MedicationRequest .
+
+ns2:TNFAlphaInhibitors a ns1:Medication ;
+    ns1:affects ns2:BetaCells ;
+    ns1:name "TNF-alpha inhibitors" .
+
+ns2:Tagatose a ns1:MedicationRequest .
+
+ns2:TemperatureSense a ns1:Observation ;
+    ns1:description "Temperature sense" .
+
+ns2:Teplizumab a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:affects ns2:AutoimmuneResponse,
+        ns2:BetaCellDestruction,
+        ns2:CD8TCells,
+        ns2:RegulatoryTCells,
+        ns2:TCells ;
+    ns1:description "A monoclonal antibody that binds to CD3 cell surface antigens on T cells" ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "1 mg/1mL" ] ;
+    ns1:name "Teplizumab" ;
+    ns1:targets ns2:CD3 .
+
+ns2:Tesaglitazar a ns1:MedicationRequest .
+
+ns2:Testosterone a ns1:Medication ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "43688007" ;
+                    ns1:display "Testosterone" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Testosterone" .
+
+ns2:Thiazolidinediones a ns1:Medication ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:display "Thiazolidinediones" .
+
+ns2:ThoroughDietaryHistory a ns1:Procedure ;
+    ns1:description "Including timing of meals, should be taken to identify potential contributions to poor control." .
+
+ns2:TimingOfMeals a ns1:Procedure ;
+    ns1:description "Timing of meals" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Tolazamide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg/1" ] .
+
+ns2:Tolbutamide a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 g / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / tab" ] .
+
+ns2:Treatment a ns1:Procedure ;
+    ns1:description "Treatment" ;
+    ns1:includes ns2:Diet,
+        ns2:Exercise,
+        ns2:InjectableAntihyperglycemicMedications,
+        ns2:Insulin,
+        ns2:OralAntihyperglycemicMedications,
+        ns2:WeightLoss ;
+    ns1:relatedTo ns2:Complications .
+
+ns2:Trodusquemine a ns1:MedicationRequest .
+
+ns2:Troglitazone a ns1:MedicationRequest .
+
+ns2:Type1DiabetesEducation a ns1:PatientEducation ;
+    ns1:description "Most patients with type 1 diabetes can be taught how to adjust their insulin doses based on blood glucose levels and carbohydrate intake. Education should be reinforced at every physician visit and hospitalization. Formal diabetes education programs, generally conducted by diabetes nurses and nutrition specialists, are often very effective and have been shown to improve diabetes outcomes." ;
+    ns1:hasComponent ns2:AdjustInsulinDoses,
+        ns2:FormalDiabetesEducation,
+        ns2:ReinforcedEducation .
+
+ns2:Ulceration a ns1:Condition ;
+    ns1:name "Ulceration" .
+
+ns2:UrineGlucose a ns1:Observation ;
+    ns1:name "Urine glucose" .
+
+ns2:UrineGlucoseMeasurement a ns1:Observation ;
+    ns1:display "Glucose [Mass/volume] in Urine" ;
+    ns1:note "Urine glucose measurement, once commonly used, is no longer used for diagnosis or monitoring because it is neither sensitive nor specific" .
+
+ns2:UrineGlucoseMonitoring a ns1:Observation ;
+    ns1:comment "too inaccurate to be recommended" ;
+    ns1:name "Urine glucose monitoring" .
+
+ns2:UrineTesting a ns1:Procedure ;
+    ns1:name "Urine testing for albuminuria" ;
+    ns1:performedPeriod "annually" .
+
+ns2:V24343 a ns1:MedicationRequest .
+
+ns2:VaccinationRecommendation a ns1:Procedure ;
+    ns1:display "Vaccination" ;
+    ns1:reasonReference ns2:DiabetesMellitus ;
+    ns1:targetDisease ns2:HepatitisB,
+        ns2:InfluenzaVirus,
+        ns2:SARSCoV2,
+        ns2:StreptococcusPneumoniae,
+        ns2:Varicella .
+
+ns2:VagusNerveStimulator a ns1:Device ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "447033006" ;
+                    ns1:display "Vagus nerve stimulator" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:subClassOf ns2:MedicalDevices .
+
+ns2:Valsartan a ns1:Medication ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "386876001" ;
+                    ns1:display "Valsartan" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:display "Valsartan" .
+
+ns2:Verapamil a ns1:Medication ;
+    ns1:affects ns2:BetaCells ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372754009" ;
+                    ns1:display "Verapamil" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:VibrationSense a ns1:Observation ;
+    ns1:name "Vibration sense" .
+
+ns2:Vildagliptin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "50.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ] .
+
+ns2:VitaminB12DeficiencyAnemia a ns1:Condition ;
+    ns1:note "False elevations of HbA1C may occur" .
+
+ns2:Voglibose a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "0.2 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "0.3 mg" ] .
+
+ns2:WashFeet a ns1:Procedure ;
+    ns1:Procedure.description "Feet should be washed daily in lukewarm water, using mild soap, and dried gently and thoroughly." ;
+    ns1:Procedure.name "Wash feet" .
+
+ns2:WeightLossSurgery a ns1:Procedure ;
+    ns1:affects ns2:Obesity ;
+    ns1:display "Bariatric surgery" ;
+    ns1:outcome "Decrease risk of progression to diabetes" ;
+    ns1:reasonReference ns2:Obesity .
+
+ns2:XL784 a ns1:MedicationRequest .
+
+ns2:ACEInhibitors a ns1:Medication ;
+    ns1:display "Angiotensin-Converting Enzyme Inhibitors" ;
+    ns1:subClassOf ns2:ReninAngiotensinAldosteroneSystemBlockers .
+
+ns2:AbdominalPain a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "21522001" ;
+                    ns1:display "Abdominal pain" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:AbsenceOfInsulinProduction a ns1:Observation ;
+    ns1:description "Absence of insulin production" .
+
+ns2:AbsentInsulinProduction a ns1:Observation ;
+    ns1:display "Absent insulin production" .
+
+ns2:AcuteMetabolicDecompensation a ns1:Condition ;
+    ns1:description "Acute metabolic decompensation" .
+
+ns2:AddisonDisease a ns1:Condition ;
+    ns1:description "An endocrine disorder that can cause labile plasma glucose levels." .
+
+ns2:Adiponectin a ns1:Substance ;
+    ns1:influences ns2:Glucose_Metabolism ;
+    ns1:partOf ns2:Adipocytokines .
+
+ns2:Adipose_Tissue a ns1:BodyStructure ;
+    ns1:functionsAs ns2:Endocrine_Organ ;
+    ns1:releases ns2:Adipocytokines .
+
+ns2:AdjustInsulinDoses a ns1:Observation ;
+    ns1:description "Adjust insulin doses based on blood glucose levels and carbohydrate intake" .
+
+ns2:Adults a ns1:Group ;
+    ns1:description "The disease generally develops in adults and becomes more common with increasing age." ;
+    ns1:name "Adults" .
+
+ns2:AdverseEffects a ns1:Observation ;
+    ns1:name "Adverse effects" .
+
+ns2:Adverse_Prenatal_Environmental_Influences a ns1:Condition ;
+    ns1:relatedTo ns2:Insulin_Resistance .
+
+ns2:AnginaPectoris a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "194828000" ;
+                    ns1:display "Angina pectoris" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:AngiotensinIIReceptorBlockers a ns1:Medication ;
+    ns1:display "Angiotensin II Receptor Blockers" ;
+    ns1:subClassOf ns2:ReninAngiotensinAldosteroneSystemBlockers .
+
+ns2:AntiGlutamicAcidDecarboxylaseAntibodies a ns1:Observation ;
+    ns1:name "Anti-glutamic acid decarboxylase antibodies" .
+
+ns2:AppetiteReduction a ns1:Effect ;
+    ns1:name "Reduces appetite" .
+
+ns2:Asymptomatic a ns1:Condition ;
+    ns1:name "Asymptomatic" .
+
+ns2:Atherosclerosis a ns1:Condition ;
+    ns1:name "Atherosclerosis" .
+
+ns2:AtheroscleroticCardiovascularDisease a ns1:Condition ;
+    ns1:name "Atherosclerotic cardiovascular disease" .
+
+ns2:Autoantigens a ns1:Substance ;
+    ns1:definition "Autoantigens include glutamic acid decarboxylase, insulin, proinsulin, insulinoma-associated protein, zinc transporter ZnT8, and other proteins in beta cells." ;
+    ns1:hasPart ns2:GlutamicAcidDecarboxylase,
+        ns2:Insulin,
+        ns2:InsulinomaAssociatedProtein,
+        ns2:Proinsulin,
+        ns2:ZincTransporterZnT8 ;
+    ns1:name "Autoantigens" .
+
+ns2:AutoimmuneBetaCellDestruction a ns1:Condition ;
+    ns1:causes ns2:AbsentInsulinProduction ;
+    ns1:definition "The pathogenesis of the autoimmune beta-cell destruction involves incompletely understood interactions between susceptibility genes, autoantigens, and environmental factors." ;
+    ns1:display "Autoimmune pancreatic beta-cell destruction" ;
+    ns1:hasCause ns2:Autoantigens,
+        ns2:EnvironmentalFactors,
+        ns2:SusceptibilityGenes ;
+    ns1:name "Autoimmune Beta-Cell Destruction" .
+
+ns2:AutoimmuneMediatedInflammation a ns1:Observation ;
+    ns1:location ns2:PancreaticBetaCells ;
+    ns1:name "Autoimmune-mediated inflammation" .
+
+ns2:BasalInsulin a ns1:Medication ;
+    ns1:Medication.code "Basal Insulin" ;
+    ns1:Medication.relatedTo ns2:Type2Diabetes ;
+    ns1:use "appropriate treatment for inpatients" .
+
+ns2:BetaCellDestruction a ns1:Observation ;
+    ns1:name "Beta-cell destruction" .
+
+ns2:BloodGlucose a ns1:Observation ;
+    ns1:description "Blood glucose should be monitored immediately before and after exercise." .
+
+ns2:BloodGlucoseControl a ns1:Observation ;
+    ns1:name "Blood glucose control" .
+
+ns2:CD3 a ns1:BodyStructure ;
+    ns1:name "CD3 cell surface antigens" .
+
+ns2:CD8TCells a ns1:BodyStructure ;
+    ns1:name "CD8+ T cells" .
+
+ns2:CarbohydrateCounting a ns1:Procedure ;
+    ns1:name "Carbohydrate counting" ;
+    ns1:usedFor ns2:Type1Diabetes .
+
+ns2:CarbohydrateExchangeSystem a ns1:Procedure ;
+    ns1:name "Carbohydrate exchange system" ;
+    ns1:usedFor ns2:Type1Diabetes .
+
+ns2:CardiovascularRiskReduction a ns1:Effect ;
+    ns1:name "Decreased cardiovascular risk" .
+
+ns2:Careful_glycemic_control a ns1:Goal ;
+    ns1:requires ns2:Frequent_glucose_monitoring,
+        ns2:Frequent_low_dose_fast_acting_insulins .
+
+ns2:Catabolism a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "40091007" ;
+                    ns1:display "Catabolism" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:CausesOfDiabetes a ns1:Observation ;
+    ns1:description "Causes of diabetes" .
+
+ns2:Cereals a ns1:Substance ;
+    ns1:definition "Early or late exposure to cereals increases islet cell autoantibody production." ;
+    ns1:name "Cereals" .
+
+ns2:Children a ns1:Group,
+        ns1:Patient ;
+    ns1:condition ns2:Type1Diabetes,
+        ns2:Type2Diabetes ;
+    ns1:description "Type 2 diabetes has become more common among children because childhood obesity has become epidemic." ;
+    ns1:hasActivity ns2:GlucoseTesting,
+        ns2:InsulinInjections,
+        ns2:LifestyleModification ;
+    ns1:hasCaregiver ns2:OtherCaregivers,
+        ns2:SchoolPersonnel ;
+    ns1:hasCharacteristic ns2:Obesity ;
+    ns1:hasComplication ns2:MicrovascularComplications ;
+    ns1:hasRisk ns2:Hypoglycemia ;
+    ns1:name "Children" ;
+    ns1:requires ns2:AttentionToDiet,
+        ns2:PhysiologicInsulinReplacement,
+        ns2:RecognitionAndManagementOfDyslipidemia,
+        ns2:RecognitionAndManagementOfHypertension,
+        ns2:WeightControl ;
+    ns1:uses ns2:InsulinPumps,
+        ns2:MedicationTherapy .
+
+ns2:ChronicKidneyDisease a ns1:Condition ;
+    ns1:name "Chronic kidney disease" .
+
+ns2:CirculatoryImpairment a ns1:Condition ;
+    ns1:Condition.code "Circulatory impairment" .
+
+ns2:ColdOrFluLikeSymptoms a ns1:Symptom ;
+    ns1:name "Cold or flu-like symptoms" .
+
+ns2:CommunicationImpairment a ns1:Condition ;
+    ns1:name "Communication impairment" .
+
+ns2:ComputerizedAlgorithm a ns1:Procedure ;
+    ns1:use "titrate insulin drips to maintain euglycemia" .
+
+ns2:ControlHyperglycemia a ns1:Goal ;
+    ns1:description "Control of hyperglycemia" .
+
+ns2:Convenience a ns1:Observation ;
+    ns1:description "Convenience" .
+
+ns2:CoronaryArteryDisease a ns1:Condition ;
+    ns1:description "Coronary artery disease" .
+
+ns2:Corticosteroids a ns1:Medication ;
+    ns1:affects ns2:AutoimmuneResponse ;
+    ns1:name "Corticosteroids" .
+
+ns2:Cost a ns1:Observation ;
+    ns1:description "Cost" .
+
+ns2:Coxsackievirus a ns1:Substance ;
+    ns1:definition "A virus linked to the onset of type 1 diabetes." ;
+    ns1:description "Coxsackievirus" .
+
+ns2:CriticalIllness a ns1:Condition ;
+    ns1:effect ns2:Hyperglycemia,
+        ns2:InsulinResistance .
+
+ns2:Cytomegalovirus a ns1:Substance ;
+    ns1:definition "A virus linked to the onset of type 1 diabetes." ;
+    ns1:name "Cytomegalovirus" .
+
+ns2:DairyProducts a ns1:Substance ;
+    ns1:definition "Exposure to dairy products, especially cow’s milk and the milk protein beta casein, has been linked to increased risk of type 1 diabetes." ;
+    ns1:name "Dairy Products" .
+
+ns2:DextroseSolution a ns1:Medication ;
+    ns1:Medication.name "Dextrose Solution" ;
+    ns1:Medication.relatedTo ns2:Surgery,
+        ns2:Type2Diabetes .
+
+ns2:Diabetes_in_adolescents a ns1:Condition ;
+    ns1:hasCause ns2:Eating_disorders,
+        ns2:Experimentation_with_substances,
+        ns2:Hormonal_changes,
+        ns2:Psychosocial_factors,
+        ns2:Pubertal_and_insulin_induced_weight_gain ;
+    ns1:hasSymptom ns2:Diabetic_ketoacidosis,
+        ns2:Hyperglycemia,
+        ns2:Hypoglycemia .
+
+ns2:DiabeticComplications a ns1:Condition ;
+    ns1:name "Diabetic complications" .
+
+ns2:Dietitian a ns1:Practitioner ;
+    ns1:experiencedIn ns2:DiabetesManagement ;
+    ns1:name "Dietitian" .
+
+ns2:DipeptidylPeptidase4Inhibitors a ns1:Medication ;
+    ns1:safety "relatively safe" ;
+    ns1:use "postprandial glucose lowering" .
+
+ns2:Dyslipidemia a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "370992007" ;
+                    ns1:display "Dyslipidemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedArtifact ns2:HDLCholesterol,
+        ns2:TriglycerideLevel .
+
+ns2:Eating_disorders a ns1:Condition ;
+    ns1:leadsTo ns2:Insulin_omission .
+
+ns2:Elevated2HourValueOnOralGlucoseToleranceTest a ns1:Observation ;
+    ns1:description "Elevated 2-hour value on oral glucose tolerance test" .
+
+ns2:ElevatedFastingPlasmaGlucoseLevel a ns1:Observation ;
+    ns1:description "Elevated fasting plasma glucose level" .
+
+ns2:ElevatedHemoglobinA1C a ns1:Observation ;
+    ns1:description "Elevated hemoglobin A1C" .
+
+ns2:Emergency_department_visits a ns1:Procedure .
+
+ns2:Endocrine_Organ a ns1:BodyStructure ;
+    ns1:partOf ns2:Adipose_Tissue .
+
+ns2:Endocrinopathies a ns1:Condition ;
+    ns1:definition "Endocrinopathies" ;
+    ns1:description "Endocrinopathies" ;
+    ns1:example "Cushing syndrome, acromegaly" .
+
+ns2:EnhanceStrokeRecovery a ns1:Outcome .
+
+ns2:EnvironmentalFactors a ns1:EnvironmentalFactor ;
+    ns1:definition "Environmental factors include diet, exposure to viruses, and other mechanisms that may contribute to the onset of type 1 diabetes." ;
+    ns1:description "Environmental Factors" ;
+    ns1:hasPart ns2:Diet,
+        ns2:Virus .
+
+ns2:EpsteinBarrVirus a ns1:Substance ;
+    ns1:definition "A virus linked to the onset of type 1 diabetes." ;
+    ns1:description "Epstein-Barr Virus" .
+
+ns2:Ethnicity a ns1:Observation ;
+    ns1:description "African, Hispanic, Asian, or American Indian ancestry" .
+
+ns2:Experimentation_with_substances a ns1:Observation ;
+    ns1:includes ns2:Alcohol_use,
+        ns2:Cigarette_use,
+        ns2:Substance_use .
+
+ns2:FPGLevel a ns1:Observation ;
+    ns1:description "FPG level" .
+
+ns2:FamilyHistoryOfType2Diabetes a ns1:Observation ;
+    ns1:description "Family history of type 2 diabetes mellitus" .
+
+ns2:FastingPlasmaGlucose a ns1:Observation ;
+    ns1:method ns2:MeasurementAfterFast ;
+    ns1:name "FPG" .
+
+ns2:Fever a ns1:Symptom ;
+    ns1:name "Fever" .
+
+ns2:FormalDiabetesEducation a ns1:Observation ;
+    ns1:description "Formal diabetes education programs, generally conducted by diabetes nurses and nutrition specialists, are often very effective and have been shown to improve diabetes outcomes" .
+
+ns2:FrailOlderPatients a ns1:Condition ;
+    ns1:name "Frail older patients" .
+
+ns2:Frequent_glucose_monitoring a ns1:Procedure .
+
+ns2:Frequent_low_dose_fast_acting_insulins a ns1:Medication .
+
+ns2:Fructosamine a ns1:Observation ;
+    ns1:component [ ns1:description "glycosylated albumin",
+                "glycosylated proteins" ] ;
+    ns1:description "Blood fructosamine level" ;
+    ns1:interpretation [ ns1:text "reflects glucose control in the previous 1 to 2 weeks" ] ;
+    ns1:name "Fructosamine" ;
+    ns1:note [ ns1:text "used when HbA1C results are false" ] ;
+    ns1:use [ ns1:text "intensive treatment of diabetes" ],
+        [ ns1:text "patients with hemoglobin variants" ],
+        [ ns1:text "patients with high red blood cell turnover" ],
+        [ ns1:text "research settings" ] .
+
+ns2:Gastroparesis a ns1:Condition ;
+    ns1:description "Leads to erratic absorption of dietary carbohydrates." .
+
+ns2:GeneticFactors a ns1:Observation ;
+    ns1:description "There are clear genetic determinants, as evidenced by the high prevalence of the disease in relatives of people with the disease. Although several genetic polymorphisms have been identified, no single gene responsible for the most common forms of type 2 diabetes has been identified." ;
+    ns1:name "Genetic factors" .
+
+ns2:Genetic_Determinants a ns1:Condition ;
+    ns1:relatedTo ns2:Obesity .
+
+ns2:GestationalDiabetes a ns1:Condition,
+        ns1:Observation ;
+    ns1:causedBy ns2:Pregnancy ;
+    ns1:definition "Gestational diabetes" ;
+    ns1:method ns2:OralGlucoseToleranceTesting ;
+    ns1:name "Gestational diabetes",
+        "Gestational diabetes mellitus or delivery of a baby > 4.1 kg" .
+
+ns2:Glucocorticoids a ns1:Medication ;
+    ns1:effect "require high doses of insulin" .
+
+ns2:Glucose a ns1:Observation ;
+    ns1:description "Blood glucose level" .
+
+ns2:GlucoseControlImprovement a ns1:Effect ;
+    ns1:name "Improvement in glucose control" .
+
+ns2:GlucoseControlMonitoring a ns1:Procedure ;
+    ns1:display "Monitoring of Glucose Control" .
+
+ns2:GlucoseIntolerance a ns1:Condition ;
+    ns1:description "Glucose intolerance" .
+
+ns2:GlucoseMetabolismImpairment a ns1:Condition ;
+    ns2:causedBy ns2:Corticosteroids ;
+    ns1:name "Glucose metabolism impairment" .
+
+ns2:GlutamicAcidDecarboxylase a ns1:Substance ;
+    ns1:definition "An autoantigen involved in autoimmune beta-cell destruction." ;
+    ns1:name "Glutamic Acid Decarboxylase" .
+
+ns2:Gluten a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "89811004" ;
+                    ns1:display "Gluten" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Early or late exposure to gluten increases islet cell autoantibody production." .
+
+ns2:GlycemicControl a ns1:Goal,
+        ns1:PreventionMethod ;
+    ns1:delaysOrPrevents ns2:Complications ;
+    ns1:target [ ns1:measure ns2:HbA1C,
+                ns2:PostprandialBloodGlucose,
+                ns2:PreprandialBloodGlucose,
+                ns2:TimeInRange ] .
+
+ns2:GlycosylatedHemoglobin a ns1:Observation ;
+    ns1:name "HbA1C" .
+
+ns2:HDLCholesterol a ns1:Observation ;
+    ns1:name "High-density lipoprotein [HDL] cholesterol < 35 mg/dL [0.9 mmol/L]" .
+
+ns2:HIVInfection a ns1:Observation ;
+    ns1:name "HIV infection" .
+
+ns2:HLA-DR3 a ns1:GeneticElement ;
+    ns1:definition "HLA-DR3 gene associated with susceptibility to type 1 diabetes." ;
+    ns1:name "HLA-DR3" .
+
+ns2:HLA-DR4 a ns1:GeneticElement ;
+    ns1:definition "HLA-DR4 gene associated with susceptibility to type 1 diabetes." ;
+    ns1:name "HLA-DR4" .
+
+ns2:HbA1CStrict a ns1:Observation ;
+    ns1:name "HbA1C" ;
+    ns1:value "< 6.5%" .
+
+ns2:HeartDisease a ns1:Complication,
+        ns1:Condition ;
+    ns1:leadingCauseOfMortality ns2:DiabetesMellitus ;
+    ns1:name "Heart disease" .
+
+ns2:HeartFailure a ns1:Condition ;
+    ns1:name "Heart failure" .
+
+ns2:HepaticInsulinResistance a ns1:Observation ;
+    ns1:causes ns2:InabilityToSuppressHepaticGlucoseProduction ;
+    ns1:name "Hepatic insulin resistance" .
+
+ns2:HepatitisB a ns1:Substance ;
+    ns1:display "Hepatitis B" ;
+    ns1:name "B16" .
+
+ns2:HighNitrates a ns1:Substance ;
+    ns1:definition "High nitrates in drinking water have been linked to increased risk of type 1 diabetes." ;
+    ns1:name "High Nitrates" .
+
+ns2:HomeMonitoring a ns1:Observation ;
+    ns1:method ns2:Fingerstick ;
+    ns1:name "Home monitoring of capillary blood glucose" .
+
+ns2:Hormonal_changes a ns1:Observation ;
+    ns1:decreases ns2:Insulin_sensitivity .
+
+ns2:HypoglycemiaUnawareness a ns1:Condition ;
+    ns1:name "Hypoglycemia unawareness" .
+
+ns2:IdiopathicDiabetes a ns1:Condition ;
+    ns1:display "Idiopathic diabetes" ;
+    ns1:subtypeOf ns2:Type1Diabetes .
+
+ns2:ImmuneDysfunction a ns1:Condition ;
+    ns1:complication ns2:BacterialInfections,
+        ns2:FungalInfections ;
+    ns1:name "Immune Dysfunction" .
+
+ns2:ImpairedGlucoseTolerance a ns1:Observation ;
+    ns1:description "The disease generally develops in adults and becomes more common with increasing age; up to one third of adults > age 65 years have impaired glucose tolerance." ;
+    ns1:name "Impaired glucose tolerance" .
+
+ns2:ImpairedPeripheralGlucoseUptake a ns1:Observation ;
+    ns1:name "Impaired peripheral glucose uptake" .
+
+ns2:Impaired_First_Phase_Insulin_Secretion a ns1:Condition ;
+    ns1:partOf ns2:Impaired_Insulin_Secretion .
+
+ns2:ImproveSurvival a ns1:Outcome ;
+    ns1:condition "patients requiring prolonged (> 5 days) critical care" .
+
+ns2:InabilityToSuppressHepaticGlucoseProduction a ns1:Observation ;
+    ns1:name "Inability to suppress hepatic glucose production" .
+
+ns2:InadequatePatientEducation a ns1:Factor ;
+    ns1:description "Leads to errors in insulin administration." .
+
+ns2:InappropriateFoodChoices a ns1:Factor ;
+    ns1:description "Affects glucose control." .
+
+ns2:IncreasedRiskOfDiabetes a ns1:Condition ;
+    ns1:name "Increased risk of diabetes" .
+
+ns2:Increased_Proinsulin_Secretion a ns1:Condition ;
+    ns1:indicates ns2:Impaired_Insulin_Processing ;
+    ns1:partOf ns2:Impaired_Insulin_Secretion .
+
+ns2:Individual_or_family_therapy a ns1:Procedure .
+
+ns2:Infections a ns1:Condition ;
+    ns1:name "Infections" .
+
+ns2:InfluenzaVirus a ns1:Substance ;
+    ns1:display "Influenza virus" .
+
+ns2:IngestionOfConcentratedGlucoseSolution a ns1:Procedure .
+
+ns2:InjectableAntihyperglycemicMedications a ns1:Medication ;
+    ns1:name "Injectable antihyperglycemic medications" .
+
+ns2:InsulinDeficiency a ns1:Condition ;
+    ns1:display "Insulin deficiency" .
+
+ns2:InsulinDependentDiabetes a ns1:Condition ;
+    ns1:display "Insulin-dependent diabetes" ;
+    ns1:subtypeOf ns2:Type1Diabetes .
+
+ns2:InsulinInfusion a ns1:Medication ;
+    ns1:outcome ns2:EnhanceStrokeRecovery,
+        ns2:ImproveSurvival,
+        ns2:PreventAdverseOutcomes ;
+    ns1:use "maintain plasma glucose between 140 and 180 mg/dL" .
+
+ns2:InsulinInfusionProtocol a ns1:Procedure ;
+    ns1:use "titrate insulin drips to maintain euglycemia" .
+
+ns2:InsulinPumps a ns1:Device .
+
+ns2:InsulinTherapy a ns1:Procedure ;
+    ns1:name "Insulin therapy" ;
+    ns1:usedFor ns2:Type1Diabetes .
+
+ns2:Insulin_Secretion_Compensation_Failure a ns1:Condition ;
+    ns1:causes ns2:Hyperglycemia ;
+    ns1:relatedTo ns2:Insulin_Resistance .
+
+ns2:InsulinomaAssociatedProtein a ns1:Substance ;
+    ns1:definition "An autoantigen involved in autoimmune beta-cell destruction." ;
+    ns1:name "Insulinoma-Associated Protein" .
+
+ns2:Intensive_medical_supervision a ns1:Procedure .
+
+ns2:Interleukin_6 a ns1:Substance ;
+    ns1:influences ns2:Glucose_Metabolism ;
+    ns1:partOf ns2:Adipocytokines .
+
+ns2:IntermediateState a ns1:CodeableConcept ;
+    ns1:text "Intermediate State" .
+
+ns2:Intrauterine_Growth_Restriction a ns1:Condition ;
+    ns1:relatedTo ns2:Insulin_Resistance .
+
+ns2:IsletCellAntibodies a ns1:Observation ;
+    ns1:name "Islet cell antibodies" .
+
+ns2:Islet_Amyloid_Polypeptide_Accumulation a ns1:Condition ;
+    ns1:partOf ns2:Impaired_Insulin_Secretion .
+
+ns2:JuvenileOnsetDiabetes a ns1:Condition ;
+    ns1:display "Juvenile-onset diabetes" ;
+    ns1:subtypeOf ns2:Type1Diabetes .
+
+ns2:LADA a ns1:Condition ;
+    ns1:display "Latent autoimmune diabetes of adulthood" ;
+    ns1:subtypeOf ns2:Type1Diabetes,
+        ns2:Type2Diabetes .
+
+ns2:LabilePlasmaGlucoseLevels a ns1:Condition ;
+    ns1:description "Dramatic, recurrent swings in glucose levels, often for no apparent reason." .
+
+ns2:Leptin a ns1:Substance ;
+    ns1:influences ns2:Glucose_Metabolism ;
+    ns1:partOf ns2:Adipocytokines .
+
+ns2:LessStrictGlycemicControl a ns1:Observation ;
+    ns1:description "Less strict glycemic control" .
+
+ns2:LipidLevels a ns1:Observation ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:description "Lipid Levels",
+        "Lipid levels" ;
+    ns1:relatedTo ns2:Diabetes .
+
+ns2:LongLifeExpectancy a ns1:Condition ;
+    ns1:name "Long life expectancy" .
+
+ns2:LongerActingInsulins a ns1:Medication ;
+    ns1:use "adjusted to prevent hyperglycemia" .
+
+ns2:Loss_of_Pulsatile_Insulin_Secretion a ns1:Condition ;
+    ns1:partOf ns2:Impaired_Insulin_Secretion .
+
+ns2:LowCarbohydrateEatingPlan a ns1:Procedure ;
+    ns1:name "Low-carbohydrate eating plan" ;
+    ns1:usedFor ns2:Type2Diabetes .
+
+ns2:LowVitaminD a ns1:Substance ;
+    ns1:definition "Low vitamin D consumption has been linked to increased risk of type 1 diabetes." ;
+    ns1:description "Low Vitamin D" .
+
+ns2:Low_Birth_Weight a ns1:Condition ;
+    ns1:relatedTo ns2:Insulin_Resistance .
+
+ns2:MHC a ns1:GeneticElement ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "70828002" ;
+                    ns1:display "MHC" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Major histocompatibility complex involved in susceptibility to type 1 diabetes." .
+
+ns2:MacrovascularDisease a ns1:Condition ;
+    ns1:complication ns2:AnginaPectoris,
+        ns2:MyocardialInfarction,
+        ns2:PeripheralArterialDisease,
+        ns2:Strokes,
+        ns2:TransientIschemicAttacks ;
+    ns1:name "Macrovascular Disease" .
+
+ns2:MeasurementAfterFast a ns1:Procedure ;
+    ns1:duration "8-12 hours" .
+
+ns2:MeasurementAfterGlucoseIngestion a ns1:Procedure ;
+    ns1:duration "2 hours" ;
+    ns1:method ns2:IngestionOfConcentratedGlucoseSolution .
+
+ns2:MeasuringBloodLevels a ns1:Procedure ;
+    ns1:description "Measuring blood levels" .
+
+ns2:Mentoring a ns1:Procedure .
+
+ns2:MetabolicAssociatedSteatohepatitis a ns1:Condition ;
+    ns1:name "Metabolic associated steatohepatitis" .
+
+ns2:MetabolicAssociatedSteatoticLiverDisease a ns1:Condition ;
+    ns1:name "Metabolic associated steatotic liver disease" .
+
+ns2:MicrovascularDisease a ns1:Condition ;
+    ns1:complication ns2:Nephropathy,
+        ns2:Neuropathy,
+        ns2:Retinopathy ;
+    ns1:effect ns2:WoundHealingImpairment ;
+    ns1:name "Microvascular Disease" .
+
+ns2:MinimizeHypoglycemicEpisodes a ns1:Goal ;
+    ns1:description "Minimize hypoglycemic episodes" .
+
+ns2:MonitoringHbA1C a ns1:Observation ;
+    ns1:description "Monitoring HbA1C" .
+
+ns2:MonogenicDiabetes a ns1:Condition ;
+    ns1:definition "Monogenic diabetes due to genetic defects affecting beta-cell function, insulin action, or mitochondrial DNA" ;
+    ns1:example "maturity-onset diabetes of youth, neonatal diabetes" ;
+    ns1:name "Monogenic diabetes" .
+
+ns2:NearNormalGlucoseLevels a ns1:Condition ;
+    ns1:description "Near-normal glucose levels" .
+
+ns2:NoCardiovascularDisease a ns1:Condition ;
+    ns1:name "No cardiovascular disease" .
+
+ns2:NoHypoglycemia a ns1:Condition ;
+    ns1:name "No hypoglycemia" .
+
+ns2:NonInsulinAntihyperglycemicMedication a ns1:Medication ;
+    ns1:name "Non-insulin antihyperglycemic medication" .
+
+ns2:NonInsulinInjectableMedications a ns1:Medication .
+
+ns2:NormalBloodSugar a ns1:Condition ;
+    ns1:description "Normal blood sugar" .
+
+ns2:NutritionConsultation a ns1:Procedure ;
+    ns1:name "Nutrition consultation" ;
+    ns1:performedBy ns2:Dietitian ;
+    ns1:usedFor ns2:Type1Diabetes,
+        ns2:Type2Diabetes .
+
+ns2:OGTT a ns1:Observation ;
+    ns1:name "2-hour value on a 75-g OGTT" .
+
+ns2:OccultInfection a ns1:Condition ;
+    ns1:description "Hidden infection that can cause labile plasma glucose levels." .
+
+ns2:OverweightOrObesity a ns1:Observation ;
+    ns1:name "Overweight or obesity" .
+
+ns2:PancreasConditions a ns1:Condition ;
+    ns1:definition "Conditions that affect the pancreas" ;
+    ns1:example "cystic fibrosis, pancreatitis, hemochromatosis, pancreatectomy" ;
+    ns1:name "Conditions that affect the pancreas" .
+
+ns2:PancreaticBetaCellSecretoryDefect a ns1:Observation ;
+    ns1:name "Pancreatic beta cell secretory defect" .
+
+ns2:PancreaticBetaCells a ns1:BodyStructure ;
+    ns1:name "Pancreatic beta cells" .
+
+ns2:PartialRecoveryOfInsulinSecretion a ns1:Condition ;
+    ns1:description "Partial recovery of insulin secretion" .
+
+ns2:Patient a ns1:Patient ;
+    ns2:hasCondition ns2:Asymptomatic,
+        ns2:DiabeticComplications,
+        ns2:GlucoseMetabolismImpairment,
+        ns2:HyperosmolarHyperglycemicState,
+        ns2:Stress,
+        ns2:SymptomaticHyperglycemia,
+        ns2:Type2Diabetes ;
+    ns1:Patient.condition ns2:CirculatoryImpairment,
+        ns2:SensoryLoss ;
+    ns1:hasCondition ns2:AddisonDisease,
+        ns2:Diabetes,
+        ns2:Gastroparesis,
+        ns2:LabilePlasmaGlucoseLevels,
+        ns2:OccultInfection,
+        ns2:Type1Diabetes,
+        ns2:Type2Diabetes ;
+    ns1:hasConsultation ns2:NutritionConsultation ;
+    ns1:hasDiet ns2:Diet ;
+    ns1:hasFactor ns2:AcuteConditions,
+        ns2:Age,
+        ns2:ChronicConditions,
+        ns2:ComorbidConditions,
+        ns2:InadequatePatientEducation,
+        ns2:InappropriateFoodChoices,
+        ns2:Lifestyle,
+        ns2:PsychosocialStress .
+
+ns2:PatientPreference a ns1:Observation ;
+    ns1:Observation.subject ns2:Patient ;
+    ns1:Observation.value [ ns1:Observation.value.type "Feature" ;
+            ns1:Observation.value.value "Size of display panel" ],
+        [ ns1:Observation.value.type "Feature" ;
+            ns1:Observation.value.value "Voice readout" ],
+        [ ns1:Observation.value.type "Feature" ;
+            ns1:Observation.value.value "Smartphone app connectivity" ],
+        [ ns1:Observation.value.type "Feature" ;
+            ns1:Observation.value.value "Time to results" ] ;
+    ns1:name "Patient preference" .
+
+ns2:Patient_education a ns1:Procedure ;
+    ns1:aimsTo ns2:Careful_glycemic_control,
+        ns2:Safe_enjoyment_of_freedoms .
+
+ns2:PeripheralArterialDisease a ns1:Condition ;
+    ns1:name "Peripheral Arterial Disease" .
+
+ns2:PeripheralArterialInsufficiency a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "840580004" ;
+                    ns1:display "Peripheral arterial insufficiency" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PeripheralInsulinResistance a ns1:Observation ;
+    ns1:causes ns2:ImpairedPeripheralGlucoseUptake ;
+    ns1:name "Peripheral insulin resistance" .
+
+ns2:PeripheralNeuropathy a ns1:Complication,
+        ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302226006" ;
+                    ns1:display "Peripheral neuropathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PlasmaGlucoseMeasurement a ns1:DiagnosticMethod .
+
+ns2:PolycysticOvarySyndrome a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "237055002" ;
+                    ns1:display "Polycystic Ovary Syndrome" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PoorOutcomes a ns1:Outcome ;
+    ns1:includes ns2:IncreasedMortality .
+
+ns2:PostprandialBloodGlucose a ns1:Observation ;
+    ns1:name "Postprandial blood glucose" ;
+    ns1:value "< 180 mg/dL" .
+
+ns2:PredispositionToInfection a ns1:Complication .
+
+ns2:PreprandialBloodGlucose a ns1:Observation ;
+    ns1:name "Preprandial blood glucose" ;
+    ns1:valueRange [ ns1:high "130 mg/dL" ;
+            ns1:low "80 mg/dL" ] .
+
+ns2:Pressors a ns1:Medication ;
+    ns1:effect "require high doses of insulin" .
+
+ns2:PreventAdverseOutcomes a ns1:Outcome ;
+    ns1:includes ns2:OrganFailure .
+
+ns2:PreventComplications a ns1:Goal ;
+    ns1:description "Prevent complications" .
+
+ns2:Proinsulin a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "79212006" ;
+                    ns1:display "Proinsulin" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A precursor to insulin, also an autoantigen in autoimmune beta-cell destruction." .
+
+ns2:Psychopharmacology a ns1:Procedure .
+
+ns2:PsychosocialStress a ns1:Factor ;
+    ns1:description "Expresses itself in erratic patterns of medication use and food intake." .
+
+ns2:Psychosocial_factors a ns1:Observation ;
+    ns1:leadsTo ns2:Insulin_nonadherence .
+
+ns2:Psychosocial_interventions a ns1:Procedure ;
+    ns1:includes ns2:Mentoring,
+        ns2:Support_groups .
+
+ns2:Pubertal_and_insulin_induced_weight_gain a ns1:Observation .
+
+ns2:RapidActingInsulin a ns1:Substance ;
+    ns1:name "Rapid-acting insulin" ;
+    ns1:usedIn ns2:BasalBolusTherapy,
+        ns2:SlidingScaleInsulin .
+
+ns2:RegulatoryTCells a ns1:BodyStructure ;
+    ns1:name "Regulatory T cells" .
+
+ns2:ReinforcedEducation a ns1:Observation ;
+    ns1:description "Education should be reinforced at every physician visit and hospitalization" .
+
+ns2:RelieveSymptoms a ns1:Goal ;
+    ns1:description "Relieve symptoms" .
+
+ns2:Resistin a ns1:Substance ;
+    ns1:influences ns2:Glucose_Metabolism ;
+    ns1:partOf ns2:Adipocytokines .
+
+ns2:Retroviruses a ns1:Substance ;
+    ns1:definition "A group of viruses linked to the onset of type 1 diabetes." ;
+    ns1:name "Retroviruses" .
+
+ns2:RubellaVirus a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "5210005" ;
+                    ns1:display "Rubella Virus" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A virus linked to the onset of type 1 diabetes." .
+
+ns2:Safe_enjoyment_of_freedoms a ns1:Goal .
+
+ns2:SedentaryLifestyle a ns1:Observation ;
+    ns1:description "Sedentary lifestyle" .
+
+ns2:SelfMonitoring a ns1:Observation,
+        ns1:Procedure ;
+    ns1:description "Self-monitoring with fingerstick testing or continuous glucose monitoring" ;
+    ns1:frequency [ ns1:code "1 to ≥ 5 times a day" ] ;
+    ns1:method [ ns1:code ns2:ContinuousGlucoseMonitoring,
+                ns2:Fingerstick ] .
+
+ns2:SensoryLoss a ns1:Condition ;
+    ns1:Condition.name "Sensory loss" .
+
+ns2:SerumLipidReduction a ns1:Effect ;
+    ns1:name "Reduces serum lipids" .
+
+ns2:SevereHyperglycemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "237621004" ;
+                    ns1:display "Severe hyperglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:ShortActingInsulin a ns1:Medication ;
+    ns1:Medication.name "Short-acting Insulin" ;
+    ns1:Medication.relatedTo ns2:Surgery ;
+    ns1:use "supplemental" .
+
+ns2:ShortDurationDiabetes a ns1:Condition ;
+    ns1:name "Short duration of diabetes mellitus" .
+
+ns2:ShortLifeExpectancy a ns1:Condition ;
+    ns1:name "Short life expectancy" .
+
+ns2:Stage1 a ns1:Stage ;
+    ns1:hasCondition ns2:IsletAutoantibodies,
+        ns2:NormalBloodSugar ;
+    ns1:hasSymptom ns2:NoSymptoms ;
+    ns1:stageIdentifier "1" .
+
+ns2:Stage2 a ns1:Stage ;
+    ns1:hasCondition ns2:Dysglycemia,
+        ns2:GlucoseIntolerance ;
+    ns1:hasSymptom ns2:NoSymptoms ;
+    ns1:stageIdentifier "2" .
+
+ns2:Stage3 a ns1:Stage ;
+    ns1:hasPhase ns2:HoneymoonPhase ;
+    ns1:hasSymptom ns2:ClinicalSymptoms ;
+    ns1:stageIdentifier "3" .
+
+ns2:SteatoticLiverDisease a ns1:Observation ;
+    ns1:name "Steatotic liver disease (formerly fatty liver disease)" .
+
+ns2:StreptococcusPneumoniae a ns1:Substance ;
+    ns1:display "Streptococcus pneumoniae" .
+
+ns2:Stress a ns1:Condition ;
+    ns1:name "Stress" .
+
+ns2:StressInducedHyperglycemia a ns1:Condition ;
+    ns1:effect ns2:IncreasedMortality,
+        ns2:PoorOutcomes .
+
+ns2:Stroke a ns1:Condition ;
+    ns1:name "Stroke" .
+
+ns2:Strokes a ns1:Condition ;
+    ns1:name "Strokes" .
+
+ns2:Sulfonylureas a ns1:Medication ;
+    ns1:sideEffect ns2:Hypoglycemia ;
+    ns1:status "stopped" .
+
+ns2:Support_groups a ns1:Procedure .
+
+ns2:SusceptibilityGenes a ns1:GeneticElement ;
+    ns1:definition "Susceptibility genes include those within the major histocompatibility complex (MHC)—especially HLA-DR3,DQB1*0201 and HLA-DR4,DQB1*0302, which are present in > 90% of patients with type 1 diabetes mellitus—and those outside the MHC, which seem to regulate insulin production and processing and confer risk of diabetes mellitus in concert with MHC genes." ;
+    ns1:hasPart ns2:HLA-DR3,
+        ns2:HLA-DR4,
+        ns2:MHC ;
+    ns1:name "Susceptibility Genes" .
+
+ns2:SymptomsAndSigns a ns1:Observation ;
+    ns1:description "Symptoms and signs of hypoglycemia, hyperglycemia, and diabetic complications" .
+
+ns2:TCells a ns1:BodyStructure ;
+    ns1:name "T cells" .
+
+ns2:TimeInRange a ns1:Observation ;
+    ns1:name "Time in range (TIR)" ;
+    ns1:value "> 70%" .
+
+ns2:Tirzepatide a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "7.5 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "15 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "5 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "10 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "12.5 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "12.5 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "5 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "2.5 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "2.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "12.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "15 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "10 mg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "2.5 mg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "7.5 mg / 0.5 mL" ] ;
+    ns1:name "Tirzepatide" .
+
+ns2:TotalParenteralNutrition a ns1:Medication ;
+    ns1:effect "require high doses of insulin" .
+
+ns2:TransientIschemicAttackStroke a ns1:Condition ;
+    ns1:name "Transient ischemic attack/stroke" .
+
+ns2:TransientIschemicAttacks a ns1:Condition ;
+    ns1:name "Transient Ischemic Attacks" .
+
+ns2:TrialDietExercise a ns1:Procedure ;
+    ns1:name "Trial of diet and exercise" .
+
+ns2:TriglycerideLevel a ns1:Observation ;
+    ns1:name "Triglyceride level > 250 mg/dL [2.8 mmol/L]" .
+
+ns2:Tumor_Necrosis_Factor_Alpha a ns1:Substance ;
+    ns1:influences ns2:Glucose_Metabolism ;
+    ns1:partOf ns2:Adipocytokines .
+
+ns2:Type_2_Diabetes a ns1:Condition ;
+    ns1:relatedTo ns2:Insulin_Resistance,
+        ns2:Obesity,
+        ns2:Weight_Gain .
+
+ns2:Ulcers a ns1:Condition ;
+    ns1:name "Ulcers" .
+
+ns2:UnusualSustainedHyperglycemia a ns1:Symptom ;
+    ns1:name "Unusual sustained hyperglycemia" ;
+    ns1:range "13.9 to 16.7 mmol/L",
+        "250 to 300 mg/dL" .
+
+ns2:Varicella a ns1:Substance ;
+    ns1:display "Varicella" ;
+    ns1:name "B01" .
+
+ns2:VascularDisease a ns1:Complication .
+
+ns2:VenousPlasma a ns1:Observation ;
+    ns1:name "Venous plasma" .
+
+ns2:Virus a ns1:Substance ;
+    ns1:definition "Several viruses (including coxsackievirus, rubella virus, cytomegalovirus, Epstein-Barr virus, SARS-CoV-2, and retroviruses) have been linked to the onset of type 1 diabetes." ;
+    ns1:hasPart ns2:Coxsackievirus,
+        ns2:Cytomegalovirus,
+        ns2:EpsteinBarrVirus,
+        ns2:Retroviruses,
+        ns2:RubellaVirus,
+        ns2:SARSCoV2 ;
+    ns1:name "Virus" .
+
+ns2:WoundHealingImpairment a ns1:Condition ;
+    ns1:effect ns2:Infections,
+        ns2:Ulcers ;
+    ns1:name "Wound Healing Impairment" .
+
+ns2:ZincTransporterZnT8 a ns1:Substance ;
+    ns1:definition "An autoantigen involved in autoimmune beta-cell destruction." ;
+    ns1:name "Zinc Transporter ZnT8" .
+
+ns2:AerobicExercise a ns1:ActivityDefinition ;
+    ns1:description "Aerobic exercise has been shown to improve glycemic control in type 2 diabetes." .
+
+ns2:AttentionToDiet a ns1:Procedure .
+
+ns2:Beta_Cell_Dysfunction a ns1:Condition ;
+    ns1:relatedTo ns2:Hyperglycemia,
+        ns2:Impaired_Insulin_Secretion .
+
+ns2:BloodPressure a ns1:Observation ;
+    ns1:affects ns2:Hypertension,
+        ns2:Type2Diabetes ;
+    ns1:name "Blood Pressure",
+        "Blood pressure" ;
+    ns1:relatedTo ns2:Diabetes .
+
+ns2:CarbohydrateIngestion a ns1:Procedure ;
+    ns1:description "Carbohydrate ingestion during the workout period, typically 5 to 15 g of sucrose or another simple sugar." .
+
+ns2:CardiovascularDisease a ns1:Condition,
+        ns1:Observation ;
+    ns1:affectedBy ns2:Exercise ;
+    ns1:description "Cardiovascular disease" ;
+    ns1:managedBy ns2:ExerciseStressTesting ;
+    ns1:name "History of cardiovascular disease",
+        "cardiovascular disease" .
+
+ns2:ClinicalSymptoms a ns1:Symptom ;
+    ns1:description "Clinical symptoms" .
+
+ns2:CombinationExercise a ns1:ActivityDefinition ;
+    ns1:description "A combination of resistance and aerobic exercise is superior to either alone." .
+
+ns2:ContinuousGlucoseMonitoring a ns1:Device,
+        ns1:Observation ;
+    ns1:Device.property [ ns1:DeviceProperty.type "lower HbA1C levels and decrease hypoglycemia" ;
+            ns1:DeviceProperty.value "shown to lower HbA1C levels and decrease hypoglycemia" ],
+        [ ns1:DeviceProperty.type "no daily fingerstick glucose testing" ;
+            ns1:DeviceProperty.value "some versions do not require daily fingerstick glucose testing to calibrate the glucose monitor" ],
+        [ ns1:DeviceProperty.type "useful in type 1 diabetes" ;
+            ns1:DeviceProperty.value "especially useful in patients with type 1 diabetes and for those with hypoglycemia unawareness or nocturnal hypoglycemia" ],
+        [ ns1:DeviceProperty.type "sensor usage duration" ;
+            ns1:DeviceProperty.value "some CGM sensors can be used for up to 2 weeks before they need to be replaced" ],
+        [ ns1:DeviceProperty.type "clinician review" ;
+            ns1:DeviceProperty.value "clinicians can review the recorded data to determine whether the patient is experiencing undetected hyperglycemia or hypoglycemia" ],
+        [ ns1:DeviceProperty.type "real-time CGM" ;
+            ns1:DeviceProperty.value "provide glucose measurements continuously" ],
+        [ ns1:DeviceProperty.type "intermittently scanned CGM" ;
+            ns1:DeviceProperty.value "provide glucose measurements intermittently when scanned with a device" ],
+        [ ns1:DeviceProperty.type "real-time glucose data" ;
+            ns1:DeviceProperty.value "alarm to warn of hypoglycemia, hyperglycemia, or rapidly changing glucose levels" ],
+        [ ns1:DeviceProperty.type "accuracy requirements" ;
+            ns1:DeviceProperty.value "less stringent than capillary blood glucose monitors" ],
+        [ ns1:DeviceProperty.type "patterns of hyperglycemia and hypoglycemia" ;
+            ns1:DeviceProperty.value "assess patterns not identified with fingerstick glucose monitoring" ],
+        [ ns1:DeviceProperty.type "time in target range (TIR)" ;
+            ns1:DeviceProperty.value "increase patients' TIR and decrease HbA1C" ],
+        [ ns1:DeviceProperty.type "recommended use" ;
+            ns1:DeviceProperty.value "recommended for all patients treated with intensive insulin therapy" ],
+        [ ns1:DeviceProperty.type "TIR definition" ;
+            ns1:DeviceProperty.value "percentage of time blood glucose measurement on CGM is within the target blood glucose range (70 to 180 mg/mL [3.9 to 9.9 mmol/L]) over 14 days" ],
+        [ ns1:DeviceProperty.type "capillary blood glucose" ;
+            ns1:DeviceProperty.value "interstitial glucose detected by a subcutaneous sensor" ],
+        [ ns1:DeviceProperty.type "TIR > 70%" ;
+            ns1:DeviceProperty.value "associated with decreased risk of diabetes complications and inversely correlated with HbA1C level" ],
+        [ ns1:DeviceProperty.type "time below range" ;
+            ns1:DeviceProperty.value "< 70 mg/dL [< 3.9 mmol/L] should be < 4%, and time below 54 mg/L [< 3.0 mmol/L] should be < 1%" ],
+        [ ns1:DeviceProperty.type "individualized targets" ;
+            ns1:DeviceProperty.value "CGM targets should be individualized depending on age, comorbidities, and risk of hypoglycemia" ],
+        [ ns1:DeviceProperty.type "integration with insulin pumps" ;
+            ns1:DeviceProperty.value "provide real-time adjustment of insulin doses based on blood glucose levels" ],
+        [ ns1:DeviceProperty.type "automated insulin delivery (AID) systems" ;
+            ns1:DeviceProperty.value "known as AID systems or hybrid closed-loop systems, recommended for all patients who take multiple daily injections of insulin" ] ;
+    ns1:Device.type "Continuous Glucose Monitoring (CGM) systems" ;
+    ns1:description "Useful tool in individuals who fluctuate between hypoglycemia and hyperglycemia." ;
+    ns1:name "Continuous glucose monitoring" .
+
+ns2:Dehydration a ns1:Symptom ;
+    ns1:Symptom.causes ns2:Fatigue,
+        ns2:MentalStatusChanges,
+        ns2:Weakness .
+
+ns2:DiabetesManagement a ns1:Procedure ;
+    ns1:name "Diabetes management" ;
+    ns1:requires ns2:PatientEducation .
+
+ns2:DiabeticKetoacidosis a ns1:Condition,
+        ns1:Symptom ;
+    ns1:Condition.name "Diabetic Ketoacidosis" ;
+    ns1:Condition.subtype ns2:Type1Diabetes ;
+    ns1:description "Diabetic ketoacidosis (DKA)" ;
+    ns1:name "Diabetic ketoacidosis" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Diabetic_ketoacidosis a ns1:Symptom .
+
+ns2:Dysglycemia a ns1:Condition ;
+    ns1:description "Dysglycemia" .
+
+ns2:ExerciseStressTesting a ns1:Procedure ;
+    ns1:description "Exercise stress testing before beginning an exercise program for patients with known or suspected cardiovascular disease." .
+
+ns2:Fatigue a ns1:Symptom .
+
+ns2:Fingerstick a ns1:Procedure ;
+    ns1:name "Fingerstick" .
+
+ns2:GlucoseTesting a ns1:Procedure .
+
+ns2:Glycosuria a ns1:Symptom ;
+    ns1:Symptom.causes ns2:OsmoticDiuresis .
+
+ns2:HoneymoonPhase a ns1:Phase ;
+    ns1:description "Honeymoon phase" ;
+    ns1:hasCondition ns2:NearNormalGlucoseLevels,
+        ns2:PartialRecoveryOfInsulinSecretion .
+
+ns2:HyperosmolarHyperglycemicState a ns1:Condition ;
+    ns1:name "Hyperosmolar hyperglycemic state" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:IncreasedInfectionRate a ns1:Outcome .
+
+ns2:InsulinDoseAdjustment a ns1:Procedure ;
+    ns1:description "Lower insulin dose as needed to get glucose slightly above normal just before exercise." .
+
+ns2:InsulinInjections a ns1:Procedure .
+
+ns2:InsulinResistance a ns1:Condition,
+        ns1:Observation ;
+    ns1:description "Hepatic insulin resistance leads to an inability to suppress hepatic glucose production, and peripheral insulin resistance impairs peripheral glucose uptake." ;
+    ns1:name "Resistance to insulin" .
+
+ns2:IsletAutoantibodies a ns1:Autoantibody ;
+    ns1:description "Islet autoantibodies" .
+
+ns2:Lifestyle a ns1:Condition ;
+    ns1:relatedTo ns2:Obesity .
+
+ns2:LifestyleModification a ns1:Procedure ;
+    ns1:display "Dietary counseling and surveillance" ;
+    ns1:outcome "Prevention of Type 2 diabetes" .
+
+ns2:LongActingInsulin a ns1:Medication,
+        ns1:Substance ;
+    ns1:Medication.name "Long-acting Insulin" ;
+    ns1:Medication.relatedTo ns2:Type1Diabetes ;
+    ns1:name "Longer-acting insulin" ;
+    ns1:usedIn ns2:BasalBolusTherapy .
+
+ns2:MedicationTherapy a ns1:Procedure .
+
+ns2:MentalStatusChanges a ns1:Symptom .
+
+ns2:Metformin a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372567009" ;
+                    ns1:display "Metformin" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:contraindication ns2:ContrastAgents,
+        ns2:RenalInsufficiency ;
+    ns1:display "Metformin" ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 MG" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "50000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "850.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "For suspension, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "750 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "56.690 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "95 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg/1000mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "50.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "390 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.40 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "750 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg/850mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "850.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "663 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850.00 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "750 mg/1kg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1005.04 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:strength "97 mg/100mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Drug delivery system" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "850.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "1 kg/1kg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "750 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "882.350 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "750 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "150.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "750.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "750 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "5.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg / tab" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet; tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "850 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "500 mg/1kg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, for suspension" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "10.000 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "526.316 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "526.310 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "625 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "1000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "850 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Not applicable" ;
+            ns2:strength "95 mg/100mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "894.737 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "850.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1.000 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ] ;
+    ns1:effect ns2:WeightNeutral ;
+    ns1:outcome "Prevention of diabetes" ;
+    ns1:sideEffect ns2:LacticAcidosis ;
+    ns1:status "withheld" ;
+    ns1:subClassOf ns2:AntihyperglycemicMedications .
+
+ns2:MicrovascularComplications a ns1:Condition ;
+    ns1:description "Microvascular complications" ;
+    ns1:includes ns2:Nephropathy,
+        ns2:Neuropathy,
+        ns2:Retinopathy .
+
+ns2:Mortality a ns1:Outcome .
+
+ns2:MyocardialInfarction a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "22298006" ;
+                    ns1:display "Myocardial Infarction" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Neuropathy a ns1:Condition ;
+    ns1:affectedBy ns2:Exercise ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "386033004" ;
+                    ns1:display "Neuropathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "Neuropathy" .
+
+ns2:NoSymptoms a ns1:Symptom ;
+    ns1:description "No symptoms" .
+
+ns2:OralAntihyperglycemicMedications a ns1:Medication ;
+    ns1:name "Oral antihyperglycemic medications" .
+
+ns2:OralAntihyperglycemics a ns1:Medication ;
+    ns1:display "Oral Antihyperglycemics" .
+
+ns2:OrthostaticHypotension a ns1:Symptom .
+
+ns2:OsmoticDiuresis a ns1:Symptom ;
+    ns1:Symptom.causes ns2:Polydipsia,
+        ns2:Polyuria,
+        ns2:UrinaryFrequency .
+
+ns2:OtherCaregivers a ns1:PractitionerRole .
+
+ns2:PatientEducation a ns1:PatientEducation,
+        ns1:Procedure ;
+    ns1:description "Education is crucial to optimizing care. Education should include information about the following: Causes of diabetes, Diet, Exercise, Medications, Self-monitoring with fingerstick testing or continuous glucose monitoring, Monitoring HbA1C, Symptoms and signs of hypoglycemia, hyperglycemia, and diabetic complications." ;
+    ns1:display "Patient Education" ;
+    ns1:hasComponent ns2:CausesOfDiabetes,
+        ns2:Diet,
+        ns2:Exercise,
+        ns2:Medications,
+        ns2:MonitoringHbA1C,
+        ns2:SelfMonitoring,
+        ns2:SymptomsAndSigns ;
+    ns1:name "Patient education" ;
+    ns1:usedFor ns2:DiabetesManagement .
+
+ns2:PhysiologicInsulinReplacement a ns1:Procedure .
+
+ns2:Pregnancy a ns1:Condition ;
+    ns1:definition "Pregnancy causes some insulin resistance in all women, but only a fraction will develop gestational diabetes." ;
+    ns1:name "Pregnancy" ;
+    ns1:note "Falsely decreases HbA1C values" .
+
+ns2:RecognitionAndManagementOfDyslipidemia a ns1:Procedure .
+
+ns2:RecognitionAndManagementOfHypertension a ns1:Procedure .
+
+ns2:RenalInsufficiency a ns1:Condition .
+
+ns2:ResistanceExercise a ns1:ActivityDefinition ;
+    ns1:description "Resistance exercise has been shown to improve glycemic control in type 2 diabetes." .
+
+ns2:Retinopathy a ns1:Condition ;
+    ns1:affectedBy ns2:Exercise ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "29555009" ;
+                    ns1:display "Retinopathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "Retinopathy" ;
+    ns1:relatedCondition ns2:DiabetesMellitus .
+
+ns2:SARSCoV2 a ns1:Substance ;
+    ns1:definition "A virus linked to the onset of type 1 diabetes." ;
+    ns1:display "SARS-CoV-2" ;
+    ns1:name "SARS-CoV-2" .
+
+ns2:SchoolPersonnel a ns1:PractitionerRole .
+
+ns2:Statins a ns1:Medication ;
+    ns1:display "Statins" ;
+    ns1:name "Statins" .
+
+ns2:SurgicalTreatment a ns1:Procedure ;
+    ns1:effect ns2:CardiovascularRiskReduction,
+        ns2:GlucoseControlImprovement,
+        ns2:WeightLoss ;
+    ns1:indication ns2:Diabetes,
+        ns2:Obesity ;
+    ns1:name "Surgical treatment for obesity" .
+
+ns2:SymptomaticHyperglycemia a ns1:Condition,
+        ns1:Symptom ;
+    ns1:description "Symptomatic hyperglycemia" ;
+    ns1:name "Symptomatic hyperglycemia" .
+
+ns2:Type1DiabetesMellitus a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "46635009" ;
+                    ns1:display "Diabetes mellitus type 1" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A chronic condition in which the pancreas produces little or no insulin due to autoimmune beta-cell destruction." ;
+    ns1:display "Type 1 diabetes mellitus" .
+
+ns2:UrinaryFrequency a ns1:Symptom .
+
+ns2:Weakness a ns1:Symptom .
+
+ns2:WeightControl a ns1:Procedure .
+
+ns2:WeightNeutral a ns1:Effect ;
+    ns1:name "Weight-neutral" .
+
+ns2:Weight_Gain a ns1:Condition ;
+    ns1:relatedTo ns2:Insulin_Resistance,
+        ns2:Obesity .
+
+ns2:Age a ns1:Observation ;
+    ns1:description "The disease generally develops in adults and becomes more common with increasing age." ;
+    ns1:name "Age",
+        "Age ≥ 35 years" .
+
+ns2:BacterialInfections a ns1:Condition,
+        ns1:Symptom ;
+    ns1:name "Bacterial Infections" .
+
+ns2:BasalBolusTherapy a ns1:Procedure ;
+    ns1:name "Basal-bolus insulin therapy" ;
+    ns1:partOf ns2:InsulinTherapy .
+
+ns2:Complications a ns1:Observation ;
+    ns1:name "Complications" ;
+    ns1:relatedTo ns2:Diabetes .
+
+ns2:DiabetesCategory a ns1:CodeableConcept ;
+    ns1:text "Diabetes Category" .
+
+ns2:FungalInfections a ns1:Condition,
+        ns1:Symptom ;
+    ns1:name "Fungal Infections" .
+
+ns2:ImpairedGlucoseRegulation a ns1:Condition,
+        ns1:Observation ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:category ns2:IntermediateState ;
+    ns1:display "Impaired glucose regulation" ;
+    ns1:name "History of impaired glucose regulation (prediabetes)",
+        "Impaired glucose regulation",
+        "impaired glucose regulation" ;
+    ns1:relatedCondition ns2:DiabetesMellitus ;
+    ns1:riskFactor ns2:CardiovascularDisease .
+
+ns2:MedicalDevices a ns1:Device ;
+    ns1:display "Encounter for fitting and adjustment of other specified devices" ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:name "Medical devices" ;
+    ns1:outcome "Weight loss" ;
+    ns1:reasonReference ns2:Obesity .
+
+ns2:Medications a ns1:Medication,
+        ns1:Observation,
+        ns1:Substance,
+        ns1:TreatmentMethod ;
+    ns1:definition "Medications, most notably glucocorticoids, beta-blockers, protease inhibitors, atypical antipsychotics, immune checkpoint inhibitors, and calcineurin inhibitors" ;
+    ns1:description "Medications" ;
+    ns1:includes ns2:Insulin,
+        ns2:NonInsulinInjectableMedications,
+        ns2:OralAntihyperglycemicMedications ;
+    ns1:name "Medications" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Nausea a ns1:Condition,
+        ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "422587007" ;
+                    ns1:display "Nausea" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Nephropathy a ns1:Complication,
+        ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "90708001" ;
+                    ns1:display "Nephropathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:OralGlucoseToleranceTesting a ns1:Observation ;
+    ns1:method ns2:MeasurementAfterGlucoseIngestion ;
+    ns1:name "OGTT" .
+
+ns2:Pioglitazone a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "45 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "45 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "25 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "33.073 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "16.540 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "12.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:strength "45 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "45 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "16.534 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Occlusive dressing technique" ;
+            ns2:strength "15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated, extended release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "45 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "30.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg/1" ] ;
+    ns1:name "Pioglitazone" .
+
+ns2:Vomiting a ns1:Condition,
+        ns1:Symptom ;
+    ns1:name "Vomiting" ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:AutoimmuneResponse a ns1:Observation ;
+    ns1:name "Autoimmune response" .
+
+ns2:BlurredVision a ns1:Symptom .
+
+ns2:HbA1C a ns1:Observation ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:description "Blood HbA1C level" ;
+    ns1:display "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    ns1:interpretation "HbA1C ≥ 6.5% = diabetes; HbA1C 5.7 to 6.4% = prediabetes or at risk of diabetes" ;
+    ns1:note "HbA1C is an indirect measure of blood glucose; values may be falsely high or low and can vary with race/ethnicity" ;
+    ns1:relatedTo ns2:PlasmaGlucose ;
+    ns1:value "< 7%" .
+
+ns2:Hypertension a ns1:Condition,
+        ns1:Observation ;
+    ns1:name "Hypertension" ;
+    ns1:relatedTo ns2:Diabetes .
+
+ns2:PlasmaGlucose a ns1:Observation ;
+    ns1:Observation.name "Plasma Glucose" ;
+    ns1:Observation.relatedTo ns2:Diabetes,
+        ns2:Surgery ;
+    ns1:affects ns2:Type2Diabetes ;
+    ns1:name "Plasma Glucose",
+        "Plasma glucose" ;
+    ns1:relatedTo ns2:Diabetes .
+
+ns2:Polyphagia a ns1:Symptom .
+
+ns2:ReninAngiotensinAldosteroneSystemBlockers a ns1:Medication ;
+    ns1:display "Renin-Angiotensin-Aldosterone System Blockers" ;
+    ns1:includes ns2:ACEInhibitors,
+        ns2:AngiotensinIIReceptorBlockers ;
+    ns1:name "Renin-angiotensin-aldosterone system blockers" .
+
+ns2:SGLT2Inhibitor a ns1:Medication ;
+    ns1:name "Sodium/glucose cotransporter 2 inhibitor" .
+
+ns2:SlidingScaleInsulin a ns1:Medication,
+        ns1:Procedure ;
+    ns1:comparison "reactive rather than proactive" ;
+    ns1:name "Sliding-scale insulin" ;
+    ns1:outcome "poor glycemic control" ;
+    ns1:use "not recommended as the only intervention" ;
+    ns1:usedFor ns2:Type1Diabetes,
+        ns2:Type2Diabetes .
+
+ns2:AntihyperglycemicMedications a ns1:Medication ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:indication ns2:Diabetes,
+        ns2:Obesity ;
+    ns1:name "Antihyperglycemic medications" .
+
+ns2:BetaCells a ns1:BodyStructure,
+        ns1:Substance ;
+    ns1:display "Beta cells" ;
+    ns1:name "Beta cells" .
+
+ns2:Polydipsia a ns1:Observation,
+        ns1:Symptom ;
+    ns1:Symptom.causes ns2:Dehydration,
+        ns2:OrthostaticHypotension ;
+    ns1:name "Polydipsia" .
+
+ns2:Polyuria a ns1:Observation,
+        ns1:Symptom ;
+    ns1:name "Polyuria" .
+
+ns2:Adipocytokines a ns1:Substance ;
+    ns1:includes ns2:Adiponectin,
+        ns2:Interleukin_6,
+        ns2:Leptin,
+        ns2:Resistin,
+        ns2:Tumor_Necrosis_Factor_Alpha .
+
+ns2:Impaired_Insulin_Secretion a ns1:Condition ;
+    ns1:includes ns2:Impaired_First_Phase_Insulin_Secretion,
+        ns2:Increased_Proinsulin_Secretion,
+        ns2:Islet_Amyloid_Polypeptide_Accumulation,
+        ns2:Loss_of_Pulsatile_Insulin_Secretion ;
+    ns1:relatedTo ns2:Beta_Cell_Dysfunction,
+        ns2:Hyperglycemia .
+
+ns2:Hypoglycemia a ns1:Condition,
+        ns1:Symptom ;
+    ns1:affectedBy ns2:Exercise ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302866003" ;
+                    ns1:display "Hypoglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "Hypoglycemia" ;
+    ns1:managedBy ns2:CarbohydrateIngestion,
+        ns2:InsulinDoseAdjustment ;
+    ns1:relatedTo ns2:Hospitalization .
+
+ns2:Insulin_Resistance a ns1:Condition ;
+    ns1:causedBy ns2:Adverse_Prenatal_Environmental_Influences ;
+    ns1:characteristicOf ns2:Type_2_Diabetes ;
+    ns1:relatedTo ns2:Beta_Cell_Dysfunction,
+        ns2:Impaired_Insulin_Secretion,
+        ns2:Intrauterine_Growth_Restriction,
+        ns2:Low_Birth_Weight .
+
+ns2:Diet a ns1:Condition,
+        ns1:EnvironmentalFactor,
+        ns1:Observation,
+        ns1:Procedure,
+        ns1:TreatmentMethod ;
+    ns1:component [ ns1:name "Dietary recommendations" ;
+            ns1:value "Individualized based on patient tastes, preferences, culture, and goals" ],
+        [ ns1:name "Carbohydrates" ;
+            ns1:value "High quality, adequate fiber, vitamins, minerals, low in added sugar, fat, sodium" ],
+        [ ns1:name "Low-carbohydrate eating plan" ;
+            ns1:value "Can reduce blood glucose levels and decrease antihyperglycemic medications" ],
+        [ ns1:name "Carbohydrate counting" ;
+            ns1:value "Used by patients with type 1 diabetes to match insulin dose to carbohydrate intake" ],
+        [ ns1:name "Carbohydrate-to-insulin ratio (CIR)" ;
+            ns1:value "15 gram:1 unit" ],
+        [ ns1:name "Glycemic index" ;
+            ns1:value "Measure of the impact of an ingested carbohydrate-containing food on the blood glucose level" ],
+        [ ns1:name "Nutrition consultation" ;
+            ns1:value "Should complement physician counseling for both type 1 and type 2 diabetes" ] ;
+    ns1:definition "Dietary factors such as exposure to dairy products, high nitrates in drinking water, and low vitamin D consumption have been linked to increased risk of type 1 diabetes." ;
+    ns1:description "Diet" ;
+    ns1:display "Diet" ;
+    ns1:hasPart ns2:Cereals,
+        ns2:DairyProducts,
+        ns2:Gluten,
+        ns2:HighNitrates,
+        ns2:LowVitaminD ;
+    ns1:name "Diet" ;
+    ns1:relatedTo ns2:Obesity .
+
+ns2:GLP1ReceptorAgonists a ns1:Medication ;
+    ns1:display "GLP-1 Receptor Agonists" ;
+    ns1:effect ns2:WeightLoss ;
+    ns1:name "GLP-1 receptor agonists",
+        "GLP1 receptor agonists" ;
+    ns1:subClassOf ns2:AntihyperglycemicMedications .
+
+ns2:Surgery a ns1:Procedure ;
+    ns1:Procedure.name "Surgery" ;
+    ns1:Procedure.status "completed" .
+
+ns2:Insulin a ns1:Medication,
+        ns1:Substance ;
+    ns1:definition "A hormone produced by beta cells, also an autoantigen in autoimmune beta-cell destruction." ;
+    ns1:display "Insulin" ;
+    ns1:name "Insulin" .
+
+ns2:Hyperglycemia a ns1:Condition,
+        ns1:Observation,
+        ns1:Symptom ;
+    ns1:Symptom.accompaniedBy ns2:Polyphagia ;
+    ns1:Symptom.causes ns2:BacterialInfections,
+        ns2:BlurredVision,
+        ns2:FungalInfections,
+        ns2:Glycosuria,
+        ns2:Nausea,
+        ns2:Vomiting,
+        ns2:WeightLoss ;
+    ns1:causedBy ns2:Insulin_Secretion_Compensation_Failure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "80394007" ;
+                    ns1:display "Hyperglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:complication ns2:ImmuneDysfunction,
+        ns2:MacrovascularDisease,
+        ns2:MicrovascularDisease ;
+    ns1:description "This combination gives rise to fasting and postprandial hyperglycemia. Often insulin levels are very high, especially early in the disease. Later in the course of the disease, insulin production may fall, further exacerbating hyperglycemia." ;
+    ns1:effect ns2:IncreasedInfectionRate,
+        ns2:Mortality ;
+    ns1:impairs ns2:Insulin_Secretion ;
+    ns1:relatedSymptom ns2:BlurredVision,
+        ns2:Polydipsia,
+        ns2:Polyphagia,
+        ns2:Polyuria .
+
+ns2:DiabetesMellitus a ns1:Condition ;
+    ns1:Condition.symptom ns2:BacterialInfections,
+        ns2:BlurredVision,
+        ns2:Dehydration,
+        ns2:Fatigue,
+        ns2:FungalInfections,
+        ns2:Glycosuria,
+        ns2:Hyperglycemia,
+        ns2:MentalStatusChanges,
+        ns2:Nausea,
+        ns2:OrthostaticHypotension,
+        ns2:OsmoticDiuresis,
+        ns2:Polydipsia,
+        ns2:Polyphagia,
+        ns2:Polyuria,
+        ns2:UrinaryFrequency,
+        ns2:Vomiting,
+        ns2:Weakness,
+        ns2:WeightLoss ;
+    ns1:category ns2:DiabetesCategory ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "73211009" ;
+                    ns1:display "Diabetes Mellitus" ;
+                    ns1:system "http://snomed.info/sct" ] ],
+        "E10-E14",
+        "E11",
+        "diabetes" ;
+    ns1:complication ns2:HeartDisease,
+        ns2:Nephropathy,
+        ns2:PeripheralNeuropathy,
+        ns2:PredispositionToInfection,
+        ns2:VascularDisease ;
+    ns1:definition "impaired insulin secretion and variable degrees of peripheral insulin resistance leading to hyperglycemia" ;
+    ns1:diagnosisMethod ns2:PlasmaGlucoseMeasurement ;
+    ns1:display "Diabetes Mellitus",
+        "Diabetes mellitus",
+        "Type 2 diabetes" ;
+    ns1:hasTreatment ns2:Diet,
+        ns2:Exercise,
+        ns2:GLP1ReceptorAgonists,
+        ns2:GlucoseControlMonitoring,
+        ns2:Insulin,
+        ns2:OralAntihyperglycemics,
+        ns2:PatientEducation,
+        ns2:ReninAngiotensinAldosteroneSystemBlockers,
+        ns2:Statins,
+        ns2:WeightLoss ;
+    ns1:prevention ns2:GlycemicControl ;
+    ns1:relatedTo ns2:Hospitalization ;
+    ns1:symptom ns2:BlurredVision,
+        ns2:Hyperglycemia,
+        ns2:Polydipsia,
+        ns2:Polyphagia,
+        ns2:Polyuria ;
+    ns1:treatment ns2:Diet,
+        ns2:Exercise,
+        ns2:Medications .
+
+ns2:Exercise a ns1:ActivityDefinition,
+        ns1:Condition,
+        ns1:Observation,
+        ns1:Procedure,
+        ns1:TreatmentMethod ;
+    ns1:affects ns2:Hypoglycemia,
+        ns2:Type1Diabetes,
+        ns2:Type2Diabetes ;
+    ns1:description "Exercise",
+        "Physical activity should increase incrementally to whatever level a patient can tolerate." ;
+    ns1:display "Exercise" ;
+    ns1:hasPart ns2:BloodGlucose,
+        ns2:CarbohydrateIngestion,
+        ns2:ExerciseStressTesting,
+        ns2:InsulinDoseAdjustment ;
+    ns1:name "Exercise" ;
+    ns1:relatedTo ns2:AerobicExercise,
+        ns2:CombinationExercise,
+        ns2:Obesity,
+        ns2:ResistanceExercise .
+
+ns2:Diabetes a ns1:Condition ;
+    ns1:Condition.name "Diabetes" ;
+    ns1:name "Diabetes" .
+
+ns2:Obesity a ns1:Condition,
+        ns1:Observation ;
+    ns1:causedBy ns2:Diet,
+        ns2:Exercise,
+        ns2:Genetic_Determinants,
+        ns2:Lifestyle ;
+    ns1:description "Type 2 diabetes has become more common among children because childhood obesity has become epidemic." ;
+    ns1:display "Obesity" ;
+    ns1:name "E66",
+        "Obesity" ;
+    ns1:relatedTo ns2:Insulin_Resistance,
+        ns2:Weight_Gain .
+
+ns2:Type1Diabetes a ns1:Condition ;
+    ns1:Condition.name "Type 1 Diabetes" ;
+    ns1:Condition.subtype ns2:Diabetes ;
+    ns1:affectedBy ns2:Exercise ;
+    ns1:category ns2:DiabetesCategory ;
+    ns1:causedBy ns2:AbsenceOfInsulinProduction,
+        ns2:AutoimmuneMediatedInflammation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "46635009" ;
+                    ns1:display "Type 1 Diabetes Mellitus" ;
+                    ns1:system "http://snomed.info/sct" ] ],
+        "type1" ;
+    ns1:description "Endogenous insulin production is almost completely absent, and in some patients, counter-regulatory response to hypoglycemia is impaired.",
+        "Type 1 diabetes" ;
+    ns1:display "Type 1 Diabetes",
+        "Type 1 Diabetes Mellitus" ;
+    ns1:hasActivity ns2:GlucoseTesting,
+        ns2:InsulinInjections ;
+    ns1:hasAutoantibody ns2:IsletAutoantibodies ;
+    ns1:hasCaregiver ns2:OtherCaregivers,
+        ns2:SchoolPersonnel ;
+    ns1:hasCause ns2:AutoimmuneBetaCellDestruction,
+        ns2:IdiopathicDiabetes ;
+    ns1:hasComplication ns2:Hypoglycemia,
+        ns2:MicrovascularComplications ;
+    ns1:hasCondition ns2:Dysglycemia ;
+    ns1:hasPhase ns2:HoneymoonPhase ;
+    ns1:hasRisk ns2:Hypoglycemia ;
+    ns1:hasSubtype ns2:InsulinDependentDiabetes,
+        ns2:JuvenileOnsetDiabetes,
+        ns2:LADA ;
+    ns1:hasSymptom ns2:ClinicalSymptoms,
+        ns2:DiabeticKetoacidosis,
+        ns2:SymptomaticHyperglycemia ;
+    ns1:recommendation [ ns1:description "Testing at least 4 times a day" ],
+        "HbA1C should be assessed quarterly" ;
+    ns1:relatedArtifact ns2:AntiGlutamicAcidDecarboxylaseAntibodies,
+        ns2:IsletCellAntibodies ;
+    ns1:requires ns2:CarbohydrateCounting,
+        ns2:CarbohydrateExchangeSystem,
+        ns2:Insulin,
+        ns2:PhysiologicInsulinReplacement ;
+    ns1:requiresModification ns2:TreatmentGoals ;
+    ns1:stage ns2:Stage1,
+        ns2:Stage2,
+        ns2:Stage3 ;
+    ns1:subClassOf ns2:DiabetesMellitus ;
+    ns1:subtype ns2:DiabetesMellitus ;
+    ns1:subtypeOf ns2:DiabetesMellitus .
+
+ns2:WeightLoss a ns1:Condition,
+        ns1:Observation,
+        ns1:Procedure,
+        ns1:Symptom ;
+    ns1:display "Weight Loss",
+        "Weight loss" ;
+    ns1:name "Weight loss" ;
+    ns1:outcome "Reduce incidence of diabetes by > 50%" .
+
+ns2:Hospitalization a ns1:Condition,
+        ns1:Procedure ;
+    ns1:name "Hospitalization" .
+
+ns2:Type2Diabetes a ns1:Condition ;
+    ns1:Condition.code "Type 2 Diabetes" ;
+    ns1:Condition.subtype ns2:Diabetes ;
+    ns1:affectedBy ns2:AerobicExercise,
+        ns2:CombinationExercise,
+        ns2:ResistanceExercise ;
+    ns1:affects ns2:Adults,
+        ns2:Children ;
+    ns1:category ns2:DiabetesCategory ;
+    ns1:causedBy ns2:HepaticInsulinResistance,
+        ns2:PancreaticBetaCellSecretoryDefect,
+        ns2:PeripheralInsulinResistance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "44054006" ;
+                    ns1:display "Type 2 Diabetes Mellitus" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "In type 2 diabetes mellitus (previously called adult-onset or non–insulin-dependent), insulin secretion is inadequate because patients have developed resistance to insulin.",
+        "Type 2 diabetes" ;
+    ns1:display "Type 2 Diabetes",
+        "Type 2 Diabetes Mellitus" ;
+    ns1:hasCharacteristic ns2:Obesity ;
+    ns1:hasComplication ns2:ImpairedGlucoseTolerance ;
+    ns1:hasRiskFactor ns2:Age,
+        ns2:GeneticFactors,
+        ns2:Obesity ;
+    ns1:hasSymptom ns2:Hyperglycemia,
+        ns2:InsulinResistance ;
+    ns1:hasTreatment ns2:Diet,
+        ns2:Exercise,
+        ns2:GLP1ReceptorAgonists,
+        ns2:Insulin,
+        ns2:OralAntihyperglycemics ;
+    ns1:recommendation "HbA1C should be assessed at least twice a year when plasma glucose appears stable",
+        "HbA1C should be assessed more frequently when control is uncertain" ;
+    ns1:relatedArtifact ns2:Age,
+        ns2:CardiovascularDisease,
+        ns2:Dyslipidemia,
+        ns2:Ethnicity,
+        ns2:FamilyHistoryOfType2Diabetes,
+        ns2:GestationalDiabetes,
+        ns2:HIVInfection,
+        ns2:Hypertension,
+        ns2:ImpairedGlucoseRegulation,
+        ns2:OverweightOrObesity,
+        ns2:PolycysticOvarySyndrome,
+        ns2:SedentaryLifestyle,
+        ns2:SteatoticLiverDisease ;
+    ns1:requires ns2:AttentionToDiet,
+        ns2:LifestyleModification,
+        ns2:LowCarbohydrateEatingPlan,
+        ns2:RecognitionAndManagementOfDyslipidemia,
+        ns2:RecognitionAndManagementOfHypertension,
+        ns2:WeightControl ;
+    ns1:subClassOf ns2:DiabetesMellitus ;
+    ns1:subtype ns2:DiabetesMellitus ;
+    ns1:subtypeOf ns2:DiabetesMellitus ;
+    ns1:uses ns2:MedicationTherapy .
+

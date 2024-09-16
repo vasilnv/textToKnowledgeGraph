@@ -1,0 +1,731 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:AggressivelyReducingBP a ns1:Procedure ;
+    ns1:condition "systolic BP > 220 mm Hg" ;
+    ns1:method "continuously infusing nicardipine IV" ;
+    ns1:name "Aggressively reducing BP" .
+
+ns2:AndexanetAlfa a ns1:Medication ;
+    ns1:antidoteFor ns2:Apixaban,
+        ns2:Rivaroxaban .
+
+ns2:Anticoagulants a ns1:Medication ;
+    ns1:hasContraindication ns2:IntracerebralHemorrhage .
+
+ns2:AntiplateletMedications a ns1:Medication ;
+    ns1:hasContraindication ns2:IntracerebralHemorrhage .
+
+ns2:AntiseizureMedications a ns1:Medication ;
+    ns1:isNotTypicallyUsed ns2:Prophylactically ;
+    ns1:isUsedOnlyIf ns2:Seizure ;
+    ns1:name "Antiseizure medications" .
+
+ns2:BedsideGlucoseTest a ns1:Procedure ;
+    ns1:name "Bedside glucose test" .
+
+ns2:BloodGlucoseLevel a ns1:Observation ;
+    ns1:method "Measured at bedside immediately" ;
+    ns1:name "Blood Glucose Level" .
+
+ns2:CerebellarHematomas a ns1:Condition ;
+    ns1:definition "Accumulation of blood within the cerebellum" ;
+    ns1:name "Cerebellar Hematomas" ;
+    ns1:resultsIn ns2:AcuteHydrocephalus,
+        ns2:MidlineShift .
+
+ns2:CerebellarHemisphereHematoma a ns1:Condition ;
+    ns1:hasSize "> 3 cm in diameter" ;
+    ns1:mayCause ns2:Herniation,
+        ns2:MidlineShift ;
+    ns1:name "Cerebellar hemisphere hematoma" ;
+    ns1:requires ns2:SurgicalEvacuation .
+
+ns2:CoagulationStudies a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "395216006" ;
+                    ns1:display "Coagulation Studies" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:component ns2:INR,
+        ns2:PTT,
+        ns2:PlateletCount .
+
+ns2:Coagulation_factor_VII_human a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Kit; powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "200 IU/10ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "60000000 IU" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous drip" ;
+            ns2:strength "520 IU/vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 IU/10ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution; kit" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "200 UI" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "600 I.E." ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "600 IU" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "600 UI" ] .
+
+ns2:CompleteBloodCount a ns1:Observation ;
+    ns1:name "Complete Blood Count (CBC)" .
+
+ns2:DeepCerebralHematoma a ns1:Condition ;
+    ns1:hasHigh ns2:SurgicalMortality ;
+    ns1:hasSevere ns2:NeurologicDeficits ;
+    ns1:isSeldom ns2:Indicated ;
+    ns1:name "Deep cerebral hematoma" ;
+    ns1:requires ns2:EarlyEvacuation .
+
+ns2:DiagnosisOfIntracerebralHemorrhage a ns1:Condition ;
+    ns1:bodySite ns2:Brain ;
+    ns1:category ns2:Neuroimaging ;
+    ns1:clinicalStatus "active" ;
+    ns1:manifestation ns2:FocalNeurologicDeficits,
+        ns2:Headache,
+        ns2:ImpairedConsciousness ;
+    ns1:relatedCondition ns2:Hypoglycemia,
+        ns2:IschemicStroke,
+        ns2:Seizure,
+        ns2:SubarachnoidHemorrhage ;
+    ns1:value "Diagnosis of Intracerebral Hemorrhage" ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:ExternalVentricularDrain a ns1:Procedure ;
+    ns1:condition "signs of hydrocephalus and increased intracerebral pressure" ;
+    ns1:isOften ns2:Lifesaving ;
+    ns1:mayDecrease ns2:IntracranialPressure ;
+    ns1:name "External ventricular drain" .
+
+ns2:FreshFrozenPlasma a ns1:Medication ;
+    ns1:usedFor ns2:ReversalOfAnticoagulantEffects .
+
+ns2:Guidelines2022 a ns1:GuidanceResponse ;
+    ns1:date "2022" ;
+    ns1:performer ns2:AmericanHeartAssociation,
+        ns2:AmericanStrokeAssociation ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Hypertension .
+
+ns2:Hydrocephalus a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "230745008" ;
+                    ns1:display "Hydrocephalus" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:predicts ns2:WorseOutcomeAfterIntracerebralHemorrhage .
+
+ns2:Idarucizumab a ns1:Medication ;
+    ns1:antidoteFor ns2:Dabigatran .
+
+ns2:LobarCerebralHematoma a ns1:Condition ;
+    ns1:mayCause ns2:NeurologicDeficits,
+        ns2:Rebleeding ;
+    ns1:name "Lobar cerebral hematoma" ;
+    ns1:requires ns2:EarlyEvacuation .
+
+ns2:PlateletTransfusions a ns1:Procedure ;
+    ns1:usedFor ns2:ReversalOfAnticoagulantEffects .
+
+ns2:ProthrombinComplexConcentrate a ns1:Medication ;
+    ns1:usedFor ns2:ReversalOfAnticoagulantEffects .
+
+ns2:SmallHemorrhages a ns1:Condition ;
+    ns1:Condition.mimics ns2:IschemicStroke ;
+    ns1:Condition.symptom ns2:FocalDeficits,
+        ns2:MinimalHeadache,
+        ns2:MinimalNausea,
+        ns2:NoHeadache,
+        ns2:NoNausea .
+
+ns2:SupportiveCare a ns1:Procedure ;
+    ns1:includes ns2:AvoidingBPFluctuations,
+        ns2:DecreasingBP,
+        ns2:MaintainingBP,
+        ns2:ReversingAnticoagulation ;
+    ns1:name "Supportive care" .
+
+ns2:VitaminK a ns1:Medication ;
+    ns1:usedFor ns2:ReversalOfAnticoagulantEffects .
+
+ns2:AcuteKidneyInjury a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "14669001" ;
+                    ns1:display "Acute kidney injury" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:AmericanHeartAssociation a ns1:Organization ;
+    ns1:name "American Heart Association" .
+
+ns2:AmericanStrokeAssociation a ns1:Organization ;
+    ns1:name "American Stroke Association" .
+
+ns2:AmyloidDeposition a ns1:Condition .
+
+ns2:AntihypertensiveTreatment a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "308116003" ;
+                    ns1:display "Antihypertensive therapy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IVInfusion,
+        ns2:Nicardipine .
+
+ns2:Apixaban a ns1:Medication .
+
+ns2:ArteriovenousMalformations a ns1:Condition .
+
+ns2:AvoidingBPFluctuations a ns1:Procedure ;
+    ns1:description "Avoiding BP fluctuations" .
+
+ns2:BasalGanglia a ns1:BodySite ;
+    ns1:description "Basal ganglia" .
+
+ns2:BloodPressureControl a ns1:Procedure ;
+    ns1:description "Blood pressure control" .
+
+ns2:BrainInfarct a ns1:Condition ;
+    ns1:hasSubtype ns2:HemorrhagicInfarction .
+
+ns2:BrainParenchyma a ns1:BodySite ;
+    ns1:description "Brain parenchyma" .
+
+ns2:BrainStem a ns1:BodySite ;
+    ns1:description "Brain stem" .
+
+ns2:BrainStemDeficits a ns1:Sign ;
+    ns1:Sign.description "Large hemorrhages in the posterior fossa cause brain stem deficits" .
+
+ns2:CTAngiography a ns1:ImagingStudy ;
+    ns1:modality "CT Angiography" .
+
+ns2:CerebellarDeficits a ns1:Sign ;
+    ns1:Sign.description "Large hemorrhages in the posterior fossa cause cerebellar deficits" .
+
+ns2:CerebellarHematoma a ns1:Condition ;
+    ns1:hasSize "greater than 3 cm" .
+
+ns2:Cerebellum a ns1:BodySite ;
+    ns1:description "Cerebellum" .
+
+ns2:CerebralAmyloidAngiopathy a ns1:Condition ;
+    ns1:affects ns2:OlderPeople ;
+    ns1:causedBy ns2:AmyloidDeposition .
+
+ns2:CerebralLobes a ns1:BodySite ;
+    ns1:description "Cerebral lobes" .
+
+ns2:CharcotBouchardAneurysms a ns1:Condition ;
+    ns1:causes ns2:IntracerebralHemorrhage ;
+    ns1:definition "Microaneurysms in small perforating arteries" ;
+    ns1:description "Charcot-Bouchard Aneurysms" .
+
+ns2:Choriocarcinoma a ns1:Condition .
+
+ns2:CongenitalAneurysm a ns1:Condition .
+
+ns2:ControlOfModifiableRiskFactors a ns1:Procedure .
+
+ns2:Dabigatran a ns1:Medication .
+
+ns2:Death a ns1:Condition ;
+    ns1:definition "Cessation of all biological functions" ;
+    ns1:value "Death" .
+
+ns2:DecreasingBP a ns1:Procedure ;
+    ns1:condition "systolic BP between 150 mm Hg and 220 mm Hg" ;
+    ns1:targetBP "140 mm Hg" ;
+    ns1:value "Decreasing BP" .
+
+ns2:Delirium a ns1:Symptom ;
+    ns1:Symptom.description "Delirium is common" .
+
+ns2:DiagnosticImagingResult a ns1:Observation ;
+    ns1:interpretation ns2:NoHemorrhage,
+        ns2:SpotSign,
+        ns2:Xanthochromia ;
+    ns1:value "Diagnostic Imaging Result" .
+
+ns2:Fatal a ns1:Outcome ;
+    ns1:Outcome.description "Large hemorrhages are fatal within a few days in about half of patients" .
+
+ns2:FocalDeficits a ns1:Symptom ;
+    ns1:Symptom.description "Small hemorrhages may cause focal deficits without impairment of consciousness" .
+
+ns2:Hemiparesis a ns1:Sign ;
+    ns1:Sign.description "Large hemorrhages in the hemispheres cause hemiparesis" .
+
+ns2:HemorrhagicInfarction a ns1:Condition .
+
+ns2:Herniation a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "414403008" ;
+                    ns1:display "Herniation" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:HighInCalories a ns1:Substance .
+
+ns2:HighInSaturatedFats a ns1:Substance .
+
+ns2:HighInTransFats a ns1:Substance .
+
+ns2:Hypoglycemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302866003" ;
+                    ns1:display "Hypoglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:INR a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "165581004" ;
+                    ns1:display "International Normalized Ratio (INR)" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:IVInfusion a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "14152002" ;
+                    ns1:display "Intravenous infusion" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:SystolicBloodPressure .
+
+ns2:ImpairedConsciousness a ns1:Symptom ;
+    ns1:name "Impaired Consciousness" .
+
+ns2:ImpairmentOfConsciousness a ns1:Symptom ;
+    ns1:name "Impairment of consciousness" .
+
+ns2:Indicated a ns1:Condition ;
+    ns1:name "Indicated" .
+
+ns2:IntraventricularHemorrhage a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "23276006" ;
+                    ns1:display "Intraventricular hemorrhage" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Bleeding into the ventricular system" ;
+    ns1:resultsIn ns2:AcuteHydrocephalus,
+        ns2:Coma .
+
+ns2:LobarIntracerebralHemorrhage a ns1:Condition ;
+    ns1:resultFrom ns2:CerebralAmyloidAngiopathy .
+
+ns2:LumbarPuncture a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "277762005" ;
+                    ns1:display "Lumbar Puncture" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:MaintainingBP a ns1:Procedure ;
+    ns1:name "Maintaining BP" ;
+    ns1:targetBP "130-140 mm Hg" .
+
+ns2:Melanoma a ns1:Condition .
+
+ns2:MetastaticIntracerebralHemorrhage a ns1:Condition ;
+    ns1:hasCause ns2:Choriocarcinoma,
+        ns2:Melanoma,
+        ns2:RenalCellCarcinoma .
+
+ns2:Microaneurysms a ns1:Condition ;
+    ns1:definition "Small aneurysms in the arteries" ;
+    ns1:subtypeOf ns2:CharcotBouchardAneurysms ;
+    ns1:value "Microaneurysms" .
+
+ns2:Midbrain a ns1:BodySite ;
+    ns1:description "Midbrain" .
+
+ns2:MidbrainHemorrhage a ns1:Condition ;
+    ns1:definition "Bleeding within the midbrain" ;
+    ns1:name "Midbrain Hemorrhage" ;
+    ns1:resultsIn ns2:Coma .
+
+ns2:MildHeadache a ns1:Symptom ;
+    ns1:description "Mild headache" .
+
+ns2:MinimalHeadache a ns1:Symptom ;
+    ns1:Symptom.description "Small hemorrhages may cause minimal headache" .
+
+ns2:MinimalNausea a ns1:Symptom ;
+    ns1:Symptom.description "Small hemorrhages may cause minimal nausea" .
+
+ns2:MycoticAneurysm a ns1:Condition .
+
+ns2:Neuroimaging a ns1:Procedure ;
+    ns1:method ns2:CT,
+        ns2:CTAngiography,
+        ns2:MRI ;
+    ns1:name "Neuroimaging" ;
+    ns1:result ns2:DiagnosticImagingResult .
+
+ns2:Nicardipine a ns1:Medication ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "372502001" ;
+                    ns1:display "Nicardipine" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:NoHeadache a ns1:Symptom ;
+    ns1:Symptom.description "Small hemorrhages may cause no headache" .
+
+ns2:NoHemorrhage a ns1:Observation ;
+    ns1:value "No Hemorrhage" .
+
+ns2:NoNausea a ns1:Symptom ;
+    ns1:Symptom.description "Small hemorrhages may cause no nausea" .
+
+ns2:OlderPeople a ns1:PopulationGroup .
+
+ns2:OtherVascularMalformations a ns1:Condition .
+
+ns2:PTT a ns1:Observation ;
+    ns1:name "Partial Thromboplastin Time (PTT)" .
+
+ns2:PlateletCount a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "61928009" ;
+                    ns1:display "Platelet Count" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Pons a ns1:BodySite ;
+    ns1:description "Pons" .
+
+ns2:PontineHemorrhage a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "7713009" ;
+                    ns1:display "Pontine Hemorrhage" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Bleeding within the pons" ;
+    ns1:resultsIn ns2:Coma .
+
+ns2:PrimaryOrMetastaticBrainTumor a ns1:Condition ;
+    ns1:hasSubtype ns2:MetastaticIntracerebralHemorrhage .
+
+ns2:Prophylactically a ns1:Condition ;
+    ns1:name "Prophylactically" .
+
+ns2:Putamen a ns1:BodySite ;
+    ns1:description "Putamen" .
+
+ns2:Rebleeding a ns1:Condition ;
+    ns1:mayIncrease ns2:NeurologicDeficits ;
+    ns1:name "Rebleeding" .
+
+ns2:RenalCellCarcinoma a ns1:Condition .
+
+ns2:ReversingAnticoagulation a ns1:Procedure ;
+    ns1:name "Reversing anticoagulation" .
+
+ns2:Rivaroxaban a ns1:Medication .
+
+ns2:RuptureOfArterioscleroticSmallArtery a ns1:Condition ;
+    ns1:causedBy ns2:ChronicArterialHypertension .
+
+ns2:Seizures a ns1:Symptom ;
+    ns1:Symptom.description "Focal or generalized seizures are common" .
+
+ns2:SpotSign a ns1:Observation ;
+    ns1:interpretation "Bleeding is continuing, hematoma will expand, poor outcome" ;
+    ns1:value "Spot Sign" .
+
+ns2:SubarachnoidHemorrhage a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "21454007" ;
+                    ns1:display "Subarachnoid Hemorrhage" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:SuddenHeadache a ns1:Symptom ;
+    ns1:Symptom.description "Sudden headache, often during activity" .
+
+ns2:SuddenSevereHeadache a ns1:Symptom ;
+    ns1:description "Sudden severe headache" .
+
+ns2:SurgicalMortality a ns1:Condition ;
+    ns1:name "Surgical mortality" .
+
+ns2:Survivor a ns1:Outcome ;
+    ns1:Outcome.description "In survivors, consciousness returns and neurologic deficits gradually diminish" .
+
+ns2:TranstentorialBrainHerniation a ns1:Condition ;
+    ns1:definition "Displacement of brain tissue across the tentorium" ;
+    ns1:name "Transtentorial Brain Herniation" ;
+    ns1:resultsIn ns2:Coma,
+        ns2:MidbrainHemorrhage,
+        ns2:PontineHemorrhage .
+
+ns2:Trauma a ns1:Condition .
+
+ns2:UseOfCocaine a ns1:RiskFactor ;
+    ns1:causes ns2:TransientSevereHypertension .
+
+ns2:UseOfSympathomimeticDrugs a ns1:RiskFactor ;
+    ns1:causes ns2:TransientSevereHypertension .
+
+ns2:WorseOutcomeAfterIntracerebralHemorrhage a ns1:Condition ;
+    ns1:value "Worse outcome after intracerebral hemorrhage" .
+
+ns2:Xanthochromia a ns1:Observation ;
+    ns1:method ns2:LumbarPuncture ;
+    ns1:name "Xanthochromia" .
+
+ns2:AcuteHydrocephalus a ns1:Condition ;
+    ns1:definition "Rapid accumulation of cerebrospinal fluid" ;
+    ns1:name "Acute Hydrocephalus" ;
+    ns1:resultsIn ns2:Coma .
+
+ns2:BleedingOrVasculiticDisorder a ns1:Condition .
+
+ns2:BloodDyscrasia a ns1:Condition .
+
+ns2:CT a ns1:DiagnosticProcedure,
+        ns1:ImagingStudy,
+        ns1:Procedure ;
+    ns1:modality "CT" ;
+    ns1:name "CT" .
+
+ns2:ChronicArterialHypertension a ns1:Condition ;
+    ns1:causes ns2:Microaneurysms ;
+    ns1:definition "Long-term high blood pressure" ;
+    ns1:hasRiskFactor ns2:CigaretteSmoking,
+        ns2:HighRiskDiet,
+        ns2:Obesity ;
+    ns1:value "Chronic Arterial Hypertension" .
+
+ns2:EarlyEvacuation a ns1:Procedure ;
+    ns1:isOften ns2:Lifesaving ;
+    ns1:value "Early evacuation" .
+
+ns2:ExcessiveAnticoagulation a ns1:Condition .
+
+ns2:FocalNeurologicDeficits a ns1:Symptom ;
+    ns1:value "Focal Neurologic Deficits",
+        "Focal neurologic deficits" .
+
+ns2:Headache a ns1:Symptom ;
+    ns1:value "Headache" .
+
+ns2:HighRiskDiet a ns1:RiskFactor ;
+    ns1:includes ns2:HighInCalories,
+        ns2:HighInSaturatedFats,
+        ns2:HighInTransFats .
+
+ns2:Hypertension a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "38341003" ;
+                    ns1:display "Hypertension" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:AntihypertensiveTreatment,
+        ns2:SystolicBloodPressure .
+
+ns2:IntracranialArterialDissection a ns1:Condition .
+
+ns2:IntracranialPressure a ns1:Condition ;
+    ns1:definition "Elevated pressure within the skull" ;
+    ns1:name "Increased Intracranial Pressure" .
+
+ns2:LossOfConsciousness a ns1:Symptom ;
+    ns1:Symptom.description "Loss of consciousness is common, often within seconds or a few minutes" ;
+    ns1:description "Loss of consciousness" .
+
+ns2:MRI a ns1:DiagnosticProcedure,
+        ns1:ImagingStudy,
+        ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "113091000" ;
+                    ns1:display "MRI" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:modality "MRI" .
+
+ns2:MidlineShift a ns1:Condition ;
+    ns1:definition "Displacement of brain structures from their normal position" ;
+    ns1:value "Midline Shift",
+        "Midline shift" .
+
+ns2:MoyamoyaDisease a ns1:Condition .
+
+ns2:Nausea a ns1:Symptom ;
+    ns1:Symptom.description "Nausea is common" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "422587007" ;
+                    ns1:display "Nausea" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Seizure a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "91175000" ;
+                    ns1:display "Seizure" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:SupportiveMeasures a ns1:Procedure ;
+    ns1:name "Supportive measures" .
+
+ns2:SystolicBloodPressure a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "271649006" ;
+                    ns1:display "Systolic Blood Pressure" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:AcuteKidneyInjury .
+
+ns2:TransientSevereHypertension a ns1:Condition ;
+    ns1:causes ns2:IntracerebralHemorrhage .
+
+ns2:Vomiting a ns1:Symptom ;
+    ns1:Symptom.description "Vomiting is common" ;
+    ns1:description "Vomiting" .
+
+ns2:IschemicStroke a ns1:Condition ;
+    ns1:Condition.description "Small hemorrhages may mimic ischemic stroke" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "422504002" ;
+                    ns1:display "Ischemic Stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Lifesaving a ns1:Condition ;
+    ns1:name "Lifesaving" .
+
+ns2:SurgicalEvacuation a ns1:Procedure ;
+    ns1:condition "large lobar cerebral hematomas and hematomas > 3 cm in a cerebellar hemisphere" ;
+    ns1:hasIndication ns2:CerebellarHematoma ;
+    ns1:isOften ns2:Lifesaving ;
+    ns1:value "Surgical evacuation" .
+
+ns2:IntracerebralHemorrhage a ns1:Condition ;
+    ns1:Condition.outcome ns2:Fatal,
+        ns2:Survivor ;
+    ns1:Condition.sign ns2:BrainStemDeficits,
+        ns2:CerebellarDeficits,
+        ns2:Coma,
+        ns2:Hemiparesis,
+        ns2:NeurologicDeficits ;
+    ns1:Condition.symptom ns2:Delirium,
+        ns2:LossOfConsciousness,
+        ns2:Nausea,
+        ns2:Seizures,
+        ns2:SuddenHeadache,
+        ns2:Vomiting ;
+    ns1:bodySite ns2:BrainParenchyma ;
+    ns1:causedBy ns2:Hypertension ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "274100004" ;
+                    ns1:display "Intracerebral Hemorrhage" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "Accumulation of blood within the brain tissue" ;
+    ns1:diagnosedBy ns2:CT,
+        ns2:MRI ;
+    ns1:hasRiskFactor ns2:BleedingOrVasculiticDisorder,
+        ns2:BloodDyscrasia,
+        ns2:ChronicArterialHypertension,
+        ns2:CigaretteSmoking,
+        ns2:ExcessiveAnticoagulation,
+        ns2:HighRiskDiet,
+        ns2:IntracranialArterialDissection,
+        ns2:MoyamoyaDisease,
+        ns2:Obesity,
+        ns2:UseOfCocaine,
+        ns2:UseOfSympathomimeticDrugs ;
+    ns1:hasSubtype ns2:LobarIntracerebralHemorrhage ;
+    ns1:hasSymptom ns2:FocalNeurologicDeficits,
+        ns2:Headache,
+        ns2:ImpairmentOfConsciousness,
+        ns2:Nausea ;
+    ns1:hasTreatment ns2:ControlOfModifiableRiskFactors,
+        ns2:SupportiveMeasures,
+        ns2:SurgicalEvacuation ;
+    ns1:occursIn ns2:BasalGanglia,
+        ns2:BrainStem,
+        ns2:Cerebellum,
+        ns2:CerebralLobes,
+        ns2:Midbrain,
+        ns2:Pons,
+        ns2:Putamen ;
+    ns1:relatedTo ns2:IschemicStroke ;
+    ns1:resultFrom ns2:ArteriovenousMalformations,
+        ns2:BleedingOrVasculiticDisorder,
+        ns2:BloodDyscrasia,
+        ns2:BrainInfarct,
+        ns2:CongenitalAneurysm,
+        ns2:ExcessiveAnticoagulation,
+        ns2:IntracranialArterialDissection,
+        ns2:MoyamoyaDisease,
+        ns2:MycoticAneurysm,
+        ns2:OtherVascularMalformations,
+        ns2:PrimaryOrMetastaticBrainTumor,
+        ns2:RuptureOfArterioscleroticSmallArtery,
+        ns2:Trauma ;
+    ns1:resultsIn ns2:IntracranialPressure,
+        ns2:IntraventricularHemorrhage,
+        ns2:TranstentorialBrainHerniation ;
+    ns1:symptom ns2:LossOfConsciousness,
+        ns2:MildHeadache,
+        ns2:SuddenSevereHeadache,
+        ns2:Vomiting ;
+    ns1:treatedBy ns2:BloodPressureControl,
+        ns2:SupportiveMeasures,
+        ns2:SurgicalEvacuation .
+
+ns2:NeurologicDeficits a ns1:Condition,
+        ns1:Sign ;
+    ns1:Sign.description "Neurologic deficits are usually sudden and progressive" ;
+    ns1:value "Neurologic deficits" .
+
+ns2:ReversalOfAnticoagulantEffects a ns1:Procedure .
+
+ns2:Coma a ns1:Condition,
+        ns1:Sign ;
+    ns1:Sign.description "Coma can occur due to large hemorrhages" ;
+    ns1:definition "State of deep unconsciousness" ;
+    ns1:resultsIn ns2:Death ;
+    ns1:value "Coma" .
+

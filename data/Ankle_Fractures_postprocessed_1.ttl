@@ -1,0 +1,1246 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:AgeOver55 a ns1:Observation ;
+    ns1:partOf ns2:OttawaAnkleRules ;
+    ns1:valueString "Age >55" .
+
+ns2:AnkleFracture a ns1:Condition ;
+    ns1:bodySite ns2:LateralMalleolus,
+        ns2:MedialMalleolus,
+        ns2:PosteriorMalleolus ;
+    ns1:causedBy ns2:InversionInjury,
+        ns2:Jumping,
+        ns2:Running ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "16114001" ;
+                    ns1:display "Ankle Fracture" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A break in one or more of the bones that make up the ankle joint." ;
+    ns1:diagnosisMethod ns2:MRI,
+        ns2:XRay ;
+    ns1:evidentOn ns2:AnkleXRay ;
+    ns1:partOf ns2:DiagnosisOfAnkleFractures ;
+    ns1:relatedTo ns2:AnkleRing,
+        ns2:Disruption ;
+    ns1:stability ns2:Stable,
+        ns2:Unstable ;
+    ns1:treatment ns2:Casting,
+        ns2:ORIF,
+        ns2:WalkingBoot .
+
+ns2:AnklePain a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "247373008" ;
+                    ns1:display "Ankle pain" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:partOf ns2:OttawaAnkleRules .
+
+ns2:AnkleStabilityEvaluation a ns1:Procedure ;
+    ns1:definition "Assessment of the stability of the ankle, which determines treatment." ;
+    ns1:description "ankle stability evaluation" ;
+    ns1:relatedTo ns2:PhysicalExamination,
+        ns2:XRay .
+
+ns2:AnteriorTalofibularLigament a ns1:BodyStructure ;
+    ns1:partOf ns2:LateralLigamentComplex .
+
+ns2:BoneTenderness a ns1:Observation ;
+    ns1:description "Bone tenderness within 6 cm of the posterior edge or tip of either malleolus" ;
+    ns1:partOf ns2:OttawaAnkleRules .
+
+ns2:Bupivacaine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Perineural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:strength "0.5 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Retrobulbar" ;
+            ns2:strength "7.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "2.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "5 mg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "5.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intraspinal" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subarachnoid" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:strength "133 mg/10ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Infiltration; Parenteral" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "2.5 mg/mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit; solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:strength "2.5 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; injection, suspension; kit; solution" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intracaudal; Intramuscular; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "5 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Cloth; injection, solution; kit; solution" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intramuscular; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Enteral; Epidural; Intracaudal" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Dental; Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Parenteral" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Parenteral; Retrobulbar" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Intra-articular; Intralesional; Intramuscular; Soft tissue; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "2.5 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Intra-articular; Intralesional; Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration; Perineural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "0.5 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ;
+            ns2:strength "7.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit" ;
+            ns2:route "Perineural; Retrobulbar; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "0.5 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Intraspinal" ;
+            ns2:strength "7.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration; Perineural" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intralesional; Intramuscular; Intravenous; Soft tissue; Subcutaneous; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Intramuscular; Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intrathecal" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intrathecal" ;
+            ns2:strength "12.6168 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Epidural; Retrobulbar" ;
+            ns2:strength "7.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "5 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intralesional; Intramuscular; Soft tissue; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "5.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; injection, suspension; kit" ;
+            ns2:route "Epidural; Intra-articular; Intracaudal; Intramuscular; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intramuscular; Intrasynovial; Soft tissue; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Retrobulbar" ;
+            ns2:strength "150 mg / 20 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "125 mg / 50 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intramuscular; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Epidural; Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal; Perineural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "0.5 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "250 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intralesional" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "0.50 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "0.0025 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "660 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit; solution" ;
+            ns2:route "Epidural; Intracaudal; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "2.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Intracaudal" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; injection, suspension; kit; solution" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intracaudal; Intralesional; Intramuscular; Intravenous; Perineural; Soft tissue; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intraspinal" ;
+            ns2:strength "15 mg / 2 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ;
+            ns2:strength "2.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intramuscular; Intravenous; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "2.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Submucosal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "0.25 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "250 mg / 50 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Infiltration; Parenteral" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intracaudal; Perineural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intrathecal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "100 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intraspinal" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "75 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ;
+            ns2:strength "5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Intracaudal; Perineural" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution, gel forming, extended release" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Spray, metered" ;
+            ns2:route "Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "150.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:strength "133 MG/10ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Perineural" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:strength "266 mg/20ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intra-articular; Intralesional; Intramuscular; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit" ;
+            ns2:route "Intra-articular; Intralesional; Intramuscular; Intravenous; Perineural; Soft tissue" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Infiltration; Intracaudal; Subcutaneous; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "660 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "0.25 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Infiltration; Perineural" ;
+            ns2:strength "2.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit" ;
+            ns2:route "Epidural; Intracaudal; Intramuscular; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "10 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intraspinal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Intracaudal" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration; Intracaudal; Perineural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:strength "5 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection; injection, solution; kit; solution" ;
+            ns2:route "Epidural; Intracaudal; Intravenous; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Epidural; Intra-articular; Intramuscular; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Dental" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Epidural; Parenteral; Retrobulbar" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "125 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural" ;
+            ns2:strength "1.25 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Intrathecal" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Retrobulbar" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Implant" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "5 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, suspension, liposomal" ;
+            ns2:route "Infiltration" ;
+            ns2:strength "13.3 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Infiltration" ;
+            ns2:strength "5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Epidural; Intrathecal" ;
+            ns2:strength "5000000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Subarachnoid" ;
+            ns2:strength "7.5 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Retrobulbar" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; kit" ;
+            ns2:route "Infiltration; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:strength "266 MG/20ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Perineural" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution; injection, suspension; kit" ;
+            ns2:route "Infiltration; Intra-articular; Intralesional; Intramuscular; Perineural; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intraspinal" ;
+            ns2:strength "7.5 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Epidural; Retrobulbar" ] .
+
+ns2:CalcaneofibularLigament a ns1:BodyStructure ;
+    ns1:partOf ns2:LateralLigamentComplex .
+
+ns2:CorrectAlignment a ns1:Observation ;
+    ns1:description "Correct alignment" .
+
+ns2:DistalFibula a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "85401006" ;
+                    ns1:display "Distal Fibula" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:ExternalRotationStressXRay a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:text "External rotation stress x-ray" ] ;
+    ns1:method ns2:DetectTibiotalarSubluxation .
+
+ns2:FibulaFracture a ns1:Condition ;
+    ns1:bodySite ns2:Fibula ;
+    ns1:relatedCondition ns2:TibiotalarJointNormal .
+
+ns2:Fracture a ns1:Condition ;
+    ns2:causes ns2:Instability ;
+    ns2:disrupts ns2:AnkleRing,
+        ns2:Ligament ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "125605004" ;
+                    ns1:display "Fracture" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:IncorrectAlignment a ns1:Observation ;
+    ns1:description "Incorrect alignment" ;
+    ns1:mayResultIn ns2:Arthritis,
+        ns2:FractureRecurrence .
+
+ns2:KneeXRay a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "1290407002" ;
+                    ns1:display "Knee X-Ray" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:method ns2:DetectProximalFibulaFracture .
+
+ns2:LateralMalleolusFracture a ns1:Condition ;
+    ns1:bodySite ns2:LateralMalleolus ;
+    ns1:relatedCondition ns2:AnkleInstability .
+
+ns2:MedialDeltoidLigament a ns1:BodyStructure ;
+    ns1:description "Medial Deltoid Ligament" .
+
+ns2:MedialMalleolusFracture a ns1:Condition ;
+    ns1:bodySite ns2:MedialMalleolus ;
+    ns1:relatedCondition ns2:AnkleInstability .
+
+ns2:Meloxicam a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, soluble" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Conjunctival; Ophthalmic" ;
+            ns2:strength "0.3 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "15 mg/1.5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:strength "15 mg/1.5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, liquid filled" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "750000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "1500000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "1500000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "30 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Topical" ;
+            ns2:strength "1 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "750000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1500000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intralesional" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral; Topical" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "0.300 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Gel" ;
+            ns2:route "Cutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution, gel forming, extended release" ;
+            ns2:route "Infiltration" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "15.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "15 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "15 mg/1.5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "15.00 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, soluble" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, orally disintegrating" ;
+            ns2:route "Oral" ;
+            ns2:strength "1500000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suppository" ;
+            ns2:route "Rectal" ;
+            ns2:strength "7.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "0.3 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ] .
+
+ns2:Pain a ns1:Symptom ;
+    ns2:occursAt ns2:InjurySite ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "47933007" ;
+                    ns1:display "Pain" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PeronealNerveFunction a ns1:Observation ;
+    ns1:description "Peroneal Nerve Function" ;
+    ns1:method ns2:DorsiflexAtAnkle ;
+    ns1:relatedCondition ns2:MaisonneuveFracture .
+
+ns2:PosteriorTalofibularLigament a ns1:BodyStructure ;
+    ns1:partOf ns2:LateralLigamentComplex .
+
+ns2:Stability a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "366716005" ;
+                    ns1:display "Stability" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:interpretation ns2:GuideTreatment .
+
+ns2:StableAnkleFracture a ns1:Condition ;
+    ns1:prognosis "Good if stable and correctly aligned" ;
+    ns1:treatment ns2:Cast,
+        ns2:WalkingBoot ;
+    ns1:valueString "Stable ankle fracture" .
+
+ns2:StableAnkleFractureTreatment a ns1:Procedure ;
+    ns1:definition "Treatment for stable ankle fractures, typically involving a walking boot or cast." ;
+    ns1:relatedTo ns2:Cast,
+        ns2:WalkingBoot ;
+    ns1:valueString "stable ankle fracture treatment" .
+
+ns2:StressXRay a ns1:Procedure ;
+    ns1:description "Stress x-rays" ;
+    ns1:usedFor ns2:DiagnosisOfAnkleFractures .
+
+ns2:Swelling a ns1:Symptom ;
+    ns2:occursAt ns2:InjurySite ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "65124004" ;
+                    ns1:display "Swelling" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:TibiotalarSubluxation a ns1:Condition ;
+    ns1:bodySite ns2:TibiotalarJoint ;
+    ns1:relatedCondition ns2:AnkleInstability,
+        ns2:DeltoidLigamentInjury .
+
+ns2:UnstableAnkleFracture a ns1:Condition ;
+    ns1:treatment ns2:ORIF ;
+    ns1:valueString "Unstable ankle fracture" .
+
+ns2:UnstableAnkleFractureTreatment a ns1:Procedure ;
+    ns1:definition "Treatment for unstable ankle fractures, often involving ORIF." ;
+    ns1:relatedTo ns2:ORIF ;
+    ns1:valueString "unstable ankle fracture treatment" .
+
+ns2:AnkleMortise a ns1:BodyStructure ;
+    ns1:description "Ankle Mortise" .
+
+ns2:AnteroposteriorView a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "1290460003" ;
+                    ns1:display "Anteroposterior view" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:partOf ns2:AnkleXRay .
+
+ns2:Arthritis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "3723001" ;
+                    ns1:display "Arthritis" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Casting a ns1:Procedure .
+
+ns2:DeltoidLigament a ns1:BodyStructure ;
+    ns1:partOf ns2:Ankle,
+        ns2:MedialLigamentComplex .
+
+ns2:DeltoidLigamentInjury a ns1:Condition ;
+    ns1:bodySite ns2:DeltoidLigament ;
+    ns1:relatedCondition ns2:AnkleInstability .
+
+ns2:Disruption a ns1:Observation ;
+    ns1:definition "Interruption of the normal structure or function." ;
+    ns1:description "disruption" ;
+    ns1:relatedTo ns2:StabilizeAnkleRing,
+        ns2:UnstableAnkle .
+
+ns2:DorsiflexAtAnkle a ns1:Procedure ;
+    ns1:description "Dorsiflex at Ankle" ;
+    ns1:method ns2:TestPeronealNerveFunction .
+
+ns2:EmergencyDepartment a ns1:Location ;
+    ns1:description "Emergency department" ;
+    ns1:partOf ns2:InabilityToBearWeight .
+
+ns2:FractureRecurrence a ns1:Condition ;
+    ns1:description "Fracture recurrence" .
+
+ns2:ImmediatelyAfterInjury a ns1:Observation ;
+    ns1:description "Immediately after the injury" ;
+    ns1:partOf ns2:InabilityToBearWeight .
+
+ns2:Instability a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "813001" ;
+                    ns1:display "Instability" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:interpretation ns2:ObviousWhenInspectedOrPalpated .
+
+ns2:InterosseousLigament a ns1:BodyStructure ;
+    ns1:code "Interosseous Ligament" .
+
+ns2:InversionInjury a ns1:Observation ;
+    ns1:relatedTo ns2:Jumping,
+        ns2:Running .
+
+ns2:Knee a ns1:BodyStructure ;
+    ns1:partOf ns2:LowerLimb .
+
+ns2:LateralView a ns1:Observation ;
+    ns1:description "Lateral view" ;
+    ns1:partOf ns2:AnkleXRay .
+
+ns2:Ligament a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "52082005" ;
+                    ns1:display "Ligament" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:MRI a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "113091000" ;
+                    ns1:display "MRI" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:usedFor ns2:DiagnosisOfAnkleFractures .
+
+ns2:MaisonneuveFracture a ns1:Condition ;
+    ns2:associatedWith ns2:AnkleMortise,
+        ns2:MedialMalleolus,
+        ns2:PeronealNerve,
+        ns2:ProximalFibula ;
+    ns1:bodySite ns2:ProximalFibula ;
+    ns1:description "Maisonneuve Fracture",
+        "Maisonneuve fracture" ;
+    ns1:relatedCondition ns2:AnkleInstability ;
+    ns1:requires ns2:ORIF .
+
+ns2:MedialLigamentComplex a ns1:BodyStructure ;
+    ns1:partOf ns2:AnkleRing .
+
+ns2:ObliqueView a ns1:Observation ;
+    ns1:description "Oblique (mortise) view" ;
+    ns1:partOf ns2:AnkleXRay .
+
+ns2:PeronealNerve a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "734088005" ;
+                    ns1:display "Peroneal nerve" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:PhysicalExamination a ns1:Procedure ;
+    ns1:definition "A process where a medical professional examines a patient's body to check for signs of disease." ;
+    ns1:description "physical examination" .
+
+ns2:PosteriorMalleolus a ns1:BodyStructure ;
+    ns1:partOf ns2:Tibia .
+
+ns2:StabilizeAnkleRing a ns1:Procedure ;
+    ns1:definition "Procedures or structures that maintain the stability of the ankle ring." ;
+    ns1:description "stabilize ankle ring" .
+
+ns2:Stable a ns1:Observation .
+
+ns2:TibiotalarJoint a ns1:BodyStructure ;
+    ns1:partOf ns2:Ankle .
+
+ns2:Unstable a ns1:Observation .
+
+ns2:UnstableAnkle a ns1:Condition ;
+    ns1:definition "A condition where the ankle is not stable due to disruption of stabilizing structures." ;
+    ns1:valueString "unstable ankle" .
+
+ns2:Cast a ns1:Device ;
+    ns1:definition "A hard protective shell used to immobilize a broken bone while it heals." ;
+    ns1:valueString "Cast",
+        "cast" .
+
+ns2:InabilityToBearWeight a ns1:Observation ;
+    ns1:description "Inability to bear weight without assistance" ;
+    ns1:hasContext ns2:EmergencyDepartment,
+        ns2:ImmediatelyAfterInjury ;
+    ns1:partOf ns2:OttawaAnkleRules .
+
+ns2:Jumping a ns1:Activity .
+
+ns2:LateralMalleolus a ns1:BodyStructure ;
+    ns1:partOf ns2:Ankle,
+        ns2:Fibula .
+
+ns2:ProximalFibula a ns1:BodyStructure ;
+    ns2:associatedWith ns2:InterosseousLigament ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "54683003" ;
+                    ns1:display "Proximal fibula" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:partOf ns2:Knee .
+
+ns2:Running a ns1:Activity .
+
+ns2:LateralLigamentComplex a ns1:BodyStructure ;
+    ns1:partOf ns2:AnkleRing .
+
+ns2:LowerLimb a ns1:BodyStructure ;
+    ns1:partOf ns2:Body .
+
+ns2:MedialMalleolus a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "6417001" ;
+                    ns1:display "Medial malleolus" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:partOf ns2:Ankle,
+        ns2:Tibia .
+
+ns2:WalkingBoot a ns1:Device,
+        ns1:Procedure ;
+    ns1:definition "A medical device used to protect and support the foot and ankle after an injury or surgery." ;
+    ns1:valueString "Walking boot",
+        "walking boot" .
+
+ns2:Ankle a ns1:BodyStructure ;
+    ns1:partOf ns2:LowerLimb .
+
+ns2:AnkleRing a ns1:BodyStructure ;
+    ns1:connectedTo ns2:Calcaneus,
+        ns2:Fibula,
+        ns2:Talus,
+        ns2:Tibia ;
+    ns1:definition "A structure formed by the ankle bones and ligaments." ;
+    ns1:valueString "Ankle Ring",
+        "ankle ring" .
+
+ns2:Calcaneus a ns1:BodyStructure ;
+    ns1:connectedTo ns2:Fibula,
+        ns2:Talus,
+        ns2:Tibia .
+
+ns2:DiagnosisOfAnkleFractures a ns1:Condition ;
+    ns1:description "Diagnosis of Ankle Fractures" .
+
+ns2:ORIF a ns1:Procedure ;
+    ns1:definition "Open Reduction and Internal Fixation, a type of surgery used to fix broken bones." ;
+    ns1:valueString "ORIF",
+        "Open reduction with internal fixation" .
+
+ns2:OttawaAnkleRules a ns1:Observation,
+        ns1:Procedure ;
+    ns1:definition "A set of guidelines to help decide if a patient with foot or ankle pain should be x-rayed to diagnose a possible bone fracture." ;
+    ns1:relatedTo ns2:XRay ;
+    ns1:usedFor ns2:AnkleXRay ;
+    ns1:valueString "Ottawa ankle rules" .
+
+ns2:Talus a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "67453005" ;
+                    ns1:display "Talus" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:connectedTo ns2:Calcaneus,
+        ns2:Fibula,
+        ns2:Tibia .
+
+ns2:XRay a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "363680008" ;
+                    ns1:display "X-ray" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A diagnostic imaging technique used to view structures inside the body." ;
+    ns1:usedFor ns2:DiagnosisOfAnkleFractures ;
+    ns1:valueString "X-rays",
+        "x-ray" .
+
+ns2:AnkleXRay a ns1:Observation ;
+    ns1:hasView ns2:AnteroposteriorView,
+        ns2:LateralView,
+        ns2:ObliqueView ;
+    ns1:partOf ns2:XRay ;
+    ns1:valueString "Ankle x-rays" .
+
+ns2:Fibula a ns1:BodyStructure ;
+    ns1:connectedTo ns2:Calcaneus,
+        ns2:Talus,
+        ns2:Tibia ;
+    ns1:partOf ns2:LowerLimb .
+
+ns2:Tibia a ns1:BodyStructure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "12611008" ;
+                    ns1:display "Tibia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:connectedTo ns2:Calcaneus,
+        ns2:Fibula,
+        ns2:Talus .
+

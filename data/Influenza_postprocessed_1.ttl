@@ -1,0 +1,1586 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:Acetyl_sulfisoxazole a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.5 g/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule, for suspension" ;
+            ns2:route "Oral" ] .
+
+ns2:Adamantanes a ns1:Medication ;
+    ns1:Medication.components "amantadine and rimantadine" ;
+    ns1:Medication.effectiveness "effective only against influenza A viruses (influenza B viruses lack the M2 protein)" ;
+    ns1:Medication.mechanism "block the M2 ion channel and thus interfere with viral uncoating inside the cell" ;
+    ns1:Medication.note "more than 99% of current and recent circulating influenza viruses are resistant to adamantanes, so these drugs are currently not recommended for treatment" .
+
+ns2:AdverseEffect a ns1:AdverseEvent ;
+    ns1:AdverseEvent.severity "mild" ;
+    ns1:AdverseEvent.symptom ns2:MildWheezing,
+        ns2:Rhinorrhea .
+
+ns2:AirborneDroplets a ns1:Mechanism ;
+    ns1:spread "Influenza viruses" .
+
+ns2:AirborneSpread a ns1:Mechanism ;
+    ns1:importance "most important mechanism" ;
+    ns1:spread "Influenza viruses" .
+
+ns2:Amantadine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "55.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "10 MG/ML" ] .
+
+ns2:Antibiotics a ns1:Medication ;
+    ns1:name "Antibiotics" ;
+    ns1:usedFor ns2:BacterialInfections .
+
+ns2:AntigenicDrift a ns1:Observation ;
+    ns1:component [ ns1:description "description" ;
+            ns1:value "relatively minor, progressive mutations in preexisting combinations of H and NA antigens" ],
+        [ ns1:description "result" ;
+            ns1:value "frequent emergence of new viral strains" ],
+        [ ns1:description "effect" ;
+            ns1:value "may cause seasonal epidemics because protection by antibody generated to the previous strain is decreased" ] ;
+    ns1:effect "produces strains that cause seasonal epidemics" ;
+    ns1:value "Antigenic Drift" .
+
+ns2:AntigenicShift a ns1:Observation ;
+    ns1:component [ ns1:description "result" ;
+            ns1:value "Pandemics can result from antigenic shift" ],
+        [ ns1:description "effect" ;
+            ns1:value "antibodies against other strains provide little or no protection against the new strain" ],
+        [ ns1:description "description" ;
+            ns1:value "relatively rare development of new combinations of H and/or NA antigens" ],
+        [ ns1:description "mechanism" ;
+            ns1:value "result from reassortment of subunits of the viral genome" ] ;
+    ns1:effect "can cause a pandemic with significant mortality" ;
+    ns1:value "Antigenic Shift" .
+
+ns2:Antipyretics a ns1:Medication ;
+    ns1:name "Antipyretics" ;
+    ns1:partOf ns2:SymptomaticTreatment .
+
+ns2:AsianInfluenza a ns1:Condition ;
+    ns1:date "1957" ;
+    ns1:location "Asia" .
+
+ns2:Aspirin a ns1:Medication ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "387458008" ;
+                    ns1:display "Aspirin" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:contraindicatedFor ns2:PatientsUnder18 .
+
+ns2:AspirinIngestion a ns1:Procedure ;
+    ns1:associatedWith ns2:ReyeSyndrome ;
+    ns1:name "Ingestion of aspirin" .
+
+ns2:Azithromycin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "500 mg / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Oral" ] .
+
+ns2:Azlocillin a ns1:MedicationRequest .
+
+ns2:BG-777 a ns1:MedicationRequest .
+
+ns2:Baloxavir a ns1:Medication ;
+    ns1:Medication.dose "single 40 mg dose orally to patients ≥ 12 years and 40 to 80 kg or a single 80 mg dose for patients >80 kg" ;
+    ns1:Medication.use "patients ≥ 12 years with uncomplicated influenza who have been symptomatic for ≤ 48 hours and who are otherwise healthy or at high-risk of developing complications" ;
+    ns1:activeAgainst ns2:InfluenzaA,
+        ns2:InfluenzaB ;
+    ns1:description "An endonuclease inhibitor used for treating influenza." ;
+    ns1:subClassOf ns2:EndonucleaseInhibitor .
+
+ns2:Baloxavir_marboxil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "80 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg" ] .
+
+ns2:Besifloxacin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "0.6 % w/v" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "0.6 %" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "6.630 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "6 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "6 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "6 mg/1mL" ] .
+
+ns2:BoosterDose a ns1:ImmunizationRecommendation ;
+    ns1:ImmunizationRecommendation.doseNumber 2 ;
+    ns1:ImmunizationRecommendation.interval "1 month" ;
+    ns1:ImmunizationRecommendation.patientGroup ns2:ChildrenUnder8YearsNotVaccinated ;
+    ns1:ImmunizationRecommendation.seriesDoses 2 ;
+    ns1:ImmunizationRecommendation.targetDisease ns2:Influenza .
+
+ns2:Bromhexine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.0800 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:strength "2 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "160 mg" ] .
+
+ns2:CDC a ns1:Organization ;
+    ns1:Organization.name "Centers for Disease Control and Prevention" ;
+    ns1:Organization.provides "Complete list of influenza vaccines for the current season" ;
+    ns1:estimates ns2:Deaths,
+        ns2:Hospitalizations ;
+    ns1:name "Centers for Disease Control and Prevention" .
+
+ns2:Case_Fatality_Rate a ns1:Statistic ;
+    ns1:description "Overall, the case fatality rate is low (eg, < 1%), but because incidence of disease is high, the total number of deaths can be significant." .
+
+ns2:Cefadroxil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "530 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "1 g/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ] .
+
+ns2:Cefoperazone a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "2 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 g/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "500 mg" ] .
+
+ns2:Cefprozil a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, effervescent" ;
+            ns2:strength "250 mg" ] .
+
+ns2:Ceftriaxone a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular; Intravenous" ;
+            ns2:strength "1 g/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Parenteral" ;
+            ns2:strength "2 G" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 mg/1mL" ] .
+
+ns2:ChestXRay a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "399208008" ;
+                    ns1:display "Chest X-Ray" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:reasonReference ns2:SevereRespiratorySymptoms ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Patient .
+
+ns2:Clarithromycin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "125 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "For suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg/5mL" ] .
+
+ns2:Clavulanic_acid a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "2.000 g" ].
+
+ns2:ClinicalEvaluation a ns1:Procedure ;
+    ns1:description "Clinical evaluation" ;
+    ns1:reasonReference ns2:DiagnosisOfInfluenza ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Patient .
+
+ns2:ContactWithContaminatedItems a ns1:Mechanism ;
+    ns1:spread "Influenza viruses" .
+
+ns2:Diagnosis a ns1:Procedure ;
+    ns1:description "Usually clinical and depends on local epidemiologic patterns." ;
+    ns1:method "RT-PCR assays",
+        "clinical" ;
+    ns1:name "Diagnosis" ;
+    ns1:purpose "determine whether outbreaks of respiratory disease are due to influenza",
+        "differentiate influenza types and subtypes",
+        "help select antiviral therapy" .
+
+ns2:Doxycycline a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "50 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, delayed release" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "150 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, extended release" ;
+            ns2:route "Oral" ;
+            ns2:strength "40 mg" ] .
+
+ns2:EggAllergy a ns1:Condition ;
+    ns1:recommendation [ ns1:condition [ ns1:description "allergic reaction more severe than just hives (eg, angioedema, respiratory distress, recurrent emesis)" ;
+                    ns1:recommendation [ ns1:setting "inpatient or outpatient medical setting" ;
+                            ns1:supervision "supervised by a clinician who is able to recognize and manage severe allergic reactions" ] ] ;
+            ns1:description "Any of the influenza vaccines can be given" ;
+            ns1:exception [ ns1:contraindication ns2:InfluenzaVaccine ;
+                    ns1:description "severe allergic reaction to a previous influenza vaccination" ] ] ;
+    ns1:value "egg allergy" .
+
+ns2:EggFreeVaccines a ns1:Medication ;
+    ns1:name "egg-free vaccines" ;
+    ns1:types [ ns1:description "cell-culture produced IIV for people > 4 years",
+                "recombinant IIV for adults" ] .
+
+ns2:EpidemiologyOfInfluenza a ns1:Observation ;
+    ns1:Observation.component [ ns1:Observation.component.name "Influenza" ;
+            ns1:Observation.component.value "causes widespread sporadic illness yearly during fall and winter in temperate climates (seasonal epidemics)" ],
+        [ ns1:Observation.component.description "SeasonalEpidemics" ;
+            ns1:Observation.component.value "caused by both influenza A and B viruses" ],
+        [ ns1:Observation.component.description "H3N2" ;
+            ns1:Observation.component.value "most seasonal influenza epidemics have been caused by H3N2 (an influenza A virus) since 1968" ],
+        [ ns1:Observation.component.description "InfluenzaB" ;
+            ns1:Observation.component.value "may cause milder disease but often cause epidemics with moderate or severe disease" ],
+        [ ns1:Observation.component.description "PredominantSerotype" ;
+            ns1:Observation.component.value "Most influenza epidemics are caused by a predominant serotype" ],
+        [ ns1:Observation.component.description "SequentialAppearance" ;
+            ns1:Observation.component.value "different influenza viruses may appear sequentially in one location" ],
+        [ ns1:Observation.component.description "SimultaneousAppearance" ;
+            ns1:Observation.component.value "different influenza viruses may appear simultaneously, with one virus predominating in one location and another virus predominating elsewhere" ],
+        [ ns1:Observation.component.description "WeeklySurveillanceReport" ;
+            ns1:Observation.component.value "A weekly surveillance report of seasonal influenza in the US is available at the Centers for Disease Control and Prevention's FluView" ] ;
+    ns1:Observation.value "Epidemiology of Influenza" .
+
+ns2:Erythromycin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "500.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Wafer" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "250 mg / cap" ] .
+
+ns2:H1N1FluPandemic a ns1:Condition ;
+    ns1:acquisition "not through ingestion of pork, rarely by contact with infected pigs" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "303175008" ;
+                    ns1:display "H1N1" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:combinationOf "swine, avian, and human influenza viruses" ;
+    ns1:date "2009-2010" ;
+    ns1:deaths "Mexico" ;
+    ns1:initialName "Swine flu virus" ;
+    ns1:location "Global" ;
+    ns1:spreadTo "70 countries and all 50 US states" ;
+    ns1:standardizedName "influenza A(H1N1)pdm09" .
+
+ns2:H1N1_Pandemic a ns1:Event ;
+    ns1:description "2009 H1N1 pandemic" ;
+    ns1:outcome ns2:H1N1_Deaths .
+
+ns2:H3N2 a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.etiology "an influenza A virus" ;
+    ns1:Condition.onset "since 1968" ;
+    ns1:Condition.verificationStatus "confirmed" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "303178005" ;
+                    ns1:display "H3N2" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Haemophilus_influenzae_type_B_strain_20752_capsular_polysaccharide_tetanus_toxoid_conjugate_antigen a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution; kit" ;
+            ns2:route "Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "10 ug/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "10 ug/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intramuscular; Subcutaneous" ;
+            ns2:strength "10 mcg/0.5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution; kit; solution" ;
+            ns2:route "Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "10 mcg / 0.5 mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "10 mcg/0.5ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Intramuscular" ] .
+
+ns2:Hemagglutinin a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "263773003" ;
+                    ns1:display "Hemagglutinin" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:component [ ns1:code [ a ns1:CodeableConcept ;
+                    ns1:coding [ a ns1:Coding ;
+                            ns1:code "59804006" ;
+                            ns1:display "Glycoprotein" ;
+                            ns1:system "http://snomed.info/sct" ] ] ;
+            ns1:value "on the influenza viral surface" ],
+        [ ns1:code "function" ;
+            ns1:value "allows the virus to bind to cellular sialic acid and fuse with the host cell membrane" ] .
+
+ns2:High_Risk_Patients a ns1:Group ;
+    ns1:age "Patients > 65 years" ;
+    ns1:description "High-risk patients" .
+
+ns2:HongKongInfluenza a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "303178005" ;
+                    ns1:display "H3N2" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:date "1968" ;
+    ns1:location "Hong Kong" .
+
+ns2:HospitalUnit a ns1:Location ;
+    ns1:description "A closed environment where clusters of cases may occur." .
+
+ns2:HouseholdContacts a ns1:Group ;
+    ns1:description "Household contacts of exposed individuals at high risk." .
+
+ns2:Hydration a ns1:Procedure ;
+    ns1:name "Hydration" ;
+    ns1:partOf ns2:SymptomaticTreatment .
+
+ns2:Hypoxemia a ns1:Condition ;
+    ns1:category "symptom" ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "389087006" ;
+                    ns1:display "Hypoxemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:IIV a ns1:Medication ;
+    ns1:Medication.name "Inactivated Influenza Vaccine" .
+
+ns2:InfluenzaAInfection a ns1:Condition ;
+    ns1:complication ns2:Encephalitis,
+        ns2:Myocarditis,
+        ns2:Myoglobinuria ;
+    ns1:name "Influenza A infection" .
+
+ns2:InfluenzaAVirus a ns1:Virus ;
+    ns1:name "Influenza A Virus" ;
+    ns1:subClassOf ns2:InfluenzaViruses .
+
+ns2:InfluenzaAntigens a ns1:Observation ;
+    ns1:name "Influenza antigens" .
+
+ns2:InfluenzaBEpidemic a ns1:Event ;
+    ns1:associatedWith ns2:ReyeSyndrome ;
+    ns1:name "Epidemic of influenza B" .
+
+ns2:InfluenzaBInfection a ns1:Condition ;
+    ns1:complication ns2:Encephalitis,
+        ns2:Myocarditis,
+        ns2:Myoglobinuria,
+        ns2:ReyeSyndrome ;
+    ns1:name "Influenza B infection" .
+
+ns2:InfluenzaBVirus a ns1:Virus ;
+    ns1:name "Influenza B Virus" ;
+    ns1:subClassOf ns2:InfluenzaViruses .
+
+ns2:InfluenzaCVirus a ns1:Virus ;
+    ns1:description "Does not cause typical influenza illness and is not discussed here." ;
+    ns1:name "Influenza C Virus" ;
+    ns1:subClassOf ns2:InfluenzaViruses .
+
+ns2:LAIV a ns1:Immunization,
+        ns1:Medication ;
+    ns1:Immunization.notRecommendedFor ns2:ChildrenUnder5Years,
+        ns2:ChildrenWithReactiveAirwayDisease ;
+    ns1:Immunization.recommendation ns2:AAP,
+        ns2:ACIP ;
+    ns1:Immunization.status "reinstated" ;
+    ns1:Medication.name "Live-attenuated Influenza Vaccine" .
+
+ns2:Lefamulin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "600 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution, concentrate" ;
+            ns2:strength "150 mg" ] .
+
+ns2:Lomefloxacin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution / drops" ;
+            ns2:route "Ophthalmic" ;
+            ns2:strength "3 mg/ml" ] .
+
+ns2:Loracarbef a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "100 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg/5mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "400 mg/1" ] .
+
+ns2:Molnupiravir a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "200 mg" ] .
+
+ns2:MorbidityMortality a ns1:Observation ;
+    ns1:Observation.code [ ns1:CodeableConcept.coding [ ns1:Coding.code "exacerbation_of_underlying_illness" ;
+                    ns1:Coding.display "Exacerbation of underlying illness" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "acute_respiratory_distress_syndrome" ;
+                    ns1:Coding.display "Acute respiratory distress syndrome" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "primary_influenza_pneumonia" ;
+                    ns1:Coding.display "Primary influenza pneumonia" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "secondary_bacterial_pneumonia" ;
+                    ns1:Coding.display "Secondary bacterial pneumonia" ] ] ;
+    ns1:Observation.subject ns2:HighRiskGroup .
+
+ns2:N4-Hydroxycytidine a ns1:MedicationRequest .
+
+ns2:Neuraminidase a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "80837006" ;
+                    ns1:display "Neuraminidase" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:component [ ns1:code [ a ns1:CodeableConcept ;
+                    ns1:coding [ a ns1:Coding ;
+                            ns1:code "59804006" ;
+                            ns1:display "Glycoprotein" ;
+                            ns1:system "http://snomed.info/sct" ] ] ;
+            ns1:value "on the influenza viral surface" ],
+        [ ns1:code "function" ;
+            ns1:value "enzymatically removes sialic acid, promoting viral release from the infected host cell" ] .
+
+ns2:NursingHome a ns1:Location ;
+    ns1:description "A closed environment where clusters of cases may occur." .
+
+ns2:OldHongKongInfluenza a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "772807005" ;
+                    ns1:display "H3N8" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:date "1900" ;
+    ns1:location "Hong Kong" .
+
+ns2:Oseltamivir a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:Medication.dose "75 mg orally 2 times a day" ;
+    ns1:Medication.effect "decrease the incidence of otitis media in children" ;
+    ns1:Medication.lowerDose "children as young as 1 year" ;
+    ns1:Medication.note "no other data clearly show that treatment of influenza prevents complications" ;
+    ns1:Medication.sideEffect "occasional nausea and vomiting" ;
+    ns1:Medication.use "patients > 12 years" ;
+    ns1:description "A neuraminidase inhibitor used for treating influenza.",
+        "Common antiviral drug used for postexposure prophylaxis." ;
+    ns1:dosage "75 mg once a day" ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Capsule, gelatin coated" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.360 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "12 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "98527 Mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "39.400 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "For suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, gelatin coated" ;
+            ns2:strength "45 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "0.7884 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "12 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ;
+            ns2:strength "12 mg/ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "98.500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "75.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "12 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "75 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg/1mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for suspension" ;
+            ns2:route "Oral" ;
+            ns2:strength "6 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "98.53 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Granule" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "98.5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "45 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "45 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "39.410 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "1200 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:strength "6 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "98528 Mg" ] ;
+    ns1:subClassOf ns2:NeuraminidaseInhibitors .
+
+ns2:Pandemic a ns1:Condition ;
+    ns1:value "Pandemic" .
+
+ns2:Peramivir a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:Medication.dose "single dose" ;
+    ns1:Medication.form "IV" ;
+    ns1:Medication.note "Studies of its use for influenza B are limited" ;
+    ns1:Medication.use "patients > 2 years who cannot tolerate oral or inhaled drugs" ;
+    ns1:description "A neuraminidase inhibitor used for treating influenza." ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 mg / mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution, concentrate" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "200 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "600 mg/60mL" ] ;
+    ns1:subClassOf ns2:NeuraminidaseInhibitors .
+
+ns2:PersonToPersonContact a ns1:Mechanism ;
+    ns1:spread "Influenza viruses" .
+
+ns2:PostexposureProphylacticAntiviralDrugs a ns1:Procedure ;
+    ns1:description "Indicated for potentially exposed people in closed environments or high-risk contacts." ;
+    ns1:indication ns2:Exposure,
+        ns2:HighRiskContacts .
+
+ns2:PredominantSerotype a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.etiology "Most influenza epidemics are caused by a predominant serotype" ;
+    ns1:Condition.name "Predominant Serotype" ;
+    ns1:Condition.verificationStatus "confirmed" .
+
+ns2:PreexposureProphylacticAntiviralDrugs a ns1:Procedure ;
+    ns1:contraindication ns2:Immunocompromised,
+        ns2:RecentVaccination,
+        ns2:VaccinationContraindicated ;
+    ns1:description "Considered during an epidemic for specific patients." ;
+    ns1:indication ns2:Epidemic .
+
+ns2:Prevention a ns1:Procedure ;
+    ns1:indicatedFor ns2:AllPatients,
+        ns2:HealthCarePractitioners,
+        ns2:HighRiskPatients ;
+    ns1:method "antiviral drugs" ;
+    ns1:name "Prevention" ;
+    ns1:target "immunocompromised patients",
+        "patients with contraindications to vaccination" .
+
+ns2:PreventionOfInfluenza a ns1:Condition ;
+    ns1:description "Prevention of Influenza" ;
+    ns1:prevention ns2:AnnualVaccination,
+        ns2:Chemoprophylaxis .
+
+ns2:PrimaryDose a ns1:ImmunizationRecommendation ;
+    ns1:ImmunizationRecommendation.doseNumber 1 ;
+    ns1:ImmunizationRecommendation.patientGroup ns2:ChildrenUnder8YearsNotVaccinated ;
+    ns1:ImmunizationRecommendation.seriesDoses 2 ;
+    ns1:ImmunizationRecommendation.targetDisease ns2:Influenza .
+
+ns2:PrimaryInfluenzaPneumonia a ns1:Condition ;
+    ns1:category "disease" ;
+    ns1:clinicalStatus "active" ;
+    ns1:name "Primary influenza pneumonia" ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:PulseOximetry a ns1:Procedure ;
+    ns1:name "Pulse oximetry" ;
+    ns1:reasonReference ns2:SevereRespiratorySymptoms ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Patient .
+
+ns2:QS-21 a ns1:MedicationRequest .
+
+ns2:RT_PCRTest a ns1:Procedure ;
+    ns1:name "Reverse transcriptase-polymerase chain reaction (RT-PCR) test" ;
+    ns1:reasonReference ns2:DiagnosisOfInfluenza ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Patient .
+
+ns2:RapidAntigenTest a ns1:Procedure ;
+    ns1:name "Rapid antigen test" ;
+    ns1:reasonReference ns2:DiagnosisOfInfluenza ;
+    ns1:status "completed" ;
+    ns1:subject ns2:Patient .
+
+ns2:Rest a ns1:Procedure ;
+    ns1:name "Rest" ;
+    ns1:partOf ns2:SymptomaticTreatment .
+
+ns2:Rimantadine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Oral" ;
+            ns2:strength "5.000 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ;
+            ns2:route "Oral" ;
+            ns2:strength "100.000 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Kit" ;
+            ns2:route "Oral" ] .
+
+ns2:RussianInfluenza a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "303176009" ;
+                    ns1:display "H2N2" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:date "1889" ;
+    ns1:location "Russia" .
+
+ns2:SeasonalInfluenza a ns1:Condition ;
+    ns1:date "since 2009" ;
+    ns1:name "influenza A(H1N1)pdm09" .
+
+ns2:SequentialAppearance a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.code "Sequential Appearance" ;
+    ns1:Condition.etiology "different influenza viruses may appear sequentially in one location" ;
+    ns1:Condition.verificationStatus "confirmed" .
+
+ns2:SimultaneousAppearance a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.code "Simultaneous Appearance" ;
+    ns1:Condition.etiology "different influenza viruses may appear simultaneously, with one virus predominating in one location and another virus predominating elsewhere" ;
+    ns1:Condition.verificationStatus "confirmed" .
+
+ns2:SpanishInfluenza a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "442352004" ;
+                    ns1:display "H1N1" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:date "1918" ;
+    ns1:location "Spain" .
+
+ns2:Streptomycin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "1 g / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "1 g" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "1 g / 2.5 mL" ] .
+
+ns2:SwineInfluenza a ns1:Condition ;
+    ns1:code "influenza A [H1N1]pdm09" ;
+    ns1:date "2009" ;
+    ns1:location "Swine" .
+
+ns2:Thymalfasin a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:strength "1.6 mg/1ml" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intramuscular; Subcutaneous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection" ;
+            ns2:route "Subcutaneous" ;
+            ns2:strength "1.6 mg/vial" ] .
+
+ns2:Treatment a ns1:Procedure ;
+    ns1:description "Treat most patients symptomatically" .
+
+ns2:Triazavirin a ns1:MedicationRequest .
+
+ns2:Umifenovir a ns1:MedicationRequest .
+
+ns2:Vaccination a ns1:Procedure ;
+    ns1:description "Preferred method of prevention against viral infections." ;
+    ns1:purpose "patients with contraindications to vaccination",
+        "prevention in immunocompromised patients" ;
+    ns1:value "Vaccinate annually everyone aged ≥ 6 months who does not have a contraindication" .
+
+ns2:VaccinationRecommendation a ns1:Observation ;
+    ns1:recommendation [ ns1:age "≥ 6 months" ;
+            ns1:contraindication ns2:Contraindication ;
+            ns1:target ns2:Everyone ] ;
+    ns1:value "Vaccination recommendations" .
+
+ns2:WHO a ns1:Organization ;
+    ns1:Organization.name "World Health Organization" .
+
+ns2:WeeklySurveillanceReport a ns1:Observation ;
+    ns1:Observation.name "Weekly Surveillance Report" ;
+    ns1:Observation.value "A weekly surveillance report of seasonal influenza in the US is available at the Centers for Disease Control and Prevention's FluView" .
+
+ns2:Zanamivir a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:Medication.contraindication "reactive airway disease" ;
+    ns1:Medication.device "inhalation device" ;
+    ns1:Medication.dose "2 puffs (10 mg) 2 times a day" ;
+    ns1:Medication.form "inhaler" ;
+    ns1:Medication.sideEffect "bronchospasm" ;
+    ns1:Medication.use "adults and children ≥ 7 years" ;
+    ns1:description "A neuraminidase inhibitor used for treating influenza." ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg / act" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg/1blister" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Aerosol, powder" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Respiratory (inhalation)" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "500 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg/1" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, metered" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:route "Respiratory (inhalation)" ;
+            ns2:strength "5 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, metered" ;
+            ns2:route "Respiratory (inhalation)" ],
+        [ a ns1:Dosage ;
+            ns2:form "Drug delivery system" ;
+            ns2:route "Buccal" ;
+            ns2:strength "5.000 mg" ] ;
+    ns1:subClassOf ns2:NeuraminidaseInhibitors .
+
+ns2:AAP a ns1:Organization ;
+    ns1:Organization.name "American Academy of Pediatrics" .
+
+ns2:ACIP a ns1:Organization ;
+    ns1:Organization.name "Centers for Disease Control and Prevention's Advisory Committee on Immunization Practices" .
+
+ns2:AbdominalPain a ns1:Symptom .
+
+ns2:AcuteSymptoms a ns1:Observation ;
+    ns1:Observation.duration "2 to 3 days" ;
+    ns1:Observation.symptom ns2:Cough,
+        ns2:Fatigue,
+        ns2:Fever,
+        ns2:Sweating,
+        ns2:Weakness .
+
+ns2:AllPatients a ns1:Group ;
+    ns1:name "All patients" .
+
+ns2:AnnualVaccination a ns1:Procedure ;
+    ns1:name "Annual vaccination" ;
+    ns1:prevents ns2:Influenza .
+
+ns2:AntiviralDrugs a ns1:Medication ;
+    ns1:description "Antiviral drugs are effective in prevention and treatment of viral infections.",
+        "Drugs given within 1 to 2 days of symptom onset to decrease the duration of fever, severity of symptoms, and time to return to normal activity." ;
+    ns1:effect "slightly decrease duration and severity of symptoms" ;
+    ns1:name "Antiviral drugs" ;
+    ns1:recommendedFor ns2:HighRiskPatients ;
+    ns1:resistance "different influenza types and subtypes are resistant to different drugs" ;
+    ns1:usage "typically used only in high-risk patients" ;
+    ns1:usedFor ns2:Influenza .
+
+ns2:AntiviralTreatment a ns1:Procedure ;
+    ns1:description "Reduces the duration of illness by about 1 day and should be specifically considered for high-risk patients." ;
+    ns1:name "Antiviral Treatment" .
+
+ns2:BacterialInfections a ns1:Condition ;
+    ns1:complicationOf ns2:Influenza ;
+    ns1:name "Complicating bacterial infections" .
+
+ns2:BloodySputum a ns1:Symptom ;
+    ns1:name "Bloody sputum" .
+
+ns2:COVID19Vaccine a ns1:Medication ;
+    ns1:value "COVID-19 vaccine" .
+
+ns2:Chemoprophylaxis a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "420965003" ;
+                    ns1:display "Chemoprophylaxis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:method ns2:AntiviralDrugs ;
+    ns1:prevents ns2:Influenza .
+
+ns2:ChildrenUnder5Years a ns1:Group ;
+    ns1:Group.characteristic "Age < 5 years" .
+
+ns2:ChildrenWithReactiveAirwayDisease a ns1:Group ;
+    ns1:Group.characteristic "Reactive Airway Disease" .
+
+ns2:Chills a ns1:Symptom .
+
+ns2:Contraindication a ns1:Condition ;
+    ns1:condition [ ns1:code "GBS in the previous 6 weeks, regardless of cause",
+                "Guillain-Barré syndrome (GBS) within 6 weeks of a previous influenza vaccination",
+                "age < 6 months",
+                "severe reaction to influenza vaccine" ] ;
+    ns1:value "Contraindication" .
+
+ns2:Deaths a ns1:Statistic ;
+    ns1:description "Deaths ranged from 12,000 to 52,000 annually from 2010 to 2020." .
+
+ns2:Dyspnea a ns1:Condition,
+        ns1:Symptom ;
+    ns1:category "symptom" ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "267036007" ;
+                    ns1:display "Dyspnea" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:ElevationAmmonia a ns1:Symptom ;
+    ns1:value "Elevation of ammonia" .
+
+ns2:ElevationLiverEnzymes a ns1:Symptom ;
+    ns1:value "Elevation of liver enzymes" .
+
+ns2:Encephalopathy a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "81308009" ;
+                    ns1:display "Encephalopathy" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:EndonucleaseInhibitor a ns1:Medication ;
+    ns1:description "Drugs that interfere with viral replication by blocking viral RNA transcription." ;
+    ns1:interferesWith ns2:InfluenzaVirus .
+
+ns2:Epidemic a ns1:Condition ;
+    ns1:description "A widespread occurrence of an infectious disease in a community at a particular time." .
+
+ns2:Exposure a ns1:Condition ;
+    ns1:description "Potential exposure to a viral infection." .
+
+ns2:FattyLiver a ns1:Symptom ;
+    ns1:name "Fatty liver" .
+
+ns2:Full_Recovery a ns1:Outcome ;
+    ns1:description "Full recovery often takes 1 to 2 weeks." .
+
+ns2:GastrointestinalSymptoms a ns1:Observation ;
+    ns1:Observation.commonWith "2009 pandemic H1N1 strain" ;
+    ns1:Observation.symptom ns2:AbdominalPain,
+        ns2:Nausea,
+        ns2:SepsisLikeSyndrome,
+        ns2:Vomiting .
+
+ns2:GeneralizedAches a ns1:Symptom ;
+    ns1:Symptom.location "back and legs" .
+
+ns2:H1N1_Deaths a ns1:Outcome ;
+    ns1:description "80% of H1N1-related deaths were estimated to have occurred in people < 65 years during the first 12 months of the 2009 H1N1 pandemic." .
+
+ns2:H5N1AvianInfluenza a ns1:Condition ;
+    ns1:name "H5N1 avian influenza" ;
+    ns1:prevention ns2:H5N1Vaccine .
+
+ns2:H5N1Vaccine a ns1:Procedure ;
+    ns1:availability ns2:PublicHealthOfficials ;
+    ns1:indicatedFor ns2:HighRiskPatients ;
+    ns1:name "H5N1 vaccine" .
+
+ns2:H7N3 a ns1:Condition ;
+    ns1:name "H7N3" .
+
+ns2:H7N7 a ns1:Condition ;
+    ns1:name "H7N7" .
+
+ns2:H7N9 a ns1:Condition ;
+    ns1:name "H7N9" .
+
+ns2:H9N2 a ns1:Condition ;
+    ns1:name "H9N2" .
+
+ns2:HA a ns1:Substance ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "263773003" ;
+                    ns1:display "Hemagglutinin" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:HealthCarePractitioners a ns1:Group ;
+    ns1:name "Health care practitioners" .
+
+ns2:HealthyAdults a ns1:Group ;
+    ns1:Group.characteristic "Healthy Adults" .
+
+ns2:HealthyYoungPatients a ns1:Group ;
+    ns1:name "Healthy Young Patients" .
+
+ns2:HighRiskContacts a ns1:Condition ;
+    ns1:description "Contacts at high risk of developing complications from influenza." .
+
+ns2:HighRiskGroup a ns1:Group ;
+    ns1:Group.characteristic [ ns1:CodeableConcept.coding [ ns1:Coding.code "children" ;
+                    ns1:Coding.display "Children < 5 years; children < 2 years are at particularly high risk" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "aspirin_use" ;
+                    ns1:Coding.display "Patients ≤ 18 years taking aspirin (because Reye syndrome is a risk)" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "adults" ;
+                    ns1:Coding.display "Adults > 65 years" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "chronic_medical_disorders" ;
+                    ns1:Coding.display "People with chronic medical disorders (eg, cardiopulmonary disease, diabetes mellitus, renal or hepatic insufficiency, hemoglobinopathies, immunodeficiency)" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "pregnancy" ;
+                    ns1:Coding.display "Women in the 2nd or 3rd trimester of pregnancy" ] ],
+        [ ns1:CodeableConcept.coding [ ns1:Coding.code "respiratory_secretions_disorders" ;
+                    ns1:Coding.display "Patients with disorders that impair handling of respiratory secretions (eg, cognitive dysfunction, neuromuscular disorders, stroke, seizure disorders)" ] ] .
+
+ns2:Hospitalization a ns1:Outcome ;
+    ns1:description "Prompt antiviral treatment can reduce the incidence of hospitalization." .
+
+ns2:Hospitalizations a ns1:Statistic ;
+    ns1:description "Hospitalizations resulting from seasonal influenza ranged from 140,000 to 710,000 annually from 2010 to 2020." .
+
+ns2:Hypoglycemia a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302866003" ;
+                    ns1:display "Hypoglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Immunocompromised a ns1:Condition ;
+    ns1:description "Condition where the immune system is weakened or not functioning properly." .
+
+ns2:IncubationPeriod a ns1:Observation ;
+    ns1:Observation.average "48 hours" ;
+    ns1:Observation.value "1 to 4 days" .
+
+ns2:InfluenzaA a ns1:Condition ;
+    ns1:description "A type of influenza virus." .
+
+ns2:InfluenzaAStrain a ns1:Substance ;
+    ns1:Substance.name "Influenza A Strain" .
+
+ns2:InfluenzaBStrain a ns1:Substance ;
+    ns1:Substance.name "Influenza B Strain" .
+
+ns2:Lipidemia a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "55822004" ;
+                    ns1:display "Lipidemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:LowerRespiratoryTractIllness a ns1:Symptom .
+
+ns2:Lower_Respiratory_Disease a ns1:Outcome ;
+    ns1:description "Prompt antiviral treatment can reduce the incidence of lower respiratory disease." .
+
+ns2:Malaise a ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "367391008" ;
+                    ns1:display "Malaise" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:MildConjunctivitis a ns1:Symptom .
+
+ns2:MildSymptoms a ns1:Observation ;
+    ns1:Observation.symptom ns2:MildConjunctivitis,
+        ns2:Rhinorrhea,
+        ns2:SoreThroat .
+
+ns2:MildWheezing a ns1:Condition ;
+    ns1:Condition.name "Mild Wheezing" .
+
+ns2:Morbidity a ns1:Outcome ;
+    ns1:description "Influenza and influenza-related pneumonia are important causes of morbidity in high-risk patients." .
+
+ns2:NA a ns1:Substance ;
+    ns1:Substance.name "Neuraminidase" .
+
+ns2:Nausea a ns1:Symptom .
+
+ns2:NonproductiveCough a ns1:Symptom .
+
+ns2:OtherAvianInfluenza a ns1:Condition ;
+    ns1:name "Other avian influenza viruses" ;
+    ns1:subtype ns2:H7N3,
+        ns2:H7N7,
+        ns2:H7N9,
+        ns2:H9N2 .
+
+ns2:PandemicH1N1 a ns1:Condition ;
+    ns1:name "Pandemic H1N1 influenza A" .
+
+ns2:Pandemics a ns1:Event ;
+    ns1:associatedWith ns2:HealthyYoungPatients ;
+    ns1:name "Pandemics" .
+
+ns2:PatientsUnder18 a ns1:Group ;
+    ns1:description "Patients ≤ 18 years" .
+
+ns2:PersistenceCough a ns1:Symptom ;
+    ns1:name "Persistence of cough" .
+
+ns2:PersistenceFever a ns1:Symptom ;
+    ns1:name "Persistence of fever" .
+
+ns2:PersistentSymptoms a ns1:Observation ;
+    ns1:Observation.duration "several days or occasionally for weeks" ;
+    ns1:Observation.symptom ns2:Cough,
+        ns2:Fatigue,
+        ns2:Sweating,
+        ns2:Weakness .
+
+ns2:Photophobia a ns1:Symptom .
+
+ns2:Pneumonia a ns1:Condition ;
+    ns1:category "disease" ;
+    ns1:causedBy ns2:Influenza ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "233604007" ;
+                    ns1:display "Pneumonia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:subject ns2:Patient ;
+    ns1:symptom ns2:BloodySputum,
+        ns2:Dyspnea,
+        ns2:Rales,
+        ns2:WorseningCough ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:Prognosis_Influenza a ns1:Prognosis ;
+    ns1:description "Most patients recover fully, although full recovery often takes 1 to 2 weeks. However, influenza and influenza-related pneumonia are important causes of morbidity or mortality in high-risk patients. Prompt antiviral treatment in these patients can reduce the incidence of lower respiratory disease and hospitalization. Appropriate antibacterial therapy decreases the mortality rate due to secondary bacterial pneumonia." ;
+    ns1:outcome ns2:Full_Recovery,
+        ns2:Hospitalization,
+        ns2:Lower_Respiratory_Disease,
+        ns2:Morbidity,
+        ns2:Mortality,
+        ns2:Secondary_Bacterial_Pneumonia .
+
+ns2:Prostration a ns1:Symptom .
+
+ns2:PublicHealthOfficials a ns1:Organization ;
+    ns1:name "Public health officials" .
+
+ns2:Rales a ns1:Condition,
+        ns1:Symptom ;
+    ns1:category "symptom" ;
+    ns1:clinicalStatus "active" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "48409008" ;
+                    ns1:display "Rales" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:RaspyProductiveCough a ns1:Symptom .
+
+ns2:RecentVaccination a ns1:Condition ;
+    ns1:description "Vaccination received within the previous 2 weeks." .
+
+ns2:RecurrenceCough a ns1:Symptom ;
+    ns1:value "Recurrence of cough" .
+
+ns2:RecurrenceFever a ns1:Symptom ;
+    ns1:value "Recurrence of fever" .
+
+ns2:RenalFailure a ns1:Condition ;
+    ns1:value "Renal failure" .
+
+ns2:RespiratorySymptoms a ns1:Observation ;
+    ns1:Observation.symptom ns2:Coryza,
+        ns2:LowerRespiratoryTractIllness,
+        ns2:NonproductiveCough,
+        ns2:RaspyProductiveCough,
+        ns2:ScratchySoreThroat,
+        ns2:SubsternalBurning .
+
+ns2:RetrobulbarAching a ns1:Symptom .
+
+ns2:ScratchySoreThroat a ns1:Symptom .
+
+ns2:SeasonalEpidemics a ns1:Condition,
+        ns1:Event ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.etiology "caused by both influenza A and B viruses" ;
+    ns1:Condition.verificationStatus "confirmed" ;
+    ns1:associatedWith ns2:HighRiskPatients ;
+    ns1:name "Seasonal Epidemics" .
+
+ns2:SeasonalH3N2 a ns1:Condition ;
+    ns1:name "Seasonal H3N2" .
+
+ns2:SecondaryBacterialPneumonia a ns1:Condition ;
+    ns1:category "disease" ;
+    ns1:causedBy ns2:Influenza ;
+    ns1:clinicalStatus "active" ;
+    ns1:name "Secondary bacterial pneumonia" ;
+    ns1:subject ns2:Patient ;
+    ns1:symptom ns2:PersistenceCough,
+        ns2:PersistenceFever,
+        ns2:RecurrenceCough,
+        ns2:RecurrenceFever ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:Secondary_Bacterial_Pneumonia a ns1:Outcome ;
+    ns1:description "Appropriate antibacterial therapy decreases the mortality rate due to secondary bacterial pneumonia." .
+
+ns2:SepsisLikeSyndrome a ns1:Symptom .
+
+ns2:SoreThroat a ns1:Symptom .
+
+ns2:SubsternalBurning a ns1:Symptom .
+
+ns2:SuddenOnset a ns1:Symptom .
+
+ns2:TypicalSymptoms a ns1:Observation ;
+    ns1:Observation.symptom ns2:Chills,
+        ns2:Cough,
+        ns2:Fever,
+        ns2:GeneralizedAches,
+        ns2:Headache,
+        ns2:Photophobia,
+        ns2:Prostration,
+        ns2:RetrobulbarAching,
+        ns2:SuddenOnset .
+
+ns2:VaccinationContraindicated a ns1:Condition ;
+    ns1:description "Condition where vaccination is not recommended." .
+
+ns2:Vomiting a ns1:Symptom .
+
+ns2:WorseningCough a ns1:Symptom ;
+    ns1:value "Worsening cough" .
+
+ns2:ChildrenUnder8YearsNotVaccinated a ns1:Group ;
+    ns1:Group.characteristic "Age < 8 years and not vaccinated" .
+
+ns2:Coryza a ns1:Symptom ;
+    ns1:value "Coryza" .
+
+ns2:Encephalitis a ns1:Condition ;
+    ns1:value "Encephalitis" .
+
+ns2:Fatigue a ns1:Symptom .
+
+ns2:Headache a ns1:Symptom ;
+    ns1:value "Headache" .
+
+ns2:InfluenzaB a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.severity "milder disease but often cause epidemics with moderate or severe disease" ;
+    ns1:Condition.verificationStatus "confirmed" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "407480007" ;
+                    ns1:display "Influenza B" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "A type of influenza virus." .
+
+ns2:InfluenzaVaccine a ns1:Medication ;
+    ns1:Medication.efficacy [ ns1:Efficacy.rate "70 to 90%" ;
+            ns1:Efficacy.target ns2:HealthyAdults ],
+        [ ns1:Efficacy.outcome "Decrease rate of pneumonia and death" ;
+            ns1:Efficacy.rate "60 to 80%" ;
+            ns1:Efficacy.target ns2:OlderPatients ] ;
+    ns1:Medication.form "Annual" ;
+    ns1:Medication.immunity [ ns1:Immunity.effect "Absent if there is antigenic shift",
+                "Decreased by antigenic drift" ] ;
+    ns1:Medication.ingredient ns2:HA,
+        ns2:InfluenzaAStrain,
+        ns2:InfluenzaBStrain,
+        ns2:NA ;
+    ns1:Medication.recommendation [ ns1:Recommendation.recommendation "Higher-dose formulation for adults > 65 years" ;
+            ns1:Recommendation.target ns2:OlderPatients ] ;
+    ns1:coadministration ns2:COVID19Vaccine ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "1181000221105" ;
+                    ns1:display "Influenza Vaccine" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:description "Should be given annually to everyone aged ≥ 6 months who does not have a contraindication." ;
+    ns1:recommendation [ ns1:frequency "annually" ;
+            ns1:reason "maintain antibody titers and allow vaccine modification to compensate for antigenic drift" ;
+            ns1:season "winter influenza season (between November and March in the US)" ;
+            ns1:timing "fall" ] .
+
+ns2:InfluenzaVirus a ns1:Condition ;
+    ns1:description "The virus causing influenza." .
+
+ns2:Mortality a ns1:Outcome ;
+    ns1:associatedWith ns2:Pandemics,
+        ns2:SeasonalEpidemics ;
+    ns1:description "Influenza and influenza-related pneumonia are important causes of mortality in high-risk patients." ;
+    ns1:value "Mortality" .
+
+ns2:Myocarditis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "50920009" ;
+                    ns1:display "Myocarditis" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Myoglobinuria a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "48165008" ;
+                    ns1:display "Myoglobinuria" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:complication ns2:RenalFailure .
+
+ns2:OlderPatients a ns1:Group ;
+    ns1:Group.characteristic "Institutionalized Older Patients" .
+
+ns2:Rhinorrhea a ns1:Condition,
+        ns1:Symptom ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "64531003" ;
+                    ns1:display "Rhinorrhea" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:SevereRespiratorySymptoms a ns1:Condition ;
+    ns1:category "symptom" ;
+    ns1:clinicalStatus "active" ;
+    ns1:name "Severe respiratory symptoms" ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:Sweating a ns1:Symptom .
+
+ns2:Weakness a ns1:Symptom .
+
+ns2:DiagnosisOfInfluenza a ns1:Condition ;
+    ns1:category "diagnosis" ;
+    ns1:clinicalStatus "active" ;
+    ns1:name "Diagnosis of Influenza" ;
+    ns1:subject ns2:Patient ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:Fever a ns1:Symptom ;
+    ns1:name "Fever" .
+
+ns2:InfluenzaViruses a ns1:Virus ;
+    ns1:associatedWith ns2:Influenza ;
+    ns1:description "Classified as type A, B, or C by their nucleoproteins and matrix proteins." ;
+    ns1:name "Influenza Viruses" .
+
+ns2:NeuraminidaseInhibitors a ns1:Medication ;
+    ns1:description "Drugs that interfere with release of influenza virus from infected cells and halt spread of infection." ;
+    ns1:interferesWith ns2:InfluenzaVirus .
+
+ns2:ReyeSyndrome a ns1:Condition ;
+    ns1:characteristic ns2:ElevationAmmonia,
+        ns2:ElevationLiverEnzymes,
+        ns2:Encephalopathy,
+        ns2:FattyLiver,
+        ns2:Hypoglycemia,
+        ns2:Lipidemia ;
+    ns1:name "Reye syndrome" .
+
+ns2:SymptomaticTreatment a ns1:Procedure ;
+    ns1:name "Symptomatic treatment" ;
+    ns1:usedFor ns2:Influenza .
+
+ns2:Cough a ns1:Symptom ;
+    ns1:name "Cough" .
+
+ns2:HighRiskPatients a ns1:Group,
+        ns1:Patient ;
+    ns1:description "Patients including all hospitalized patients who develop influenza-like symptoms.",
+        "Patients who are institutionalized, at the extremes of age, have cardiopulmonary insufficiency, or are in late pregnancy." ;
+    ns1:name "High-Risk Patients",
+        "High-risk patients" .
+
+ns2:Influenza a ns1:Condition ;
+    ns1:Condition.clinicalStatus "active" ;
+    ns1:Condition.onset "yearly during fall and winter in temperate climates" ;
+    ns1:Condition.symptom ns2:AcuteSymptoms,
+        ns2:GastrointestinalSymptoms,
+        ns2:IncubationPeriod,
+        ns2:MildSymptoms,
+        ns2:PersistentSymptoms,
+        ns2:RespiratorySymptoms,
+        ns2:TypicalSymptoms ;
+    ns1:Condition.verificationStatus "confirmed" ;
+    ns1:associatedWith ns2:AntiviralTreatment,
+        ns2:Coryza,
+        ns2:Cough,
+        ns2:Fever,
+        ns2:Headache,
+        ns2:HighRiskPatients,
+        ns2:InfluenzaVaccine,
+        ns2:Malaise,
+        ns2:Mortality ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "6142004" ;
+                    ns1:display "Influenza" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:complication ns2:Pneumonia,
+        ns2:SecondaryBacterialPneumonia ;
+    ns1:description "A viral respiratory infection causing fever, coryza, cough, headache, and malaise." ;
+    ns1:prognosis ns2:Prognosis_Influenza ;
+    ns1:subtype ns2:H5N1AvianInfluenza,
+        ns2:InfluenzaB,
+        ns2:OtherAvianInfluenza,
+        ns2:PandemicH1N1,
+        ns2:SeasonalH3N2 .
+

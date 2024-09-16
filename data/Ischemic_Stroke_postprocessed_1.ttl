@@ -1,0 +1,2538 @@
+@prefix ns1: <http://hl7.org/fhir/> .
+@prefix ns2: <http://example.com/> .
+
+ns2:AcquiredArterialLesions a ns1:Condition ;
+    ns1:name "Acquired arterial lesions" .
+
+ns2:AcuteAntihypertensiveTherapy a ns1:Procedure ;
+    ns1:context "only in certain circumstances" ;
+    ns1:name "Acute antihypertensive therapy" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:AcuteIschemicStroke a ns1:Condition ;
+    ns1:value "Acute ischemic stroke" .
+
+ns2:AcuteMeningitis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "822031000000101" ;
+                    ns1:display "Acute Meningitis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:VascularInflammation .
+
+ns2:AcuteStrokeTreatment a ns1:Procedure ;
+    ns1:guideline ns2:GuidelinesForEarlyManagement ;
+    ns1:recommendedBy ns2:AmericanHeartAssociation,
+        ns2:AmericanStrokeAssociation ;
+    ns1:requires ns2:Hospitalization,
+        ns2:SupportiveMeasures .
+
+ns2:Alfimeprase a ns1:MedicationRequest .
+
+ns2:AmphetamineUse a ns1:Condition ;
+    ns1:relatedTo ns2:SympathomimeticDrugUse ;
+    ns1:value "Amphetamine Use" .
+
+ns2:Anticoagulation a ns1:Procedure ;
+    ns1:context "sometimes" ;
+    ns1:name "Anticoagulation" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:AnticoagulationHeparin a ns1:Medication ;
+    ns1:description "Anticoagulation with heparin" ;
+    ns1:purpose "reduce the risk of recurrent cardiac emboli" ;
+    ns1:use "stroke caused by cerebral venous thrombosis and sometimes for stroke caused by cervical artery dissection" .
+
+ns2:AnticoagulationLowMolecularWeightHeparin a ns1:Medication ;
+    ns1:description "Anticoagulation with low molecular weight heparin" ;
+    ns1:purpose "reduce the risk of recurrent cardiac emboli" ;
+    ns1:use "stroke caused by cerebral venous thrombosis and sometimes for stroke caused by cervical artery dissection" .
+
+ns2:AntinuclearAntibodies a ns1:Observation ;
+    ns1:description "Antinuclear antibodies" ;
+    ns1:partOf ns2:RheumaticDisordersTesting .
+
+ns2:AntiphospholipidAntibodies a ns1:Observation ;
+    ns1:description "Antiphospholipid antibodies" ;
+    ns1:partOf ns2:ThromboticDisordersTesting .
+
+ns2:AntiplateletMedication a ns1:Medication ;
+    ns1:combinationEfficacy "Not established" ;
+    ns1:combinationSafety "Not established" ;
+    ns1:combinationWith ns2:NewAnticoagulants .
+
+ns2:AntithrombinIII a ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "34086003" ;
+                    ns1:display "Antithrombin III" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:partOf ns2:ThromboticDisordersTesting .
+
+ns2:Aspirin a ns1:Medication ;
+    ns1:Medication.dosage "81 or 325 mg once a day" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "387458008" ;
+                    ns1:display "Aspirin" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:dosage "325 mg orally",
+        "81 to 325 mg within 48 hours of stroke onset" ;
+    ns1:purpose "reduce the risk of early recurrent stroke and death" ;
+    ns1:relatedTo ns2:AntiplateletMedications ;
+    ns1:use "acute stroke treatment" .
+
+ns2:Atherosclerosis a ns1:Condition ;
+    ns1:description "Atherosclerosis" .
+
+ns2:AtheroscleroticStroke a ns1:Condition ;
+    ns1:description "evidence of atherosclerotic stroke" .
+
+ns2:Atorvastatin a ns1:Medication ;
+    ns1:description "80 mg once a day is recommended for patients with evidence of atherosclerotic stroke and LDL cholesterol ≥ 100 mg/dL." ;
+    ns1:dosage "80 mg" ;
+    ns1:frequency "once a day" .
+
+ns2:BPReduction a ns1:Procedure ;
+    ns1:description "BP Reduction" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:BloodRiskFactors a ns1:Observation ;
+    ns1:component [ ns1:code "Diabetes",
+                "Dyslipidemia",
+                "Hypercoagulability" ] ;
+    ns1:description "Blood Risk Factors" .
+
+ns2:BridgingTherapy a ns1:Procedure ;
+    ns1:description "Bridging therapy" .
+
+ns2:CYP2C19 a ns1:Observation ;
+    ns1:Observation.description "CYP2C19" ;
+    ns1:Observation.statement "a test to determine CYP2C19 status (eg, genetic testing for CYP450 polymorphisms) is recommended",
+        "if impaired metabolism is confirmed, aspirin or combination aspirin and ticagrelor is a reasonable alternative" .
+
+ns2:CaliberOfCollateralVessels a ns1:Condition ;
+    ns1:description "Caliber of various collateral vessels" .
+
+ns2:CardiacEmboli a ns1:Condition ;
+    ns1:description "Cardiac emboli" ;
+    ns1:purpose "reduce the risk of recurrent cardiac emboli" ;
+    ns1:use "anticoagulation treatment" .
+
+ns2:CardiacRiskFactors a ns1:Observation ;
+    ns1:component [ ns1:code "Atrial fibrillation",
+                "Potential structural sources of emboli" ] ;
+    ns1:description "Cardiac Risk Factors" .
+
+ns2:CarotidArtery a ns1:AnatomicalStructure ;
+    ns1:name "Carotid artery" ;
+    ns1:partOf ns2:EfficientCollateralSystem .
+
+ns2:CarotidStenting a ns1:Procedure ;
+    ns1:complication ns2:RecurrentStroke ;
+    ns1:device ns2:EmboliProtectionDevice ;
+    ns1:indication ns2:CarotidObstruction,
+        ns2:HighSurgicalRisk,
+        ns2:RecentNondisablingSubmaximalStroke,
+        ns2:UlceratedPlaque ;
+    ns1:outcome ns2:StrokePrevention ;
+    ns1:performedBy ns2:Interventionists,
+        ns2:Surgeons ;
+    ns1:preferredFor ns2:HighSurgicalRiskPatients,
+        ns2:PatientsOver70Years .
+
+ns2:CarotidUltrasonography a ns1:Procedure ;
+    ns1:description "Carotid ultrasonography" ;
+    ns1:partOf ns2:Testing ;
+    ns1:relatedTo ns2:AnteriorCirculation .
+
+ns2:CerebralVenousThrombosis a ns1:Condition ;
+    ns1:description "Cerebral venous thrombosis" ;
+    ns1:purpose "reduce the risk of recurrent cardiac emboli" ;
+    ns1:use "anticoagulation treatment" .
+
+ns2:CervicalArteryDissection a ns1:Condition ;
+    ns1:description "Cervical artery dissection" ;
+    ns1:purpose "reduce the risk of recurrent cardiac emboli" ;
+    ns1:use "anticoagulation treatment" .
+
+ns2:ChronicMeningitis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "21664006" ;
+                    ns1:display "Chronic Meningitis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:VascularInflammation .
+
+ns2:Clevidipine a ns1:Medication ;
+    ns1:dosage "1 to 2 mg/hour IV infusion (titrate by doubling the dose every 2 to 5 minutes until desired BP is reached to a maximum of 21 mg/hour)" ;
+    ns1:relatedTo ns2:BP .
+
+ns2:ClinicalFindings a ns1:Observation ;
+    ns1:name "Clinical findings" .
+
+ns2:Clinician a ns1:Practitioner ;
+    ns1:role "Clinician" .
+
+ns2:Clopidogrel a ns1:Medication ;
+    ns1:Medication.dosage "75 mg once a day" ;
+    ns1:Medication.indication "for patients who are allergic to aspirin" ;
+    ns1:Medication.statement "if ischemic stroke recurs or if a coronary artery stent becomes blocked while patients are taking clopidogrel, clinicians should suspect impaired metabolism of clopidogrel",
+        "if patients cannot tolerate clopidogrel or have clopidogrel resistance due to CYP2C19 loss of allele, ticagrelor 90 mg twice a day can be substituted" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "386952008" ;
+                    ns1:display "Clopidogrel" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:purpose "reduce the risk of stroke in the first 90 days" ;
+    ns1:use "acute stroke treatment" .
+
+ns2:ClopidogrelPlusAspirin a ns1:Medication ;
+    ns1:Medication.statement "before and for ≥ 30 days after stenting is indicated, usually for ≤ 6 months",
+        "if started during acute treatment, is given for only a short time (eg, < 3 weeks) because it has no advantage over aspirin alone in long-term secondary stroke prevention and results in more bleeding complications" ;
+    ns1:Medication.value "Clopidogrel plus aspirin" .
+
+ns2:ClopidogrelResistance a ns1:Condition ;
+    ns1:purpose "use dual antiplatelet therapy with aspirin and ticagrelor" ;
+    ns1:use "patients with CYP2C19 loss of function allele" ;
+    ns1:value "Clopidogrel resistance" .
+
+ns2:CocaineUse a ns1:Condition ;
+    ns1:relatedTo ns2:SympathomimeticDrugUse ;
+    ns1:value "Cocaine Use" .
+
+ns2:CombinationProduct a ns1:Medication ;
+    ns1:Medication.dosage "2 times a day" ;
+    ns1:Medication.value "Combination product aspirin 25 mg/extended-release dipyridamole 200 mg" .
+
+ns2:CompleteBloodCount a ns1:Observation ;
+    ns1:partOf ns2:BloodTests ;
+    ns1:value "Complete blood count (CBC)" .
+
+ns2:Contraindications a ns1:Observation ;
+    ns1:description "Contraindications" ;
+    ns1:relatedTo ns2:AntiplateletMedications ;
+    ns1:value "aspirin-induced or nonsteroidal anti-inflammatory drug (NSAID)-induced asthma or urticaria, other hypersensitivity to aspirin or to tartrazine, acute gastrointestinal bleeding, glucose-6-phosphate dehydrogenase (G6PD) deficiency, and use of warfarin" .
+
+ns2:ConventionalAngiography a ns1:Procedure ;
+    ns1:partOf ns2:Testing ;
+    ns1:value "Conventional angiography" .
+
+ns2:Cost a ns1:Observation ;
+    ns1:disadvantage ns2:NewAnticoagulants .
+
+ns2:DAWNTrial a ns1:ResearchStudy ;
+    ns1:name "DAWN trial" ;
+    ns1:outcome ns2:LargeMismatchBetweenInfarctVolumeAndClinicalDeficit,
+        ns2:SymptomOnset24Hours .
+
+ns2:DEFUSE3Trial a ns1:ResearchStudy ;
+    ns1:name "DEFUSE 3 trial" ;
+    ns1:outcome ns2:LargerPenumbra,
+        ns2:SmallInfarct,
+        ns2:SymptomOnset16Hours .
+
+ns2:Damage a ns1:Condition ;
+    ns1:causedBy ns2:BrainIschemia ;
+    ns1:name "Damage" .
+
+ns2:DiagnosisOfIschemicStroke a ns1:Condition ;
+    ns1:clinicalStatus "active" ;
+    ns1:method ns2:BedsideGlucoseTesting,
+        ns2:ClinicalEvaluation,
+        ns2:Neuroimaging ;
+    ns1:name "Diagnosis of Ischemic Stroke" ;
+    ns1:note "Evaluation to identify the cause" ;
+    ns1:verificationStatus "confirmed" .
+
+ns2:DiagnosticEvaluation a ns1:Procedure ;
+    ns1:definition "The diagnostic evaluation is incomplete." ;
+    ns1:name "Diagnostic evaluation" .
+
+ns2:DiffusionWeightedImaging a ns1:Procedure ;
+    ns1:name "Diffusion-weighted imaging" .
+
+ns2:DissectionOfAorta a ns1:Condition ;
+    ns1:name "Dissection of Aorta" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:DissectionOfIntracranialArteries a ns1:Condition ;
+    ns1:name "Dissection of Intracranial Arteries" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:DistalA2 a ns1:AnatomicalLocation ;
+    ns1:description "anterior cerebral artery distal to the anterior communicating artery" ;
+    ns1:name "Distal A2" .
+
+ns2:DualAntiplateletTherapyAspirinClopidogrel a ns1:Medication ;
+    ns1:dosage "300 to 600 mg orally once, then 75 mg orally once a day within 24 hours of stroke onset" ;
+    ns1:name "Dual antiplatelet therapy with aspirin plus clopidogrel" ;
+    ns1:purpose "reduce the risk of stroke in the first 90 days" ;
+    ns1:use "patients with minor stroke or at high risk of a transient ischemic attack (TIA; ABCD2 score ≥ 4)" .
+
+ns2:DualAntiplateletTherapyAspirinTicagrelor a ns1:Medication ;
+    ns1:dosage "loading dose of 180 mg on day 1 followed by 90 mg twice a day" ;
+    ns1:name "Dual antiplatelet therapy with aspirin and ticagrelor" ;
+    ns1:purpose "reduce the risk of stroke in the first 90 days" ;
+    ns1:use "patients with clopidogrel resistance CYP2C19 loss of function allele, especially if an extracranial or intracranial stent is used" .
+
+ns2:ECG a ns1:Procedure ;
+    ns1:name "ECG" ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:EaseOfUse a ns1:Observation ;
+    ns1:advantage ns2:NewAnticoagulants ;
+    ns1:description "No need to check anticoagulation level with a blood test after the initial dose or to use a parenteral anticoagulant such as unfractionated heparin given by continuous infusion when transitioning from parenteral to oral anticoagulants" .
+
+ns2:Edoxaban a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "20.210 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "15 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet" ;
+            ns2:route "Oral" ;
+            ns2:strength "60 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Tablet, film coated" ;
+            ns2:route "Oral" ;
+            ns2:strength "30 mg" ] .
+
+ns2:Embolus a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "55584005" ;
+                    ns1:display "Embolus" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Endarterectomy a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "392031002" ;
+                    ns1:display "Endarterectomy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:EndovascularClosureOfPatentForamenOvale a ns1:Procedure ;
+    ns1:effectiveTime "< 60 years" ;
+    ns1:indication ns2:EmbolicStrokeOfUndeterminedCause ;
+    ns1:recommendation ns2:AntiplateletTherapy .
+
+ns2:EpiduralHematoma a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "703861005" ;
+                    ns1:display "Epidural Hematoma" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:excludedBy ns2:Neuroimaging .
+
+ns2:ErythrocyteSedimentationRate a ns1:Observation ;
+    ns1:name "Erythrocyte sedimentation rate" ;
+    ns1:partOf ns2:RheumaticDisordersTesting .
+
+ns2:ExtracranialCarotidEndarterectomy a ns1:Procedure ;
+    ns1:complication ns2:MyocardialInfarction ;
+    ns1:indication ns2:CarotidObstruction,
+        ns2:RecentNondisablingSubmaximalStroke,
+        ns2:UlceratedPlaque ;
+    ns1:outcome ns2:StrokePrevention ;
+    ns1:performedBy ns2:Interventionists,
+        ns2:Surgeons .
+
+ns2:ExtracranialVertebralAngioplastyAndStenting a ns1:Procedure ;
+    ns1:effectiveTime "50 to 99%" ;
+    ns1:indication ns2:RecurrentSymptomsOfVertebrobasilarIschemia,
+        ns2:VertebralArteryObstruction .
+
+ns2:FactorVLeiden a ns1:Observation ;
+    ns1:name "Factor V Leiden" ;
+    ns1:partOf ns2:ThromboticDisordersTesting .
+
+ns2:FastingBloodGlucose a ns1:Observation ;
+    ns1:name "Fasting blood glucose" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:GeneralStrokeTreatments a ns1:Procedure ;
+    ns1:name "General stroke treatments" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:GlucoseTesting a ns1:Procedure ;
+    ns1:name "Bedside glucose testing" .
+
+ns2:HemoglobinA1C a ns1:Observation ;
+    ns1:name "Hemoglobin A1C" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:HemoglobinElectrophoresis a ns1:Procedure ;
+    ns1:name "Hemoglobin electrophoresis" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:HemorrhagicComplication a ns1:Condition ;
+    ns1:antidote ns2:AndexanetAlfa,
+        ns2:Idarucizumab .
+
+ns2:HemorrhagicStroke a ns1:Condition ;
+    ns1:name "Hemorrhagic Stroke" ;
+    ns1:relatedTo ns2:ComaOrStupor,
+        ns2:Headache,
+        ns2:Vomiting .
+
+ns2:HemorrhagicTransformation a ns1:Condition ;
+    ns1:name "Hemorrhagic transformation" ;
+    ns1:purpose "risk of hemorrhage is higher, especially with large infarcts" ;
+    ns1:use "acute stage of stroke" .
+
+ns2:HolterMonitoring a ns1:Procedure ;
+    ns1:name "Holter monitoring" ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:HomocysteineMeasurement a ns1:Observation ;
+    ns1:name "Measurement of homocysteine" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:Hypothermia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "386689009" ;
+                    ns1:display "Hypothermia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:IVRecombinantTPA a ns1:Procedure ;
+    ns1:name "IV recombinant tPA" .
+
+ns2:ImplantableCardiacMonitor a ns1:Device ;
+    ns1:name "Implantable cardiac monitor" ;
+    ns1:reasonReference ns2:CardiacCauses ;
+    ns1:useContext ns2:AtrialArrhythmiasDetection .
+
+ns2:Infarction a ns1:Condition ;
+    ns1:causedBy ns2:SevereIschemia ;
+    ns1:name "Infarction" .
+
+ns2:InflammatoryMediators a ns1:Substance ;
+    ns1:contributeTo ns2:Edema,
+        ns2:MicrovascularThrombosis ;
+    ns1:example ns2:Interleukin1Beta,
+        ns2:TumorNecrosisFactorAlpha .
+
+ns2:IntracerebralHemorrhage a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "274100004" ;
+                    ns1:display "Intracerebral Hemorrhage" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:excludedBy ns2:Neuroimaging .
+
+ns2:IntracranialMajorArteryAngioplastyAndStenting a ns1:Procedure ;
+    ns1:consideration ns2:InterventionistsExperience,
+        ns2:PatientCharacteristics,
+        ns2:TimingOfProcedure ;
+    ns1:indication ns2:OptimalTreatmentWithMedicationsIneffective ;
+    ns1:outcome ns2:LowRateOfPeriproceduralAdverseEvents .
+
+ns2:IpsilateralCarotidStenosis a ns1:Condition ;
+    ns1:name "Ipsilateral carotid stenosis" .
+
+ns2:IschemicInjury a ns1:Condition ;
+    ns1:mechanism ns2:Edema,
+        ns2:InfarctionWithCellNecrosis,
+        ns2:MicrovascularThrombosis,
+        ns2:ProgrammedCellDeath .
+
+ns2:LDL a ns1:Observation ;
+    ns1:name "low-density lipoprotein cholesterol" ;
+    ns1:target "50% reduction or a level of < 70 mg/dL" ;
+    ns1:value "≥ 100 mg/dL" .
+
+ns2:Labetalol a ns1:Medication ;
+    ns1:dosage "10 to 20 mg IV bolus over 1 to 2 minutes (may repeat 1 time)" ;
+    ns1:relatedTo ns2:BP .
+
+ns2:LacunarInfarct a ns1:Condition ;
+    ns1:name "Lacunar infarct" ;
+    ns1:subClassOf ns2:SmallInfarct .
+
+ns2:LargeVesselOcclusion a ns1:Condition ;
+    ns1:location "anterior circulation" ;
+    ns1:name "Large-vessel occlusion" .
+
+ns2:LipidProfile a ns1:Observation ;
+    ns1:name "Lipid profile" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:LongTermControlOfRiskFactors a ns1:Procedure ;
+    ns1:name "Long-term control of risk factors" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:LongTermStrokeTreatment a ns1:Procedure ;
+    ns1:Procedure.supportingInformation ns2:LongTermManagement,
+        ns2:SupportiveCare .
+
+ns2:MajorArteries a ns1:AnatomicalStructure ;
+    ns1:name "Major arteries" ;
+    ns1:partOf ns2:CerebralHemispheres .
+
+ns2:MechanicalProstheticCardiacValve a ns1:Device ;
+    ns1:targetINR "2.5 to 3.5" .
+
+ns2:MetabolicPanel a ns1:Observation ;
+    ns1:name "Metabolic panel" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:NIHSS a ns1:Observation ;
+    ns1:component [ ns1:name "Language function",
+                "Level of consciousness",
+                "Motor deficits",
+                "Sensory deficits" ] ;
+    ns1:name "National Institutes of Health Stroke Scale" .
+
+ns2:NecroticCellDeath a ns1:Condition ;
+    ns1:contributingFactor ns2:ExcitatoryNeurotoxins,
+        ns2:IntracellularAcidosis,
+        ns2:LipidPeroxidativeDamage,
+        ns2:LossOfATPStores,
+        ns2:LossOfIonicHomeostasis .
+
+ns2:Nicardipine a ns1:Medication ;
+    ns1:dosage "5 mg/hour IV infusion initially (dose is increased by 2.5 mg/hour every 5 to 15 minutes to a maximum of 15 mg/hour)" ;
+    ns1:relatedTo ns2:BP .
+
+ns2:NoCauseIdentified a ns1:Observation ;
+    ns1:definition "No cause is identified despite an extensive evaluation." ;
+    ns1:name "No cause identified" .
+
+ns2:NonstenoticCarotidDisease a ns1:Condition ;
+    ns1:definition "Symptomatic nonstenotic carotid disease with < 50% occlusion may be an important cause of stroke." ;
+    ns1:name "Nonstenotic carotid disease" .
+
+ns2:NormalVariations a ns1:Condition ;
+    ns1:bodySite ns2:CircleOfWillis ;
+    ns1:name "Normal variations" .
+
+ns2:OralAnticoagulants a ns1:Medication ;
+    ns1:indication ns2:PrimaryPrevention,
+        ns2:SecondaryPreventionOfCardioembolicStrokes .
+
+ns2:OralAntiplateletMedication a ns1:Medication ;
+    ns1:Medication.name "Oral antiplatelet medications" ;
+    ns1:Medication.statement "used to prevent subsequent noncardioembolic (atherothrombotic, lacunar, cryptogenic) strokes (secondary prevention)" ;
+    ns1:name "Oral antiplatelet medications" ;
+    ns1:purpose "reduce the risk of recurrent disabling stroke" ;
+    ns1:use "acute stroke treatment" .
+
+ns2:PartialThromboplastinTime a ns1:Observation ;
+    ns1:name "Partial thromboplastin time (PTT)" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:Penumbras a ns1:AnatomicalStructure ;
+    ns1:name "Penumbras" ;
+    ns1:partOf ns2:BrainTissue .
+
+ns2:Perfusion a ns1:Observation ;
+    ns1:name "Perfusion" ;
+    ns1:relatedTo ns2:Neurons .
+
+ns2:PerfusionCT a ns1:Procedure ;
+    ns1:name "Perfusion CT" .
+
+ns2:PerfusionMRI a ns1:Procedure ;
+    ns1:name "Perfusion MRI" .
+
+ns2:PerfusionOfIschemicBrainArea a ns1:Procedure ;
+    ns1:contraindication ns2:EndOrganDamage,
+        ns2:MechanicalThrombectomy,
+        ns2:UseOfTPA ;
+    ns1:requires ns2:HighBloodPressure .
+
+ns2:PerfusionWeightedImaging a ns1:Procedure ;
+    ns1:name "Perfusion-weighted imaging" .
+
+ns2:Phosphocreatine a ns1:MedicationRequest ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Tablet" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Oral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Capsule" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "100 MG/ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intramuscular" ;
+            ns2:strength "20 MG/ML" ] .
+
+ns2:Pravastatin a ns1:Medication ;
+    ns1:description "May be also used." .
+
+ns2:Prevention a ns1:Procedure ;
+    ns1:name "prevent recurrent strokes" ;
+    ns1:target ns2:Statins .
+
+ns2:ProbableCause a ns1:Observation ;
+    ns1:definition "There is more than one probable cause (eg, atrial fibrillation and ipsilateral carotid stenosis)." ;
+    ns1:value "Probable cause" .
+
+ns2:ProteinC a ns1:Observation ;
+    ns1:name "Protein C" ;
+    ns1:partOf ns2:ThromboticDisordersTesting .
+
+ns2:ProteinS a ns1:Observation ;
+    ns1:name "Protein S" ;
+    ns1:partOf ns2:ThromboticDisordersTesting .
+
+ns2:ProthrombinTime a ns1:Observation ;
+    ns1:name "Prothrombin time (PT)" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:Rehabilitation a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "52052004" ;
+                    ns1:display "Rehabilitation" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:context "long-term treatment" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:ReperfusionTherapy a ns1:Procedure ;
+    ns1:context "acute treatment" ;
+    ns1:method "recombinant tissue plasminogen activator or tenecteplase and/or mechanical thrombectomy" ;
+    ns1:name "Reperfusion therapy" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:RestoringBloodFlow a ns1:Procedure ;
+    ns1:description "Restoring blood flow" ;
+    ns1:relatedTo ns2:BrainIschemia .
+
+ns2:RheumatoidFactor a ns1:Observation ;
+    ns1:description "Rheumatoid factor" ;
+    ns1:partOf ns2:RheumaticDisordersTesting .
+
+ns2:Rosuvastatin a ns1:Medication ;
+    ns1:description "40 mg once a day is recommended for patients with evidence of atherosclerotic stroke and LDL cholesterol ≥ 100 mg/dL." ;
+    ns1:dosage "40 mg" ;
+    ns1:frequency "once a day" .
+
+ns2:SerumTroponin a ns1:Procedure ;
+    ns1:name "Serum troponin" ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:Simvastatin a ns1:Medication ;
+    ns1:description "May be also used." .
+
+ns2:StatinTherapy a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "315053001" ;
+                    ns1:display "Statin therapy" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:StenoticCerebralArteries a ns1:Condition ;
+    ns1:name "Stenotic Cerebral Arteries" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:StentRetrieverDevice a ns1:Device ;
+    ns1:name "Stent retriever device" .
+
+ns2:StrokeMimics a ns1:Condition ;
+    ns1:name "Stroke Mimics" ;
+    ns1:relatedTo ns2:NonCerebrovascularDisorders .
+
+ns2:SubduralHematoma a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "95453001" ;
+                    ns1:display "Subdural hematoma" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:excludedBy ns2:Neuroimaging .
+
+ns2:SubmaximalStroke a ns1:Condition ;
+    ns1:Condition.description "A stroke is considered submaximal when after it is complete, there is residual function in the affected area, suggesting viable tissue at risk of damage" ;
+    ns1:Condition.name "Submaximal Stroke" .
+
+ns2:SuddenNeurologicDeficits a ns1:Observation ;
+    ns1:name "Sudden Neurologic Deficits" ;
+    ns1:relatedTo ns2:SpecificArterialTerritory .
+
+ns2:SyphilisSerologicTesting a ns1:Procedure ;
+    ns1:name "Syphilis serologic testing" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:TIAs a ns1:Condition .
+
+ns2:Telemetry a ns1:Procedure ;
+    ns1:name "Telemetry" ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:Tenecteplase a ns1:Medication ;
+    ns1:Medication.ingredient ns2:Alteplase,
+        ns2:AminoAcids ;
+    ns1:Medication.property ns2:FibrinBinding,
+        ns2:PlasminogenActivatorInhibitorResistance,
+        ns2:PlasminogenConversion,
+        ns2:SingleBolusAdministration .
+
+ns2:ThrombiRemovalDevices a ns1:Device ;
+    ns1:name "Devices used to remove thrombi" ;
+    ns1:outcome ns2:ReestablishPerfusion .
+
+ns2:ThrombolysisInSitu a ns1:Procedure ;
+    ns1:description "angiographically directed intra-arterial thrombolysis of a thrombus or embolus" ;
+    ns1:example "distal A2 (anterior cerebral artery distal to the anterior communicating artery)" ;
+    ns1:indication "clot too distal to be accessed by catheters" ;
+    ns1:name "Thrombolysis-in-situ" ;
+    ns1:relatedTo ns2:Emboli,
+        ns2:Thrombi ;
+    ns1:status "obsolete" .
+
+ns2:ThrombosisOfSubclavianArtery a ns1:Condition ;
+    ns1:Condition.name "Thrombosis of the subclavian artery" ;
+    ns1:Condition.resultIn ns2:EmbolicStroke .
+
+ns2:ThromboticStroke a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "371040005" ;
+                    ns1:display "Thrombotic stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:Thrombus a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "396339007" ;
+                    ns1:display "Thrombus" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Ticagrelor a ns1:Medication ;
+    ns1:Medication.code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "698805004" ;
+                    ns1:display "Ticagrelor" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:Medication.dosage "90 mg twice a day" .
+
+ns2:TranscranialDuplexUltrasonography a ns1:Procedure ;
+    ns1:name "Transcranial duplex ultrasonography" ;
+    ns1:partOf ns2:Testing .
+
+ns2:TransesophagealEchocardiography a ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "105376000" ;
+                    ns1:display "Transesophageal echocardiography" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:TransientIschemicAttack a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "266257000" ;
+                    ns1:display "Transient Ischemic Attack (TIA)" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:purpose "reduce the risk of recurrent disabling stroke" ;
+    ns1:use "acute stroke treatment" .
+
+ns2:TransthoracicEchocardiography a ns1:Procedure ;
+    ns1:name "Transthoracic echocardiography" ;
+    ns1:reasonReference ns2:CardiacCauses .
+
+ns2:UrgentProcedure a ns1:Procedure ;
+    ns1:partOf ns2:Testing ;
+    ns1:relatedTo ns2:CTAngiography,
+        ns2:MagneticResonanceAngiography ;
+    ns1:shouldNotDelay ns2:IVtPA ;
+    ns1:value "Urgent procedure" .
+
+ns2:Uric_acid a ns1:MedicationRequest .
+
+ns2:UrineDrugScreen a ns1:Procedure ;
+    ns1:name "Urine drug screen for cocaine and amphetamines" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:VascularImaging a ns1:Procedure ;
+    ns1:name "Vascular Imaging" ;
+    ns1:relatedTo ns2:ArterialStenosis .
+
+ns2:VascularRiskFactors a ns1:Observation ;
+    ns1:component [ ns1:name "Critical arterial stenosis detected by vascular imaging" ] ;
+    ns1:name "Vascular Risk Factors" .
+
+ns2:tPA a ns1:Medication ;
+    ns1:relatedTo ns2:Emboli,
+        ns2:Thrombi .
+
+ns2:tPAEligibility a ns1:Procedure ;
+    ns1:name "tPA Eligibility" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:AbdominalObesity a ns1:Condition ;
+    ns1:name "Abdominal obesity" .
+
+ns2:AccumulationOfLactate a ns1:Condition .
+
+ns2:AcuteChronicMeningitis a ns1:Condition ;
+    ns1:name "Acute or chronic meningitis" .
+
+ns2:AcuteMyocardialInfarction a ns1:Condition .
+
+ns2:AcutePericarditis a ns1:Condition .
+
+ns2:AcuteRenalFailure a ns1:Condition .
+
+ns2:AcuteReperfusionTherapy a ns1:Procedure ;
+    ns1:reason ns2:Emboli,
+        ns2:Thrombi ;
+    ns1:target ns2:Patient .
+
+ns2:AdherenceToMedicationRegimen a ns1:Observation .
+
+ns2:AdvancedAge a ns1:Condition .
+
+ns2:Age a ns1:Observation ;
+    ns1:name "Age" .
+
+ns2:AgeOver80 a ns1:Observation ;
+    ns1:criteria "age > 80 years" .
+
+ns2:AidInRecovery a ns1:Observation .
+
+ns2:Air a ns1:Substance ;
+    ns1:Substance.associatedWith ns2:DecompressionSickness ;
+    ns1:Substance.name "Air" .
+
+ns2:AirEmboli a ns1:Condition ;
+    ns1:name "Air emboli" .
+
+ns2:AirwaySupport a ns1:Procedure ;
+    ns1:indication ns2:BulbarDysfunction,
+        ns2:DecreasedConsciousness .
+
+ns2:AlcoholUseDisorder a ns1:Condition .
+
+ns2:Alteplase a ns1:Medication,
+        ns1:MedicationRequest ;
+    ns1:Medication.property ns2:BleedingRisk,
+        ns2:TherapeuticWindow ;
+    ns1:dosageInstruction [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Parenteral" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "2 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "20 MG" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "2.2 mg/2mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "20 MG/20ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder" ;
+            ns2:strength "50 mg/1vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution; kit" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50 mg/50mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Liquid; powder, for solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "2 mg / vial" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50.0 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution; kit" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "100 mg/100mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "10 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50 mg/50mL" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50 mg" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, for solution" ;
+            ns2:route "Intravenous" ;
+            ns2:strength "50 MG/50ML" ],
+        [ a ns1:Dosage ;
+            ns2:form "Injection, powder, lyophilized, for solution" ;
+            ns2:route "Intravenous" ] .
+
+ns2:AminoAcids a ns1:Substance .
+
+ns2:AndexanetAlfa a ns1:Medication ;
+    ns1:indication ns2:Apixaban,
+        ns2:Rivaroxaban .
+
+ns2:Anticoagulants a ns1:Medication ;
+    ns1:definition "Anticoagulants may help reduce risk of subsequent strokes" ;
+    ns1:name "Anticoagulants" ;
+    ns1:relatedTo ns2:Emboli,
+        ns2:Thrombi .
+
+ns2:AntiphospholipidSyndrome a ns1:Condition ;
+    ns1:name "Antiphospholipid Syndrome",
+        "Antiphospholipid syndrome" ;
+    ns1:relatedTo ns2:HypercoagulabilityDisorders .
+
+ns2:AntiplateletTherapy a ns1:Medication,
+        ns1:Procedure ;
+    ns1:name "Antiplatelet Therapy",
+        "Antiplatelet therapy" ;
+    ns1:relatedTo ns2:IschemicStroke ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:AntipyreticMedication a ns1:Medication .
+
+ns2:AortaDissection a ns1:Condition ;
+    ns1:name "Dissection of the aorta" .
+
+ns2:AorticArch a ns1:BodyStructure ;
+    ns1:BodyStructure.location "Aortic arch" .
+
+ns2:AorticDissection a ns1:Condition .
+
+ns2:ArterialStenosis a ns1:Condition ;
+    ns1:relatedTo ns2:IschemicStroke ;
+    ns1:value "Arterial Stenosis" .
+
+ns2:AskFamilyMembersAboutSignsOfDepression a ns1:Procedure .
+
+ns2:AskPatientsAboutSadness a ns1:Procedure .
+
+ns2:AtaxicHemiparesis a ns1:Symptom ;
+    ns1:Symptom.description "Ataxic hemiparesis" .
+
+ns2:AtherothromboticOcclusion a ns1:Condition ;
+    ns1:definition "Occlusion of large arteries" ;
+    ns1:name "Atherothrombotic occlusion" .
+
+ns2:AtherothromboticStroke a ns1:Condition ;
+    ns1:Condition.display "Atherothrombotic Stroke" ;
+    ns1:Condition.symptom ns2:NeurologicDeficits ;
+    ns1:Condition.time "night" .
+
+ns2:AtrialArrhythmiasDetection a ns1:Observation ;
+    ns1:name "Atrial arrhythmias detection" ;
+    ns1:reasonReference ns2:CryptogenicStroke .
+
+ns2:BacterialEndocarditis a ns1:Condition ;
+    ns1:Condition.name "Bacterial endocarditis" .
+
+ns2:BasedOnPatientHealthStatus a ns1:Timing .
+
+ns2:BasicNeeds a ns1:Observation ;
+    ns1:name "Basic Needs" .
+
+ns2:BasilarArtery a ns1:BodySite ;
+    ns1:name "Basilar artery" .
+
+ns2:BedsideGlucoseTesting a ns1:Procedure ;
+    ns1:name "Bedside Glucose Testing" .
+
+ns2:BetterFunctionalOutcomes a ns1:Observation .
+
+ns2:BinswangerDisease a ns1:Condition ;
+    ns1:name "Binswanger Disease",
+        "Binswanger disease" ;
+    ns1:relatedTo ns2:RareDisorders .
+
+ns2:Bleeding a ns1:Observation ;
+    ns1:name "Bleeding" ;
+    ns1:partOf ns2:Tumor .
+
+ns2:BleedingRisk a ns1:RiskAssessment ;
+    ns1:RiskAssessment.condition ns2:AcutePericarditis,
+        ns2:AdvancedAge,
+        ns2:CerebrovascularDisease,
+        ns2:CurrentUseOfAnticoagulants,
+        ns2:HemorrhagicDiabeticRetinopathy,
+        ns2:HemostaticDefects,
+        ns2:Hypertension,
+        ns2:Pregnancy,
+        ns2:RecentGastrointestinalBleeding,
+        ns2:RecentIntracranialHemorrhage,
+        ns2:RecentMajorSurgery,
+        ns2:RecentTrauma,
+        ns2:SepticThrombophlebitis,
+        ns2:SignificantHepaticDysfunction,
+        ns2:SubacuteBacterialEndocarditis .
+
+ns2:BloodRelatedCauses a ns1:Condition ;
+    ns1:name "Blood-related causes" .
+
+ns2:BrainAssessment a ns1:Procedure ;
+    ns1:name "Brain assessment" .
+
+ns2:BrainTissue a ns1:AnatomicalStructure ;
+    ns1:name "Brain tissue" ;
+    ns1:partOf ns2:CerebralHemispheres .
+
+ns2:CTAngiography a ns1:Procedure ;
+    ns1:avoids ns2:MotionArtifacts ;
+    ns1:name "CT angiography (CTA)" ;
+    ns1:partOf ns2:Testing ;
+    ns1:preferredOver ns2:MagneticResonanceAngiography ;
+    ns1:relatedTo ns2:AnteriorCirculation,
+        ns2:PosteriorCirculation .
+
+ns2:CarbonMonoxideToxicity a ns1:Condition ;
+    ns1:name "Carbon Monoxide Toxicity",
+        "Carbon monoxide toxicity" ;
+    ns1:relatedTo ns2:SystemicPerfusionImpairment .
+
+ns2:CardiacThrombi a ns1:Condition ;
+    ns1:Condition.associatedWith ns2:AtrialFibrillation,
+        ns2:AtrialMyxoma,
+        ns2:MechanicalCirculatoryAssistDevices,
+        ns2:PostMyocardialInfarction,
+        ns2:ProstheticHeartValves,
+        ns2:RheumaticHeartDisease,
+        ns2:VegetationsOnHeartValves ;
+    ns1:Condition.name "Cardiac thrombi" .
+
+ns2:CarotidArteryStenosis a ns1:Condition ;
+    ns1:name "Carotid artery stenosis" .
+
+ns2:CarotidBifurcation a ns1:BodySite ;
+    ns1:name "Carotid bifurcation" .
+
+ns2:CarotidEndarterectomy a ns1:Procedure ;
+    ns1:context "sometimes" ;
+    ns1:definition "Carotid endarterectomy may help reduce risk of subsequent strokes" ;
+    ns1:name "Carotid endarterectomy" ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:Catheterization a ns1:Procedure ;
+    ns1:Procedure.name "Catheterization" .
+
+ns2:CerebralArterialTree a ns1:BodyStructure ;
+    ns1:BodyStructure.location "Cerebral arterial tree" .
+
+ns2:CerebralEdema a ns1:Condition ;
+    ns1:Condition.name "Cerebral Edema" ;
+    ns1:Condition.symptom ns2:ImpairedConsciousness .
+
+ns2:CerebralEmbolism a ns1:Condition ;
+    ns1:definition "Embolic infarction" ;
+    ns1:name "Cerebral embolism" .
+
+ns2:CerebrovascularDisease a ns1:Condition .
+
+ns2:CertainDrugsUse a ns1:Condition ;
+    ns1:name "Use of certain drugs" .
+
+ns2:CircleOfWillis a ns1:AnatomicalStructure ;
+    ns1:name "Circle of Willis" ;
+    ns1:partOf ns2:EfficientCollateralSystem .
+
+ns2:ClearSensorium a ns1:Observation ;
+    ns1:name "Clear Sensorium" .
+
+ns2:ClinicalDiagnosis a ns1:Procedure ;
+    ns1:definition "Diagnosis is clinical" ;
+    ns1:name "Clinical diagnosis" .
+
+ns2:ClinicalEvaluation a ns1:Procedure ;
+    ns1:name "Clinical Evaluation" .
+
+ns2:Clinicians a ns1:Practitioner .
+
+ns2:Clots a ns1:Condition ;
+    ns1:Condition.associatedWith ns2:OpenHeartSurgery ;
+    ns1:Condition.name "Clots" .
+
+ns2:ComaOrStupor a ns1:Symptom ;
+    ns1:name "Coma or Stupor" .
+
+ns2:CombinedHemiparesisAndHemianesthesia a ns1:Symptom ;
+    ns1:Symptom.description "Combined hemiparesis and hemianesthesia" .
+
+ns2:ControlOfRiskFactors a ns1:Observation .
+
+ns2:ControllingHyperglycemiaAndFever a ns1:Procedure ;
+    ns1:Procedure.outcome ns2:BetterFunctionalOutcomes,
+        ns2:LimitBrainDamage .
+
+ns2:CoronaryArteryBypassGraft a ns1:Procedure .
+
+ns2:CorrectionOfHyperthermia a ns1:Procedure ;
+    ns1:indication ns2:Hyperthermia ;
+    ns1:method ns2:AntipyreticMedication,
+        ns2:IdentifyAndTreatCauseOfHypothermia .
+
+ns2:CurrentUseOfAnticoagulants a ns1:Condition ;
+    ns1:Condition.example ns2:Warfarin .
+
+ns2:DecompressionSickness a ns1:Condition ;
+    ns1:Condition.name "Decompression sickness" .
+
+ns2:DeepPerforatingArteries a ns1:BodySite ;
+    ns1:name "Deep perforating arteries" .
+
+ns2:DeepVenousThrombosisProphylaxis a ns1:Condition .
+
+ns2:DenseMiddleCerebralArterySign a ns1:Observation ;
+    ns1:name "Dense middle cerebral artery sign" ;
+    ns1:partOf ns2:AnteriorCirculationIschemicStroke .
+
+ns2:DiastolicBP a ns1:Observation ;
+    ns1:Observation.value "110 mm Hg" .
+
+ns2:DiffusionWeightedMRI a ns1:ImagingStudy ;
+    ns1:characteristic ns2:HighlySensitiveForEarlyIschemia ;
+    ns1:name "Diffusion-weighted MRI" ;
+    ns1:partOf ns2:Neuroimaging .
+
+ns2:DysarthriaClumsyHandSyndrome a ns1:Symptom ;
+    ns1:Symptom.description "Dysarthria–clumsy hand syndrome" .
+
+ns2:ESUS a ns1:Condition ;
+    ns1:definition "A subcategory of cryptogenic stroke, is diagnosed when no source has been identified after sufficient diagnostic evaluation has excluded lacunar stroke, major cardioembolic sources, and ipsilateral steno-occlusive vessel disease (> 50% occlusion)." ;
+    ns1:excludes ns2:IpsilateralStenoOcclusiveVesselDisease,
+        ns2:LacunarStroke,
+        ns2:MajorCardioembolicSources ;
+    ns1:name "Embolic stroke of undetermined source (ESUS)" .
+
+ns2:EarlyImprovement a ns1:Observation ;
+    ns1:name "Early Improvement" ;
+    ns1:suggests ns2:FavorablePrognosis .
+
+ns2:EffacementOfSulci a ns1:Observation ;
+    ns1:name "Effacement of sulci" ;
+    ns1:partOf ns2:AnteriorCirculationIschemicStroke .
+
+ns2:EmboliProtectionDevice a ns1:Device ;
+    ns1:type "filter" .
+
+ns2:EmbolicStrokeOfUndeterminedCause a ns1:Condition .
+
+ns2:EndOrganDamage a ns1:Condition ;
+    ns1:includes ns2:AcuteMyocardialInfarction,
+        ns2:AcuteRenalFailure,
+        ns2:AorticDissection,
+        ns2:HypertensiveEncephalopathy,
+        ns2:PulmonaryEdema,
+        ns2:RetinalHemorrhages .
+
+ns2:Endocarditis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "56819008" ;
+                    ns1:display "Endocarditis" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:EnteralNutrition a ns1:Procedure ;
+    ns1:Procedure.timing ns2:Within7DaysOfAdmission .
+
+ns2:ExcessAlcoholConsumption a ns1:Condition ;
+    ns1:name "Excess alcohol consumption" .
+
+ns2:ExcitatoryNeurotoxins a ns1:Substance ;
+    ns1:example ns2:Glutamate .
+
+ns2:ExogenousEstrogenUse a ns1:Condition ;
+    ns1:name "Use of exogenous estrogen" .
+
+ns2:ExtracranialArteries a ns1:BodySite ;
+    ns1:name "Extracranial arteries" .
+
+ns2:FamilyHistoryOfStroke a ns1:Condition ;
+    ns1:name "Family history of stroke" .
+
+ns2:Fat a ns1:Substance ;
+    ns1:Substance.name "Fat" ;
+    ns1:Substance.origin ns2:FracturedLongBones .
+
+ns2:FatEmboli a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "212372004" ;
+                    ns1:display "Fat Emboli" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Fever a ns1:Symptom ;
+    ns1:Symptom.description "Occasionally, fever develops" .
+
+ns2:FibrinBinding a ns1:Property .
+
+ns2:FibromuscularDysplasia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "31653004" ;
+                    ns1:display "Fibromuscular dysplasia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:RareDisorders .
+
+ns2:FirstStroke a ns1:Observation ;
+    ns1:name "First Stroke" .
+
+ns2:FocalNeurologicSigns a ns1:Observation ;
+    ns1:name "Focal Neurologic Signs" ;
+    ns1:relatedTo ns2:CNSInfections,
+        ns2:FunctionalNeurologicDisorders,
+        ns2:Hypoglycemia,
+        ns2:Migraine,
+        ns2:Seizures .
+
+ns2:FracturedLongBones a ns1:Condition ;
+    ns1:Condition.value "Fractured long bones" .
+
+ns2:FreeRadicals a ns1:Substance .
+
+ns2:FunctionalImpairment a ns1:Observation ;
+    ns1:name "Functional Impairment" .
+
+ns2:GenitourinaryBleeding a ns1:Condition .
+
+ns2:Glutamate a ns1:Substance .
+
+ns2:GuidelinesForEarlyManagement a ns1:Guideline ;
+    ns1:providedBy ns2:AmericanHeartAssociation,
+        ns2:AmericanStrokeAssociation .
+
+ns2:HeartDisorders a ns1:Condition ;
+    ns1:name "Heart disorders" .
+
+ns2:Hemoglobinopathies a ns1:Condition ;
+    ns1:name "Hemoglobinopathies" ;
+    ns1:relatedTo ns2:HyperviscosityDisorders .
+
+ns2:HemorrhagicDiabeticRetinopathy a ns1:Condition ;
+    ns1:Condition.example ns2:HemorrhagicOphthalmicConditions .
+
+ns2:HemorrhagicOphthalmicConditions a ns1:Condition .
+
+ns2:HemostaticDefects a ns1:Condition ;
+    ns1:Condition.example ns2:RenalDisease,
+        ns2:SevereHepaticDisease .
+
+ns2:HighBloodPressure a ns1:Observation ;
+    ns1:management ns2:LoweringBPBy15Percent ;
+    ns1:monitoringInterval "15 minutes" ;
+    ns1:threshold "≥ 220 mm Hg systolic or ≥ 120 mm Hg diastolic" .
+
+ns2:HighRiskDiet a ns1:Condition ;
+    ns1:name "High-risk diet" .
+
+ns2:HighSurgicalRiskPatients a ns1:Patient .
+
+ns2:HighlySensitiveForEarlyIschemia a ns1:Observation ;
+    ns1:name "Highly sensitive for early ischemia" ;
+    ns1:partOf ns2:DiffusionWeightedMRI .
+
+ns2:Hospitalization a ns1:Procedure .
+
+ns2:Hypercoagulability a ns1:Condition ;
+    ns1:name "Hypercoagulability" .
+
+ns2:Hyperglycemia a ns1:Observation .
+
+ns2:Hyperhomocysteinemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "419503008" ;
+                    ns1:display "Hyperhomocysteinemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:HypercoagulabilityDisorders .
+
+ns2:HypertensiveEncephalopathy a ns1:Condition .
+
+ns2:Hyperthermia a ns1:Condition,
+        ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "1197782006" ;
+                    ns1:display "Hyperthermia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:threshold "> 38° C" .
+
+ns2:Hypotension a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "45007003" ;
+                    ns1:display "Hypotension" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke,
+        ns2:SystemicPerfusionImpairment .
+
+ns2:Hypoxia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "389086002" ;
+                    ns1:display "Hypoxia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:SystemicPerfusionImpairment .
+
+ns2:IVThrombolysis a ns1:Procedure ;
+    ns1:name "IV thrombolysis" .
+
+ns2:IVtPA a ns1:Medication ;
+    ns1:name "IV tPA" .
+
+ns2:Idarucizumab a ns1:Medication ;
+    ns1:indication ns2:Dabigatran .
+
+ns2:IdentifyAndTreatCauseOfHypothermia a ns1:Procedure .
+
+ns2:IdentifyRiskOfAspiration a ns1:Observation .
+
+ns2:InadequateBloodFlow a ns1:Condition ;
+    ns1:bodySite ns2:BrainArtery ;
+    ns1:name "Inadequate blood flow" .
+
+ns2:IncreasedIntracranialPressure a ns1:Condition .
+
+ns2:InfarctionWithCellNecrosis a ns1:Condition .
+
+ns2:InsularCorticalRibbon a ns1:Observation ;
+    ns1:name "Insular cortical ribbon" ;
+    ns1:partOf ns2:AnteriorCirculationIschemicStroke .
+
+ns2:InsulinResistance a ns1:Condition ;
+    ns1:name "Insulin resistance" .
+
+ns2:Interleukin1Beta a ns1:Substance .
+
+ns2:IntermittentPneumaticCompression a ns1:Procedure ;
+    ns1:Procedure.reason ns2:DeepVenousThrombosisProphylaxis ;
+    ns1:Procedure.subject ns2:ImmobileStrokePatientsWithoutContraindications .
+
+ns2:InternalCarotidArteryOcclusion a ns1:Condition ;
+    ns1:name "Internal carotid artery occlusion" .
+
+ns2:InternalCarotidArterySegment a ns1:BodySite ;
+    ns1:name "Segment of the internal carotid artery between the cavernous sinus and supraclinoid process" .
+
+ns2:InterventionistsExperience a ns1:Observation .
+
+ns2:IntracellularAcidosis a ns1:Condition ;
+    ns1:dueTo ns2:AccumulationOfLactate .
+
+ns2:IntracellularCalciumAccumulation a ns1:Condition .
+
+ns2:IntracranialArteries a ns1:BodySite ;
+    ns1:name "Intracranial arteries" .
+
+ns2:IntracranialArteriesDissection a ns1:Condition ;
+    ns1:name "Dissection of intracranial arteries" .
+
+ns2:IntracranialInfection a ns1:Condition ;
+    ns1:relatedTo ns2:VenousSinusThrombosis ;
+    ns1:value "Intracranial Infection" .
+
+ns2:InvasiveCardiovascularProcedures a ns1:Procedure ;
+    ns1:Procedure.display "Invasive cardiovascular procedures" ;
+    ns1:Procedure.example ns2:Catheterization .
+
+ns2:IpsilateralCarotidObstruction a ns1:Condition ;
+    ns1:severity "70 to 99% of the arterial lumen" .
+
+ns2:IpsilateralStenoOcclusiveVesselDisease a ns1:Condition ;
+    ns1:definition "> 50% occlusion" ;
+    ns1:value "Ipsilateral steno-occlusive vessel disease" .
+
+ns2:IronMediatedProcess a ns1:Process .
+
+ns2:LackOfPhysicalActivity a ns1:Condition ;
+    ns1:name "Lack of physical activity" .
+
+ns2:LacunarStroke a ns1:Condition ;
+    ns1:name "Lacunar Stroke" .
+
+ns2:LargeArteriesAtBaseOfBrain a ns1:BodySite ;
+    ns1:description "Large arteries at the base of the brain" .
+
+ns2:LargeInfarct a ns1:Condition ;
+    ns1:characteristic ns2:Hypodensity ;
+    ns1:diagnosedBy ns2:CT ;
+    ns1:name "Large infarct" .
+
+ns2:LeftVentricularAssistDevice a ns1:Device ;
+    ns1:Device.name "Left ventricular assist device" .
+
+ns2:LimitBrainDamage a ns1:Observation .
+
+ns2:LipidPeroxidativeDamage a ns1:Condition ;
+    ns1:process ns2:FreeRadicals,
+        ns2:IronMediatedProcess .
+
+ns2:Lipohyalinosis a ns1:Condition ;
+    ns1:definition "Degeneration of the media of small arteries and replacement by lipids and collagen." ;
+    ns1:name "Lipohyalinosis" .
+
+ns2:LiverFailure a ns1:Condition ;
+    ns1:criteria "elevated INR" .
+
+ns2:LongTermManagement a ns1:Procedure ;
+    ns1:Procedure.supportingInformation ns2:PreventionOfRecurrentStroke,
+        ns2:TreatmentOfDepression .
+
+ns2:LossOfATPStores a ns1:Condition .
+
+ns2:LossOfGrayWhiteJunction a ns1:Observation ;
+    ns1:description "Loss of the gray-white junction" ;
+    ns1:partOf ns2:AnteriorCirculationIschemicStroke .
+
+ns2:LossOfIonicHomeostasis a ns1:Condition ;
+    ns1:includes ns2:IntracellularCalciumAccumulation .
+
+ns2:LowMolecularWeightHeparin a ns1:Medication ;
+    ns1:Medication.subject ns2:ImmobileStrokePatientsWithoutContraindications .
+
+ns2:LowRateOfPeriproceduralAdverseEvents a ns1:Observation .
+
+ns2:LoweringBPBy15Percent a ns1:Procedure ;
+    ns1:timeframe "24 hours after stroke onset" .
+
+ns2:MajorCardioembolicSources a ns1:Condition ;
+    ns1:name "Major cardioembolic sources" .
+
+ns2:MajorCerebralArtery a ns1:BodySite ;
+    ns1:name "Major cerebral artery" .
+
+ns2:MaranticEndocarditis a ns1:Condition ;
+    ns1:Condition.name "Marantic endocarditis" .
+
+ns2:MaximizeFunction a ns1:Observation .
+
+ns2:MechanicalThrombectomy a ns1:Procedure ;
+    ns1:description "angiographically directed intra-arterial removal of a thrombus or embolus by a stent retriever device" ;
+    ns1:indication ns2:InternalCarotidArteryOcclusion,
+        ns2:LargeMismatchBetweenInfarctVolumeAndClinicalDeficit,
+        ns2:LargerPenumbra,
+        ns2:MiddleCerebralArteryOcclusion,
+        ns2:SmallInfarct,
+        ns2:TissueAtRiskOfInfarction,
+        "recent large-vessel occlusion in the anterior circulation" ;
+    ns1:name "Mechanical Thrombectomy" ;
+    ns1:outcome ns2:ReestablishPerfusion ;
+    ns1:relatedTo ns2:Emboli,
+        ns2:IschemicStroke,
+        ns2:Thrombi ;
+    ns1:setting "large stroke centers" ;
+    ns1:status "standard of care" ;
+    ns1:useContext ns2:IVThrombolysis,
+        ns2:NIHSSScoreGreaterThan6,
+        ns2:NIHSSScoreLessThan6,
+        ns2:PosteriorCirculationStrokes,
+        ns2:SymptomOnset16Hours,
+        ns2:SymptomOnset24Hours,
+        ns2:SymptomOnset6Hours .
+
+ns2:MediumSizedInfarct a ns1:Condition ;
+    ns1:characteristic ns2:Hypodensity ;
+    ns1:diagnosedBy ns2:CT ;
+    ns1:name "Medium-sized infarct" .
+
+ns2:MiddleCerebralArtery a ns1:BodySite ;
+    ns1:name "Middle cerebral artery" .
+
+ns2:MiddleCerebralArteryOcclusion a ns1:Condition ;
+    ns1:name "Middle cerebral artery occlusion" .
+
+ns2:Migraine a ns1:Condition ;
+    ns1:name "Migraine" ;
+    ns1:relatedTo ns2:HemiplegicMigraine,
+        ns2:Vasospasm .
+
+ns2:Mild a ns1:Observation ;
+    ns1:name "Mild" .
+
+ns2:MitralStenosis a ns1:Condition ;
+    ns1:Condition.name "Mitral stenosis" .
+
+ns2:Moderate a ns1:Observation ;
+    ns1:name "Moderate" .
+
+ns2:ModifiableRiskFactors a ns1:Observation ;
+    ns1:Observation.component ns2:AlcoholUseDisorder,
+        ns2:Diabetes,
+        ns2:Dyslipidemia,
+        ns2:Hypertension,
+        ns2:Obesity,
+        ns2:Smoking .
+
+ns2:MotionArtifacts a ns1:Observation ;
+    ns1:name "Motion artifacts" .
+
+ns2:MoyamoyaDisease a ns1:Condition ;
+    ns1:name "Moyamoya Disease",
+        "Moyamoya disease" ;
+    ns1:relatedTo ns2:RareDisorders .
+
+ns2:MultiInfarctDementia a ns1:Condition ;
+    ns1:Condition.cause ns2:LacunarInfarcts ;
+    ns1:Condition.name "Multi-Infarct Dementia" .
+
+ns2:MyocardialInfarction a ns1:Condition ;
+    ns1:occurrence "periprocedural period" .
+
+ns2:NIHSSScoreGreaterThan6 a ns1:Observation ;
+    ns1:name "NIHSS score > 6" .
+
+ns2:NIHSSScoreLessThan6 a ns1:Observation ;
+    ns1:name "NIHSS score < 6" .
+
+ns2:NIHStrokeScale a ns1:Observation ;
+    ns1:name "NIH Stroke Scale" .
+
+ns2:NeckArteries a ns1:BodyStructure ;
+    ns1:BodyStructure.location "Neck arteries" .
+
+ns2:NeurologicRecovery a ns1:Observation ;
+    ns1:completeRecoveryRate "10%" ;
+    ns1:name "Neurologic Recovery" ;
+    ns1:permanentDeficitsAfter "12 months" .
+
+ns2:Neurons a ns1:AnatomicalStructure ;
+    ns1:name "Neurons" .
+
+ns2:NonCerebrovascularDisorders a ns1:Condition ;
+    ns1:name "Non-Cerebrovascular Disorders" ;
+    ns1:relatedTo ns2:FocalNeurologicSigns .
+
+ns2:NonatherothromboticObstruction a ns1:Condition ;
+    ns1:causedBy ns2:Lipohyalinosis ;
+    ns1:definition "Obstruction of small, perforating arteries that supply deep cortical structures." ;
+    ns1:name "Nonatherothrombotic obstruction" .
+
+ns2:NonthromboticOcclusion a ns1:Condition ;
+    ns1:definition "Occlusion of small, deep cerebral arteries (lacunar infarction)" ;
+    ns1:name "Nonthrombotic occlusion" .
+
+ns2:Obesity a ns1:Condition .
+
+ns2:ObstetricalDelivery a ns1:Procedure .
+
+ns2:ObstructiveSleepApnea a ns1:Condition ;
+    ns1:name "Obstructive sleep apnea" .
+
+ns2:OccludedArteriovenousCannulaAtInfectedSite a ns1:Condition .
+
+ns2:OptimalTreatmentWithMedicationsIneffective a ns1:Condition .
+
+ns2:OrganBiopsy a ns1:Procedure .
+
+ns2:OtherCardiovascularEvents a ns1:Condition .
+
+ns2:OxygenSaturationBelow94 a ns1:Observation .
+
+ns2:PatentForamenOvaleWithShunt a ns1:Condition ;
+    ns1:Condition.display "Patent foramen ovale with shunt" ;
+    ns1:Condition.resultIn ns2:ParadoxicalEmboli .
+
+ns2:Patient a ns1:Patient .
+
+ns2:PatientCharacteristics a ns1:Observation ;
+    ns1:component ns2:AdherenceToMedicationRegimen,
+        ns2:ControlOfRiskFactors .
+
+ns2:PatientsOver70Years a ns1:Patient .
+
+ns2:PeripartumState a ns1:Condition ;
+    ns1:name "Peripartum State" ;
+    ns1:relatedTo ns2:VenousSinusThrombosis .
+
+ns2:PhysicalTherapy a ns1:Procedure ;
+    ns1:Procedure.outcome ns2:MaximizeFunction,
+        ns2:PreventJointContractures,
+        ns2:PreventSarcopenia .
+
+ns2:PlasmaCellDisorders a ns1:Condition ;
+    ns1:name "Plasma Cell Disorders",
+        "Plasma cell disorders" ;
+    ns1:relatedTo ns2:HyperviscosityDisorders .
+
+ns2:PlasminogenActivatorInhibitorResistance a ns1:Property .
+
+ns2:PlasminogenConversion a ns1:Property .
+
+ns2:Polycythemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "127062003" ;
+                    ns1:display "Polycythemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:HyperviscosityDisorders .
+
+ns2:PosteriorCirculationStrokes a ns1:Condition ;
+    ns1:name "Posterior circulation strokes" .
+
+ns2:PostoperativeState a ns1:Condition ;
+    ns1:name "Postoperative State" ;
+    ns1:relatedTo ns2:VenousSinusThrombosis .
+
+ns2:Pregnancy a ns1:Condition .
+
+ns2:PreventJointContractures a ns1:Observation .
+
+ns2:PreventPressureUlcers a ns1:Procedure ;
+    ns1:Procedure.timing ns2:StartedEarly .
+
+ns2:PreventSarcopenia a ns1:Observation .
+
+ns2:PreventionOfRecurrentStroke a ns1:Procedure ;
+    ns1:Procedure.reason ns2:SecondaryPrevention ;
+    ns1:Procedure.supportingInformation ns2:ModifiableRiskFactors,
+        ns2:ReducingSystolicBP .
+
+ns2:PreviousPunctureOfNoncompressibleVessels a ns1:Procedure .
+
+ns2:PrimaryPrevention a ns1:Condition .
+
+ns2:PriorStroke a ns1:Condition ;
+    ns1:name "Prior stroke" .
+
+ns2:Prognosis a ns1:Observation ;
+    ns1:name "Prognosis" ;
+    ns1:relatedTo ns2:Aphasia,
+        ns2:BrainStemSigns,
+        ns2:EarlyImprovement,
+        ns2:ImpairedConsciousness,
+        ns2:OlderAge,
+        ns2:YoungerAge .
+
+ns2:ProgrammedCellDeath a ns1:Condition ;
+    ns1:alias "Apoptosis" .
+
+ns2:ProximalArterialStenosis a ns1:Condition ;
+    ns1:definition "Stenosis with hypotension that decreases cerebral blood flow in arterial watershed zones (hemodynamic stroke)" ;
+    ns1:name "Proximal arterial stenosis" .
+
+ns2:PsychosocialStress a ns1:Condition ;
+    ns1:value "Psychosocial stress" .
+
+ns2:PulmonaryEdema a ns1:Condition .
+
+ns2:PureMotorHemiparesis a ns1:Symptom ;
+    ns1:Symptom.description "Pure motor hemiparesis" .
+
+ns2:PureSensoryHemianesthesia a ns1:Symptom ;
+    ns1:Symptom.description "Pure sensory hemianesthesia" .
+
+ns2:RaceEthnicity a ns1:Condition ;
+    ns1:name "Race/ethnicity" .
+
+ns2:RapidlyGrowing a ns1:Observation ;
+    ns1:name "Rapidly growing" ;
+    ns1:partOf ns2:Tumor .
+
+ns2:RecentGastrointestinalBleeding a ns1:Condition ;
+    ns1:Condition.example ns2:GenitourinaryBleeding .
+
+ns2:RecentIntracranialHemorrhage a ns1:Condition .
+
+ns2:RecentMajorSurgery a ns1:Condition ;
+    ns1:Condition.example ns2:CoronaryArteryBypassGraft,
+        ns2:ObstetricalDelivery,
+        ns2:OrganBiopsy,
+        ns2:PreviousPunctureOfNoncompressibleVessels .
+
+ns2:RecentTrauma a ns1:Condition .
+
+ns2:RecurrentStroke a ns1:Condition ;
+    ns1:occurrence "periprocedural period" .
+
+ns2:RecurrentSymptomsOfVertebrobasilarIschemia a ns1:Condition .
+
+ns2:ReducingSystolicBP a ns1:Procedure ;
+    ns1:Procedure.target ns2:TargetBP120mmHg,
+        ns2:TypicalLevel140mmHg ;
+    ns1:Procedure.timing ns2:BasedOnPatientHealthStatus,
+        ns2:OtherCardiovascularEvents,
+        ns2:RiskOfRecurrentStroke .
+
+ns2:RenalDisease a ns1:Condition .
+
+ns2:RetinalHemorrhages a ns1:Condition .
+
+ns2:RheumaticDisorders a ns1:Condition ;
+    ns1:name "Rheumatic Disorders" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:RiskOfRecurrentStroke a ns1:Condition .
+
+ns2:ScreeningForDysphagia a ns1:Procedure ;
+    ns1:Procedure.outcome ns2:IdentifyRiskOfAspiration ;
+    ns1:Procedure.performer ns2:SpeechLanguagePathologist,
+        ns2:TrainedHealthCarePractitioner .
+
+ns2:SecondaryPrevention a ns1:Condition .
+
+ns2:SecondaryPreventionOfCardioembolicStrokes a ns1:Condition .
+
+ns2:Seizures a ns1:Condition ;
+    ns1:name "Seizures" ;
+    ns1:relatedTo ns2:PostictalParalysis .
+
+ns2:SepticThrombophlebitis a ns1:Condition ;
+    ns1:Condition.example ns2:OccludedArteriovenousCannulaAtInfectedSite .
+
+ns2:SerumCreatinineOver1.5mgdL a ns1:Observation ;
+    ns1:criteria "serum creatinine ≥ 1.5mg/dL" .
+
+ns2:Severe a ns1:Observation ;
+    ns1:name "Severe" .
+
+ns2:SevereAnemia a ns1:Condition ;
+    ns1:name "Severe Anemia",
+        "Severe anemia" ;
+    ns1:relatedTo ns2:SystemicPerfusionImpairment .
+
+ns2:SevereHepaticDisease a ns1:Condition .
+
+ns2:SevereIschemia a ns1:Condition ;
+    ns1:name "Severe ischemia" ;
+    ns1:relatedTo ns2:BrainIschemia .
+
+ns2:Sex a ns1:Condition ;
+    ns1:name "Sex" .
+
+ns2:SickleCellDisease a ns1:Condition ;
+    ns1:name "Sickle Cell Disease",
+        "Sickle cell disease" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:SignificantHepaticDysfunction a ns1:Condition .
+
+ns2:SingleBolusAdministration a ns1:Property .
+
+ns2:SmallCorticalBranches a ns1:BodySite ;
+    ns1:name "Small cortical branches" .
+
+ns2:SpecificArterialTerritory a ns1:BodyStructure ;
+    ns1:name "Specific Arterial Territory" .
+
+ns2:SpeechLanguagePathologist a ns1:Practitioner .
+
+ns2:Spontaneously a ns1:Event ;
+    ns1:Event.name "Spontaneously" .
+
+ns2:StartedEarly a ns1:Timing .
+
+ns2:Statins a ns1:Medication ;
+    ns1:description "Used to prevent recurrent strokes; lipid levels must be decreased by substantial amounts." .
+
+ns2:Stenting a ns1:Procedure ;
+    ns1:context "sometimes" ;
+    ns1:definition "Stenting may help reduce risk of subsequent strokes" ;
+    ns1:name "Stenting" ;
+    ns1:relatedTo ns2:IschemicStroke ;
+    ns1:subject ns2:IschemicStroke .
+
+ns2:StrokeOutcome a ns1:Observation ;
+    ns1:name "Stroke Outcome" ;
+    ns1:relatedTo ns2:Hemiplegia,
+        ns2:MortalityRate,
+        ns2:NeurologicRecovery,
+        ns2:SubsequentStrokes .
+
+ns2:StrokeSeverity a ns1:Observation ;
+    ns1:correlatesWith ns2:FunctionalImpairment,
+        ns2:Prognosis ;
+    ns1:method ns2:NIHStrokeScale .
+
+ns2:SubacuteBacterialEndocarditis a ns1:Condition .
+
+ns2:SubarachnoidHemorrhage a ns1:Condition ;
+    ns1:name "Subarachnoid Hemorrhage",
+        "Subarachnoid hemorrhage" ;
+    ns1:relatedTo ns2:Vasospasm .
+
+ns2:SubclavianArteryThrombosis a ns1:Condition ;
+    ns1:name "Subclavian artery thrombosis" .
+
+ns2:SubsequentStrokes a ns1:Observation ;
+    ns1:highRiskAfter ns2:FirstStroke ;
+    ns1:name "Subsequent Strokes" ;
+    ns1:recurrencePeriod "5 years" ;
+    ns1:recurrenceRate "25%" .
+
+ns2:SuddenlySymptomatic a ns1:Observation ;
+    ns1:name "Suddenly symptomatic" ;
+    ns1:partOf ns2:Tumor .
+
+ns2:SupplementalOxygen a ns1:Procedure ;
+    ns1:indication ns2:OxygenSaturationBelow94 .
+
+ns2:SupportiveCare a ns1:Procedure ;
+    ns1:Procedure.supportingInformation ns2:ControllingHyperglycemiaAndFever,
+        ns2:EnteralNutrition,
+        ns2:IntermittentPneumaticCompression,
+        ns2:LowMolecularWeightHeparin,
+        ns2:PhysicalTherapy,
+        ns2:PreventPressureUlcers,
+        ns2:ScreeningForDysphagia .
+
+ns2:SupportiveMeasures a ns1:Procedure ;
+    ns1:includes ns2:AirwaySupport,
+        ns2:CorrectionOfHyperthermia,
+        ns2:SupplementalOxygen,
+        ns2:TreatmentOfHyperglycemia,
+        ns2:TreatmentOfHypoglycemia,
+        ns2:VentilatoryAssistance .
+
+ns2:SympathomimeticDrugsUse a ns1:Condition ;
+    ns1:name "Use of sympathomimetic drugs" .
+
+ns2:SymptomOnset6Hours a ns1:Observation ;
+    ns1:name "Symptom onset within 6 hours" .
+
+ns2:Syphilis a ns1:Condition ;
+    ns1:name "Syphilis" ;
+    ns1:relatedTo ns2:VascularInflammation .
+
+ns2:SystolicBP a ns1:Observation ;
+    ns1:Observation.value "175 mm Hg" .
+
+ns2:TargetBP120mmHg a ns1:Observation .
+
+ns2:TherapeuticWindow a ns1:Property .
+
+ns2:Thrombocytosis a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "6631009" ;
+                    ns1:display "Thrombocytosis" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:HyperviscosityDisorders .
+
+ns2:ThrombolyticTherapy a ns1:Procedure ;
+    ns1:definition "Thrombolytic therapy may be useful acutely in certain patients" ;
+    ns1:name "Thrombolytic Therapy",
+        "Thrombolytic therapy" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:ThromboticDisorders a ns1:Condition ;
+    ns1:relatedTo ns2:IschemicStroke ;
+    ns1:value "Thrombotic Disorders",
+        "Thrombotic disorders" .
+
+ns2:TimingOfProcedure a ns1:Observation ;
+    ns1:value "> 3 weeks after the stroke" .
+
+ns2:TissueAtRiskOfInfarction a ns1:Condition ;
+    ns1:name "Tissue at risk of infarction" .
+
+ns2:TrainedHealthCarePractitioner a ns1:Practitioner .
+
+ns2:TreatmentOfDepression a ns1:Procedure ;
+    ns1:Procedure.outcome ns2:AidInRecovery ;
+    ns1:Procedure.performer ns2:Clinicians ;
+    ns1:Procedure.supportingInformation ns2:AskFamilyMembersAboutSignsOfDepression,
+        ns2:AskPatientsAboutSadness .
+
+ns2:TreatmentOfHyperglycemia a ns1:Procedure ;
+    ns1:indication ns2:Hyperglycemia ;
+    ns1:monitoring ns2:Hypoglycemia ;
+    ns1:targetBloodGlucose "140 to 180 mg/dL" .
+
+ns2:TreatmentOfHypoglycemia a ns1:Procedure ;
+    ns1:indication ns2:Hypoglycemia .
+
+ns2:TumorNecrosisFactorAlpha a ns1:Substance .
+
+ns2:TypicalLevel140mmHg a ns1:Observation .
+
+ns2:UnderlyingMalignancy a ns1:Condition ;
+    ns1:name "Underlying Malignancy" ;
+    ns1:relatedTo ns2:HypercoagulabilityDisorders .
+
+ns2:UnilateralNeurologicDysfunction a ns1:Symptom ;
+    ns1:Symptom.description "Unilateral neurologic dysfunction often beginning in one arm, then spreading ipsilaterally" .
+
+ns2:UseOfTPA a ns1:Procedure .
+
+ns2:ValvularAtrialFibrillation a ns1:Condition .
+
+ns2:VascularCauses a ns1:Condition ;
+    ns1:name "Vascular causes" .
+
+ns2:VasculiticDisorders a ns1:Condition ;
+    ns1:name "Vasculitic Disorders",
+        "Vasculitic disorders" ;
+    ns1:relatedTo ns2:VascularInflammation .
+
+ns2:Vasculitis a ns1:Condition ;
+    ns1:name "Vasculitis" .
+
+ns2:VegetationsOnHeartValves a ns1:Condition ;
+    ns1:Condition.associatedWith ns2:BacterialEndocarditis,
+        ns2:MaranticEndocarditis ;
+    ns1:Condition.name "Vegetations on heart valves" .
+
+ns2:VenousClots a ns1:Condition ;
+    ns1:Condition.name "Venous clots" ;
+    ns1:Condition.pathway ns2:PatentForamenOvaleWithShunt .
+
+ns2:VentilatoryAssistance a ns1:Procedure ;
+    ns1:indication ns2:BulbarDysfunction,
+        ns2:DecreasedConsciousness .
+
+ns2:VertebralArtery a ns1:AnatomicalStructure,
+        ns1:BodyStructure ;
+    ns1:BodyStructure.location "Vertebral artery" ;
+    ns1:name "Vertebral artery" ;
+    ns1:partOf ns2:EfficientCollateralSystem .
+
+ns2:VertebralArteryBranches a ns1:BodyStructure ;
+    ns1:BodyStructure.location "Vertebral artery branches" .
+
+ns2:VertebralArteryObstruction a ns1:Condition .
+
+ns2:Vomiting a ns1:Symptom ;
+    ns1:name "Vomiting" .
+
+ns2:WalkingAbility a ns1:Observation ;
+    ns1:name "Walking Ability" .
+
+ns2:WeightUnder60kg a ns1:Observation ;
+    ns1:criteria "weight < 60 kg" .
+
+ns2:Within7DaysOfAdmission a ns1:Timing .
+
+ns2:YoungerAge a ns1:Observation ;
+    ns1:name "Younger Age" ;
+    ns1:suggests ns2:FavorablePrognosis .
+
+ns2:AmericanHeartAssociation a ns1:Organization .
+
+ns2:AmericanStrokeAssociation a ns1:Organization .
+
+ns2:Aphasia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "87486003" ;
+                    ns1:display "Aphasia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:suggests ns2:PoorPrognosis .
+
+ns2:Apixaban a ns1:Medication ;
+    ns1:dosage "5 mg twice a day" ;
+    ns1:reducedDosage "2.5 mg" ;
+    ns1:reducedDosageCriteria ns2:AgeOver80,
+        ns2:SerumCreatinineOver1.5mgdL,
+        ns2:WeightUnder60kg ;
+    ns1:substance ns2:DirectFactorXaInhibitor .
+
+ns2:AtrialFibrillation a ns1:Condition ;
+    ns1:Condition.code "Atrial fibrillation" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "49436004" ;
+                    ns1:display "Atrial fibrillation" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:AtrialMyxoma a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "233854003" ;
+                    ns1:display "Atrial Myxoma" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:BrainStemSigns a ns1:Observation ;
+    ns1:name "Brain Stem Signs" ;
+    ns1:suggests ns2:PoorPrognosis .
+
+ns2:BulbarDysfunction a ns1:Condition .
+
+ns2:CNSInfections a ns1:Condition ;
+    ns1:name "CNS Infections" .
+
+ns2:Cardioembolism a ns1:Condition ;
+    ns1:hasRiskFactor ns2:AirEmboli,
+        ns2:Atheromas,
+        ns2:AtrialFibrillation,
+        ns2:AtrialMyxoma,
+        ns2:Endocarditis,
+        ns2:FatEmboli,
+        ns2:MechanicalCirculatoryAssistDevices,
+        ns2:OpenHeartSurgery,
+        ns2:ParadoxicalEmboli,
+        ns2:PostMyocardialInfarction,
+        ns2:ProstheticHeartValves,
+        ns2:RheumaticHeartDisease,
+        ns2:SubclavianArteryThrombosis ;
+    ns1:value "Cardioembolism" .
+
+ns2:CarotidObstruction a ns1:Condition ;
+    ns1:severity "≥ 60%" .
+
+ns2:CerebralHemispheres a ns1:AnatomicalStructure ;
+    ns1:name "Cerebral hemispheres" .
+
+ns2:CigaretteSmoking a ns1:Condition ;
+    ns1:description "Cigarette smoking" .
+
+ns2:Dabigatran a ns1:Medication ;
+    ns1:contraindication ns2:LiverFailure,
+        ns2:SevereRenalFailure ;
+    ns1:dosage "150 mg twice a day" ;
+    ns1:indication ns2:NonvalvularAtrialFibrillation ;
+    ns1:substance ns2:DirectThrombinInhibitor .
+
+ns2:DecreasedConsciousness a ns1:Condition .
+
+ns2:Dyslipidemia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "370992007" ;
+                    ns1:display "Dyslipidemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] .
+
+ns2:Edema a ns1:Condition ;
+    ns1:consequence ns2:IncreasedIntracranialPressure .
+
+ns2:EmbolicStroke a ns1:Condition ;
+    ns1:Condition.code "Embolic Stroke",
+        "Embolic stroke" ;
+    ns1:Condition.location ns2:VertebralArtery,
+        ns2:VertebralArteryBranches ;
+    ns1:Condition.symptom ns2:Headache,
+        ns2:NeurologicDeficits,
+        ns2:Seizure ;
+    ns1:Condition.time "day" ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "371041009" ;
+                    ns1:display "Embolic Stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:FavorablePrognosis a ns1:Observation ;
+    ns1:value "Favorable Prognosis" .
+
+ns2:FunctionalNeurologicDisorders a ns1:Condition ;
+    ns1:note "Generally a diagnosis of exclusion" ;
+    ns1:value "Functional Neurologic Disorders" .
+
+ns2:Hemiplegia a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "50582007" ;
+                    ns1:display "Hemiplegia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:relatedTo ns2:BasicNeeds,
+        ns2:ClearSensorium,
+        ns2:WalkingAbility ;
+    ns1:severity ns2:Mild,
+        ns2:Moderate,
+        ns2:Severe .
+
+ns2:HemiplegicMigraine a ns1:Condition,
+        ns1:Observation ;
+    ns1:value "Hemiplegic Migraine" .
+
+ns2:HypercoagulabilityDisorder a ns1:Condition ;
+    ns1:hasSubtype ns2:AntiphospholipidSyndrome,
+        ns2:Hyperhomocysteinemia,
+        ns2:UnderlyingMalignancy ;
+    ns1:name "Hypercoagulability Disorder" ;
+    ns1:relatedTo ns2:VenousSinusThrombosis .
+
+ns2:Hypodensity a ns1:Observation ;
+    ns1:name "Hypodensity" ;
+    ns1:partOf ns2:LargeInfarct,
+        ns2:MediumSizedInfarct .
+
+ns2:ImmobileStrokePatientsWithoutContraindications a ns1:Patient .
+
+ns2:Interventionists a ns1:Practitioner ;
+    ns1:experience "very experienced" .
+
+ns2:LargeMismatchBetweenInfarctVolumeAndClinicalDeficit a ns1:Observation ;
+    ns1:description "Large mismatch between infarct volume and clinical deficit" .
+
+ns2:LargeVesselAtherosclerosis a ns1:Condition ;
+    ns1:bodySite ns2:ExtracranialArteries,
+        ns2:IntracranialArteries ;
+    ns1:hasRiskFactor ns2:Atheromas ;
+    ns1:name "Large-vessel atherosclerosis" .
+
+ns2:LargerPenumbra a ns1:Condition ;
+    ns1:name "Larger penumbra" .
+
+ns2:MagneticResonanceAngiography a ns1:Procedure ;
+    ns1:name "Magnetic resonance angiography (MRA)" ;
+    ns1:partOf ns2:Testing ;
+    ns1:relatedTo ns2:AnteriorCirculation,
+        ns2:PosteriorCirculation .
+
+ns2:MechanicalCirculatoryAssistDevices a ns1:Condition,
+        ns1:Device ;
+    ns1:Device.example ns2:LeftVentricularAssistDevice ;
+    ns1:name "Mechanical circulatory assist devices" .
+
+ns2:MicrovascularThrombosis a ns1:Condition .
+
+ns2:OlderAge a ns1:Condition,
+        ns1:Observation ;
+    ns1:name "Older Age",
+        "Older age" ;
+    ns1:suggests ns2:PoorPrognosis .
+
+ns2:OpenHeartSurgery a ns1:Condition,
+        ns1:Procedure ;
+    ns1:name "Open-heart surgery" .
+
+ns2:ParadoxicalEmboli a ns1:Condition ;
+    ns1:name "Paradoxical emboli" .
+
+ns2:PostMyocardialInfarction a ns1:Condition ;
+    ns1:name "Post–myocardial infarction" .
+
+ns2:PosteriorCirculation a ns1:BodyStructure ;
+    ns1:name "Posterior circulation" .
+
+ns2:PostictalParalysis a ns1:Condition,
+        ns1:Observation ;
+    ns1:name "Postictal Paralysis" .
+
+ns2:ProstheticHeartValves a ns1:Condition,
+        ns1:Device ;
+    ns1:name "Prosthetic heart valves" .
+
+ns2:RecentNondisablingSubmaximalStroke a ns1:Condition ;
+    ns1:associatedWith ns2:IpsilateralCarotidObstruction .
+
+ns2:ReestablishPerfusion a ns1:Observation ;
+    ns1:name "Reestablish perfusion" .
+
+ns2:RheumaticHeartDisease a ns1:Condition ;
+    ns1:Condition.associatedWith ns2:MitralStenosis ;
+    ns1:name "Rheumatic heart disease" .
+
+ns2:Rivaroxaban a ns1:Medication ;
+    ns1:contraindication ns2:SevereRenalFailure ;
+    ns1:dosage "20 mg once a day" ;
+    ns1:indication ns2:NonvalvularAtrialFibrillation ;
+    ns1:substance ns2:DirectFactorXaInhibitor .
+
+ns2:Seizure a ns1:Symptom ;
+    ns1:Symptom.description "A seizure may occur at stroke onset, more often with embolic than thrombotic stroke. Seizures may also occur months to years later; late seizures result from scarring or hemosiderin deposition at the site of ischemia" .
+
+ns2:SevereRenalFailure a ns1:Condition ;
+    ns1:criteria "creatinine clearance < 15 mL/minute" .
+
+ns2:Smoking a ns1:Condition ;
+    ns1:definition "The act of inhaling and exhaling the smoke of tobacco or a drug." ;
+    ns1:name "Smoking" .
+
+ns2:Surgeons a ns1:Practitioner ;
+    ns1:experience "very experienced" .
+
+ns2:SympathomimeticDrugUse a ns1:Condition ;
+    ns1:name "Sympathomimetic Drug Use" ;
+    ns1:relatedTo ns2:Vasospasm .
+
+ns2:SymptomOnset16Hours a ns1:Observation ;
+    ns1:name "Symptom onset within 16 hours" .
+
+ns2:SymptomOnset24Hours a ns1:Observation ;
+    ns1:name "Symptom onset within 24 hours" .
+
+ns2:UlceratedPlaque a ns1:Condition .
+
+ns2:Warfarin a ns1:Medication ;
+    ns1:Medication.name "Warfarin" ;
+    ns1:Medication.statement "aspirin is occasionally used simultaneously with warfarin in certain high-risk patients",
+        "in patients taking warfarin, antiplatelet medications additively increase risk of bleeding and are thus usually avoided" ;
+    ns1:dosage "Adjusted-dose" ;
+    ns1:indication ns2:NonvalvularAtrialFibrillation,
+        ns2:ValvularAtrialFibrillation ;
+    ns1:substance ns2:VitaminKAntagonist ;
+    ns1:targetINR "2 to 3" .
+
+ns2:AnteriorCirculation a ns1:BodyStructure ;
+    ns1:name "Anterior circulation" .
+
+ns2:AntiplateletMedications a ns1:Medication ;
+    ns1:definition "Antiplatelet medications may help reduce risk of subsequent strokes" ;
+    ns1:name "Antiplatelet medications" ;
+    ns1:relatedTo ns2:Emboli,
+        ns2:Thrombi .
+
+ns2:BP a ns1:Observation ;
+    ns1:name "Blood Pressure" ;
+    ns1:relatedTo ns2:AcuteReperfusionTherapy ;
+    ns1:value "< 180/105 mm Hg" .
+
+ns2:BrainIschemia a ns1:Condition ;
+    ns1:causedBy ns2:InadequateBloodFlow ;
+    ns1:name "Brain ischemia" .
+
+ns2:EfficientCollateralSystem a ns1:AnatomicalStructure ;
+    ns1:name "Efficient collateral system" ;
+    ns1:partOf ns2:BrainArtery .
+
+ns2:EmbolicStrokeOfUndeterminedSource a ns1:Condition ;
+    ns1:name "Embolic stroke of undetermined source" .
+
+ns2:Headache a ns1:Symptom ;
+    ns1:Symptom.description "Headache may precede neurologic deficits" ;
+    ns1:name "Headache" .
+
+ns2:HypercoagulabilityDisorders a ns1:Condition ;
+    ns1:name "Hypercoagulability Disorders" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:Hypoglycemia a ns1:Condition,
+        ns1:Observation ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "302866003" ;
+                    ns1:display "Hypoglycemia" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:threshold "< 60 mg/dL" .
+
+ns2:ImpairedConsciousness a ns1:Observation,
+        ns1:Symptom ;
+    ns1:Symptom.description "Deterioration during the first 48 to 72 hours after onset of symptoms, particularly progressively impaired consciousness" ;
+    ns1:name "Impaired Consciousness" ;
+    ns1:suggests ns2:PoorPrognosis .
+
+ns2:MRI a ns1:ImagingStudy,
+        ns1:Procedure ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "113091000" ;
+                    ns1:display "MRI" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "MRI is done to exclude hemorrhage and confirm the presence and extent of stroke" ;
+    ns1:partOf ns2:Neuroimaging .
+
+ns2:NeurologicDeficits a ns1:Symptom ;
+    ns1:Symptom.description "Patterns of neurologic deficits often suggest the affected artery" .
+
+ns2:NewAnticoagulants a ns1:Medication ;
+    ns1:alternativeTo ns2:Warfarin ;
+    ns1:includes ns2:Apixaban,
+        ns2:Dabigatran,
+        ns2:Rivaroxaban .
+
+ns2:NonvalvularAtrialFibrillation a ns1:Condition .
+
+ns2:RareDisorders a ns1:Condition ;
+    ns1:name "Rare Disorders" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:RheumaticDisordersTesting a ns1:Procedure ;
+    ns1:name "Testing for rheumatic disorders" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:SmallInfarct a ns1:Condition ;
+    ns1:diagnosedBy ns2:MRI ;
+    ns1:name "Small infarct" .
+
+ns2:Tumor a ns1:Condition ;
+    ns1:characteristic ns2:Bleeding,
+        ns2:RapidlyGrowing,
+        ns2:SuddenlySymptomatic ;
+    ns1:excludedBy ns2:Neuroimaging ;
+    ns1:name "Tumor" .
+
+ns2:AnteriorCirculationIschemicStroke a ns1:Condition ;
+    ns1:characteristic ns2:DenseMiddleCerebralArterySign,
+        ns2:EffacementOfSulci,
+        ns2:InsularCorticalRibbon,
+        ns2:LossOfGrayWhiteJunction ;
+    ns1:diagnosedBy ns2:CT ;
+    ns1:name "Anterior circulation ischemic stroke" .
+
+ns2:Atheromas a ns1:Condition ;
+    ns1:Condition.location ns2:AorticArch,
+        ns2:NeckArteries ;
+    ns1:bodySite ns2:CarotidBifurcation,
+        ns2:MajorCerebralArtery ;
+    ns1:name "Atheromas" ;
+    ns1:relatedCondition ns2:Thrombi .
+
+ns2:CryptogenicStroke a ns1:Condition ;
+    ns1:definition "No cause is identified in one-third of ischemic strokes at the time of patient discharge",
+        "Stroke is classified as cryptogenic when one of the following occurs: The diagnostic evaluation is incomplete. No cause is identified despite an extensive evaluation. There is more than one probable cause (eg, atrial fibrillation and ipsilateral carotid stenosis)." ;
+    ns1:hasSubcategory ns2:ESUS ;
+    ns1:hasSubtype ns2:EmbolicStrokeOfUndeterminedSource ;
+    ns1:name "Cryptogenic Stroke",
+        "Cryptogenic stroke" .
+
+ns2:Diabetes a ns1:Condition ;
+    ns1:definition "A group of diseases that result in too much sugar in the blood (high blood glucose)." ;
+    ns1:name "Diabetes" .
+
+ns2:PoorPrognosis a ns1:Observation ;
+    ns1:name "Poor Prognosis" .
+
+ns2:SystemicPerfusionImpairment a ns1:Condition ;
+    ns1:name "Systemic Perfusion Impairment" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:Vasospasm a ns1:Condition ;
+    ns1:hasCause ns2:SubarachnoidHemorrhage,
+        ns2:SympathomimeticDrugsUse ;
+    ns1:name "Vasospasm" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:CT a ns1:ImagingStudy,
+        ns1:Procedure ;
+    ns1:definition "CT is done to exclude hemorrhage and confirm the presence and extent of stroke" ;
+    ns1:name "CT" ;
+    ns1:partOf ns2:Neuroimaging .
+
+ns2:Hypertension a ns1:Condition ;
+    ns1:Condition.property ns2:DiastolicBP,
+        ns2:SystolicBP ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "38341003" ;
+                    ns1:display "Hypertension" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A condition in which the force of the blood against the artery walls is too high." .
+
+ns2:HyperviscosityDisorders a ns1:Condition ;
+    ns1:hasSubtype ns2:Hemoglobinopathies,
+        ns2:PlasmaCellDisorders,
+        ns2:Polycythemia,
+        ns2:Thrombocytosis ;
+    ns1:relatedTo ns2:Stroke ;
+    ns1:value "Hyperviscosity Disorders" .
+
+ns2:LacunarInfarcts a ns1:Condition ;
+    ns1:Condition.symptom ns2:AtaxicHemiparesis,
+        ns2:CombinedHemiparesisAndHemianesthesia,
+        ns2:DysarthriaClumsyHandSyndrome,
+        ns2:MultiInfarctDementia,
+        ns2:PureMotorHemiparesis,
+        ns2:PureSensoryHemianesthesia ;
+    ns1:associatedWith ns2:Diabetes,
+        ns2:Hypertension,
+        ns2:Smoking ;
+    ns1:causedBy ns2:Emboli,
+        ns2:NonatherothromboticObstruction ;
+    ns1:definition "Small (≤ 1.5 cm) infarcts resulting from nonatherothrombotic obstruction of small, perforating arteries that supply deep cortical structures." ;
+    ns1:hasRiskFactor ns2:CigaretteSmoking,
+        ns2:Diabetes,
+        ns2:Hypertension ;
+    ns1:name "Lacunar Infarcts",
+        "Lacunar infarcts" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:ThromboticDisordersTesting a ns1:Procedure ;
+    ns1:name "Testing for thrombotic disorders" ;
+    ns1:partOf ns2:BloodTests .
+
+ns2:VascularInflammation a ns1:Condition ;
+    ns1:hasCause ns2:AcuteChronicMeningitis,
+        ns2:Syphilis,
+        ns2:VasculiticDisorders ;
+    ns1:name "Vascular Inflammation",
+        "Vascular inflammation" ;
+    ns1:relatedTo ns2:Stroke .
+
+ns2:VenousSinusThrombosis a ns1:Condition ;
+    ns1:hasCause ns2:HypercoagulabilityDisorder,
+        ns2:IntracranialInfection,
+        ns2:PeripartumState,
+        ns2:PostoperativeState ;
+    ns1:name "Venous Sinus Thrombosis",
+        "Venous sinus thrombosis" ;
+    ns1:relatedTo ns2:IschemicStroke .
+
+ns2:Testing a ns1:Procedure ;
+    ns1:name "Testing" ;
+    ns1:reasonReference ns2:VascularCauses .
+
+ns2:CardiacCauses a ns1:Condition ;
+    ns1:name "Cardiac causes" .
+
+ns2:Emboli a ns1:Condition ;
+    ns1:Condition.dislodge ns2:InvasiveCardiovascularProcedures,
+        ns2:Spontaneously ;
+    ns1:Condition.location ns2:CerebralArterialTree ;
+    ns1:Condition.origin ns2:Air,
+        ns2:Atheromas,
+        ns2:CardiacThrombi,
+        ns2:Clots,
+        ns2:Fat,
+        ns2:VenousClots ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "414086009" ;
+                    ns1:display "Emboli" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:definition "A blockage-causing piece of material, inside a blood vessel." .
+
+ns2:Thrombi a ns1:Condition ;
+    ns1:bodySite ns2:BasilarArtery,
+        ns2:DeepPerforatingArteries,
+        ns2:InternalCarotidArterySegment,
+        ns2:LargeArteriesAtBaseOfBrain,
+        ns2:MiddleCerebralArtery,
+        ns2:SmallCorticalBranches ;
+    ns1:name "Thrombi" ;
+    ns1:relatedCondition ns2:Atheromas .
+
+ns2:Neuroimaging a ns1:Procedure ;
+    ns1:description "Neuroimaging" ;
+    ns1:method ns2:CT,
+        ns2:MRI ;
+    ns1:partOf ns2:BrainAssessment .
+
+ns2:Stroke a ns1:Condition ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "230690007" ;
+                    ns1:display "Stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:hasSubtype ns2:Cardioembolism,
+        ns2:CryptogenicStroke,
+        ns2:EmbolicStrokeOfUndeterminedSource,
+        ns2:IschemicStroke,
+        ns2:LacunarInfarcts,
+        ns2:LargeVesselAtherosclerosis ;
+    ns1:outcome ns2:StrokeOutcome ;
+    ns1:prognosis ns2:StrokePrognosis ;
+    ns1:progression ns2:StrokeProgression ;
+    ns1:purpose "reduce the risk of recurrent disabling stroke" ;
+    ns1:relatedCondition ns2:Aphasia,
+        ns2:BrainStemSigns,
+        ns2:Hemiplegia,
+        ns2:IschemicStroke ;
+    ns1:severity ns2:StrokeSeverity ;
+    ns1:use "acute stroke treatment" .
+
+ns2:BloodTests a ns1:Procedure ;
+    ns1:name "Blood Tests",
+        "Blood tests" ;
+    ns1:reasonReference ns2:BloodRelatedCauses ;
+    ns1:relatedTo ns2:RheumaticDisorders,
+        ns2:ThromboticDisorders .
+
+ns2:IschemicStroke a ns1:Condition ;
+    ns1:Condition.cause ns2:AtherothromboticStroke,
+        ns2:CerebralEdema,
+        ns2:EmbolicStroke,
+        ns2:LacunarInfarcts ;
+    ns1:Condition.symptom ns2:Fever,
+        ns2:Headache,
+        ns2:ImpairedConsciousness,
+        ns2:NeurologicDeficits,
+        ns2:Seizure,
+        ns2:UnilateralNeurologicDysfunction ;
+    ns1:categorizedAs ns2:CryptogenicStroke ;
+    ns1:causedBy ns2:AtherothromboticOcclusion,
+        ns2:CerebralEmbolism,
+        ns2:LacunarInfarcts,
+        ns2:NonthromboticOcclusion,
+        ns2:ProximalArterialStenosis ;
+    ns1:code [ a ns1:CodeableConcept ;
+            ns1:coding [ a ns1:Coding ;
+                    ns1:code "422504002" ;
+                    ns1:display "Ischemic Stroke" ;
+                    ns1:system "http://snomed.info/sct" ] ] ;
+    ns1:component [ ns1:value "Blood",
+                "Brain parenchyma",
+                "Vascular system" ] ;
+    ns1:definition "A type of stroke that occurs when a blood vessel supplying blood to the brain is obstructed.",
+        "Sudden neurologic deficits that result from focal cerebral ischemia associated with permanent brain infarction" ;
+    ns1:diagnosedBy ns2:CT,
+        ns2:ClinicalDiagnosis,
+        ns2:MRI ;
+    ns1:hasCause ns2:AortaDissection,
+        ns2:BinswangerDisease,
+        ns2:CarbonMonoxideToxicity,
+        ns2:Cardioembolism,
+        ns2:CryptogenicStroke,
+        ns2:EmbolicStrokeOfUndeterminedSource,
+        ns2:FibromuscularDysplasia,
+        ns2:HypercoagulabilityDisorder,
+        ns2:HyperviscosityDisorders,
+        ns2:Hypotension,
+        ns2:Hypoxia,
+        ns2:IntracranialArteriesDissection,
+        ns2:LacunarInfarcts,
+        ns2:LargeVesselAtherosclerosis,
+        ns2:MoyamoyaDisease,
+        ns2:SevereAnemia,
+        ns2:SickleCellDisease,
+        ns2:VascularInflammation,
+        ns2:Vasospasm,
+        ns2:VenousSinusThrombosis ;
+    ns1:hasRiskFactor ns2:AbdominalObesity,
+        ns2:CarotidArteryStenosis,
+        ns2:CertainDrugsUse,
+        ns2:CigaretteSmoking,
+        ns2:Diabetes,
+        ns2:Dyslipidemia,
+        ns2:ExcessAlcoholConsumption,
+        ns2:ExogenousEstrogenUse,
+        ns2:FamilyHistoryOfStroke,
+        ns2:HeartDisorders,
+        ns2:HighRiskDiet,
+        ns2:Hypercoagulability,
+        ns2:Hypertension,
+        ns2:InsulinResistance,
+        ns2:LackOfPhysicalActivity,
+        ns2:ObstructiveSleepApnea,
+        ns2:OlderAge,
+        ns2:PriorStroke,
+        ns2:PsychosocialStress,
+        ns2:RaceEthnicity,
+        ns2:Sex,
+        ns2:Vasculitis ;
+    ns1:increasesWith ns2:Age ;
+    ns1:mortalityRate "20%" ;
+    ns1:relatedTo ns2:CNSInfections,
+        ns2:FunctionalNeurologicDisorders,
+        ns2:HemiplegicMigraine,
+        ns2:PostictalParalysis,
+        ns2:Stroke ;
+    ns1:treatedBy ns2:Anticoagulants,
+        ns2:AntiplateletMedications,
+        ns2:CarotidEndarterectomy,
+        ns2:Stenting,
+        ns2:ThrombolyticTherapy .
+
