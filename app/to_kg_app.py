@@ -40,7 +40,7 @@ def generate_knowledge_graph(args, chunks, g):
     ttl_output_whole = ""
     chunks_size = len(chunks)
     for (i, chunk) in enumerate(chunks, start=1):
-        print(f"Parsing chunk {chunk}")
+        print(f"Parsing chunk {i}/{chunks_size}")
         messages = helper.format_initial_messages(helper.get_system_prompt(), chunk)
         print(f'Step {1 * i}/{5 * chunks_size} Prompting the LLM for initial knowledge graph...')
         log_message.info(f"Step {1 * i}/{5 * chunks_size} Prompting the LLM for initial knowledge graph...")

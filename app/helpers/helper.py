@@ -4,7 +4,13 @@ import re
 import nltk
 from nltk.tokenize import sent_tokenize
 
-nltk.download('punkt')
+
+def ensure_punkt_available():
+    """Load punkt tokenizer data without forcing network on import."""
+    try:
+        nltk.data.find("tokenizers/punkt")
+    except LookupError:
+        nltk.download("punkt", quiet=True)
 
 
 def extract_ttl_content_gpt(text):
@@ -90,6 +96,7 @@ def split_text_into_chunks(txt, max_chunk_size=2000, min_chunk_size=100):
     if not isinstance(txt, str):
         raise TypeError("Input text must be a string")
 
+    ensure_punkt_available()
     paragraphs = []
     sentences = sent_tokenize(txt)
 
@@ -97,7 +104,6 @@ def split_text_into_chunks(txt, max_chunk_size=2000, min_chunk_size=100):
     curr_paragraph = ""
     for s in sentences:
         sent = s.strip()
-        print(f"Sentence length is {len(sent)}")
         if curr_paragraph_size != 0 and curr_paragraph_size + len(sent) < min_chunk_size:
             curr_paragraph += sent + " "
             curr_paragraph_size += len(sent) + 1

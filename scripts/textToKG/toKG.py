@@ -5,6 +5,7 @@ import re
 import sys
 import os
 import csv
+import getpass
 
 
 def read_file(filenames):
@@ -121,9 +122,15 @@ def post_process_ttl_file(g, valid_props):
 @click.command()
 @click.argument('filenames', nargs=-1)
 @click.argument('output', nargs=1)
-@click.argument('api_key', nargs=1)
-@click.argument('retry', nargs=1)
+@click.option('--api-key', default=None, help='OpenAI API key. Prefer OPENAI_API_KEY env var.')
+@click.option('--retry/--no-retry', default=False, help='Retry chunk generation if TTL parsing fails.')
 def convert_text_to_kg(filenames, output, api_key, retry):
+
+    resolved_api_key = api_key or os.getenv("OPENAI_API_KEY")
+    if not resolved_api_key:
+        resolved_api_key = getpass.getpass("OpenAI API key: ").strip()
+    if not resolved_api_key.startswith("sk-"):
+        raise click.BadParameter("A valid OpenAI API key is required.")
 
     chunk_size = 1500
     chunks = []
@@ -157,7 +164,7 @@ def convert_text_to_kg(filenames, output, api_key, retry):
     ttl_output_whole = ""
     for chunk in chunks:
         g1 = Graph()
-        ttl_output = infer_ontology(api_key, args, chunk)
+        ttl_output = infer_ontology(resolved_api_key, args, chunk)
         while True:
             if len(ttl_output) != 0:
                 # merging
@@ -168,8 +175,8 @@ def convert_text_to_kg(filenames, output, api_key, retry):
                     break
                 except Exception as e:
                     print(f"Error paring in TTL: ", e)
-                    if bool(retry):
-                        ttl_output = infer_ontology(api_key, args, chunk)
+                    if retry:
+                        ttl_output = infer_ontology(resolved_api_key, args, chunk)
                     else:
                         break
 
